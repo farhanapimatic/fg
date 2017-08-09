@@ -174,9 +174,448 @@ Scopes enable your application to only request access to the resources it needs 
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [UserController](#user_controller)
-* [StoreController](#store_controller)
 * [PetController](#pet_controller)
+* [StoreController](#store_controller)
+* [UserController](#user_controller)
+
+## <a name="pet_controller"></a>![Class: ](https://apidocs.io/img/class.png ".PetController") PetController
+
+### Get singleton instance
+
+The singleton instance of the ``` PetController ``` class can be accessed from the API Client.
+
+```php
+$pet = $client->getPet();
+```
+
+### <a name="update_pet"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.updatePet") updatePet
+
+> Update an existing pet
+
+
+```php
+function updatePet($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | Pet object that needs to be added to the store |
+
+
+
+#### Example Usage
+
+```php
+$body = new Pet();
+
+$pet->updatePet($body);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid ID supplied |
+| 404 | Pet not found |
+| 405 | Validation exception |
+
+
+
+### <a name="add_pet"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.addPet") addPet
+
+> Add a new pet to the store
+
+
+```php
+function addPet($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | Pet object that needs to be added to the store |
+
+
+
+#### Example Usage
+
+```php
+$body = new Pet();
+
+$pet->addPet($body);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 405 | Invalid input |
+
+
+
+### <a name="find_pets_by_status"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.findPetsByStatus") findPetsByStatus
+
+> Finds Pets by status
+
+
+```php
+function findPetsByStatus($status)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| status |  ``` Required ```  ``` Collection ```  | Status values that need to be considered for filter |
+
+
+
+#### Example Usage
+
+```php
+$status = array(Status7::AVAILABLE);
+
+$result = $pet->findPetsByStatus($status);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid status value |
+
+
+
+### <a name="find_pets_by_tags"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.findPetsByTags") findPetsByTags
+
+> Finds Pets by tags
+
+
+```php
+function findPetsByTags($tags)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| tags |  ``` Required ```  ``` Collection ```  | Tags to filter by |
+
+
+
+#### Example Usage
+
+```php
+$tags = array('tags');
+
+$result = $pet->findPetsByTags($tags);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid tag value |
+
+
+
+### <a name="get_pet_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.getPetById") getPetById
+
+> Find pet by ID
+
+
+```php
+function getPetById($petId)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| petId |  ``` Required ```  | ID of pet to return |
+
+
+
+#### Example Usage
+
+```php
+$petId = 176;
+
+$result = $pet->getPetById($petId);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid ID supplied |
+| 404 | Pet not found |
+
+
+
+### <a name="update_pet_with_form"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.updatePetWithForm") updatePetWithForm
+
+> Updates a pet in the store with form data
+
+
+```php
+function updatePetWithForm(
+        $petId,
+        $name = null,
+        $status = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| petId |  ``` Required ```  | ID of pet that needs to be updated |
+| name |  ``` Optional ```  | Updated name of the pet |
+| status |  ``` Optional ```  | Updated status of the pet |
+
+
+
+#### Example Usage
+
+```php
+$petId = 176;
+$name = 'name';
+$status = 'status';
+
+$pet->updatePetWithForm($petId, $name, $status);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 405 | Invalid input |
+
+
+
+### <a name="delete_pet"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.deletePet") deletePet
+
+> Deletes a pet
+
+
+```php
+function deletePet(
+        $petId,
+        $apiKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| petId |  ``` Required ```  | Pet id to delete |
+| apiKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$petId = 176;
+$apiKey = 'api_key';
+
+$pet->deletePet($petId, $apiKey);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid ID supplied |
+| 404 | Pet not found |
+
+
+
+### <a name="upload_file"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.uploadFile") uploadFile
+
+> uploads an image
+
+
+```php
+function uploadFile(
+        $petId,
+        $additionalMetadata = null,
+        $file = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| petId |  ``` Required ```  | ID of pet to update |
+| additionalMetadata |  ``` Optional ```  | Additional data to pass to server |
+| file |  ``` Optional ```  | file to upload |
+
+
+
+#### Example Usage
+
+```php
+$petId = 176;
+$additionalMetadata = 'additionalMetadata';
+$file = "PathToFile";
+
+$result = $pet->uploadFile($petId, $additionalMetadata, $file);
+
+```
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="store_controller"></a>![Class: ](https://apidocs.io/img/class.png ".StoreController") StoreController
+
+### Get singleton instance
+
+The singleton instance of the ``` StoreController ``` class can be accessed from the API Client.
+
+```php
+$store = $client->getStore();
+```
+
+### <a name="get_inventory"></a>![Method: ](https://apidocs.io/img/method.png ".StoreController.getInventory") getInventory
+
+> Returns pet inventories by status
+
+
+```php
+function getInventory()
+```
+
+#### Example Usage
+
+```php
+
+$result = $store->getInventory();
+
+```
+
+
+### <a name="create_place_order"></a>![Method: ](https://apidocs.io/img/method.png ".StoreController.createPlaceOrder") createPlaceOrder
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Place an order for a pet
+
+
+```php
+function createPlaceOrder($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | order placed for purchasing the pet |
+
+
+
+#### Example Usage
+
+```php
+$body = new Order();
+
+$result = $store->createPlaceOrder($body);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid Order |
+
+
+
+### <a name="get_order_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".StoreController.getOrderById") getOrderById
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Find purchase order by ID
+
+
+```php
+function getOrderById($orderId)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| orderId |  ``` Required ```  | ID of pet that needs to be fetched |
+
+
+
+#### Example Usage
+
+```php
+$orderId = 176;
+
+$result = $store->getOrderById($orderId);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid ID supplied |
+| 404 | Order not found |
+
+
+
+### <a name="delete_order"></a>![Method: ](https://apidocs.io/img/method.png ".StoreController.deleteOrder") deleteOrder
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Delete purchase order by ID
+
+
+```php
+function deleteOrder($orderId)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| orderId |  ``` Required ```  | ID of the order that needs to be deleted |
+
+
+
+#### Example Usage
+
+```php
+$orderId = 176;
+
+$store->deleteOrder($orderId);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid ID supplied |
+| 404 | Order not found |
+
+
+
+[Back to List of Controllers](#list_of_controllers)
 
 ## <a name="user_controller"></a>![Class: ](https://apidocs.io/img/class.png ".UserController") UserController
 
@@ -188,59 +627,31 @@ The singleton instance of the ``` UserController ``` class can be accessed from 
 $user = $client->getUser();
 ```
 
-### <a name="get_logout_user"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.getLogoutUser") getLogoutUser
+### <a name="create_user"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.createUser") createUser
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Logs out current logged in user session
+> Create user
 
 
 ```php
-function getLogoutUser()
-```
-
-#### Example Usage
-
-```php
-
-$user->getLogoutUser();
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 0 | successful operation |
-
-
-
-### <a name="create_users_with_list_input"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.createUsersWithListInput") createUsersWithListInput
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Creates list of users with given input array
-
-
-```php
-function createUsersWithListInput($body)
+function createUser($body)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  ``` Collection ```  | List of user object |
+| body |  ``` Required ```  | Created user object |
 
 
 
 #### Example Usage
 
 ```php
-$user = new User();
-$body = array($user);
+$body = new User();
 
-$user->createUsersWithListInput($body);
+$user->createUser($body);
 
 ```
 
@@ -289,31 +700,32 @@ $user->createUsersWithArrayInput($body);
 
 
 
-### <a name="create_user"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.createUser") createUser
+### <a name="create_users_with_list_input"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.createUsersWithListInput") createUsersWithListInput
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Create user
+> Creates list of users with given input array
 
 
 ```php
-function createUser($body)
+function createUsersWithListInput($body)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | Created user object |
+| body |  ``` Required ```  ``` Collection ```  | List of user object |
 
 
 
 #### Example Usage
 
 ```php
-$body = new User();
+$user = new User();
+$body = array($user);
 
-$user->createUser($body);
+$user->createUsersWithListInput($body);
 
 ```
 
@@ -325,22 +737,89 @@ $user->createUser($body);
 
 
 
-### <a name="delete_user"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.deleteUser") deleteUser
+### <a name="get_login_user"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.getLoginUser") getLoginUser
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Delete user
+> Logs user into the system
 
 
 ```php
-function deleteUser($username)
+function getLoginUser(
+        $username,
+        $password)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| username |  ``` Required ```  | The name that needs to be deleted |
+| username |  ``` Required ```  | The user name for login |
+| password |  ``` Required ```  | The password for login in clear text |
+
+
+
+#### Example Usage
+
+```php
+$username = 'username';
+$password = 'password';
+
+$result = $user->getLoginUser($username, $password);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid username/password supplied |
+
+
+
+### <a name="get_logout_user"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.getLogoutUser") getLogoutUser
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Logs out current logged in user session
+
+
+```php
+function getLogoutUser()
+```
+
+#### Example Usage
+
+```php
+
+$user->getLogoutUser();
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 0 | successful operation |
+
+
+
+### <a name="get_user_by_name"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.getUserByName") getUserByName
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Get user by user name
+
+
+```php
+function getUserByName($username)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| username |  ``` Required ```  | The name that needs to be fetched. Use user1 for testing. |
 
 
 
@@ -349,7 +828,7 @@ function deleteUser($username)
 ```php
 $username = 'username';
 
-$user->deleteUser($username);
+$result = $user->getUserByName($username);
 
 ```
 
@@ -403,22 +882,22 @@ $user->updateUser($username, $body);
 
 
 
-### <a name="get_user_by_name"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.getUserByName") getUserByName
+### <a name="delete_user"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.deleteUser") deleteUser
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Get user by user name
+> Delete user
 
 
 ```php
-function getUserByName($username)
+function deleteUser($username)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| username |  ``` Required ```  | The name that needs to be fetched. Use user1 for testing. |
+| username |  ``` Required ```  | The name that needs to be deleted |
 
 
 
@@ -427,7 +906,7 @@ function getUserByName($username)
 ```php
 $username = 'username';
 
-$result = $user->getUserByName($username);
+$user->deleteUser($username);
 
 ```
 
@@ -437,485 +916,6 @@ $result = $user->getUserByName($username);
 |------------|-------------------|
 | 400 | Invalid username supplied |
 | 404 | User not found |
-
-
-
-### <a name="get_login_user"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.getLoginUser") getLoginUser
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Logs user into the system
-
-
-```php
-function getLoginUser(
-        $username,
-        $password)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| username |  ``` Required ```  | The user name for login |
-| password |  ``` Required ```  | The password for login in clear text |
-
-
-
-#### Example Usage
-
-```php
-$username = 'username';
-$password = 'password';
-
-$result = $user->getLoginUser($username, $password);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid username/password supplied |
-
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="store_controller"></a>![Class: ](https://apidocs.io/img/class.png ".StoreController") StoreController
-
-### Get singleton instance
-
-The singleton instance of the ``` StoreController ``` class can be accessed from the API Client.
-
-```php
-$store = $client->getStore();
-```
-
-### <a name="create_place_order"></a>![Method: ](https://apidocs.io/img/method.png ".StoreController.createPlaceOrder") createPlaceOrder
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Place an order for a pet
-
-
-```php
-function createPlaceOrder($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | order placed for purchasing the pet |
-
-
-
-#### Example Usage
-
-```php
-$body = new Order();
-
-$result = $store->createPlaceOrder($body);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid Order |
-
-
-
-### <a name="get_inventory"></a>![Method: ](https://apidocs.io/img/method.png ".StoreController.getInventory") getInventory
-
-> Returns pet inventories by status
-
-
-```php
-function getInventory()
-```
-
-#### Example Usage
-
-```php
-
-$result = $store->getInventory();
-
-```
-
-
-### <a name="delete_order"></a>![Method: ](https://apidocs.io/img/method.png ".StoreController.deleteOrder") deleteOrder
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Delete purchase order by ID
-
-
-```php
-function deleteOrder($orderId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| orderId |  ``` Required ```  | ID of the order that needs to be deleted |
-
-
-
-#### Example Usage
-
-```php
-$orderId = 96;
-
-$store->deleteOrder($orderId);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Order not found |
-
-
-
-### <a name="get_order_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".StoreController.getOrderById") getOrderById
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Find purchase order by ID
-
-
-```php
-function getOrderById($orderId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| orderId |  ``` Required ```  | ID of pet that needs to be fetched |
-
-
-
-#### Example Usage
-
-```php
-$orderId = 96;
-
-$result = $store->getOrderById($orderId);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Order not found |
-
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="pet_controller"></a>![Class: ](https://apidocs.io/img/class.png ".PetController") PetController
-
-### Get singleton instance
-
-The singleton instance of the ``` PetController ``` class can be accessed from the API Client.
-
-```php
-$pet = $client->getPet();
-```
-
-### <a name="find_pets_by_tags"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.findPetsByTags") findPetsByTags
-
-> Finds Pets by tags
-
-
-```php
-function findPetsByTags($tags)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| tags |  ``` Required ```  ``` Collection ```  | Tags to filter by |
-
-
-
-#### Example Usage
-
-```php
-$tags = array('tags');
-
-$result = $pet->findPetsByTags($tags);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid tag value |
-
-
-
-### <a name="add_pet"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.addPet") addPet
-
-> Add a new pet to the store
-
-
-```php
-function addPet($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | Pet object that needs to be added to the store |
-
-
-
-#### Example Usage
-
-```php
-$body = new Pet();
-
-$pet->addPet($body);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 405 | Invalid input |
-
-
-
-### <a name="upload_file"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.uploadFile") uploadFile
-
-> uploads an image
-
-
-```php
-function uploadFile(
-        $petId,
-        $additionalMetadata = null,
-        $file = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| petId |  ``` Required ```  | ID of pet to update |
-| additionalMetadata |  ``` Optional ```  | Additional data to pass to server |
-| file |  ``` Optional ```  | file to upload |
-
-
-
-#### Example Usage
-
-```php
-$petId = 96;
-$additionalMetadata = 'additionalMetadata';
-$file = "PathToFile";
-
-$result = $pet->uploadFile($petId, $additionalMetadata, $file);
-
-```
-
-
-### <a name="delete_pet"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.deletePet") deletePet
-
-> Deletes a pet
-
-
-```php
-function deletePet(
-        $petId,
-        $apiKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| petId |  ``` Required ```  | Pet id to delete |
-| apiKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$petId = 96;
-$apiKey = 'api_key';
-
-$pet->deletePet($petId, $apiKey);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Pet not found |
-
-
-
-### <a name="update_pet_with_form"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.updatePetWithForm") updatePetWithForm
-
-> Updates a pet in the store with form data
-
-
-```php
-function updatePetWithForm(
-        $petId,
-        $name = null,
-        $status = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| petId |  ``` Required ```  | ID of pet that needs to be updated |
-| name |  ``` Optional ```  | Updated name of the pet |
-| status |  ``` Optional ```  | Updated status of the pet |
-
-
-
-#### Example Usage
-
-```php
-$petId = 96;
-$name = 'name';
-$status = 'status';
-
-$pet->updatePetWithForm($petId, $name, $status);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 405 | Invalid input |
-
-
-
-### <a name="get_pet_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.getPetById") getPetById
-
-> Find pet by ID
-
-
-```php
-function getPetById($petId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| petId |  ``` Required ```  | ID of pet to return |
-
-
-
-#### Example Usage
-
-```php
-$petId = 96;
-
-$result = $pet->getPetById($petId);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Pet not found |
-
-
-
-### <a name="find_pets_by_status"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.findPetsByStatus") findPetsByStatus
-
-> Finds Pets by status
-
-
-```php
-function findPetsByStatus($status)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| status |  ``` Required ```  ``` Collection ```  | Status values that need to be considered for filter |
-
-
-
-#### Example Usage
-
-```php
-$status = array(Status7::AVAILABLE);
-
-$result = $pet->findPetsByStatus($status);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid status value |
-
-
-
-### <a name="update_pet"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.updatePet") updatePet
-
-> Update an existing pet
-
-
-```php
-function updatePet($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | Pet object that needs to be added to the store |
-
-
-
-#### Example Usage
-
-```php
-$body = new Pet();
-
-$pet->updatePet($body);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Pet not found |
-| 405 | Validation exception |
 
 
 

@@ -147,36 +147,270 @@ Scopes enable your application to only request access to the resources it needs 
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [UserController](#user_controller)
-* [StoreController](#store_controller)
 * [PetController](#pet_controller)
+* [StoreController](#store_controller)
+* [UserController](#user_controller)
 
-## <a name="user_controller"></a>![Class: ](https://apidocs.io/img/class.png "io.swagger.petstore.controllers.UserController") UserController
+## <a name="pet_controller"></a>![Class: ](https://apidocs.io/img/class.png "io.swagger.petstore.controllers.PetController") PetController
 
 ### Get singleton instance
 
-The singleton instance of the ``` UserController ``` class can be accessed from the API Client.
+The singleton instance of the ``` PetController ``` class can be accessed from the API Client.
 
 ```java
-UserController user = client.getUser();
+PetController pet = client.getPet();
 ```
 
-### <a name="get_logout_user_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.UserController.getLogoutUserAsync") getLogoutUserAsync
+### <a name="update_pet_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.PetController.updatePetAsync") updatePetAsync
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Logs out current logged in user session
+> Update an existing pet
 
 
 ```java
-void getLogoutUserAsync(final APICallBack<Object> callBack)
+void updatePetAsync(
+        final Pet body,
+        final APICallBack<Object> callBack)
 ```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | Pet object that needs to be added to the store |
+
 
 #### Example Usage
 
 ```java
+try {
+    Pet body = new Pet();
+    // Invoking the API call with sample inputs
+    pet.updatePetAsync(body, new APICallBack<void>() {
+        public void onSuccess(HttpContext context, void response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid ID supplied |
+| 404 | Pet not found |
+| 405 | Validation exception |
+
+
+
+### <a name="add_pet_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.PetController.addPetAsync") addPetAsync
+
+> Add a new pet to the store
+
+
+```java
+void addPetAsync(
+        final Pet body,
+        final APICallBack<Object> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | Pet object that needs to be added to the store |
+
+
+#### Example Usage
+
+```java
+try {
+    Pet body = new Pet();
+    // Invoking the API call with sample inputs
+    pet.addPetAsync(body, new APICallBack<void>() {
+        public void onSuccess(HttpContext context, void response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 405 | Invalid input |
+
+
+
+### <a name="find_pets_by_status_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.PetController.findPetsByStatusAsync") findPetsByStatusAsync
+
+> Finds Pets by status
+
+
+```java
+void findPetsByStatusAsync(
+        final List<Status7Enum> status,
+        final APICallBack<List<Pet>> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| status |  ``` Required ```  ``` Collection ```  | Status values that need to be considered for filter |
+
+
+#### Example Usage
+
+```java
+List<Status7Enum> status = Arrays.asList (Status7.AVAILABLE);// Invoking the API call with sample inputs
+pet.findPetsByStatusAsync(status, new APICallBack<List<Pet>>() {
+    public void onSuccess(HttpContext context, List<Pet> response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid status value |
+
+
+
+### <a name="find_pets_by_tags_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.PetController.findPetsByTagsAsync") findPetsByTagsAsync
+
+> Finds Pets by tags
+
+
+```java
+void findPetsByTagsAsync(
+        final List<String> tags,
+        final APICallBack<List<Pet>> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| tags |  ``` Required ```  ``` Collection ```  | Tags to filter by |
+
+
+#### Example Usage
+
+```java
+List<String> tags = new LinkedList<String>(Arrays.asList("tags"));
 // Invoking the API call with sample inputs
-user.getLogoutUserAsync(new APICallBack<void>() {
+pet.findPetsByTagsAsync(tags, new APICallBack<List<Pet>>() {
+    public void onSuccess(HttpContext context, List<Pet> response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid tag value |
+
+
+
+### <a name="get_pet_by_id_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.PetController.getPetByIdAsync") getPetByIdAsync
+
+> Find pet by ID
+
+
+```java
+void getPetByIdAsync(
+        final long petId,
+        final APICallBack<Pet> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| petId |  ``` Required ```  | ID of pet to return |
+
+
+#### Example Usage
+
+```java
+long petId = 176;
+// Invoking the API call with sample inputs
+pet.getPetByIdAsync(petId, new APICallBack<Pet>() {
+    public void onSuccess(HttpContext context, Pet response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid ID supplied |
+| 404 | Pet not found |
+
+
+
+### <a name="update_pet_with_form_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.PetController.updatePetWithFormAsync") updatePetWithFormAsync
+
+> Updates a pet in the store with form data
+
+
+```java
+void updatePetWithFormAsync(
+        final long petId,
+        final String name,
+        final String status,
+        final APICallBack<Object> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| petId |  ``` Required ```  | ID of pet that needs to be updated |
+| name |  ``` Optional ```  | Updated name of the pet |
+| status |  ``` Optional ```  | Updated status of the pet |
+
+
+#### Example Usage
+
+```java
+long petId = 176;
+String name = "name";
+String status = "status";
+// Invoking the API call with sample inputs
+pet.updatePetWithFormAsync(petId, name, status, new APICallBack<void>() {
     public void onSuccess(HttpContext context, void response) {
         // TODO success callback handler
     }
@@ -191,20 +425,19 @@ user.getLogoutUserAsync(new APICallBack<void>() {
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 0 | successful operation |
+| 405 | Invalid input |
 
 
 
-### <a name="create_users_with_list_input_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.UserController.createUsersWithListInputAsync") createUsersWithListInputAsync
+### <a name="delete_pet_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.PetController.deletePetAsync") deletePetAsync
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Creates list of users with given input array
+> Deletes a pet
 
 
 ```java
-void createUsersWithListInputAsync(
-        final List<User> body,
+void deletePetAsync(
+        final long petId,
+        final String apiKey,
         final APICallBack<Object> callBack)
 ```
 
@@ -212,16 +445,291 @@ void createUsersWithListInputAsync(
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  ``` Collection ```  | List of user object |
+| petId |  ``` Required ```  | Pet id to delete |
+| apiKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+long petId = 176;
+String apiKey = "api_key";
+// Invoking the API call with sample inputs
+pet.deletePetAsync(petId, apiKey, new APICallBack<void>() {
+    public void onSuccess(HttpContext context, void response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid ID supplied |
+| 404 | Pet not found |
+
+
+
+### <a name="upload_file_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.PetController.uploadFileAsync") uploadFileAsync
+
+> uploads an image
+
+
+```java
+void uploadFileAsync(
+        final long petId,
+        final String additionalMetadata,
+        final File file,
+        final APICallBack<ApiResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| petId |  ``` Required ```  | ID of pet to update |
+| additionalMetadata |  ``` Optional ```  | Additional data to pass to server |
+| file |  ``` Optional ```  | file to upload |
+
+
+#### Example Usage
+
+```java
+long petId = 176;
+String additionalMetadata = "additionalMetadata";
+File file = new File("PathToFile");
+// Invoking the API call with sample inputs
+pet.uploadFileAsync(petId, additionalMetadata, file, new APICallBack<ApiResponse>() {
+    public void onSuccess(HttpContext context, ApiResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="store_controller"></a>![Class: ](https://apidocs.io/img/class.png "io.swagger.petstore.controllers.StoreController") StoreController
+
+### Get singleton instance
+
+The singleton instance of the ``` StoreController ``` class can be accessed from the API Client.
+
+```java
+StoreController store = client.getStore();
+```
+
+### <a name="get_inventory_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.StoreController.getInventoryAsync") getInventoryAsync
+
+> Returns pet inventories by status
+
+
+```java
+void getInventoryAsync(final APICallBack<Integer> callBack)
+```
+
+#### Example Usage
+
+```java
+// Invoking the API call with sample inputs
+store.getInventoryAsync(new APICallBack<Integer>() {
+    public void onSuccess(HttpContext context, Integer response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+
+### <a name="create_place_order_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.StoreController.createPlaceOrderAsync") createPlaceOrderAsync
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Place an order for a pet
+
+
+```java
+void createPlaceOrderAsync(
+        final Order body,
+        final APICallBack<Order> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | order placed for purchasing the pet |
 
 
 #### Example Usage
 
 ```java
 try {
-    List<User> body = new ArrayList<User>();
+    Order body = new Order();
     // Invoking the API call with sample inputs
-    user.createUsersWithListInputAsync(body, new APICallBack<void>() {
+    store.createPlaceOrderAsync(body, new APICallBack<Order>() {
+        public void onSuccess(HttpContext context, Order response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid Order |
+
+
+
+### <a name="get_order_by_id_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.StoreController.getOrderByIdAsync") getOrderByIdAsync
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Find purchase order by ID
+
+
+```java
+void getOrderByIdAsync(
+        final long orderId,
+        final APICallBack<Order> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| orderId |  ``` Required ```  | ID of pet that needs to be fetched |
+
+
+#### Example Usage
+
+```java
+long orderId = 176;
+// Invoking the API call with sample inputs
+store.getOrderByIdAsync(orderId, new APICallBack<Order>() {
+    public void onSuccess(HttpContext context, Order response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid ID supplied |
+| 404 | Order not found |
+
+
+
+### <a name="delete_order_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.StoreController.deleteOrderAsync") deleteOrderAsync
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Delete purchase order by ID
+
+
+```java
+void deleteOrderAsync(
+        final long orderId,
+        final APICallBack<Object> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| orderId |  ``` Required ```  | ID of the order that needs to be deleted |
+
+
+#### Example Usage
+
+```java
+long orderId = 176;
+// Invoking the API call with sample inputs
+store.deleteOrderAsync(orderId, new APICallBack<void>() {
+    public void onSuccess(HttpContext context, void response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid ID supplied |
+| 404 | Order not found |
+
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="user_controller"></a>![Class: ](https://apidocs.io/img/class.png "io.swagger.petstore.controllers.UserController") UserController
+
+### Get singleton instance
+
+The singleton instance of the ``` UserController ``` class can be accessed from the API Client.
+
+```java
+UserController user = client.getUser();
+```
+
+### <a name="create_user_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.UserController.createUserAsync") createUserAsync
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create user
+
+
+```java
+void createUserAsync(
+        final User body,
+        final APICallBack<Object> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | Created user object |
+
+
+#### Example Usage
+
+```java
+try {
+    User body = new User();
+    // Invoking the API call with sample inputs
+    user.createUserAsync(body, new APICallBack<void>() {
         public void onSuccess(HttpContext context, void response) {
             // TODO success callback handler
         }
@@ -291,16 +799,16 @@ try {
 
 
 
-### <a name="create_user_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.UserController.createUserAsync") createUserAsync
+### <a name="create_users_with_list_input_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.UserController.createUsersWithListInputAsync") createUsersWithListInputAsync
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Create user
+> Creates list of users with given input array
 
 
 ```java
-void createUserAsync(
-        final User body,
+void createUsersWithListInputAsync(
+        final List<User> body,
         final APICallBack<Object> callBack)
 ```
 
@@ -308,16 +816,16 @@ void createUserAsync(
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | Created user object |
+| body |  ``` Required ```  ``` Collection ```  | List of user object |
 
 
 #### Example Usage
 
 ```java
 try {
-    User body = new User();
+    List<User> body = new ArrayList<User>();
     // Invoking the API call with sample inputs
-    user.createUserAsync(body, new APICallBack<void>() {
+    user.createUsersWithListInputAsync(body, new APICallBack<void>() {
         public void onSuccess(HttpContext context, void response) {
             // TODO success callback handler
         }
@@ -339,24 +847,105 @@ try {
 
 
 
-### <a name="delete_user_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.UserController.deleteUserAsync") deleteUserAsync
+### <a name="get_login_user_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.UserController.getLoginUserAsync") getLoginUserAsync
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Delete user
+> Logs user into the system
 
 
 ```java
-void deleteUserAsync(
+void getLoginUserAsync(
         final String username,
-        final APICallBack<Object> callBack)
+        final String password,
+        final APICallBack<String> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| username |  ``` Required ```  | The name that needs to be deleted |
+| username |  ``` Required ```  | The user name for login |
+| password |  ``` Required ```  | The password for login in clear text |
+
+
+#### Example Usage
+
+```java
+String username = "username";
+String password = "password";
+// Invoking the API call with sample inputs
+user.getLoginUserAsync(username, password, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid username/password supplied |
+
+
+
+### <a name="get_logout_user_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.UserController.getLogoutUserAsync") getLogoutUserAsync
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Logs out current logged in user session
+
+
+```java
+void getLogoutUserAsync(final APICallBack<Object> callBack)
+```
+
+#### Example Usage
+
+```java
+// Invoking the API call with sample inputs
+user.getLogoutUserAsync(new APICallBack<void>() {
+    public void onSuccess(HttpContext context, void response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 0 | successful operation |
+
+
+
+### <a name="get_user_by_name_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.UserController.getUserByNameAsync") getUserByNameAsync
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Get user by user name
+
+
+```java
+void getUserByNameAsync(
+        final String username,
+        final APICallBack<User> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| username |  ``` Required ```  | The name that needs to be fetched. Use user1 for testing. |
 
 
 #### Example Usage
@@ -364,8 +953,8 @@ void deleteUserAsync(
 ```java
 String username = "username";
 // Invoking the API call with sample inputs
-user.deleteUserAsync(username, new APICallBack<void>() {
-    public void onSuccess(HttpContext context, void response) {
+user.getUserByNameAsync(username, new APICallBack<User>() {
+    public void onSuccess(HttpContext context, User response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
@@ -436,24 +1025,24 @@ try {
 
 
 
-### <a name="get_user_by_name_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.UserController.getUserByNameAsync") getUserByNameAsync
+### <a name="delete_user_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.UserController.deleteUserAsync") deleteUserAsync
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Get user by user name
+> Delete user
 
 
 ```java
-void getUserByNameAsync(
+void deleteUserAsync(
         final String username,
-        final APICallBack<User> callBack)
+        final APICallBack<Object> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| username |  ``` Required ```  | The name that needs to be fetched. Use user1 for testing. |
+| username |  ``` Required ```  | The name that needs to be deleted |
 
 
 #### Example Usage
@@ -461,8 +1050,8 @@ void getUserByNameAsync(
 ```java
 String username = "username";
 // Invoking the API call with sample inputs
-user.getUserByNameAsync(username, new APICallBack<User>() {
-    public void onSuccess(HttpContext context, User response) {
+user.deleteUserAsync(username, new APICallBack<void>() {
+    public void onSuccess(HttpContext context, void response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
@@ -478,595 +1067,6 @@ user.getUserByNameAsync(username, new APICallBack<User>() {
 |------------|-------------------|
 | 400 | Invalid username supplied |
 | 404 | User not found |
-
-
-
-### <a name="get_login_user_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.UserController.getLoginUserAsync") getLoginUserAsync
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Logs user into the system
-
-
-```java
-void getLoginUserAsync(
-        final String username,
-        final String password,
-        final APICallBack<String> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| username |  ``` Required ```  | The user name for login |
-| password |  ``` Required ```  | The password for login in clear text |
-
-
-#### Example Usage
-
-```java
-String username = "username";
-String password = "password";
-// Invoking the API call with sample inputs
-user.getLoginUserAsync(username, password, new APICallBack<String>() {
-    public void onSuccess(HttpContext context, String response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid username/password supplied |
-
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="store_controller"></a>![Class: ](https://apidocs.io/img/class.png "io.swagger.petstore.controllers.StoreController") StoreController
-
-### Get singleton instance
-
-The singleton instance of the ``` StoreController ``` class can be accessed from the API Client.
-
-```java
-StoreController store = client.getStore();
-```
-
-### <a name="create_place_order_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.StoreController.createPlaceOrderAsync") createPlaceOrderAsync
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Place an order for a pet
-
-
-```java
-void createPlaceOrderAsync(
-        final Order body,
-        final APICallBack<Order> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | order placed for purchasing the pet |
-
-
-#### Example Usage
-
-```java
-try {
-    Order body = new Order();
-    // Invoking the API call with sample inputs
-    store.createPlaceOrderAsync(body, new APICallBack<Order>() {
-        public void onSuccess(HttpContext context, Order response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid Order |
-
-
-
-### <a name="get_inventory_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.StoreController.getInventoryAsync") getInventoryAsync
-
-> Returns pet inventories by status
-
-
-```java
-void getInventoryAsync(final APICallBack<Integer> callBack)
-```
-
-#### Example Usage
-
-```java
-// Invoking the API call with sample inputs
-store.getInventoryAsync(new APICallBack<Integer>() {
-    public void onSuccess(HttpContext context, Integer response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-
-### <a name="delete_order_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.StoreController.deleteOrderAsync") deleteOrderAsync
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Delete purchase order by ID
-
-
-```java
-void deleteOrderAsync(
-        final long orderId,
-        final APICallBack<Object> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| orderId |  ``` Required ```  | ID of the order that needs to be deleted |
-
-
-#### Example Usage
-
-```java
-long orderId = 188;
-// Invoking the API call with sample inputs
-store.deleteOrderAsync(orderId, new APICallBack<void>() {
-    public void onSuccess(HttpContext context, void response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Order not found |
-
-
-
-### <a name="get_order_by_id_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.StoreController.getOrderByIdAsync") getOrderByIdAsync
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Find purchase order by ID
-
-
-```java
-void getOrderByIdAsync(
-        final long orderId,
-        final APICallBack<Order> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| orderId |  ``` Required ```  | ID of pet that needs to be fetched |
-
-
-#### Example Usage
-
-```java
-long orderId = 188;
-// Invoking the API call with sample inputs
-store.getOrderByIdAsync(orderId, new APICallBack<Order>() {
-    public void onSuccess(HttpContext context, Order response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Order not found |
-
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="pet_controller"></a>![Class: ](https://apidocs.io/img/class.png "io.swagger.petstore.controllers.PetController") PetController
-
-### Get singleton instance
-
-The singleton instance of the ``` PetController ``` class can be accessed from the API Client.
-
-```java
-PetController pet = client.getPet();
-```
-
-### <a name="find_pets_by_tags_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.PetController.findPetsByTagsAsync") findPetsByTagsAsync
-
-> Finds Pets by tags
-
-
-```java
-void findPetsByTagsAsync(
-        final List<String> tags,
-        final APICallBack<List<Pet>> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| tags |  ``` Required ```  ``` Collection ```  | Tags to filter by |
-
-
-#### Example Usage
-
-```java
-List<String> tags = new LinkedList<String>(Arrays.asList("tags"));
-// Invoking the API call with sample inputs
-pet.findPetsByTagsAsync(tags, new APICallBack<List<Pet>>() {
-    public void onSuccess(HttpContext context, List<Pet> response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid tag value |
-
-
-
-### <a name="add_pet_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.PetController.addPetAsync") addPetAsync
-
-> Add a new pet to the store
-
-
-```java
-void addPetAsync(
-        final Pet body,
-        final APICallBack<Object> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | Pet object that needs to be added to the store |
-
-
-#### Example Usage
-
-```java
-try {
-    Pet body = new Pet();
-    // Invoking the API call with sample inputs
-    pet.addPetAsync(body, new APICallBack<void>() {
-        public void onSuccess(HttpContext context, void response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 405 | Invalid input |
-
-
-
-### <a name="upload_file_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.PetController.uploadFileAsync") uploadFileAsync
-
-> uploads an image
-
-
-```java
-void uploadFileAsync(
-        final long petId,
-        final String additionalMetadata,
-        final File file,
-        final APICallBack<ApiResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| petId |  ``` Required ```  | ID of pet to update |
-| additionalMetadata |  ``` Optional ```  | Additional data to pass to server |
-| file |  ``` Optional ```  | file to upload |
-
-
-#### Example Usage
-
-```java
-long petId = 188;
-String additionalMetadata = "additionalMetadata";
-File file = new File("PathToFile");
-// Invoking the API call with sample inputs
-pet.uploadFileAsync(petId, additionalMetadata, file, new APICallBack<ApiResponse>() {
-    public void onSuccess(HttpContext context, ApiResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-
-### <a name="delete_pet_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.PetController.deletePetAsync") deletePetAsync
-
-> Deletes a pet
-
-
-```java
-void deletePetAsync(
-        final long petId,
-        final String apiKey,
-        final APICallBack<Object> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| petId |  ``` Required ```  | Pet id to delete |
-| apiKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-long petId = 188;
-String apiKey = "api_key";
-// Invoking the API call with sample inputs
-pet.deletePetAsync(petId, apiKey, new APICallBack<void>() {
-    public void onSuccess(HttpContext context, void response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Pet not found |
-
-
-
-### <a name="update_pet_with_form_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.PetController.updatePetWithFormAsync") updatePetWithFormAsync
-
-> Updates a pet in the store with form data
-
-
-```java
-void updatePetWithFormAsync(
-        final long petId,
-        final String name,
-        final String status,
-        final APICallBack<Object> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| petId |  ``` Required ```  | ID of pet that needs to be updated |
-| name |  ``` Optional ```  | Updated name of the pet |
-| status |  ``` Optional ```  | Updated status of the pet |
-
-
-#### Example Usage
-
-```java
-long petId = 188;
-String name = "name";
-String status = "status";
-// Invoking the API call with sample inputs
-pet.updatePetWithFormAsync(petId, name, status, new APICallBack<void>() {
-    public void onSuccess(HttpContext context, void response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 405 | Invalid input |
-
-
-
-### <a name="get_pet_by_id_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.PetController.getPetByIdAsync") getPetByIdAsync
-
-> Find pet by ID
-
-
-```java
-void getPetByIdAsync(
-        final long petId,
-        final APICallBack<Pet> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| petId |  ``` Required ```  | ID of pet to return |
-
-
-#### Example Usage
-
-```java
-long petId = 188;
-// Invoking the API call with sample inputs
-pet.getPetByIdAsync(petId, new APICallBack<Pet>() {
-    public void onSuccess(HttpContext context, Pet response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Pet not found |
-
-
-
-### <a name="find_pets_by_status_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.PetController.findPetsByStatusAsync") findPetsByStatusAsync
-
-> Finds Pets by status
-
-
-```java
-void findPetsByStatusAsync(
-        final List<Status7Enum> status,
-        final APICallBack<List<Pet>> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| status |  ``` Required ```  ``` Collection ```  | Status values that need to be considered for filter |
-
-
-#### Example Usage
-
-```java
-List<Status7Enum> status = Arrays.asList (Status7.AVAILABLE);// Invoking the API call with sample inputs
-pet.findPetsByStatusAsync(status, new APICallBack<List<Pet>>() {
-    public void onSuccess(HttpContext context, List<Pet> response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid status value |
-
-
-
-### <a name="update_pet_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.PetController.updatePetAsync") updatePetAsync
-
-> Update an existing pet
-
-
-```java
-void updatePetAsync(
-        final Pet body,
-        final APICallBack<Object> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | Pet object that needs to be added to the store |
-
-
-#### Example Usage
-
-```java
-try {
-    Pet body = new Pet();
-    // Invoking the API call with sample inputs
-    pet.updatePetAsync(body, new APICallBack<void>() {
-        public void onSuccess(HttpContext context, void response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Pet not found |
-| 405 | Validation exception |
 
 
 

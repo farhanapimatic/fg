@@ -88,9 +88,418 @@ SwaggerPetstoreClient client = new SwaggerPetstoreClient(oAuthClientId, oAuthRed
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [UserController](#user_controller)
-* [StoreController](#store_controller)
 * [PetController](#pet_controller)
+* [StoreController](#store_controller)
+* [UserController](#user_controller)
+
+## <a name="pet_controller"></a>![Class: ](https://apidocs.io/img/class.png "SwaggerPetstore.PCL.Controllers.PetController") PetController
+
+### Get singleton instance
+
+The singleton instance of the ``` PetController ``` class can be accessed from the API Client.
+
+```csharp
+PetController pet = client.Pet;
+```
+
+### <a name="update_pet"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.PetController.UpdatePet") UpdatePet
+
+> Update an existing pet
+
+
+```csharp
+Task UpdatePet(Models.Pet body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | Pet object that needs to be added to the store |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.Pet();
+
+await pet.UpdatePet(body);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid ID supplied |
+| 404 | Pet not found |
+| 405 | Validation exception |
+
+
+### <a name="add_pet"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.PetController.AddPet") AddPet
+
+> Add a new pet to the store
+
+
+```csharp
+Task AddPet(Models.Pet body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | Pet object that needs to be added to the store |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.Pet();
+
+await pet.AddPet(body);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 405 | Invalid input |
+
+
+### <a name="find_pets_by_status"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.PetController.FindPetsByStatus") FindPetsByStatus
+
+> Finds Pets by status
+
+
+```csharp
+Task<List<Models.Pet>> FindPetsByStatus(List<Models.Status7Enum> status)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| status |  ``` Required ```  ``` Collection ```  | Status values that need to be considered for filter |
+
+
+#### Example Usage
+
+```csharp
+List<Models.Status7Enum> status = new List<Models.Status7Enum> {Models.Status7Enum.AVAILABLE};
+List<Models.Pet> result = await pet.FindPetsByStatus(status);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid status value |
+
+
+### <a name="find_pets_by_tags"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.PetController.FindPetsByTags") FindPetsByTags
+
+> Finds Pets by tags
+
+
+```csharp
+Task<List<Models.Pet>> FindPetsByTags(List<string> tags)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| tags |  ``` Required ```  ``` Collection ```  | Tags to filter by |
+
+
+#### Example Usage
+
+```csharp
+List<string> tags = new List<string> { "tags" };
+
+List<Models.Pet> result = await pet.FindPetsByTags(tags);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid tag value |
+
+
+### <a name="get_pet_by_id"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.PetController.GetPetById") GetPetById
+
+> Find pet by ID
+
+
+```csharp
+Task<Models.Pet> GetPetById(long petId)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| petId |  ``` Required ```  | ID of pet to return |
+
+
+#### Example Usage
+
+```csharp
+long petId = 240;
+
+Models.Pet result = await pet.GetPetById(petId);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid ID supplied |
+| 404 | Pet not found |
+
+
+### <a name="update_pet_with_form"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.PetController.UpdatePetWithForm") UpdatePetWithForm
+
+> Updates a pet in the store with form data
+
+
+```csharp
+Task UpdatePetWithForm(long petId, string name = null, string status = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| petId |  ``` Required ```  | ID of pet that needs to be updated |
+| name |  ``` Optional ```  | Updated name of the pet |
+| status |  ``` Optional ```  | Updated status of the pet |
+
+
+#### Example Usage
+
+```csharp
+long petId = 240;
+string name = "name";
+string status = "status";
+
+await pet.UpdatePetWithForm(petId, name, status);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 405 | Invalid input |
+
+
+### <a name="delete_pet"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.PetController.DeletePet") DeletePet
+
+> Deletes a pet
+
+
+```csharp
+Task DeletePet(long petId, string apiKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| petId |  ``` Required ```  | Pet id to delete |
+| apiKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+long petId = 240;
+string apiKey = "api_key";
+
+await pet.DeletePet(petId, apiKey);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid ID supplied |
+| 404 | Pet not found |
+
+
+### <a name="upload_file"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.PetController.UploadFile") UploadFile
+
+> uploads an image
+
+
+```csharp
+Task<Models.ApiResponse> UploadFile(long petId, string additionalMetadata = null, FileStreamInfo file = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| petId |  ``` Required ```  | ID of pet to update |
+| additionalMetadata |  ``` Optional ```  | Additional data to pass to server |
+| file |  ``` Optional ```  | file to upload |
+
+
+#### Example Usage
+
+```csharp
+long petId = 240;
+string additionalMetadata = "additionalMetadata";
+FileStreamInfo file = new FileStreamInfo(new FileStream(@"pathToFile",FileMode.Open));
+
+Models.ApiResponse result = await pet.UploadFile(petId, additionalMetadata, file);
+
+```
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="store_controller"></a>![Class: ](https://apidocs.io/img/class.png "SwaggerPetstore.PCL.Controllers.StoreController") StoreController
+
+### Get singleton instance
+
+The singleton instance of the ``` StoreController ``` class can be accessed from the API Client.
+
+```csharp
+StoreController store = client.Store;
+```
+
+### <a name="get_inventory"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.StoreController.GetInventory") GetInventory
+
+> Returns pet inventories by status
+
+
+```csharp
+Task<int?> GetInventory()
+```
+
+#### Example Usage
+
+```csharp
+
+int? result = await store.GetInventory();
+
+```
+
+
+### <a name="create_place_order"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.StoreController.CreatePlaceOrder") CreatePlaceOrder
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Place an order for a pet
+
+
+```csharp
+Task<Models.Order> CreatePlaceOrder(Models.Order body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | order placed for purchasing the pet |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.Order();
+
+Models.Order result = await store.CreatePlaceOrder(body);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid Order |
+
+
+### <a name="get_order_by_id"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.StoreController.GetOrderById") GetOrderById
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Find purchase order by ID
+
+
+```csharp
+Task<Models.Order> GetOrderById(long orderId)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| orderId |  ``` Required ```  | ID of pet that needs to be fetched |
+
+
+#### Example Usage
+
+```csharp
+long orderId = 240;
+
+Models.Order result = await store.GetOrderById(orderId);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid ID supplied |
+| 404 | Order not found |
+
+
+### <a name="delete_order"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.StoreController.DeleteOrder") DeleteOrder
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Delete purchase order by ID
+
+
+```csharp
+Task DeleteOrder(long orderId)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| orderId |  ``` Required ```  | ID of the order that needs to be deleted |
+
+
+#### Example Usage
+
+```csharp
+long orderId = 240;
+
+await store.DeleteOrder(orderId);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid ID supplied |
+| 404 | Order not found |
+
+
+[Back to List of Controllers](#list_of_controllers)
 
 ## <a name="user_controller"></a>![Class: ](https://apidocs.io/img/class.png "SwaggerPetstore.PCL.Controllers.UserController") UserController
 
@@ -102,56 +511,30 @@ The singleton instance of the ``` UserController ``` class can be accessed from 
 UserController user = client.User;
 ```
 
-### <a name="get_logout_user"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.UserController.GetLogoutUser") GetLogoutUser
+### <a name="create_user"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.UserController.CreateUser") CreateUser
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Logs out current logged in user session
+> Create user
 
 
 ```csharp
-Task GetLogoutUser()
-```
-
-#### Example Usage
-
-```csharp
-
-await user.GetLogoutUser();
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 0 | successful operation |
-
-
-### <a name="create_users_with_list_input"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.UserController.CreateUsersWithListInput") CreateUsersWithListInput
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Creates list of users with given input array
-
-
-```csharp
-Task CreateUsersWithListInput(List<Models.User> body)
+Task CreateUser(Models.User body)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  ``` Collection ```  | List of user object |
+| body |  ``` Required ```  | Created user object |
 
 
 #### Example Usage
 
 ```csharp
-var body = new List<Models.User>();
+var body = new Models.User();
 
-await user.CreateUsersWithListInput(body);
+await user.CreateUser(body);
 
 ```
 
@@ -196,30 +579,30 @@ await user.CreateUsersWithArrayInput(body);
 | 0 | successful operation |
 
 
-### <a name="create_user"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.UserController.CreateUser") CreateUser
+### <a name="create_users_with_list_input"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.UserController.CreateUsersWithListInput") CreateUsersWithListInput
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Create user
+> Creates list of users with given input array
 
 
 ```csharp
-Task CreateUser(Models.User body)
+Task CreateUsersWithListInput(List<Models.User> body)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | Created user object |
+| body |  ``` Required ```  ``` Collection ```  | List of user object |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.User();
+var body = new List<Models.User>();
 
-await user.CreateUser(body);
+await user.CreateUsersWithListInput(body);
 
 ```
 
@@ -230,22 +613,84 @@ await user.CreateUser(body);
 | 0 | successful operation |
 
 
-### <a name="delete_user"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.UserController.DeleteUser") DeleteUser
+### <a name="get_login_user"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.UserController.GetLoginUser") GetLoginUser
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Delete user
+> Logs user into the system
 
 
 ```csharp
-Task DeleteUser(string username)
+Task<string> GetLoginUser(string username, string password)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| username |  ``` Required ```  | The name that needs to be deleted |
+| username |  ``` Required ```  | The user name for login |
+| password |  ``` Required ```  | The password for login in clear text |
+
+
+#### Example Usage
+
+```csharp
+string username = "username";
+string password = "password";
+
+string result = await user.GetLoginUser(username, password);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid username/password supplied |
+
+
+### <a name="get_logout_user"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.UserController.GetLogoutUser") GetLogoutUser
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Logs out current logged in user session
+
+
+```csharp
+Task GetLogoutUser()
+```
+
+#### Example Usage
+
+```csharp
+
+await user.GetLogoutUser();
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 0 | successful operation |
+
+
+### <a name="get_user_by_name"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.UserController.GetUserByName") GetUserByName
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Get user by user name
+
+
+```csharp
+Task<Models.User> GetUserByName(string username)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| username |  ``` Required ```  | The name that needs to be fetched. Use user1 for testing. |
 
 
 #### Example Usage
@@ -253,7 +698,7 @@ Task DeleteUser(string username)
 ```csharp
 string username = "username";
 
-await user.DeleteUser(username);
+Models.User result = await user.GetUserByName(username);
 
 ```
 
@@ -302,22 +747,22 @@ await user.UpdateUser(username, body);
 | 404 | User not found |
 
 
-### <a name="get_user_by_name"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.UserController.GetUserByName") GetUserByName
+### <a name="delete_user"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.UserController.DeleteUser") DeleteUser
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Get user by user name
+> Delete user
 
 
 ```csharp
-Task<Models.User> GetUserByName(string username)
+Task DeleteUser(string username)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| username |  ``` Required ```  | The name that needs to be fetched. Use user1 for testing. |
+| username |  ``` Required ```  | The name that needs to be deleted |
 
 
 #### Example Usage
@@ -325,7 +770,7 @@ Task<Models.User> GetUserByName(string username)
 ```csharp
 string username = "username";
 
-Models.User result = await user.GetUserByName(username);
+await user.DeleteUser(username);
 
 ```
 
@@ -335,451 +780,6 @@ Models.User result = await user.GetUserByName(username);
 |------------|-------------------|
 | 400 | Invalid username supplied |
 | 404 | User not found |
-
-
-### <a name="get_login_user"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.UserController.GetLoginUser") GetLoginUser
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Logs user into the system
-
-
-```csharp
-Task<string> GetLoginUser(string username, string password)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| username |  ``` Required ```  | The user name for login |
-| password |  ``` Required ```  | The password for login in clear text |
-
-
-#### Example Usage
-
-```csharp
-string username = "username";
-string password = "password";
-
-string result = await user.GetLoginUser(username, password);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid username/password supplied |
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="store_controller"></a>![Class: ](https://apidocs.io/img/class.png "SwaggerPetstore.PCL.Controllers.StoreController") StoreController
-
-### Get singleton instance
-
-The singleton instance of the ``` StoreController ``` class can be accessed from the API Client.
-
-```csharp
-StoreController store = client.Store;
-```
-
-### <a name="create_place_order"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.StoreController.CreatePlaceOrder") CreatePlaceOrder
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Place an order for a pet
-
-
-```csharp
-Task<Models.Order> CreatePlaceOrder(Models.Order body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | order placed for purchasing the pet |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.Order();
-
-Models.Order result = await store.CreatePlaceOrder(body);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid Order |
-
-
-### <a name="get_inventory"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.StoreController.GetInventory") GetInventory
-
-> Returns pet inventories by status
-
-
-```csharp
-Task<int?> GetInventory()
-```
-
-#### Example Usage
-
-```csharp
-
-int? result = await store.GetInventory();
-
-```
-
-
-### <a name="delete_order"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.StoreController.DeleteOrder") DeleteOrder
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Delete purchase order by ID
-
-
-```csharp
-Task DeleteOrder(long orderId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| orderId |  ``` Required ```  | ID of the order that needs to be deleted |
-
-
-#### Example Usage
-
-```csharp
-long orderId = 160;
-
-await store.DeleteOrder(orderId);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Order not found |
-
-
-### <a name="get_order_by_id"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.StoreController.GetOrderById") GetOrderById
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Find purchase order by ID
-
-
-```csharp
-Task<Models.Order> GetOrderById(long orderId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| orderId |  ``` Required ```  | ID of pet that needs to be fetched |
-
-
-#### Example Usage
-
-```csharp
-long orderId = 160;
-
-Models.Order result = await store.GetOrderById(orderId);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Order not found |
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="pet_controller"></a>![Class: ](https://apidocs.io/img/class.png "SwaggerPetstore.PCL.Controllers.PetController") PetController
-
-### Get singleton instance
-
-The singleton instance of the ``` PetController ``` class can be accessed from the API Client.
-
-```csharp
-PetController pet = client.Pet;
-```
-
-### <a name="find_pets_by_tags"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.PetController.FindPetsByTags") FindPetsByTags
-
-> Finds Pets by tags
-
-
-```csharp
-Task<List<Models.Pet>> FindPetsByTags(List<string> tags)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| tags |  ``` Required ```  ``` Collection ```  | Tags to filter by |
-
-
-#### Example Usage
-
-```csharp
-List<string> tags = new List<string> { "tags" };
-
-List<Models.Pet> result = await pet.FindPetsByTags(tags);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid tag value |
-
-
-### <a name="add_pet"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.PetController.AddPet") AddPet
-
-> Add a new pet to the store
-
-
-```csharp
-Task AddPet(Models.Pet body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | Pet object that needs to be added to the store |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.Pet();
-
-await pet.AddPet(body);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 405 | Invalid input |
-
-
-### <a name="upload_file"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.PetController.UploadFile") UploadFile
-
-> uploads an image
-
-
-```csharp
-Task<Models.ApiResponse> UploadFile(long petId, string additionalMetadata = null, FileStreamInfo file = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| petId |  ``` Required ```  | ID of pet to update |
-| additionalMetadata |  ``` Optional ```  | Additional data to pass to server |
-| file |  ``` Optional ```  | file to upload |
-
-
-#### Example Usage
-
-```csharp
-long petId = 160;
-string additionalMetadata = "additionalMetadata";
-FileStreamInfo file = new FileStreamInfo(new FileStream(@"pathToFile",FileMode.Open));
-
-Models.ApiResponse result = await pet.UploadFile(petId, additionalMetadata, file);
-
-```
-
-
-### <a name="delete_pet"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.PetController.DeletePet") DeletePet
-
-> Deletes a pet
-
-
-```csharp
-Task DeletePet(long petId, string apiKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| petId |  ``` Required ```  | Pet id to delete |
-| apiKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-long petId = 160;
-string apiKey = "api_key";
-
-await pet.DeletePet(petId, apiKey);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Pet not found |
-
-
-### <a name="update_pet_with_form"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.PetController.UpdatePetWithForm") UpdatePetWithForm
-
-> Updates a pet in the store with form data
-
-
-```csharp
-Task UpdatePetWithForm(long petId, string name = null, string status = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| petId |  ``` Required ```  | ID of pet that needs to be updated |
-| name |  ``` Optional ```  | Updated name of the pet |
-| status |  ``` Optional ```  | Updated status of the pet |
-
-
-#### Example Usage
-
-```csharp
-long petId = 160;
-string name = "name";
-string status = "status";
-
-await pet.UpdatePetWithForm(petId, name, status);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 405 | Invalid input |
-
-
-### <a name="get_pet_by_id"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.PetController.GetPetById") GetPetById
-
-> Find pet by ID
-
-
-```csharp
-Task<Models.Pet> GetPetById(long petId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| petId |  ``` Required ```  | ID of pet to return |
-
-
-#### Example Usage
-
-```csharp
-long petId = 160;
-
-Models.Pet result = await pet.GetPetById(petId);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Pet not found |
-
-
-### <a name="find_pets_by_status"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.PetController.FindPetsByStatus") FindPetsByStatus
-
-> Finds Pets by status
-
-
-```csharp
-Task<List<Models.Pet>> FindPetsByStatus(List<Models.Status7Enum> status)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| status |  ``` Required ```  ``` Collection ```  | Status values that need to be considered for filter |
-
-
-#### Example Usage
-
-```csharp
-List<Models.Status7Enum> status = new List<Models.Status7Enum> {Models.Status7Enum.AVAILABLE};
-List<Models.Pet> result = await pet.FindPetsByStatus(status);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid status value |
-
-
-### <a name="update_pet"></a>![Method: ](https://apidocs.io/img/method.png "SwaggerPetstore.PCL.Controllers.PetController.UpdatePet") UpdatePet
-
-> Update an existing pet
-
-
-```csharp
-Task UpdatePet(Models.Pet body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | Pet object that needs to be added to the store |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.Pet();
-
-await pet.UpdatePet(body);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Pet not found |
-| 405 | Validation exception |
 
 
 [Back to List of Controllers](#list_of_controllers)

@@ -165,9 +165,478 @@ Scopes enable your application to only request access to the resources it needs 
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [UserController](#user_controller)
-* [StoreController](#store_controller)
 * [PetController](#pet_controller)
+* [StoreController](#store_controller)
+* [UserController](#user_controller)
+
+## <a name="pet_controller"></a>![Class: ](https://apidocs.io/img/class.png ".PetController") PetController
+
+### Get singleton instance
+
+The singleton instance of the ``` PetController ``` class can be accessed from the API Client.
+
+```javascript
+var controller = lib.PetController;
+```
+
+### <a name="update_pet"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.updatePet") updatePet
+
+> Update an existing pet
+
+
+```javascript
+function updatePet(body, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | Pet object that needs to be added to the store |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var body = new Pet({"key":"value"});
+
+    controller.updatePet(body, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid ID supplied |
+| 404 | Pet not found |
+| 405 | Validation exception |
+
+
+
+
+### <a name="add_pet"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.addPet") addPet
+
+> Add a new pet to the store
+
+
+```javascript
+function addPet(body, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | Pet object that needs to be added to the store |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var body = new Pet({"key":"value"});
+
+    controller.addPet(body, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 405 | Invalid input |
+
+
+
+
+### <a name="find_pets_by_status"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.findPetsByStatus") findPetsByStatus
+
+> Finds Pets by status
+
+
+```javascript
+function findPetsByStatus(status, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| status |  ``` Required ```  ``` Collection ```  | Status values that need to be considered for filter |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var status = [ Object.keys(Status7)[0] ];
+
+    controller.findPetsByStatus(status, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid status value |
+
+
+
+
+### <a name="find_pets_by_tags"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.findPetsByTags") findPetsByTags
+
+> Finds Pets by tags
+
+
+```javascript
+function findPetsByTags(tags, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| tags |  ``` Required ```  ``` Collection ```  | Tags to filter by |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var tags = ['tags'];
+
+    controller.findPetsByTags(tags, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid tag value |
+
+
+
+
+### <a name="get_pet_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.getPetById") getPetById
+
+> Find pet by ID
+
+
+```javascript
+function getPetById(petId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| petId |  ``` Required ```  | ID of pet to return |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var petId = 240;
+
+    controller.getPetById(petId, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid ID supplied |
+| 404 | Pet not found |
+
+
+
+
+### <a name="update_pet_with_form"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.updatePetWithForm") updatePetWithForm
+
+> Updates a pet in the store with form data
+
+
+```javascript
+function updatePetWithForm(petId, name, status, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| petId |  ``` Required ```  | ID of pet that needs to be updated |
+| name |  ``` Optional ```  | Updated name of the pet |
+| status |  ``` Optional ```  | Updated status of the pet |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var petId = 240;
+    var name = 'name';
+    var status = 'status';
+
+    controller.updatePetWithForm(petId, name, status, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 405 | Invalid input |
+
+
+
+
+### <a name="delete_pet"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.deletePet") deletePet
+
+> Deletes a pet
+
+
+```javascript
+function deletePet(petId, apiKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| petId |  ``` Required ```  | Pet id to delete |
+| apiKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var petId = 240;
+    var apiKey = api_key;
+
+    controller.deletePet(petId, apiKey, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid ID supplied |
+| 404 | Pet not found |
+
+
+
+
+### <a name="upload_file"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.uploadFile") uploadFile
+
+> uploads an image
+
+
+```javascript
+function uploadFile(petId, additionalMetadata, file, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| petId |  ``` Required ```  | ID of pet to update |
+| additionalMetadata |  ``` Optional ```  | Additional data to pass to server |
+| file |  ``` Optional ```  | file to upload |
+
+
+
+#### Example Usage
+
+```javascript
+
+    TestHelper.getFilePath('url', function(data) {
+        var petId = 240;
+    var additionalMetadata = 'additionalMetadata';
+    var file = data;
+
+        controller.uploadFile(petId, additionalMetadata, file, function(error, response, context) {
+
+        });
+    });
+```
+
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="store_controller"></a>![Class: ](https://apidocs.io/img/class.png ".StoreController") StoreController
+
+### Get singleton instance
+
+The singleton instance of the ``` StoreController ``` class can be accessed from the API Client.
+
+```javascript
+var controller = lib.StoreController;
+```
+
+### <a name="get_inventory"></a>![Method: ](https://apidocs.io/img/method.png ".StoreController.getInventory") getInventory
+
+> Returns pet inventories by status
+
+
+```javascript
+function getInventory(callback)
+```
+
+#### Example Usage
+
+```javascript
+
+
+    controller.getInventory(function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="create_place_order"></a>![Method: ](https://apidocs.io/img/method.png ".StoreController.createPlaceOrder") createPlaceOrder
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Place an order for a pet
+
+
+```javascript
+function createPlaceOrder(body, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | order placed for purchasing the pet |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var body = new Order({"key":"value"});
+
+    controller.createPlaceOrder(body, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid Order |
+
+
+
+
+### <a name="get_order_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".StoreController.getOrderById") getOrderById
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Find purchase order by ID
+
+
+```javascript
+function getOrderById(orderId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| orderId |  ``` Required ```  | ID of pet that needs to be fetched |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var orderId = 240;
+
+    controller.getOrderById(orderId, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid ID supplied |
+| 404 | Order not found |
+
+
+
+
+### <a name="delete_order"></a>![Method: ](https://apidocs.io/img/method.png ".StoreController.deleteOrder") deleteOrder
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Delete purchase order by ID
+
+
+```javascript
+function deleteOrder(orderId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| orderId |  ``` Required ```  | ID of the order that needs to be deleted |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var orderId = 240;
+
+    controller.deleteOrder(orderId, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid ID supplied |
+| 404 | Order not found |
+
+
+
+
+[Back to List of Controllers](#list_of_controllers)
 
 ## <a name="user_controller"></a>![Class: ](https://apidocs.io/img/class.png ".UserController") UserController
 
@@ -179,52 +648,21 @@ The singleton instance of the ``` UserController ``` class can be accessed from 
 var controller = lib.UserController;
 ```
 
-### <a name="get_logout_user"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.getLogoutUser") getLogoutUser
+### <a name="create_user"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.createUser") createUser
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Logs out current logged in user session
+> Create user
 
 
 ```javascript
-function getLogoutUser(callback)
-```
-
-#### Example Usage
-
-```javascript
-
-
-    controller.getLogoutUser(function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 0 | successful operation |
-
-
-
-
-### <a name="create_users_with_list_input"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.createUsersWithListInput") createUsersWithListInput
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Creates list of users with given input array
-
-
-```javascript
-function createUsersWithListInput(body, callback)
+function createUser(body, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  ``` Collection ```  | List of user object |
+| body |  ``` Required ```  | Created user object |
 
 
 
@@ -232,11 +670,9 @@ function createUsersWithListInput(body, callback)
 
 ```javascript
 
-    var body = [{"key":"value"}].map(function(elem) {
-        return new User(elem);
-    });
+    var body = new User({"key":"value"});
 
-    controller.createUsersWithListInput(body, function(error, response, context) {
+    controller.createUser(body, function(error, response, context) {
 
     
     });
@@ -292,21 +728,21 @@ function createUsersWithArrayInput(body, callback)
 
 
 
-### <a name="create_user"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.createUser") createUser
+### <a name="create_users_with_list_input"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.createUsersWithListInput") createUsersWithListInput
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Create user
+> Creates list of users with given input array
 
 
 ```javascript
-function createUser(body, callback)
+function createUsersWithListInput(body, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | Created user object |
+| body |  ``` Required ```  ``` Collection ```  | List of user object |
 
 
 
@@ -314,9 +750,11 @@ function createUser(body, callback)
 
 ```javascript
 
-    var body = new User({"key":"value"});
+    var body = [{"key":"value"}].map(function(elem) {
+        return new User(elem);
+    });
 
-    controller.createUser(body, function(error, response, context) {
+    controller.createUsersWithListInput(body, function(error, response, context) {
 
     
     });
@@ -331,21 +769,93 @@ function createUser(body, callback)
 
 
 
-### <a name="delete_user"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.deleteUser") deleteUser
+### <a name="get_login_user"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.getLoginUser") getLoginUser
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Delete user
+> Logs user into the system
 
 
 ```javascript
-function deleteUser(username, callback)
+function getLoginUser(username, password, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| username |  ``` Required ```  | The name that needs to be deleted |
+| username |  ``` Required ```  | The user name for login |
+| password |  ``` Required ```  | The password for login in clear text |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var username = 'username';
+    var password = 'password';
+
+    controller.getLoginUser(username, password, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid username/password supplied |
+
+
+
+
+### <a name="get_logout_user"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.getLogoutUser") getLogoutUser
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Logs out current logged in user session
+
+
+```javascript
+function getLogoutUser(callback)
+```
+
+#### Example Usage
+
+```javascript
+
+
+    controller.getLogoutUser(function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 0 | successful operation |
+
+
+
+
+### <a name="get_user_by_name"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.getUserByName") getUserByName
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Get user by user name
+
+
+```javascript
+function getUserByName(username, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| username |  ``` Required ```  | The name that needs to be fetched. Use user1 for testing. |
 
 
 
@@ -355,7 +865,7 @@ function deleteUser(username, callback)
 
     var username = 'username';
 
-    controller.deleteUser(username, function(error, response, context) {
+    controller.getUserByName(username, function(error, response, context) {
 
     
     });
@@ -413,21 +923,21 @@ function updateUser(username, body, callback)
 
 
 
-### <a name="get_user_by_name"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.getUserByName") getUserByName
+### <a name="delete_user"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.deleteUser") deleteUser
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Get user by user name
+> Delete user
 
 
 ```javascript
-function getUserByName(username, callback)
+function deleteUser(username, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| username |  ``` Required ```  | The name that needs to be fetched. Use user1 for testing. |
+| username |  ``` Required ```  | The name that needs to be deleted |
 
 
 
@@ -437,7 +947,7 @@ function getUserByName(username, callback)
 
     var username = 'username';
 
-    controller.getUserByName(username, function(error, response, context) {
+    controller.deleteUser(username, function(error, response, context) {
 
     
     });
@@ -449,516 +959,6 @@ function getUserByName(username, callback)
 |------------|-------------------|
 | 400 | Invalid username supplied |
 | 404 | User not found |
-
-
-
-
-### <a name="get_login_user"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.getLoginUser") getLoginUser
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Logs user into the system
-
-
-```javascript
-function getLoginUser(username, password, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| username |  ``` Required ```  | The user name for login |
-| password |  ``` Required ```  | The password for login in clear text |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var username = 'username';
-    var password = 'password';
-
-    controller.getLoginUser(username, password, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid username/password supplied |
-
-
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="store_controller"></a>![Class: ](https://apidocs.io/img/class.png ".StoreController") StoreController
-
-### Get singleton instance
-
-The singleton instance of the ``` StoreController ``` class can be accessed from the API Client.
-
-```javascript
-var controller = lib.StoreController;
-```
-
-### <a name="create_place_order"></a>![Method: ](https://apidocs.io/img/method.png ".StoreController.createPlaceOrder") createPlaceOrder
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Place an order for a pet
-
-
-```javascript
-function createPlaceOrder(body, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | order placed for purchasing the pet |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var body = new Order({"key":"value"});
-
-    controller.createPlaceOrder(body, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid Order |
-
-
-
-
-### <a name="get_inventory"></a>![Method: ](https://apidocs.io/img/method.png ".StoreController.getInventory") getInventory
-
-> Returns pet inventories by status
-
-
-```javascript
-function getInventory(callback)
-```
-
-#### Example Usage
-
-```javascript
-
-
-    controller.getInventory(function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="delete_order"></a>![Method: ](https://apidocs.io/img/method.png ".StoreController.deleteOrder") deleteOrder
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Delete purchase order by ID
-
-
-```javascript
-function deleteOrder(orderId, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| orderId |  ``` Required ```  | ID of the order that needs to be deleted |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var orderId = 160;
-
-    controller.deleteOrder(orderId, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Order not found |
-
-
-
-
-### <a name="get_order_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".StoreController.getOrderById") getOrderById
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Find purchase order by ID
-
-
-```javascript
-function getOrderById(orderId, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| orderId |  ``` Required ```  | ID of pet that needs to be fetched |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var orderId = 160;
-
-    controller.getOrderById(orderId, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Order not found |
-
-
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="pet_controller"></a>![Class: ](https://apidocs.io/img/class.png ".PetController") PetController
-
-### Get singleton instance
-
-The singleton instance of the ``` PetController ``` class can be accessed from the API Client.
-
-```javascript
-var controller = lib.PetController;
-```
-
-### <a name="find_pets_by_tags"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.findPetsByTags") findPetsByTags
-
-> Finds Pets by tags
-
-
-```javascript
-function findPetsByTags(tags, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| tags |  ``` Required ```  ``` Collection ```  | Tags to filter by |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var tags = ['tags'];
-
-    controller.findPetsByTags(tags, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid tag value |
-
-
-
-
-### <a name="add_pet"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.addPet") addPet
-
-> Add a new pet to the store
-
-
-```javascript
-function addPet(body, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | Pet object that needs to be added to the store |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var body = new Pet({"key":"value"});
-
-    controller.addPet(body, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 405 | Invalid input |
-
-
-
-
-### <a name="upload_file"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.uploadFile") uploadFile
-
-> uploads an image
-
-
-```javascript
-function uploadFile(petId, additionalMetadata, file, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| petId |  ``` Required ```  | ID of pet to update |
-| additionalMetadata |  ``` Optional ```  | Additional data to pass to server |
-| file |  ``` Optional ```  | file to upload |
-
-
-
-#### Example Usage
-
-```javascript
-
-    TestHelper.getFilePath('url', function(data) {
-        var petId = 160;
-    var additionalMetadata = 'additionalMetadata';
-    var file = data;
-
-        controller.uploadFile(petId, additionalMetadata, file, function(error, response, context) {
-
-        });
-    });
-```
-
-
-
-### <a name="delete_pet"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.deletePet") deletePet
-
-> Deletes a pet
-
-
-```javascript
-function deletePet(petId, apiKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| petId |  ``` Required ```  | Pet id to delete |
-| apiKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var petId = 160;
-    var apiKey = api_key;
-
-    controller.deletePet(petId, apiKey, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Pet not found |
-
-
-
-
-### <a name="update_pet_with_form"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.updatePetWithForm") updatePetWithForm
-
-> Updates a pet in the store with form data
-
-
-```javascript
-function updatePetWithForm(petId, name, status, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| petId |  ``` Required ```  | ID of pet that needs to be updated |
-| name |  ``` Optional ```  | Updated name of the pet |
-| status |  ``` Optional ```  | Updated status of the pet |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var petId = 160;
-    var name = 'name';
-    var status = 'status';
-
-    controller.updatePetWithForm(petId, name, status, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 405 | Invalid input |
-
-
-
-
-### <a name="get_pet_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.getPetById") getPetById
-
-> Find pet by ID
-
-
-```javascript
-function getPetById(petId, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| petId |  ``` Required ```  | ID of pet to return |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var petId = 160;
-
-    controller.getPetById(petId, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Pet not found |
-
-
-
-
-### <a name="find_pets_by_status"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.findPetsByStatus") findPetsByStatus
-
-> Finds Pets by status
-
-
-```javascript
-function findPetsByStatus(status, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| status |  ``` Required ```  ``` Collection ```  | Status values that need to be considered for filter |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var status = [ Object.keys(Status7)[0] ];
-
-    controller.findPetsByStatus(status, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid status value |
-
-
-
-
-### <a name="update_pet"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.updatePet") updatePet
-
-> Update an existing pet
-
-
-```javascript
-function updatePet(body, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | Pet object that needs to be added to the store |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var body = new Pet({"key":"value"});
-
-    controller.updatePet(body, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Pet not found |
-| 405 | Validation exception |
 
 
 
