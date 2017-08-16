@@ -1,58 +1,62 @@
 # Getting started
 
+Testing various
+ api 
+features
+
 ## How to Build
 
 This client library is a Ruby gem which can be compiled and used in your Ruby and Ruby on Rails project. This library requires a few gems from the RubyGems repository.
 
 1. Open the command line interface or the terminal and navigate to the folder containing the source code.
-2. Run ``` gem build awse_commerce_service.gemspec ``` to build the gem.
-3. Once built, the gem can be installed on the current work environment using ``` gem install awse_commerce_service-1.0.0.gem ```
+2. Run ``` gem build tester.gemspec ``` to build the gem.
+3. Once built, the gem can be installed on the current work environment using ``` gem install tester-1.1.0.gem ```
 
-![Building Gem](https://apidocs.io/illustration/ruby?step=buildSDK&workspaceFolder=AWSECommerceService-Ruby&workspaceName=AWSECommerceService-Ruby&projectName=awse_commerce_service&gemName=awse_commerce_service&gemVer=1.0.0)
+![Building Gem](https://apidocs.io/illustration/ruby?step=buildSDK&workspaceFolder=Tester-Ruby&workspaceName=Tester-Ruby&projectName=tester&gemName=tester&gemVer=1.1.0)
 
 ## How to Use
 
-The following section explains how to use the AwseCommerceService Ruby Gem in a new Rails project using RubyMine&trade;. The basic workflow presented here is also applicable if you prefer using a different editor or IDE.
+The following section explains how to use the Tester Ruby Gem in a new Rails project using RubyMine&trade;. The basic workflow presented here is also applicable if you prefer using a different editor or IDE.
 
 ### 1. Starting a new project
 
 Close any existing projects in RubyMine&trade; by selecting ``` File -> Close Project ```. Next, click on ``` Create New Project ``` to create a new project from scratch.
 
-![Create a new project in RubyMine](https://apidocs.io/illustration/ruby?step=createNewProject0&workspaceFolder=AWSECommerceService-Ruby&workspaceName=AwseCommerceService&projectName=awse_commerce_service&gemName=awse_commerce_service&gemVer=1.0.0)
+![Create a new project in RubyMine](https://apidocs.io/illustration/ruby?step=createNewProject0&workspaceFolder=Tester-Ruby&workspaceName=Tester&projectName=tester&gemName=tester&gemVer=1.1.0)
 
 Next, provide ``` TestApp ``` as the project name, choose ``` Rails Application ``` as the project type, and click ``` OK ```.
 
-![Create a new Rails Application in RubyMine - step 1](https://apidocs.io/illustration/ruby?step=createNewProject1&workspaceFolder=AWSECommerceService-Ruby&workspaceName=AwseCommerceService&projectName=awse_commerce_service&gemName=awse_commerce_service&gemVer=1.0.0)
+![Create a new Rails Application in RubyMine - step 1](https://apidocs.io/illustration/ruby?step=createNewProject1&workspaceFolder=Tester-Ruby&workspaceName=Tester&projectName=tester&gemName=tester&gemVer=1.1.0)
 
 In the next dialog make sure that correct *Ruby SDK* is being used (minimum 2.0.0) and click ``` OK ```.
 
-![Create a new Rails Application in RubyMine - step 2](https://apidocs.io/illustration/ruby?step=createNewProject2&workspaceFolder=AWSECommerceService-Ruby&workspaceName=AwseCommerceService&projectName=awse_commerce_service&gemName=awse_commerce_service&gemVer=1.0.0)
+![Create a new Rails Application in RubyMine - step 2](https://apidocs.io/illustration/ruby?step=createNewProject2&workspaceFolder=Tester-Ruby&workspaceName=Tester&projectName=tester&gemName=tester&gemVer=1.1.0)
 
 This will create a new Rails Application project with an existing set of files and folder.
 
 ### 2. Add reference of the gem
 
-In order to use the AwseCommerceService gem in the new project we must add a gem reference. Locate the ```Gemfile``` in the *Project Explorer* window under the ``` TestApp ``` project node. The file contains references to all gems being used in the project. Here, add the reference to the library gem by adding the following line: ``` gem 'awse_commerce_service', '~> 1.0.0' ```
+In order to use the Tester gem in the new project we must add a gem reference. Locate the ```Gemfile``` in the *Project Explorer* window under the ``` TestApp ``` project node. The file contains references to all gems being used in the project. Here, add the reference to the library gem by adding the following line: ``` gem 'tester', '~> 1.1.0' ```
 
-![Add references of the Gemfile](https://apidocs.io/illustration/ruby?step=addReference&workspaceFolder=AWSECommerceService-Ruby&workspaceName=AwseCommerceService&projectName=awse_commerce_service&gemName=awse_commerce_service&gemVer=1.0.0)
+![Add references of the Gemfile](https://apidocs.io/illustration/ruby?step=addReference&workspaceFolder=Tester-Ruby&workspaceName=Tester&projectName=tester&gemName=tester&gemVer=1.1.0)
 
 ### 3. Adding a new Rails Controller
 
 Once the ``` TestApp ``` project is created, a folder named ``` controllers ``` will be visible in the *Project Explorer* under the following path: ``` TestApp > app > controllers ```. Right click on this folder and select ``` New -> Run Rails Generator... ```.
 
-![Run Rails Generator on Controllers Folder](https://apidocs.io/illustration/ruby?step=addCode0&workspaceFolder=AWSECommerceService-Ruby&workspaceName=AwseCommerceService&projectName=awse_commerce_service&gemName=awse_commerce_service&gemVer=1.0.0)
+![Run Rails Generator on Controllers Folder](https://apidocs.io/illustration/ruby?step=addCode0&workspaceFolder=Tester-Ruby&workspaceName=Tester&projectName=tester&gemName=tester&gemVer=1.1.0)
 
 Selecting the said option will popup a small window where the generator names are displayed. Here, select the ``` controller ``` template.
 
-![Create a new Controller](https://apidocs.io/illustration/ruby?step=addCode1&workspaceFolder=AWSECommerceService-Ruby&workspaceName=AwseCommerceService&projectName=awse_commerce_service&gemName=awse_commerce_service&gemVer=1.0.0)
+![Create a new Controller](https://apidocs.io/illustration/ruby?step=addCode1&workspaceFolder=Tester-Ruby&workspaceName=Tester&projectName=tester&gemName=tester&gemVer=1.1.0)
 
 Next, a popup window will ask you for a Controller name and included Actions. For controller name provide ``` Hello ``` and include an action named ``` Index ``` and click ``` OK ```.
 
-![Add a new Controller](https://apidocs.io/illustration/ruby?step=addCode2&workspaceFolder=AWSECommerceService-Ruby&workspaceName=AwseCommerceService&projectName=awse_commerce_service&gemName=awse_commerce_service&gemVer=1.0.0)
+![Add a new Controller](https://apidocs.io/illustration/ruby?step=addCode2&workspaceFolder=Tester-Ruby&workspaceName=Tester&projectName=tester&gemName=tester&gemVer=1.1.0)
 
 A new controller class anmed ``` HelloController ``` will be created in a file named ``` hello_controller.rb ``` containing a method named ``` Index ```. In this method, add code for initialization and a sample for its usage.
 
-![Initialize the library](https://apidocs.io/illustration/ruby?step=addCode3&workspaceFolder=AWSECommerceService-Ruby&workspaceName=AwseCommerceService&projectName=awse_commerce_service&gemName=awse_commerce_service&gemVer=1.0.0)
+![Initialize the library](https://apidocs.io/illustration/ruby?step=addCode3&workspaceFolder=Tester-Ruby&workspaceName=Tester&projectName=tester&gemName=tester&gemVer=1.1.0)
 
 ## How to Test
 
@@ -70,12 +74,12 @@ API client can be initialized as following.
 
 ```ruby
 
-client = AwseCommerceService::AwseCommerceServiceClient.new
+client = Tester::TesterClient.new
 ```
 
 The added initlization code can be debugged by putting a breakpoint in the ``` Index ``` method and running the project in debug mode by selecting ``` Run -> Debug 'Development: TestApp' ```.
 
-![Debug the TestApp](https://apidocs.io/illustration/ruby?step=addCode4&workspaceFolder=AWSECommerceService-Ruby&workspaceName=AwseCommerceService&projectName=awse_commerce_service&gemName=awse_commerce_service&gemVer=1.0.0&initLine=client%2520%253D%2520AwseCommerceServiceClient.new)
+![Debug the TestApp](https://apidocs.io/illustration/ruby?step=addCode4&workspaceFolder=Tester-Ruby&workspaceName=Tester&projectName=tester&gemName=tester&gemVer=1.1.0&initLine=client%2520%253D%2520TesterClient.new)
 
 
 
@@ -83,2786 +87,2146 @@ The added initlization code can be debugged by putting a breakpoint in the ``` I
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [AWSECommerceServiceBindingController](#awse_commerce_service_binding_controller)
+* [ResponseTypesController](#response_types_controller)
+* [BodyParamsController](#body_params_controller)
+* [FormParamsController](#form_params_controller)
+* [QueryParamController](#query_param_controller)
+* [ErrorCodesController](#error_codes_controller)
+* [EchoController](#echo_controller)
+* [HeaderController](#header_controller)
+* [TemplateParamsController](#template_params_controller)
 
-## <a name="awse_commerce_service_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png ".AWSECommerceServiceBindingController") AWSECommerceServiceBindingController
+## <a name="response_types_controller"></a>![Class: ](https://apidocs.io/img/class.png ".ResponseTypesController") ResponseTypesController
 
 ### Get singleton instance
 
-The singleton instance of the ``` AWSECommerceServiceBindingController ``` class can be accessed from the API Client.
+The singleton instance of the ``` ResponseTypesController ``` class can be accessed from the API Client.
 
 ```ruby
-aWSECommerceServiceBinding = client.awse_commerce_service_binding
+responseTypes = client.response_types
 ```
 
-### <a name="create_cart_modify_97"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_modify_97") create_cart_modify_97
+### <a name="get_date_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_date_array") get_date_array
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```ruby
-def create_cart_modify_97(body); end
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```ruby
-body = CartModifyRequestMsg.new
-
-result = aWSECommerceServiceBinding.create_cart_modify_97(body)
-
-```
-
-
-### <a name="create_cart_clear_98"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_clear_98") create_cart_clear_98
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```ruby
-def create_cart_clear_98(body); end
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```ruby
-body = CartClearRequestMsg.new
-
-result = aWSECommerceServiceBinding.create_cart_clear_98(body)
-
-```
-
-
-### <a name="create_cart_create_96"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_create_96") create_cart_create_96
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```ruby
-def create_cart_create_96(body); end
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```ruby
-body = CartCreateRequestMsg.new
-
-result = aWSECommerceServiceBinding.create_cart_create_96(body)
-
-```
-
-
-### <a name="create_cart_add_95"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_add_95") create_cart_add_95
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```ruby
-def create_cart_add_95(body); end
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```ruby
-body = CartAddRequestMsg.new
-
-result = aWSECommerceServiceBinding.create_cart_add_95(body)
-
-```
-
-
-### <a name="create_cart_get_94"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_get_94") create_cart_get_94
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```ruby
-def create_cart_get_94(body); end
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```ruby
-body = CartGetRequestMsg.new
-
-result = aWSECommerceServiceBinding.create_cart_get_94(body)
-
-```
-
-
-### <a name="create_similarity_lookup_93"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_similarity_lookup_93") create_similarity_lookup_93
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```ruby
-def create_similarity_lookup_93(body); end
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```ruby
-body = SimilarityLookupRequestMsg.new
-
-result = aWSECommerceServiceBinding.create_similarity_lookup_93(body)
-
-```
-
-
-### <a name="create_browse_node_lookup_92"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_browse_node_lookup_92") create_browse_node_lookup_92
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```ruby
-def create_browse_node_lookup_92(body); end
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```ruby
-body = BrowseNodeLookupRequestMsg.new
-
-result = aWSECommerceServiceBinding.create_browse_node_lookup_92(body)
-
-```
-
-
-### <a name="create_item_lookup_91"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_lookup_91") create_item_lookup_91
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```ruby
-def create_item_lookup_91(body); end
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```ruby
-body = ItemLookupRequestMsg.new
-
-result = aWSECommerceServiceBinding.create_item_lookup_91(body)
-
-```
-
-
-### <a name="create_item_search_90"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_search_90") create_item_search_90
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```ruby
-def create_item_search_90(body); end
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```ruby
-body = ItemSearchRequestMsg.new
-
-result = aWSECommerceServiceBinding.create_item_search_90(body)
-
-```
-
-
-### <a name="create_cart_clear_89"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_clear_89") create_cart_clear_89
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```ruby
-def create_cart_clear_89(body); end
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```ruby
-body = CartClearRequestMsg.new
-
-result = aWSECommerceServiceBinding.create_cart_clear_89(body)
-
-```
-
-
-### <a name="create_cart_modify_88"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_modify_88") create_cart_modify_88
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```ruby
-def create_cart_modify_88(body); end
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```ruby
-body = CartModifyRequestMsg.new
-
-result = aWSECommerceServiceBinding.create_cart_modify_88(body)
-
-```
-
-
-### <a name="create_cart_create_87"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_create_87") create_cart_create_87
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```ruby
-def create_cart_create_87(body); end
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```ruby
-body = CartCreateRequestMsg.new
-
-result = aWSECommerceServiceBinding.create_cart_create_87(body)
-
-```
-
-
-### <a name="create_cart_add_86"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_add_86") create_cart_add_86
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```ruby
-def create_cart_add_86(body); end
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```ruby
-body = CartAddRequestMsg.new
-
-result = aWSECommerceServiceBinding.create_cart_add_86(body)
-
-```
-
-
-### <a name="create_cart_get_85"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_get_85") create_cart_get_85
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```ruby
-def create_cart_get_85(body); end
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```ruby
-body = CartGetRequestMsg.new
-
-result = aWSECommerceServiceBinding.create_cart_get_85(body)
-
-```
-
-
-### <a name="create_similarity_lookup_84"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_similarity_lookup_84") create_similarity_lookup_84
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```ruby
-def create_similarity_lookup_84(body); end
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```ruby
-body = SimilarityLookupRequestMsg.new
-
-result = aWSECommerceServiceBinding.create_similarity_lookup_84(body)
-
-```
-
-
-### <a name="create_browse_node_lookup_83"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_browse_node_lookup_83") create_browse_node_lookup_83
-
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_browse_node_lookup_83(body); end
+def get_date_array; end
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```ruby
-body = BrowseNodeLookupRequestMsg.new
 
-result = aWSECommerceServiceBinding.create_browse_node_lookup_83(body)
+result = responseTypes.get_date_array()
 
 ```
 
 
-### <a name="create_item_lookup_82"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_lookup_82") create_item_lookup_82
+### <a name="get_date"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_date") get_date
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_item_lookup_82(body); end
+def get_date; end
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```ruby
-body = ItemLookupRequestMsg.new
 
-result = aWSECommerceServiceBinding.create_item_lookup_82(body)
+result = responseTypes.get_date()
 
 ```
-
 
-### <a name="create_item_search_81"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_search_81") create_item_search_81
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_long"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_long") get_long
 
 > TODO: Add a method description
 
 
 ```ruby
-def create_item_search_81(body); end
+def get_long; end
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
 #### Example Usage
 
 ```ruby
-body = ItemSearchRequestMsg.new
 
-result = aWSECommerceServiceBinding.create_item_search_81(body)
+result = responseTypes.get_long()
 
 ```
 
 
-### <a name="create_cart_clear_80"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_clear_80") create_cart_clear_80
+### <a name="get_model"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_model") get_model
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_clear_80(body); end
+def get_model; end
 ```
-
-#### Parameters
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 #### Example Usage
 
 ```ruby
-body = CartClearRequestMsg.new
 
-result = aWSECommerceServiceBinding.create_cart_clear_80(body)
+result = responseTypes.get_model()
 
 ```
 
 
-### <a name="create_cart_modify_79"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_modify_79") create_cart_modify_79
+### <a name="get_string_enum_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_string_enum_array") get_string_enum_array
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_modify_79(body); end
+def get_string_enum_array; end
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```ruby
-body = CartModifyRequestMsg.new
 
-result = aWSECommerceServiceBinding.create_cart_modify_79(body)
+result = responseTypes.get_string_enum_array()
 
 ```
-
 
-### <a name="create_cart_create_78"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_create_78") create_cart_create_78
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_string_enum"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_string_enum") get_string_enum
 
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_create_78(body); end
+def get_string_enum; end
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
 #### Example Usage
 
 ```ruby
-body = CartCreateRequestMsg.new
 
-result = aWSECommerceServiceBinding.create_cart_create_78(body)
+result = responseTypes.get_string_enum()
 
 ```
 
 
-### <a name="create_cart_add_77"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_add_77") create_cart_add_77
+### <a name="get_model_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_model_array") get_model_array
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_add_77(body); end
+def get_model_array; end
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```ruby
-body = CartAddRequestMsg.new
 
-result = aWSECommerceServiceBinding.create_cart_add_77(body)
+result = responseTypes.get_model_array()
 
 ```
-
 
-### <a name="create_cart_get_76"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_get_76") create_cart_get_76
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_int_enum"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_int_enum") get_int_enum
 
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_get_76(body); end
+def get_int_enum; end
 ```
 
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 #### Example Usage
 
 ```ruby
-body = CartGetRequestMsg.new
 
-result = aWSECommerceServiceBinding.create_cart_get_76(body)
+result = responseTypes.get_int_enum()
 
 ```
 
 
-### <a name="create_similarity_lookup_75"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_similarity_lookup_75") create_similarity_lookup_75
+### <a name="get_int_enum_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_int_enum_array") get_int_enum_array
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_similarity_lookup_75(body); end
+def get_int_enum_array; end
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```ruby
-body = SimilarityLookupRequestMsg.new
 
-result = aWSECommerceServiceBinding.create_similarity_lookup_75(body)
+result = responseTypes.get_int_enum_array()
 
 ```
-
 
-### <a name="create_browse_node_lookup_74"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_browse_node_lookup_74") create_browse_node_lookup_74
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_precision"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_precision") get_precision
 
 > TODO: Add a method description
 
 
 ```ruby
-def create_browse_node_lookup_74(body); end
+def get_precision; end
 ```
-
-#### Parameters
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 #### Example Usage
 
 ```ruby
-body = BrowseNodeLookupRequestMsg.new
 
-result = aWSECommerceServiceBinding.create_browse_node_lookup_74(body)
+result = responseTypes.get_precision()
 
 ```
 
 
-### <a name="create_item_lookup_73"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_lookup_73") create_item_lookup_73
+### <a name="get_binary"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_binary") get_binary
 
-> *Tags:*  ``` Skips Authentication ``` 
+> gets a binary object
 
-> TODO: Add a method description
-
 
 ```ruby
-def create_item_lookup_73(body); end
+def get_binary; end
 ```
-
-#### Parameters
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 #### Example Usage
 
 ```ruby
-body = ItemLookupRequestMsg.new
 
-result = aWSECommerceServiceBinding.create_item_lookup_73(body)
+result = responseTypes.get_binary()
 
 ```
 
 
-### <a name="create_item_search_72"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_search_72") create_item_search_72
+### <a name="get_integer"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_integer") get_integer
 
-> *Tags:*  ``` Skips Authentication ``` 
+> Gets a integer response
 
-> TODO: Add a method description
-
 
 ```ruby
-def create_item_search_72(body); end
+def get_integer; end
 ```
-
-#### Parameters
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 #### Example Usage
 
 ```ruby
-body = ItemSearchRequestMsg.new
 
-result = aWSECommerceServiceBinding.create_item_search_72(body)
+result = responseTypes.get_integer()
 
 ```
 
 
-### <a name="create_cart_clear_71"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_clear_71") create_cart_clear_71
+### <a name="get_integer_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_integer_array") get_integer_array
 
-> *Tags:*  ``` Skips Authentication ``` 
+> Get an array of integers.
 
-> TODO: Add a method description
-
 
 ```ruby
-def create_cart_clear_71(body); end
+def get_integer_array; end
 ```
-
-#### Parameters
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 #### Example Usage
 
 ```ruby
-body = CartClearRequestMsg.new
 
-result = aWSECommerceServiceBinding.create_cart_clear_71(body)
+result = responseTypes.get_integer_array()
 
 ```
 
 
-### <a name="create_cart_modify_70"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_modify_70") create_cart_modify_70
+### <a name="get_dynamic"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_dynamic") get_dynamic
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_modify_70(body); end
+def get_dynamic; end
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```ruby
-body = CartModifyRequestMsg.new
 
-result = aWSECommerceServiceBinding.create_cart_modify_70(body)
+result = responseTypes.get_dynamic()
 
 ```
-
 
-### <a name="create_cart_create_69"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_create_69") create_cart_create_69
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_dynamic_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_dynamic_array") get_dynamic_array
 
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_create_69(body); end
+def get_dynamic_array; end
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
 #### Example Usage
 
 ```ruby
-body = CartCreateRequestMsg.new
 
-result = aWSECommerceServiceBinding.create_cart_create_69(body)
+result = responseTypes.get_dynamic_array()
 
 ```
 
 
-### <a name="create_cart_add_68"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_add_68") create_cart_add_68
+### <a name="get_3339_datetime"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_3339_datetime") get_3339_datetime
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_add_68(body); end
+def get_3339_datetime; end
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```ruby
-body = CartAddRequestMsg.new
 
-result = aWSECommerceServiceBinding.create_cart_add_68(body)
+result = responseTypes.get_3339_datetime()
 
 ```
-
 
-### <a name="create_cart_get_67"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_get_67") create_cart_get_67
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_3339_datetime_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_3339_datetime_array") get_3339_datetime_array
 
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_get_67(body); end
+def get_3339_datetime_array; end
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
 #### Example Usage
 
 ```ruby
-body = CartGetRequestMsg.new
 
-result = aWSECommerceServiceBinding.create_cart_get_67(body)
+result = responseTypes.get_3339_datetime_array()
 
 ```
 
 
-### <a name="create_similarity_lookup_66"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_similarity_lookup_66") create_similarity_lookup_66
+### <a name="get_boolean"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_boolean") get_boolean
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_similarity_lookup_66(body); end
+def get_boolean; end
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```ruby
-body = SimilarityLookupRequestMsg.new
 
-result = aWSECommerceServiceBinding.create_similarity_lookup_66(body)
+result = responseTypes.get_boolean()
 
 ```
-
 
-### <a name="create_browse_node_lookup_65"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_browse_node_lookup_65") create_browse_node_lookup_65
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_boolean_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_boolean_array") get_boolean_array
 
 > TODO: Add a method description
 
 
 ```ruby
-def create_browse_node_lookup_65(body); end
+def get_boolean_array; end
 ```
 
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 #### Example Usage
 
 ```ruby
-body = BrowseNodeLookupRequestMsg.new
 
-result = aWSECommerceServiceBinding.create_browse_node_lookup_65(body)
+result = responseTypes.get_boolean_array()
 
 ```
 
 
-### <a name="create_item_lookup_64"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_lookup_64") create_item_lookup_64
+### <a name="get_headers"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_headers") get_headers
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_item_lookup_64(body); end
+def get_headers; end
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```ruby
-body = ItemLookupRequestMsg.new
 
-result = aWSECommerceServiceBinding.create_item_lookup_64(body)
+responseTypes.get_headers()
 
 ```
-
 
-### <a name="create_item_search_63"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_search_63") create_item_search_63
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_1123_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_1123_date_time") get_1123_date_time
 
 > TODO: Add a method description
 
 
 ```ruby
-def create_item_search_63(body); end
+def get_1123_date_time; end
 ```
-
-#### Parameters
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 #### Example Usage
 
 ```ruby
-body = ItemSearchRequestMsg.new
 
-result = aWSECommerceServiceBinding.create_item_search_63(body)
+result = responseTypes.get_1123_date_time()
 
 ```
 
 
-### <a name="create_cart_clear_62"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_clear_62") create_cart_clear_62
+### <a name="get_unix_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_unix_date_time") get_unix_date_time
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_clear_62(body); end
+def get_unix_date_time; end
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```ruby
-body = CartClearRequestMsg.new
 
-result = aWSECommerceServiceBinding.create_cart_clear_62(body)
+result = responseTypes.get_unix_date_time()
 
 ```
-
 
-### <a name="create_cart_modify_61"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_modify_61") create_cart_modify_61
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_1123_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_1123_date_time_array") get_1123_date_time_array
 
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_modify_61(body); end
+def get_1123_date_time_array; end
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
 #### Example Usage
 
 ```ruby
-body = CartModifyRequestMsg.new
 
-result = aWSECommerceServiceBinding.create_cart_modify_61(body)
+result = responseTypes.get_1123_date_time_array()
 
 ```
 
 
-### <a name="create_cart_create_60"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_create_60") create_cart_create_60
+### <a name="get_unix_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_unix_date_time_array") get_unix_date_time_array
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_create_60(body); end
+def get_unix_date_time_array; end
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```ruby
-body = CartCreateRequestMsg.new
 
-result = aWSECommerceServiceBinding.create_cart_create_60(body)
+result = responseTypes.get_unix_date_time_array()
 
 ```
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="body_params_controller"></a>![Class: ](https://apidocs.io/img/class.png ".BodyParamsController") BodyParamsController
 
+### Get singleton instance
 
-### <a name="create_cart_add_59"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_add_59") create_cart_add_59
+The singleton instance of the ``` BodyParamsController ``` class can be accessed from the API Client.
 
-> *Tags:*  ``` Skips Authentication ``` 
+```ruby
+bodyParams = client.body_params
+```
 
+### <a name="send_date_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.send_date_array") send_date_array
+
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_add_59(body); end
+def send_date_array(dates); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| dates |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = CartAddRequestMsg.new
+dates_value = "["1994-02-13", "1994-02-13"]";
+dates = JSON.parse(dates_value);
 
-result = aWSECommerceServiceBinding.create_cart_add_59(body)
+result = bodyParams.send_date_array(dates)
 
 ```
-
 
-### <a name="create_cart_get_58"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_get_58") create_cart_get_58
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_date"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.send_date") send_date
 
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_get_58(body); end
+def send_date(date); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| date |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = CartGetRequestMsg.new
+date = 1994-02-13
 
-result = aWSECommerceServiceBinding.create_cart_get_58(body)
+result = bodyParams.send_date(date)
 
 ```
 
 
-### <a name="create_similarity_lookup_57"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_similarity_lookup_57") create_similarity_lookup_57
+### <a name="send_unix_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.send_unix_date_time") send_unix_date_time
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_similarity_lookup_57(body); end
+def send_unix_date_time(datetime); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = SimilarityLookupRequestMsg.new
+datetime = 1484719381
 
-result = aWSECommerceServiceBinding.create_similarity_lookup_57(body)
+result = bodyParams.send_unix_date_time(datetime)
 
 ```
-
 
-### <a name="create_browse_node_lookup_56"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_browse_node_lookup_56") create_browse_node_lookup_56
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_rfc_1123_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.send_rfc_1123_date_time") send_rfc_1123_date_time
 
 > TODO: Add a method description
 
 
 ```ruby
-def create_browse_node_lookup_56(body); end
+def send_rfc_1123_date_time(datetime); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = BrowseNodeLookupRequestMsg.new
+datetime = Sun, 06 Nov 1994 08:49:37 GMT
 
-result = aWSECommerceServiceBinding.create_browse_node_lookup_56(body)
+result = bodyParams.send_rfc_1123_date_time(datetime)
 
 ```
 
 
-### <a name="create_item_lookup_55"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_lookup_55") create_item_lookup_55
+### <a name="send_rfc_3339_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.send_rfc_3339_date_time") send_rfc_3339_date_time
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_item_lookup_55(body); end
+def send_rfc_3339_date_time(datetime); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = ItemLookupRequestMsg.new
+datetime = 1994-02-13T14:01:54.9571247Z
 
-result = aWSECommerceServiceBinding.create_item_lookup_55(body)
+result = bodyParams.send_rfc_3339_date_time(datetime)
 
 ```
-
 
-### <a name="create_item_search_54"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_search_54") create_item_search_54
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_unix_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.send_unix_date_time_array") send_unix_date_time_array
 
 > TODO: Add a method description
 
 
 ```ruby
-def create_item_search_54(body); end
+def send_unix_date_time_array(datetimes); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = ItemSearchRequestMsg.new
+datetimes_value = "[1484719381,1484719381]";
+datetimes = JSON.parse(datetimes_value);
 
-result = aWSECommerceServiceBinding.create_item_search_54(body)
+result = bodyParams.send_unix_date_time_array(datetimes)
 
 ```
 
 
-### <a name="create_cart_clear_53"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_clear_53") create_cart_clear_53
+### <a name="send_rfc_1123_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.send_rfc_1123_date_time_array") send_rfc_1123_date_time_array
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_clear_53(body); end
+def send_rfc_1123_date_time_array(datetimes); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = CartClearRequestMsg.new
+datetimes_value = "["Sun, 06 Nov 1994 08:49:37 GMT","Sun, 06 Nov 1994 08:49:37 GMT"]";
+datetimes = JSON.parse(datetimes_value);
 
-result = aWSECommerceServiceBinding.create_cart_clear_53(body)
+result = bodyParams.send_rfc_1123_date_time_array(datetimes)
 
 ```
-
 
-### <a name="create_cart_modify_52"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_modify_52") create_cart_modify_52
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_rfc_3339_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.send_rfc_3339_date_time_array") send_rfc_3339_date_time_array
 
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_modify_52(body); end
+def send_rfc_3339_date_time_array(datetimes); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = CartModifyRequestMsg.new
+datetimes_value = "["1994-02-13T14:01:54.9571247Z","1994-02-13T14:01:54.9571247Z"]";
+datetimes = JSON.parse(datetimes_value);
 
-result = aWSECommerceServiceBinding.create_cart_modify_52(body)
+result = bodyParams.send_rfc_3339_date_time_array(datetimes)
 
 ```
 
 
-### <a name="create_cart_create_51"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_create_51") create_cart_create_51
+### <a name="send_string_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.send_string_array") send_string_array
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
+> sends a string body param
 
 
 ```ruby
-def create_cart_create_51(body); end
+def send_string_array(sarray); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| sarray |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = CartCreateRequestMsg.new
+sarray_value = "["abc", "def"]";
+sarray = JSON.parse(sarray_value);
 
-result = aWSECommerceServiceBinding.create_cart_create_51(body)
+result = bodyParams.send_string_array(sarray)
 
 ```
 
 
-### <a name="create_cart_add_50"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_add_50") create_cart_add_50
+### <a name="send_integer_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.send_integer_array") send_integer_array
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_add_50(body); end
+def send_integer_array(integers); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| integers |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = CartAddRequestMsg.new
+integers_value = "[1,2,3,4,5]";
+integers = JSON.parse(integers_value);
 
-result = aWSECommerceServiceBinding.create_cart_add_50(body)
+result = bodyParams.send_integer_array(integers)
 
 ```
-
 
-### <a name="create_cart_get_49"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_get_49") create_cart_get_49
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_model"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.send_model") send_model
 
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_get_49(body); end
+def send_model(model); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| model |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = CartGetRequestMsg.new
+model_value = "{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"}";
+model = JSON.parse(model_value);
 
-result = aWSECommerceServiceBinding.create_cart_get_49(body)
+result = bodyParams.send_model(model)
 
 ```
 
 
-### <a name="create_similarity_lookup_48"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_similarity_lookup_48") create_similarity_lookup_48
+### <a name="send_model_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.send_model_array") send_model_array
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_similarity_lookup_48(body); end
+def send_model_array(models); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| models |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = SimilarityLookupRequestMsg.new
+models_value = "[{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"},{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"}]";
+models = JSON.parse(models_value);
 
-result = aWSECommerceServiceBinding.create_similarity_lookup_48(body)
+result = bodyParams.send_model_array(models)
 
 ```
-
 
-### <a name="create_browse_node_lookup_47"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_browse_node_lookup_47") create_browse_node_lookup_47
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_dynamic"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.send_dynamic") send_dynamic
 
 > TODO: Add a method description
 
 
 ```ruby
-def create_browse_node_lookup_47(body); end
+def send_dynamic(dynamic); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| dynamic |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = BrowseNodeLookupRequestMsg.new
+dynamic_value = "{\"uid\": \"1123213\", \"name\": \"Shahid\"}";
+dynamic = JSON.parse(dynamic_value);
 
-result = aWSECommerceServiceBinding.create_browse_node_lookup_47(body)
+result = bodyParams.send_dynamic(dynamic)
 
 ```
 
 
-### <a name="create_item_lookup_46"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_lookup_46") create_item_lookup_46
+### <a name="send_string"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.send_string") send_string
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_item_lookup_46(body); end
+def send_string(value); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| value |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = ItemLookupRequestMsg.new
+value = 'TestString'
 
-result = aWSECommerceServiceBinding.create_item_lookup_46(body)
+result = bodyParams.send_string(value)
 
 ```
-
 
-### <a name="create_item_search_45"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_search_45") create_item_search_45
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_string_enum_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.send_string_enum_array") send_string_enum_array
 
 > TODO: Add a method description
 
 
 ```ruby
-def create_item_search_45(body); end
+def send_string_enum_array(days); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| days |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = ItemSearchRequestMsg.new
+days = [Tester::Days::TUESDAY,Tester::Days::SATURDAY,Tester::Days::MONDAY,Tester::Days::SUNDAY]
 
-result = aWSECommerceServiceBinding.create_item_search_45(body)
+result = bodyParams.send_string_enum_array(days)
 
 ```
 
 
-### <a name="create_cart_clear_44"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_clear_44") create_cart_clear_44
+### <a name="send_integer_enum_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.send_integer_enum_array") send_integer_enum_array
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_clear_44(body); end
+def send_integer_enum_array(suites); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| suites |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = CartClearRequestMsg.new
+suites = [Tester::SuiteCode::HEARTS,Tester::SuiteCode::CLUBS,Tester::SuiteCode::DIAMONDS,Tester::SuiteCode::SPADES,Tester::SuiteCode::CLUBS]
 
-result = aWSECommerceServiceBinding.create_cart_clear_44(body)
+result = bodyParams.send_integer_enum_array(suites)
 
 ```
+
 
+[Back to List of Controllers](#list_of_controllers)
 
-### <a name="create_cart_modify_43"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_modify_43") create_cart_modify_43
+## <a name="form_params_controller"></a>![Class: ](https://apidocs.io/img/class.png ".FormParamsController") FormParamsController
 
-> *Tags:*  ``` Skips Authentication ``` 
+### Get singleton instance
 
+The singleton instance of the ``` FormParamsController ``` class can be accessed from the API Client.
+
+```ruby
+formParams = client.form_params
+```
+
+### <a name="send_date_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_date_array") send_date_array
+
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_modify_43(body); end
+def send_date_array(dates); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| dates |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = CartModifyRequestMsg.new
+dates_value = "["1994-02-13","1994-02-13"]";
+dates = JSON.parse(dates_value);
 
-result = aWSECommerceServiceBinding.create_cart_modify_43(body)
+result = formParams.send_date_array(dates)
 
 ```
-
 
-### <a name="create_cart_create_42"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_create_42") create_cart_create_42
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_date"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_date") send_date
 
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_create_42(body); end
+def send_date(date); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| date |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = CartCreateRequestMsg.new
+date = 1994-02-13
 
-result = aWSECommerceServiceBinding.create_cart_create_42(body)
+result = formParams.send_date(date)
 
 ```
 
 
-### <a name="create_cart_add_41"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_add_41") create_cart_add_41
+### <a name="send_unix_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_unix_date_time") send_unix_date_time
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_add_41(body); end
+def send_unix_date_time(datetime); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = CartAddRequestMsg.new
+datetime = 1484719381
 
-result = aWSECommerceServiceBinding.create_cart_add_41(body)
+result = formParams.send_unix_date_time(datetime)
 
 ```
-
 
-### <a name="create_cart_get_40"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_get_40") create_cart_get_40
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_rfc_1123_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_rfc_1123_date_time") send_rfc_1123_date_time
 
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_get_40(body); end
+def send_rfc_1123_date_time(datetime); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = CartGetRequestMsg.new
+datetime = Sun, 06 Nov 1994 08:49:37 GMT
 
-result = aWSECommerceServiceBinding.create_cart_get_40(body)
+result = formParams.send_rfc_1123_date_time(datetime)
 
 ```
 
 
-### <a name="create_similarity_lookup_39"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_similarity_lookup_39") create_similarity_lookup_39
+### <a name="send_rfc_3339_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_rfc_3339_date_time") send_rfc_3339_date_time
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_similarity_lookup_39(body); end
+def send_rfc_3339_date_time(datetime); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = SimilarityLookupRequestMsg.new
+datetime = 1994-02-13T14:01:54.9571247Z
 
-result = aWSECommerceServiceBinding.create_similarity_lookup_39(body)
+result = formParams.send_rfc_3339_date_time(datetime)
 
 ```
-
 
-### <a name="create_browse_node_lookup_38"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_browse_node_lookup_38") create_browse_node_lookup_38
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_unix_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_unix_date_time_array") send_unix_date_time_array
 
 > TODO: Add a method description
 
 
 ```ruby
-def create_browse_node_lookup_38(body); end
+def send_unix_date_time_array(datetimes); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = BrowseNodeLookupRequestMsg.new
+datetimes_value = "[1484719381,1484719381]";
+datetimes = JSON.parse(datetimes_value);
 
-result = aWSECommerceServiceBinding.create_browse_node_lookup_38(body)
+result = formParams.send_unix_date_time_array(datetimes)
 
 ```
 
 
-### <a name="create_item_lookup_37"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_lookup_37") create_item_lookup_37
+### <a name="send_rfc_1123_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_rfc_1123_date_time_array") send_rfc_1123_date_time_array
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_item_lookup_37(body); end
+def send_rfc_1123_date_time_array(datetimes); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = ItemLookupRequestMsg.new
+datetimes_value = "["Sun, 06 Nov 1994 08:49:37 GMT","Sun, 06 Nov 1994 08:49:37 GMT"]";
+datetimes = JSON.parse(datetimes_value);
 
-result = aWSECommerceServiceBinding.create_item_lookup_37(body)
+result = formParams.send_rfc_1123_date_time_array(datetimes)
 
 ```
-
 
-### <a name="create_item_search_36"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_search_36") create_item_search_36
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_long"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_long") send_long
 
 > TODO: Add a method description
 
 
 ```ruby
-def create_item_search_36(body); end
+def send_long(value); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| value |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = ItemSearchRequestMsg.new
+value = 5147483647
 
-result = aWSECommerceServiceBinding.create_item_search_36(body)
+result = formParams.send_long(value)
 
 ```
 
 
-### <a name="create_cart_clear_35"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_clear_35") create_cart_clear_35
+### <a name="send_integer_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_integer_array") send_integer_array
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_clear_35(body); end
+def send_integer_array(integers); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| integers |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = CartClearRequestMsg.new
+integers_value = "[1,2,3,4,5]";
+integers = JSON.parse(integers_value);
 
-result = aWSECommerceServiceBinding.create_cart_clear_35(body)
+result = formParams.send_integer_array(integers)
 
 ```
-
 
-### <a name="create_cart_modify_34"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_modify_34") create_cart_modify_34
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_string_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_string_array") send_string_array
 
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_modify_34(body); end
+def send_string_array(strings); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| strings |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = CartModifyRequestMsg.new
+strings_value = "["abc", "def"]";
+strings = JSON.parse(strings_value);
 
-result = aWSECommerceServiceBinding.create_cart_modify_34(body)
+result = formParams.send_string_array(strings)
 
 ```
 
 
-### <a name="create_cart_create_33"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_create_33") create_cart_create_33
+### <a name="send_model"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_model") send_model
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_create_33(body); end
+def send_model(model); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| model |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = CartCreateRequestMsg.new
+model_value = "{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"}";
+model = JSON.parse(model_value);
 
-result = aWSECommerceServiceBinding.create_cart_create_33(body)
+result = formParams.send_model(model)
 
 ```
-
 
-### <a name="create_cart_add_32"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_add_32") create_cart_add_32
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_model_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_model_array") send_model_array
 
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_add_32(body); end
+def send_model_array(models); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| models |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = CartAddRequestMsg.new
+models_value = "[{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"},{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"}]";
+models = JSON.parse(models_value);
 
-result = aWSECommerceServiceBinding.create_cart_add_32(body)
+result = formParams.send_model_array(models)
 
 ```
 
 
-### <a name="create_cart_get_31"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_get_31") create_cart_get_31
+### <a name="send_file"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_file") send_file
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_get_31(body); end
+def send_file(file); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| file |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = CartGetRequestMsg.new
+file = Faraday::UploadIO.new('PathToFile', 'application/octet-stream')
 
-result = aWSECommerceServiceBinding.create_cart_get_31(body)
+result = formParams.send_file(file)
 
 ```
-
 
-### <a name="create_similarity_lookup_30"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_similarity_lookup_30") create_similarity_lookup_30
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_string"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_string") send_string
 
 > TODO: Add a method description
 
 
 ```ruby
-def create_similarity_lookup_30(body); end
+def send_string(value); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| value |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = SimilarityLookupRequestMsg.new
+value = 'TestString'
 
-result = aWSECommerceServiceBinding.create_similarity_lookup_30(body)
+result = formParams.send_string(value)
 
 ```
 
 
-### <a name="create_browse_node_lookup_29"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_browse_node_lookup_29") create_browse_node_lookup_29
+### <a name="send_rfc_3339_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_rfc_3339_date_time_array") send_rfc_3339_date_time_array
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_browse_node_lookup_29(body); end
+def send_rfc_3339_date_time_array(datetimes); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = BrowseNodeLookupRequestMsg.new
+datetimes_value = "["1994-02-13T14:01:54.9571247Z","1994-02-13T14:01:54.9571247Z"]";
+datetimes = JSON.parse(datetimes_value);
 
-result = aWSECommerceServiceBinding.create_browse_node_lookup_29(body)
+result = formParams.send_rfc_3339_date_time_array(datetimes)
 
 ```
-
 
-### <a name="create_item_lookup_28"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_lookup_28") create_item_lookup_28
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_mixed_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_mixed_array") send_mixed_array
 
-> TODO: Add a method description
+> Send a variety for form params. Returns file count and body params
 
 
 ```ruby
-def create_item_lookup_28(body); end
+def send_mixed_array(options = Hash.new); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| file |  ``` Required ```  | TODO: Add a parameter description |
+| integers |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
+| models |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
+| strings |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = ItemLookupRequestMsg.new
+collect = Hash.new
 
-result = aWSECommerceServiceBinding.create_item_lookup_28(body)
+file = Faraday::UploadIO.new('PathToFile', 'application/octet-stream')
+collect['file'] = file
 
-```
+integers_value = "[1,2,3,4,5]";
+integers = JSON.parse(integers_value);
+collect['integers'] = integers
+
+models_value = "[{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"},{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"}]";
+models = JSON.parse(models_value);
+collect['models'] = models
+
+strings_value = "["abc", "def"]";
+strings = JSON.parse(strings_value);
+collect['strings'] = strings
 
 
-### <a name="create_item_search_27"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_search_27") create_item_search_27
+result = formParams.send_mixed_array(collect)
 
-> *Tags:*  ``` Skips Authentication ``` 
+```
+
 
+### <a name="send_integer_enum_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_integer_enum_array") send_integer_enum_array
+
 > TODO: Add a method description
 
 
 ```ruby
-def create_item_search_27(body); end
+def send_integer_enum_array(suites); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| suites |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = ItemSearchRequestMsg.new
+suites = [Tester::SuiteCode::HEARTS,Tester::SuiteCode::CLUBS,Tester::SuiteCode::DIAMONDS,Tester::SuiteCode::SPADES,Tester::SuiteCode::CLUBS]
 
-result = aWSECommerceServiceBinding.create_item_search_27(body)
+result = formParams.send_integer_enum_array(suites)
 
 ```
-
 
-### <a name="create_cart_clear_26"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_clear_26") create_cart_clear_26
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_string_enum_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_string_enum_array") send_string_enum_array
 
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_clear_26(body); end
+def send_string_enum_array(days); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| days |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = CartClearRequestMsg.new
+days = [Tester::Days::TUESDAY,Tester::Days::SATURDAY,Tester::Days::MONDAY,Tester::Days::SUNDAY]
 
-result = aWSECommerceServiceBinding.create_cart_clear_26(body)
+result = formParams.send_string_enum_array(days)
 
 ```
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="query_param_controller"></a>![Class: ](https://apidocs.io/img/class.png ".QueryParamController") QueryParamController
+
+### Get singleton instance
 
+The singleton instance of the ``` QueryParamController ``` class can be accessed from the API Client.
 
-### <a name="create_cart_modify_25"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_modify_25") create_cart_modify_25
+```ruby
+queryParam = client.query_param
+```
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="date_array"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.date_array") date_array
 
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_modify_25(body); end
+def date_array(dates); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| dates |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = CartModifyRequestMsg.new
+dates_value = "["1994-02-13","1994-02-13"]";
+dates = JSON.parse(dates_value);
 
-result = aWSECommerceServiceBinding.create_cart_modify_25(body)
+result = queryParam.date_array(dates)
 
 ```
 
 
-### <a name="create_cart_create_24"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_create_24") create_cart_create_24
+### <a name="date"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.date") date
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_create_24(body); end
+def date(date); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| date |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = CartCreateRequestMsg.new
+date = 1994-02-13
 
-result = aWSECommerceServiceBinding.create_cart_create_24(body)
+result = queryParam.date(date)
 
 ```
-
 
-### <a name="create_cart_add_23"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_add_23") create_cart_add_23
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="unix_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.unix_date_time_array") unix_date_time_array
 
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_add_23(body); end
+def unix_date_time_array(datetimes); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = CartAddRequestMsg.new
+datetimes_value = "[1484719381,1484719381]";
+datetimes = JSON.parse(datetimes_value);
 
-result = aWSECommerceServiceBinding.create_cart_add_23(body)
+result = queryParam.unix_date_time_array(datetimes)
 
 ```
 
 
-### <a name="create_cart_get_22"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_get_22") create_cart_get_22
+### <a name="unix_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.unix_date_time") unix_date_time
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_get_22(body); end
+def unix_date_time(datetime); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = CartGetRequestMsg.new
+datetime = 1484719381
 
-result = aWSECommerceServiceBinding.create_cart_get_22(body)
+result = queryParam.unix_date_time(datetime)
 
 ```
-
 
-### <a name="create_similarity_lookup_21"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_similarity_lookup_21") create_similarity_lookup_21
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="rfc_1123_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.rfc_1123_date_time") rfc_1123_date_time
 
 > TODO: Add a method description
 
 
 ```ruby
-def create_similarity_lookup_21(body); end
+def rfc_1123_date_time(datetime); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = SimilarityLookupRequestMsg.new
+datetime = Sun, 06 Nov 1994 08:49:37 GMT
 
-result = aWSECommerceServiceBinding.create_similarity_lookup_21(body)
+result = queryParam.rfc_1123_date_time(datetime)
 
 ```
 
 
-### <a name="create_browse_node_lookup_20"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_browse_node_lookup_20") create_browse_node_lookup_20
+### <a name="rfc_1123_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.rfc_1123_date_time_array") rfc_1123_date_time_array
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_browse_node_lookup_20(body); end
+def rfc_1123_date_time_array(datetimes); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = BrowseNodeLookupRequestMsg.new
+datetimes_value = "["Sun, 06 Nov 1994 08:49:37 GMT","Sun, 06 Nov 1994 08:49:37 GMT"]";
+datetimes = JSON.parse(datetimes_value);
 
-result = aWSECommerceServiceBinding.create_browse_node_lookup_20(body)
+result = queryParam.rfc_1123_date_time_array(datetimes)
 
 ```
-
 
-### <a name="create_item_lookup_19"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_lookup_19") create_item_lookup_19
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="rfc_3339_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.rfc_3339_date_time_array") rfc_3339_date_time_array
 
 > TODO: Add a method description
 
 
 ```ruby
-def create_item_lookup_19(body); end
+def rfc_3339_date_time_array(datetimes); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = ItemLookupRequestMsg.new
+datetimes_value = "["1994-02-13T14:01:54.9571247Z","1994-02-13T14:01:54.9571247Z"]";
+datetimes = JSON.parse(datetimes_value);
 
-result = aWSECommerceServiceBinding.create_item_lookup_19(body)
+result = queryParam.rfc_3339_date_time_array(datetimes)
 
 ```
 
 
-### <a name="create_item_search_18"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_search_18") create_item_search_18
+### <a name="rfc_3339_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.rfc_3339_date_time") rfc_3339_date_time
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_item_search_18(body); end
+def rfc_3339_date_time(datetime); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = ItemSearchRequestMsg.new
+datetime = 1994-02-13T14:01:54.9571247Z
 
-result = aWSECommerceServiceBinding.create_item_search_18(body)
+result = queryParam.rfc_3339_date_time(datetime)
 
 ```
-
 
-### <a name="create_cart_clear_17"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_clear_17") create_cart_clear_17
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="no_params"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.no_params") no_params
 
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_clear_17(body); end
+def no_params; end
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
 #### Example Usage
 
 ```ruby
-body = CartClearRequestMsg.new
 
-result = aWSECommerceServiceBinding.create_cart_clear_17(body)
+result = queryParam.no_params()
 
 ```
 
 
-### <a name="create_cart_modify_16"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_modify_16") create_cart_modify_16
+### <a name="string_param"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.string_param") string_param
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_modify_16(body); end
+def string_param(string); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| string |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = CartModifyRequestMsg.new
+string = 'l;asd;asdwe[2304&&;\'.d??\\a\\\\\\;sd//'
 
-result = aWSECommerceServiceBinding.create_cart_modify_16(body)
+result = queryParam.string_param(string)
 
 ```
-
 
-### <a name="create_cart_create_15"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_create_15") create_cart_create_15
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="url_param"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.url_param") url_param
 
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_create_15(body); end
+def url_param(url); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| url |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = CartCreateRequestMsg.new
+url = 'https://www.shahidisawesome.com/and/also/a/narcissist?thisis=aparameter&another=one'
 
-result = aWSECommerceServiceBinding.create_cart_create_15(body)
+result = queryParam.url_param(url)
 
 ```
 
 
-### <a name="create_cart_add_14"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_add_14") create_cart_add_14
+### <a name="number_array"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.number_array") number_array
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_add_14(body); end
+def number_array(integers); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| integers |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = CartAddRequestMsg.new
+integers_value = "[1,2,3,4,5]";
+integers = JSON.parse(integers_value);
 
-result = aWSECommerceServiceBinding.create_cart_add_14(body)
+result = queryParam.number_array(integers)
 
 ```
-
 
-### <a name="create_cart_get_13"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_get_13") create_cart_get_13
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="string_array"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.string_array") string_array
 
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_get_13(body); end
+def string_array(strings); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| strings |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = CartGetRequestMsg.new
+strings_value = "["abc", "def"]";
+strings = JSON.parse(strings_value);
 
-result = aWSECommerceServiceBinding.create_cart_get_13(body)
+result = queryParam.string_array(strings)
 
 ```
 
 
-### <a name="create_similarity_lookup_12"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_similarity_lookup_12") create_similarity_lookup_12
+### <a name="simple_query"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.simple_query") simple_query
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_similarity_lookup_12(body); end
+def simple_query(boolean,
+                     number,
+                     string,
+                     _query_parameters = nil); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| boolean |  ``` Required ```  | TODO: Add a parameter description |
+| number |  ``` Required ```  | TODO: Add a parameter description |
+| string |  ``` Required ```  | TODO: Add a parameter description |
+| _query_parameters | ``` Optional ``` | Additional optional query parameters are supported by this method |
 
 
 #### Example Usage
 
 ```ruby
-body = SimilarityLookupRequestMsg.new
+boolean = true
+number = 4
+string = 'TestString'
+# key-value map for optional query parameters
+queryParams = { 'key' => 'value' }
 
-result = aWSECommerceServiceBinding.create_similarity_lookup_12(body)
+result = queryParam.simple_query(boolean, number, string, queryParams)
 
 ```
-
 
-### <a name="create_browse_node_lookup_11"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_browse_node_lookup_11") create_browse_node_lookup_11
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="string_enum_array"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.string_enum_array") string_enum_array
 
 > TODO: Add a method description
 
 
 ```ruby
-def create_browse_node_lookup_11(body); end
+def string_enum_array(days); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| days |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = BrowseNodeLookupRequestMsg.new
+days = [Tester::Days::TUESDAY,Tester::Days::SATURDAY,Tester::Days::MONDAY,Tester::Days::SUNDAY]
 
-result = aWSECommerceServiceBinding.create_browse_node_lookup_11(body)
+result = queryParam.string_enum_array(days)
 
 ```
 
 
-### <a name="create_item_lookup_10"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_lookup_10") create_item_lookup_10
+### <a name="multiple_params"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.multiple_params") multiple_params
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_item_lookup_10(body); end
+def multiple_params(number,
+                        precision,
+                        string,
+                        url); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| number |  ``` Required ```  | TODO: Add a parameter description |
+| precision |  ``` Required ```  | TODO: Add a parameter description |
+| string |  ``` Required ```  | TODO: Add a parameter description |
+| url |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = ItemLookupRequestMsg.new
+number = 123412312
+precision = 1112.34
+string = '""test./;";12&&3asl"";"qw1&34"///..//.'
+url = 'http://www.abc.com/test?a=b&c="http://lolol.com?param=no&another=lol"'
 
-result = aWSECommerceServiceBinding.create_item_lookup_10(body)
+result = queryParam.multiple_params(number, precision, string, url)
 
 ```
-
 
-### <a name="create_item_search_9"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_search_9") create_item_search_9
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="integer_enum_array"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.integer_enum_array") integer_enum_array
 
 > TODO: Add a method description
 
 
 ```ruby
-def create_item_search_9(body); end
+def integer_enum_array(suites); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| suites |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = ItemSearchRequestMsg.new
+suites = [Tester::SuiteCode::HEARTS,Tester::SuiteCode::CLUBS,Tester::SuiteCode::DIAMONDS,Tester::SuiteCode::SPADES,Tester::SuiteCode::CLUBS]
 
-result = aWSECommerceServiceBinding.create_item_search_9(body)
+result = queryParam.integer_enum_array(suites)
 
 ```
 
 
-### <a name="create_cart_clear"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_clear") create_cart_clear
+[Back to List of Controllers](#list_of_controllers)
 
-> *Tags:*  ``` Skips Authentication ``` 
+## <a name="error_codes_controller"></a>![Class: ](https://apidocs.io/img/class.png ".ErrorCodesController") ErrorCodesController
 
-> TODO: Add a method description
+### Get singleton instance
 
+The singleton instance of the ``` ErrorCodesController ``` class can be accessed from the API Client.
 
 ```ruby
-def create_cart_clear(body); end
+errorCodes = client.error_codes
 ```
 
-#### Parameters
+### <a name="get_400"></a>![Method: ](https://apidocs.io/img/method.png ".ErrorCodesController.get_400") get_400
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+> TODO: Add a method description
+
 
+```ruby
+def get_400; end
+```
 
 #### Example Usage
 
 ```ruby
-body = CartClearRequestMsg.new
 
-result = aWSECommerceServiceBinding.create_cart_clear(body)
+result = errorCodes.get_400()
 
 ```
 
 
-### <a name="create_cart_modify"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_modify") create_cart_modify
+### <a name="get_500"></a>![Method: ](https://apidocs.io/img/method.png ".ErrorCodesController.get_500") get_500
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_modify(body); end
+def get_500; end
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```ruby
-body = CartModifyRequestMsg.new
 
-result = aWSECommerceServiceBinding.create_cart_modify(body)
+result = errorCodes.get_500()
 
 ```
-
 
-### <a name="create_cart_create"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_create") create_cart_create
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_401"></a>![Method: ](https://apidocs.io/img/method.png ".ErrorCodesController.get_401") get_401
 
 > TODO: Add a method description
 
 
 ```ruby
-def create_cart_create(body); end
+def get_401; end
 ```
 
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 #### Example Usage
 
 ```ruby
-body = CartCreateRequestMsg.new
 
-result = aWSECommerceServiceBinding.create_cart_create(body)
+result = errorCodes.get_401()
 
 ```
 
+#### Errors
 
-### <a name="create_cart_add"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_add") create_cart_add
+| Error Code | Error Description |
+|------------|-------------------|
+| 401 | 401 Local |
+| 421 | Default |
+| 431 | Default |
+| 432 | Default |
+| 441 | Default |
+| 0 | Invalid response. |
 
-> *Tags:*  ``` Skips Authentication ``` 
 
-> TODO: Add a method description
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="echo_controller"></a>![Class: ](https://apidocs.io/img/class.png ".EchoController") EchoController
+
+### Get singleton instance
+
+The singleton instance of the ``` EchoController ``` class can be accessed from the API Client.
+
+```ruby
+echo = client.echo
+```
+
+### <a name="json_echo"></a>![Method: ](https://apidocs.io/img/method.png ".EchoController.json_echo") json_echo
+
+> Echo's back the request
 
 
 ```ruby
-def create_cart_add(body); end
+def json_echo(input); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| input |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = CartAddRequestMsg.new
+input_value = "{\"uid\": \"1123213\", \"name\": \"Shahid\"}";
+input = JSON.parse(input_value);
 
-result = aWSECommerceServiceBinding.create_cart_add(body)
+result = echo.json_echo(input)
 
 ```
 
 
-### <a name="create_cart_get"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_get") create_cart_get
+### <a name="form_echo"></a>![Method: ](https://apidocs.io/img/method.png ".EchoController.form_echo") form_echo
 
-> *Tags:*  ``` Skips Authentication ``` 
+> Sends the request including any form params as JSON
 
-> TODO: Add a method description
-
 
 ```ruby
-def create_cart_get(body); end
+def form_echo(input); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| input |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = CartGetRequestMsg.new
+input_value = "{\"uid\": \"1123213\", \"name\": \"Shahid\"}";
+input = JSON.parse(input_value);
 
-result = aWSECommerceServiceBinding.create_cart_get(body)
+result = echo.form_echo(input)
 
 ```
 
 
-### <a name="create_similarity_lookup"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_similarity_lookup") create_similarity_lookup
+### <a name="query_echo"></a>![Method: ](https://apidocs.io/img/method.png ".EchoController.query_echo") query_echo
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```ruby
-def create_similarity_lookup(body); end
+def query_echo(_query_parameters = nil); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| _query_parameters | ``` Optional ``` | Additional optional query parameters are supported by this method |
 
 
 #### Example Usage
 
 ```ruby
-body = SimilarityLookupRequestMsg.new
+# key-value map for optional query parameters
+queryParams = { 'key' => 'value' }
 
-result = aWSECommerceServiceBinding.create_similarity_lookup(body)
+result = echo.query_echo(queryParams)
 
 ```
 
 
-### <a name="create_browse_node_lookup"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_browse_node_lookup") create_browse_node_lookup
+[Back to List of Controllers](#list_of_controllers)
 
-> *Tags:*  ``` Skips Authentication ``` 
+## <a name="header_controller"></a>![Class: ](https://apidocs.io/img/class.png ".HeaderController") HeaderController
 
-> TODO: Add a method description
+### Get singleton instance
+
+The singleton instance of the ``` HeaderController ``` class can be accessed from the API Client.
+
+```ruby
+header = client.header
+```
 
+### <a name="send_headers"></a>![Method: ](https://apidocs.io/img/method.png ".HeaderController.send_headers") send_headers
 
+> Sends a single header params
+
+
 ```ruby
-def create_browse_node_lookup(body); end
+def send_headers(custom_header,
+                     value); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| custom_header |  ``` Required ```  | TODO: Add a parameter description |
+| value |  ``` Required ```  | Represents the value of the custom header |
 
 
 #### Example Usage
 
 ```ruby
-body = BrowseNodeLookupRequestMsg.new
+custom_header = 'TestString'
+value = 'TestString'
 
-result = aWSECommerceServiceBinding.create_browse_node_lookup(body)
+result = header.send_headers(custom_header, value)
 
 ```
+
+
+[Back to List of Controllers](#list_of_controllers)
 
+## <a name="template_params_controller"></a>![Class: ](https://apidocs.io/img/class.png ".TemplateParamsController") TemplateParamsController
 
-### <a name="create_item_lookup"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_lookup") create_item_lookup
+### Get singleton instance
 
-> *Tags:*  ``` Skips Authentication ``` 
+The singleton instance of the ``` TemplateParamsController ``` class can be accessed from the API Client.
 
+```ruby
+templateParams = client.template_params
+```
+
+### <a name="send_string_array"></a>![Method: ](https://apidocs.io/img/method.png ".TemplateParamsController.send_string_array") send_string_array
+
 > TODO: Add a method description
 
 
 ```ruby
-def create_item_lookup(body); end
+def send_string_array(strings); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| strings |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = ItemLookupRequestMsg.new
+strings_value = "["abc", "def"]";
+strings = JSON.parse(strings_value);
 
-result = aWSECommerceServiceBinding.create_item_lookup(body)
+result = templateParams.send_string_array(strings)
 
 ```
-
 
-### <a name="create_item_search"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_search") create_item_search
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_integer_array"></a>![Method: ](https://apidocs.io/img/method.png ".TemplateParamsController.send_integer_array") send_integer_array
 
 > TODO: Add a method description
 
 
 ```ruby
-def create_item_search(body); end
+def send_integer_array(integers); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| integers |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body = ItemSearchRequestMsg.new
+integers_value = "[1,2,3,4,5]";
+integers = JSON.parse(integers_value);
 
-result = aWSECommerceServiceBinding.create_item_search(body)
+result = templateParams.send_integer_array(integers)
 
 ```
 

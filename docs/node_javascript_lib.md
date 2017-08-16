@@ -1,5 +1,9 @@
 # Getting started
 
+Testing various
+ api 
+features
+
 ## How to Build
 
 The generated SDK relies on [Node Package Manager](https://www.npmjs.com/) (NPM) being available to resolve dependencies. If you don't already have NPM installed, please go ahead and follow instructions to install NPM from [here](https://nodejs.org/en/download/).
@@ -11,7 +15,7 @@ To check if node and npm have been successfully installed, write the following c
 * `node --version`
 * `npm -version`
 
-![Version Check](https://apidocs.io/illustration/nodejs?step=versionCheck&workspaceFolder=AWSECommerceService-Node)
+![Version Check](https://apidocs.io/illustration/nodejs?step=versionCheck&workspaceFolder=Tester-Node)
 
 Now use npm to resolve all dependencies by running the following command in the root directory (of the SDK folder):
 
@@ -19,13 +23,13 @@ Now use npm to resolve all dependencies by running the following command in the 
 npm install
 ```
 
-![Resolve Dependencies](https://apidocs.io/illustration/nodejs?step=resolveDependency1&workspaceFolder=AWSECommerceService-Node)
+![Resolve Dependencies](https://apidocs.io/illustration/nodejs?step=resolveDependency1&workspaceFolder=Tester-Node)
 
 ![Resolve Dependencies](https://apidocs.io/illustration/nodejs?step=resolveDependency2)
 
 This will install all dependencies in the `node_modules` folder.
 
-Once dependencies are resolved, you will need to move the folder `AWSECommerceServiceLib ` in to your `node_modules` folder.
+Once dependencies are resolved, you will need to move the folder `TesterLib ` in to your `node_modules` folder.
 
 ## How to Use
 
@@ -40,7 +44,7 @@ Click on `File` and select `Open Folder`.
 
 Select the folder of your SDK and click on `Select Folder` to open it up in Sublime Text. The folder will become visible in the bar on the left.
 
-![Open Project](https://apidocs.io/illustration/nodejs?step=openProject&workspaceFolder=AWSECommerceService-Node)
+![Open Project](https://apidocs.io/illustration/nodejs?step=openProject&workspaceFolder=Tester-Node)
 
 ### 2. Creating a Test File
 
@@ -52,9 +56,9 @@ var lib = require('lib');
 
 Save changes.
 
-![Create new file](https://apidocs.io/illustration/nodejs?step=createNewFile&workspaceFolder=AWSECommerceService-Node)
+![Create new file](https://apidocs.io/illustration/nodejs?step=createNewFile&workspaceFolder=Tester-Node)
 
-![Save new file](https://apidocs.io/illustration/nodejs?step=saveNewFile&workspaceFolder=AWSECommerceService-Node)
+![Save new file](https://apidocs.io/illustration/nodejs?step=saveNewFile&workspaceFolder=Tester-Node)
 
 ### 3. Running The Test File
 
@@ -64,7 +68,7 @@ To run the `index.js` file, open up the command prompt and navigate to the Path 
 node index.js
 ```
 
-![Run file](https://apidocs.io/illustration/nodejs?step=runProject&workspaceFolder=AWSECommerceService-Node)
+![Run file](https://apidocs.io/illustration/nodejs?step=runProject&workspaceFolder=Tester-Node)
 
 
 ## How to Test
@@ -85,11 +89,11 @@ Tests can be run in a number of ways:
 ### Method 3 (Run specific controller's tests)
 
 1. Navigate to the `../test/Controllers/` directory from command prompt.
-2. Type `mocha  AWSECommerceServiceController`  to run all the tests in that controller file.
+2. Type `mocha  TesterController`  to run all the tests in that controller file.
 
 > To increase mocha's default timeout, you can change the `TEST_TIMEOUT` parameter's value in `TestBootstrap.js`.
 
-![Run Tests](https://apidocs.io/illustration/nodejs?step=runTests&controllerName=AWSECommerceServiceController)
+![Run Tests](https://apidocs.io/illustration/nodejs?step=runTests&controllerName=TesterController)
 
 ## Initialization
 
@@ -109,747 +113,194 @@ const lib = require('lib');
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [AWSECommerceServiceBindingController](#awse_commerce_service_binding_controller)
+* [ResponseTypesController](#response_types_controller)
+* [BodyParamsController](#body_params_controller)
+* [FormParamsController](#form_params_controller)
+* [QueryParamController](#query_param_controller)
+* [ErrorCodesController](#error_codes_controller)
+* [EchoController](#echo_controller)
+* [HeaderController](#header_controller)
+* [TemplateParamsController](#template_params_controller)
 
-## <a name="awse_commerce_service_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png ".AWSECommerceServiceBindingController") AWSECommerceServiceBindingController
+## <a name="response_types_controller"></a>![Class: ](https://apidocs.io/img/class.png ".ResponseTypesController") ResponseTypesController
 
 ### Get singleton instance
 
-The singleton instance of the ``` AWSECommerceServiceBindingController ``` class can be accessed from the API Client.
+The singleton instance of the ``` ResponseTypesController ``` class can be accessed from the API Client.
 
 ```javascript
-var controller = lib.AWSECommerceServiceBindingController;
+var controller = lib.ResponseTypesController;
 ```
 
-### <a name="create_cart_modify97"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify97") createCartModify97
+### <a name="get_date_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getDateArray") getDateArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```javascript
-function createCartModify97(body, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var body = new CartModifyRequestMsg({"key":"value"});
-
-    controller.createCartModify97(body, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="create_cart_clear98"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear98") createCartClear98
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```javascript
-function createCartClear98(body, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var body = new CartClearRequestMsg({"key":"value"});
-
-    controller.createCartClear98(body, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="create_cart_create96"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate96") createCartCreate96
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```javascript
-function createCartCreate96(body, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var body = new CartCreateRequestMsg({"key":"value"});
-
-    controller.createCartCreate96(body, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="create_cart_add95"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd95") createCartAdd95
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```javascript
-function createCartAdd95(body, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var body = new CartAddRequestMsg({"key":"value"});
-
-    controller.createCartAdd95(body, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="create_cart_get94"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet94") createCartGet94
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```javascript
-function createCartGet94(body, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var body = new CartGetRequestMsg({"key":"value"});
-
-    controller.createCartGet94(body, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="create_similarity_lookup93"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup93") createSimilarityLookup93
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```javascript
-function createSimilarityLookup93(body, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var body = new SimilarityLookupRequestMsg({"key":"value"});
-
-    controller.createSimilarityLookup93(body, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="create_browse_node_lookup92"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup92") createBrowseNodeLookup92
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```javascript
-function createBrowseNodeLookup92(body, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var body = new BrowseNodeLookupRequestMsg({"key":"value"});
-
-    controller.createBrowseNodeLookup92(body, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="create_item_lookup91"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup91") createItemLookup91
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```javascript
-function createItemLookup91(body, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var body = new ItemLookupRequestMsg({"key":"value"});
-
-    controller.createItemLookup91(body, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="create_item_search90"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch90") createItemSearch90
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```javascript
-function createItemSearch90(body, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var body = new ItemSearchRequestMsg({"key":"value"});
-
-    controller.createItemSearch90(body, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="create_cart_clear89"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear89") createCartClear89
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```javascript
-function createCartClear89(body, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var body = new CartClearRequestMsg({"key":"value"});
-
-    controller.createCartClear89(body, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="create_cart_modify88"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify88") createCartModify88
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```javascript
-function createCartModify88(body, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var body = new CartModifyRequestMsg({"key":"value"});
-
-    controller.createCartModify88(body, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="create_cart_create87"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate87") createCartCreate87
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```javascript
-function createCartCreate87(body, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var body = new CartCreateRequestMsg({"key":"value"});
-
-    controller.createCartCreate87(body, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="create_cart_add86"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd86") createCartAdd86
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```javascript
-function createCartAdd86(body, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var body = new CartAddRequestMsg({"key":"value"});
-
-    controller.createCartAdd86(body, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="create_cart_get85"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet85") createCartGet85
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```javascript
-function createCartGet85(body, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var body = new CartGetRequestMsg({"key":"value"});
-
-    controller.createCartGet85(body, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="create_similarity_lookup84"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup84") createSimilarityLookup84
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```javascript
-function createSimilarityLookup84(body, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var body = new SimilarityLookupRequestMsg({"key":"value"});
-
-    controller.createSimilarityLookup84(body, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="create_browse_node_lookup83"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup83") createBrowseNodeLookup83
-
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```javascript
-function createBrowseNodeLookup83(body, callback)
+function getDateArray(callback)
 ```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
-
 #### Example Usage
 
 ```javascript
 
-    var body = new BrowseNodeLookupRequestMsg({"key":"value"});
 
-    controller.createBrowseNodeLookup83(body, function(error, response, context) {
+    controller.getDateArray(function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_item_lookup82"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup82") createItemLookup82
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_date"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getDate") getDate
 
 > TODO: Add a method description
 
 
 ```javascript
-function createItemLookup82(body, callback)
+function getDate(callback)
 ```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
-
 #### Example Usage
 
 ```javascript
 
-    var body = new ItemLookupRequestMsg({"key":"value"});
 
-    controller.createItemLookup82(body, function(error, response, context) {
+    controller.getDate(function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_item_search81"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch81") createItemSearch81
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_long"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getLong") getLong
 
 > TODO: Add a method description
 
 
 ```javascript
-function createItemSearch81(body, callback)
+function getLong(callback)
 ```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
-
 #### Example Usage
 
 ```javascript
 
-    var body = new ItemSearchRequestMsg({"key":"value"});
 
-    controller.createItemSearch81(body, function(error, response, context) {
+    controller.getLong(function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_cart_clear80"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear80") createCartClear80
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_model"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getModel") getModel
 
 > TODO: Add a method description
 
 
 ```javascript
-function createCartClear80(body, callback)
+function getModel(callback)
 ```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
-
 #### Example Usage
 
 ```javascript
 
-    var body = new CartClearRequestMsg({"key":"value"});
 
-    controller.createCartClear80(body, function(error, response, context) {
+    controller.getModel(function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_cart_modify79"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify79") createCartModify79
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_string_enum_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getStringEnumArray") getStringEnumArray
 
 > TODO: Add a method description
 
 
 ```javascript
-function createCartModify79(body, callback)
+function getStringEnumArray(callback)
 ```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
-
 #### Example Usage
 
 ```javascript
 
-    var body = new CartModifyRequestMsg({"key":"value"});
 
-    controller.createCartModify79(body, function(error, response, context) {
+    controller.getStringEnumArray(function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_cart_create78"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate78") createCartCreate78
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_string_enum"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getStringEnum") getStringEnum
 
 > TODO: Add a method description
 
 
 ```javascript
-function createCartCreate78(body, callback)
+function getStringEnum(callback)
 ```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
-
 #### Example Usage
 
 ```javascript
 
-    var body = new CartCreateRequestMsg({"key":"value"});
 
-    controller.createCartCreate78(body, function(error, response, context) {
+    controller.getStringEnum(function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_cart_add77"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd77") createCartAdd77
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```javascript
-function createCartAdd77(body, callback)
-```
-#### Parameters
+### <a name="get_model_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getModelArray") getModelArray
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+> TODO: Add a method description
 
 
+```javascript
+function getModelArray(callback)
+```
 
 #### Example Usage
 
 ```javascript
 
-    var body = new CartAddRequestMsg({"key":"value"});
 
-    controller.createCartAdd77(body, function(error, response, context) {
+    controller.getModelArray(function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_cart_get76"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet76") createCartGet76
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_int_enum"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getIntEnum") getIntEnum
 
 > TODO: Add a method description
 
 
 ```javascript
-function createCartGet76(body, callback)
+function getIntEnum(callback)
 ```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 
 #### Example Usage
 
 ```javascript
 
-    var body = new CartGetRequestMsg({"key":"value"});
 
-    controller.createCartGet76(body, function(error, response, context) {
+    controller.getIntEnum(function(error, response, context) {
 
     
     });
@@ -857,63 +308,43 @@ function createCartGet76(body, callback)
 
 
 
-### <a name="create_similarity_lookup75"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup75") createSimilarityLookup75
+### <a name="get_int_enum_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getIntEnumArray") getIntEnumArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```javascript
-function createSimilarityLookup75(body, callback)
+function getIntEnumArray(callback)
 ```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
-
 #### Example Usage
 
 ```javascript
 
-    var body = new SimilarityLookupRequestMsg({"key":"value"});
 
-    controller.createSimilarityLookup75(body, function(error, response, context) {
+    controller.getIntEnumArray(function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_browse_node_lookup74"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup74") createBrowseNodeLookup74
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_precision"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getPrecision") getPrecision
 
 > TODO: Add a method description
 
 
 ```javascript
-function createBrowseNodeLookup74(body, callback)
+function getPrecision(callback)
 ```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
-
 #### Example Usage
 
 ```javascript
 
-    var body = new BrowseNodeLookupRequestMsg({"key":"value"});
 
-    controller.createBrowseNodeLookup74(body, function(error, response, context) {
+    controller.getPrecision(function(error, response, context) {
 
     
     });
@@ -921,31 +352,21 @@ function createBrowseNodeLookup74(body, callback)
 
 
 
-### <a name="create_item_lookup73"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup73") createItemLookup73
+### <a name="get_binary"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getBinary") getBinary
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
+> gets a binary object
 
 
 ```javascript
-function createItemLookup73(body, callback)
+function getBinary(callback)
 ```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
-
 #### Example Usage
 
 ```javascript
 
-    var body = new ItemLookupRequestMsg({"key":"value"});
 
-    controller.createItemLookup73(body, function(error, response, context) {
+    controller.getBinary(function(error, response, context) {
 
     
     });
@@ -953,31 +374,21 @@ function createItemLookup73(body, callback)
 
 
 
-### <a name="create_item_search72"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch72") createItemSearch72
+### <a name="get_integer"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getInteger") getInteger
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
+> Gets a integer response
 
 
 ```javascript
-function createItemSearch72(body, callback)
+function getInteger(callback)
 ```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
-
 #### Example Usage
 
 ```javascript
 
-    var body = new ItemSearchRequestMsg({"key":"value"});
 
-    controller.createItemSearch72(body, function(error, response, context) {
+    controller.getInteger(function(error, response, context) {
 
     
     });
@@ -985,31 +396,21 @@ function createItemSearch72(body, callback)
 
 
 
-### <a name="create_cart_clear71"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear71") createCartClear71
+### <a name="get_integer_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getIntegerArray") getIntegerArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
+> Get an array of integers.
 
 
 ```javascript
-function createCartClear71(body, callback)
+function getIntegerArray(callback)
 ```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
-
 #### Example Usage
 
 ```javascript
 
-    var body = new CartClearRequestMsg({"key":"value"});
 
-    controller.createCartClear71(body, function(error, response, context) {
+    controller.getIntegerArray(function(error, response, context) {
 
     
     });
@@ -1017,63 +418,43 @@ function createCartClear71(body, callback)
 
 
 
-### <a name="create_cart_modify70"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify70") createCartModify70
+### <a name="get_dynamic"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getDynamic") getDynamic
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```javascript
-function createCartModify70(body, callback)
+function getDynamic(callback)
 ```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
-
 #### Example Usage
 
 ```javascript
 
-    var body = new CartModifyRequestMsg({"key":"value"});
 
-    controller.createCartModify70(body, function(error, response, context) {
+    controller.getDynamic(function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_cart_create69"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate69") createCartCreate69
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_dynamic_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getDynamicArray") getDynamicArray
 
 > TODO: Add a method description
 
 
 ```javascript
-function createCartCreate69(body, callback)
+function getDynamicArray(callback)
 ```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 
 #### Example Usage
 
 ```javascript
 
-    var body = new CartCreateRequestMsg({"key":"value"});
 
-    controller.createCartCreate69(body, function(error, response, context) {
+    controller.getDynamicArray(function(error, response, context) {
 
     
     });
@@ -1081,63 +462,43 @@ function createCartCreate69(body, callback)
 
 
 
-### <a name="create_cart_add68"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd68") createCartAdd68
+### <a name="get3339_datetime"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get3339Datetime") get3339Datetime
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```javascript
-function createCartAdd68(body, callback)
+function get3339Datetime(callback)
 ```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
-
 #### Example Usage
 
 ```javascript
 
-    var body = new CartAddRequestMsg({"key":"value"});
 
-    controller.createCartAdd68(body, function(error, response, context) {
+    controller.get3339Datetime(function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_cart_get67"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet67") createCartGet67
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get3339_datetime_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get3339DatetimeArray") get3339DatetimeArray
 
 > TODO: Add a method description
 
 
 ```javascript
-function createCartGet67(body, callback)
+function get3339DatetimeArray(callback)
 ```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
-
 #### Example Usage
 
 ```javascript
 
-    var body = new CartGetRequestMsg({"key":"value"});
 
-    controller.createCartGet67(body, function(error, response, context) {
+    controller.get3339DatetimeArray(function(error, response, context) {
 
     
     });
@@ -1145,63 +506,43 @@ function createCartGet67(body, callback)
 
 
 
-### <a name="create_similarity_lookup66"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup66") createSimilarityLookup66
+### <a name="get_boolean"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getBoolean") getBoolean
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```javascript
-function createSimilarityLookup66(body, callback)
+function getBoolean(callback)
 ```
-#### Parameters
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
 #### Example Usage
 
 ```javascript
 
-    var body = new SimilarityLookupRequestMsg({"key":"value"});
 
-    controller.createSimilarityLookup66(body, function(error, response, context) {
+    controller.getBoolean(function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_browse_node_lookup65"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup65") createBrowseNodeLookup65
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_boolean_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getBooleanArray") getBooleanArray
 
 > TODO: Add a method description
 
 
 ```javascript
-function createBrowseNodeLookup65(body, callback)
+function getBooleanArray(callback)
 ```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 
 #### Example Usage
 
 ```javascript
 
-    var body = new BrowseNodeLookupRequestMsg({"key":"value"});
 
-    controller.createBrowseNodeLookup65(body, function(error, response, context) {
+    controller.getBooleanArray(function(error, response, context) {
 
     
     });
@@ -1209,63 +550,43 @@ function createBrowseNodeLookup65(body, callback)
 
 
 
-### <a name="create_item_lookup64"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup64") createItemLookup64
+### <a name="get_headers"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getHeaders") getHeaders
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```javascript
-function createItemLookup64(body, callback)
+function getHeaders(callback)
 ```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
-
 #### Example Usage
 
 ```javascript
 
-    var body = new ItemLookupRequestMsg({"key":"value"});
 
-    controller.createItemLookup64(body, function(error, response, context) {
+    controller.getHeaders(function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_item_search63"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch63") createItemSearch63
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get1123_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get1123DateTime") get1123DateTime
 
 > TODO: Add a method description
 
 
 ```javascript
-function createItemSearch63(body, callback)
+function get1123DateTime(callback)
 ```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
-
 #### Example Usage
 
 ```javascript
 
-    var body = new ItemSearchRequestMsg({"key":"value"});
 
-    controller.createItemSearch63(body, function(error, response, context) {
+    controller.get1123DateTime(function(error, response, context) {
 
     
     });
@@ -1273,63 +594,43 @@ function createItemSearch63(body, callback)
 
 
 
-### <a name="create_cart_clear62"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear62") createCartClear62
+### <a name="get_unix_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getUnixDateTime") getUnixDateTime
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```javascript
-function createCartClear62(body, callback)
+function getUnixDateTime(callback)
 ```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
-
 #### Example Usage
 
 ```javascript
 
-    var body = new CartClearRequestMsg({"key":"value"});
 
-    controller.createCartClear62(body, function(error, response, context) {
+    controller.getUnixDateTime(function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_cart_modify61"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify61") createCartModify61
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get1123_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get1123DateTimeArray") get1123DateTimeArray
 
 > TODO: Add a method description
 
 
 ```javascript
-function createCartModify61(body, callback)
+function get1123DateTimeArray(callback)
 ```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 
 #### Example Usage
 
 ```javascript
 
-    var body = new CartModifyRequestMsg({"key":"value"});
 
-    controller.createCartModify61(body, function(error, response, context) {
+    controller.get1123DateTimeArray(function(error, response, context) {
 
     
     });
@@ -1337,53 +638,53 @@ function createCartModify61(body, callback)
 
 
 
-### <a name="create_cart_create60"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate60") createCartCreate60
+### <a name="get_unix_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getUnixDateTimeArray") getUnixDateTimeArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```javascript
-function createCartCreate60(body, callback)
+function getUnixDateTimeArray(callback)
 ```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
-
 #### Example Usage
 
 ```javascript
 
-    var body = new CartCreateRequestMsg({"key":"value"});
 
-    controller.createCartCreate60(body, function(error, response, context) {
+    controller.getUnixDateTimeArray(function(error, response, context) {
 
     
     });
 ```
+
 
 
+[Back to List of Controllers](#list_of_controllers)
 
-### <a name="create_cart_add59"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd59") createCartAdd59
+## <a name="body_params_controller"></a>![Class: ](https://apidocs.io/img/class.png ".BodyParamsController") BodyParamsController
 
-> *Tags:*  ``` Skips Authentication ``` 
+### Get singleton instance
 
+The singleton instance of the ``` BodyParamsController ``` class can be accessed from the API Client.
+
+```javascript
+var controller = lib.BodyParamsController;
+```
+
+### <a name="send_date_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendDateArray") sendDateArray
+
 > TODO: Add a method description
 
 
 ```javascript
-function createCartAdd59(body, callback)
+function sendDateArray(dates, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| dates |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -1391,31 +692,29 @@ function createCartAdd59(body, callback)
 
 ```javascript
 
-    var body = new CartAddRequestMsg({"key":"value"});
+    var dates = ["1994-02-13", "1994-02-13"];
 
-    controller.createCartAdd59(body, function(error, response, context) {
+    controller.sendDateArray(dates, function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_cart_get58"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet58") createCartGet58
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_date"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendDate") sendDate
 
 > TODO: Add a method description
 
 
 ```javascript
-function createCartGet58(body, callback)
+function sendDate(date, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| date |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -1423,9 +722,9 @@ function createCartGet58(body, callback)
 
 ```javascript
 
-    var body = new CartGetRequestMsg({"key":"value"});
+    var date = "1994-02-13";
 
-    controller.createCartGet58(body, function(error, response, context) {
+    controller.sendDate(date, function(error, response, context) {
 
     
     });
@@ -1433,21 +732,19 @@ function createCartGet58(body, callback)
 
 
 
-### <a name="create_similarity_lookup57"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup57") createSimilarityLookup57
+### <a name="send_unix_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendUnixDateTime") sendUnixDateTime
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```javascript
-function createSimilarityLookup57(body, callback)
+function sendUnixDateTime(datetime, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -1455,31 +752,29 @@ function createSimilarityLookup57(body, callback)
 
 ```javascript
 
-    var body = new SimilarityLookupRequestMsg({"key":"value"});
+    var datetime = 1484719381;
 
-    controller.createSimilarityLookup57(body, function(error, response, context) {
+    controller.sendUnixDateTime(datetime, function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_browse_node_lookup56"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup56") createBrowseNodeLookup56
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_rfc1123_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendRfc1123DateTime") sendRfc1123DateTime
 
 > TODO: Add a method description
 
 
 ```javascript
-function createBrowseNodeLookup56(body, callback)
+function sendRfc1123DateTime(datetime, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -1487,9 +782,9 @@ function createBrowseNodeLookup56(body, callback)
 
 ```javascript
 
-    var body = new BrowseNodeLookupRequestMsg({"key":"value"});
+    var datetime = "Sun, 06 Nov 1994 08:49:37 GMT";
 
-    controller.createBrowseNodeLookup56(body, function(error, response, context) {
+    controller.sendRfc1123DateTime(datetime, function(error, response, context) {
 
     
     });
@@ -1497,21 +792,19 @@ function createBrowseNodeLookup56(body, callback)
 
 
 
-### <a name="create_item_lookup55"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup55") createItemLookup55
+### <a name="send_rfc3339_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendRfc3339DateTime") sendRfc3339DateTime
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```javascript
-function createItemLookup55(body, callback)
+function sendRfc3339DateTime(datetime, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -1519,31 +812,29 @@ function createItemLookup55(body, callback)
 
 ```javascript
 
-    var body = new ItemLookupRequestMsg({"key":"value"});
+    var datetime = "1994-02-13T14:01:54.9571247Z";
 
-    controller.createItemLookup55(body, function(error, response, context) {
+    controller.sendRfc3339DateTime(datetime, function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_item_search54"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch54") createItemSearch54
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_unix_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendUnixDateTimeArray") sendUnixDateTimeArray
 
 > TODO: Add a method description
 
 
 ```javascript
-function createItemSearch54(body, callback)
+function sendUnixDateTimeArray(datetimes, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -1551,9 +842,9 @@ function createItemSearch54(body, callback)
 
 ```javascript
 
-    var body = new ItemSearchRequestMsg({"key":"value"});
+    var datetimes = [1484719381,1484719381];
 
-    controller.createItemSearch54(body, function(error, response, context) {
+    controller.sendUnixDateTimeArray(datetimes, function(error, response, context) {
 
     
     });
@@ -1561,21 +852,19 @@ function createItemSearch54(body, callback)
 
 
 
-### <a name="create_cart_clear53"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear53") createCartClear53
+### <a name="send_rfc1123_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendRfc1123DateTimeArray") sendRfc1123DateTimeArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```javascript
-function createCartClear53(body, callback)
+function sendRfc1123DateTimeArray(datetimes, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -1583,31 +872,29 @@ function createCartClear53(body, callback)
 
 ```javascript
 
-    var body = new CartClearRequestMsg({"key":"value"});
+    var datetimes = ["Sun, 06 Nov 1994 08:49:37 GMT","Sun, 06 Nov 1994 08:49:37 GMT"];
 
-    controller.createCartClear53(body, function(error, response, context) {
+    controller.sendRfc1123DateTimeArray(datetimes, function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_cart_modify52"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify52") createCartModify52
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_rfc3339_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendRfc3339DateTimeArray") sendRfc3339DateTimeArray
 
 > TODO: Add a method description
 
 
 ```javascript
-function createCartModify52(body, callback)
+function sendRfc3339DateTimeArray(datetimes, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -1615,9 +902,9 @@ function createCartModify52(body, callback)
 
 ```javascript
 
-    var body = new CartModifyRequestMsg({"key":"value"});
+    var datetimes = ["1994-02-13T14:01:54.9571247Z","1994-02-13T14:01:54.9571247Z"];
 
-    controller.createCartModify52(body, function(error, response, context) {
+    controller.sendRfc3339DateTimeArray(datetimes, function(error, response, context) {
 
     
     });
@@ -1625,21 +912,19 @@ function createCartModify52(body, callback)
 
 
 
-### <a name="create_cart_create51"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate51") createCartCreate51
+### <a name="send_string_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendStringArray") sendStringArray
 
-> *Tags:*  ``` Skips Authentication ``` 
+> sends a string body param
 
-> TODO: Add a method description
-
 
 ```javascript
-function createCartCreate51(body, callback)
+function sendStringArray(sarray, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| sarray |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -1647,9 +932,9 @@ function createCartCreate51(body, callback)
 
 ```javascript
 
-    var body = new CartCreateRequestMsg({"key":"value"});
+    var sarray = ["abc", "def"];
 
-    controller.createCartCreate51(body, function(error, response, context) {
+    controller.sendStringArray(sarray, function(error, response, context) {
 
     
     });
@@ -1657,21 +942,19 @@ function createCartCreate51(body, callback)
 
 
 
-### <a name="create_cart_add50"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd50") createCartAdd50
+### <a name="send_integer_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendIntegerArray") sendIntegerArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```javascript
-function createCartAdd50(body, callback)
+function sendIntegerArray(integers, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| integers |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -1679,31 +962,29 @@ function createCartAdd50(body, callback)
 
 ```javascript
 
-    var body = new CartAddRequestMsg({"key":"value"});
+    var integers = [1,2,3,4,5];
 
-    controller.createCartAdd50(body, function(error, response, context) {
+    controller.sendIntegerArray(integers, function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_cart_get49"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet49") createCartGet49
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_model"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendModel") sendModel
 
 > TODO: Add a method description
 
 
 ```javascript
-function createCartGet49(body, callback)
+function sendModel(model, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| model |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -1711,9 +992,9 @@ function createCartGet49(body, callback)
 
 ```javascript
 
-    var body = new CartGetRequestMsg({"key":"value"});
+    var model = new Employee({"name":"Shahid Khaliq","age":5147483645,"address":"H # 531, S # 20","uid":"123321","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z","salary":20000,"department":"Software Development","joiningDay":"Saturday","workingDays":["Monday","Tuesday","Friday"],"boss":{"personType":"Boss","name":"Zeeshan Ejaz","age":5147483645,"address":"H # 531, S # 20","uid":"123321","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z","salary":20000,"department":"Software Development","joiningDay":"Saturday","workingDays":["Monday","Tuesday","Friday"],"dependents":[{"name":"Future Wife","age":5147483649,"address":"H # 531, S # 20","uid":"123412","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z"},{"name":"Future Kid","age":5147483648,"address":"H # 531, S # 20","uid":"312341","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z"}],"hiredAt":"Sun, 06 Nov 1994 08:49:37 GMT","promotedAt":1484719381},"dependents":[{"name":"Future Wife","age":5147483649,"address":"H # 531, S # 20","uid":"123412","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z"},{"name":"Future Kid","age":5147483648,"address":"H # 531, S # 20","uid":"312341","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z"}],"hiredAt":"Sun, 06 Nov 1994 08:49:37 GMT"});
 
-    controller.createCartGet49(body, function(error, response, context) {
+    controller.sendModel(model, function(error, response, context) {
 
     
     });
@@ -1721,21 +1002,19 @@ function createCartGet49(body, callback)
 
 
 
-### <a name="create_similarity_lookup48"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup48") createSimilarityLookup48
+### <a name="send_model_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendModelArray") sendModelArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```javascript
-function createSimilarityLookup48(body, callback)
+function sendModelArray(models, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| models |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -1743,9 +1022,11 @@ function createSimilarityLookup48(body, callback)
 
 ```javascript
 
-    var body = new SimilarityLookupRequestMsg({"key":"value"});
+    var models = [{"name":"Shahid Khaliq","age":5147483645,"address":"H # 531, S # 20","uid":"123321","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z","salary":20000,"department":"Software Development","joiningDay":"Saturday","workingDays":["Monday","Tuesday","Friday"],"boss":{"personType":"Boss","name":"Zeeshan Ejaz","age":5147483645,"address":"H # 531, S # 20","uid":"123321","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z","salary":20000,"department":"Software Development","joiningDay":"Saturday","workingDays":["Monday","Tuesday","Friday"],"dependents":[{"name":"Future Wife","age":5147483649,"address":"H # 531, S # 20","uid":"123412","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z"},{"name":"Future Kid","age":5147483648,"address":"H # 531, S # 20","uid":"312341","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z"}],"hiredAt":"Sun, 06 Nov 1994 08:49:37 GMT","promotedAt":1484719381},"dependents":[{"name":"Future Wife","age":5147483649,"address":"H # 531, S # 20","uid":"123412","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z"},{"name":"Future Kid","age":5147483648,"address":"H # 531, S # 20","uid":"312341","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z"}],"hiredAt":"Sun, 06 Nov 1994 08:49:37 GMT"},{"name":"Shahid Khaliq","age":5147483645,"address":"H # 531, S # 20","uid":"123321","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z","salary":20000,"department":"Software Development","joiningDay":"Saturday","workingDays":["Monday","Tuesday","Friday"],"boss":{"personType":"Boss","name":"Zeeshan Ejaz","age":5147483645,"address":"H # 531, S # 20","uid":"123321","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z","salary":20000,"department":"Software Development","joiningDay":"Saturday","workingDays":["Monday","Tuesday","Friday"],"dependents":[{"name":"Future Wife","age":5147483649,"address":"H # 531, S # 20","uid":"123412","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z"},{"name":"Future Kid","age":5147483648,"address":"H # 531, S # 20","uid":"312341","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z"}],"hiredAt":"Sun, 06 Nov 1994 08:49:37 GMT","promotedAt":1484719381},"dependents":[{"name":"Future Wife","age":5147483649,"address":"H # 531, S # 20","uid":"123412","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z"},{"name":"Future Kid","age":5147483648,"address":"H # 531, S # 20","uid":"312341","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z"}],"hiredAt":"Sun, 06 Nov 1994 08:49:37 GMT"}].map(function(elem) {
+        return new Employee(elem);
+    });
 
-    controller.createSimilarityLookup48(body, function(error, response, context) {
+    controller.sendModelArray(models, function(error, response, context) {
 
     
     });
@@ -1753,21 +1034,19 @@ function createSimilarityLookup48(body, callback)
 
 
 
-### <a name="create_browse_node_lookup47"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup47") createBrowseNodeLookup47
+### <a name="send_dynamic"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendDynamic") sendDynamic
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```javascript
-function createBrowseNodeLookup47(body, callback)
+function sendDynamic(dynamic, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| dynamic |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -1775,31 +1054,29 @@ function createBrowseNodeLookup47(body, callback)
 
 ```javascript
 
-    var body = new BrowseNodeLookupRequestMsg({"key":"value"});
+    var dynamic = {"uid": "1123213", "name": "Shahid"};
 
-    controller.createBrowseNodeLookup47(body, function(error, response, context) {
+    controller.sendDynamic(dynamic, function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_item_lookup46"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup46") createItemLookup46
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_string"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendString") sendString
 
 > TODO: Add a method description
 
 
 ```javascript
-function createItemLookup46(body, callback)
+function sendString(value, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| value |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -1807,9 +1084,9 @@ function createItemLookup46(body, callback)
 
 ```javascript
 
-    var body = new ItemLookupRequestMsg({"key":"value"});
+    var value = 'TestString';
 
-    controller.createItemLookup46(body, function(error, response, context) {
+    controller.sendString(value, function(error, response, context) {
 
     
     });
@@ -1817,21 +1094,19 @@ function createItemLookup46(body, callback)
 
 
 
-### <a name="create_item_search45"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch45") createItemSearch45
+### <a name="send_string_enum_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendStringEnumArray") sendStringEnumArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```javascript
-function createItemSearch45(body, callback)
+function sendStringEnumArray(days, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| days |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -1839,31 +1114,29 @@ function createItemSearch45(body, callback)
 
 ```javascript
 
-    var body = new ItemSearchRequestMsg({"key":"value"});
+    var days = ["Tuesday", "Saturday", "Wednesday", "Monday", "Sunday"];
 
-    controller.createItemSearch45(body, function(error, response, context) {
+    controller.sendStringEnumArray(days, function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_cart_clear44"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear44") createCartClear44
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_integer_enum_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendIntegerEnumArray") sendIntegerEnumArray
 
 > TODO: Add a method description
 
 
 ```javascript
-function createCartClear44(body, callback)
+function sendIntegerEnumArray(suites, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| suites |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -1871,31 +1144,41 @@ function createCartClear44(body, callback)
 
 ```javascript
 
-    var body = new CartClearRequestMsg({"key":"value"});
+    var suites = [1, 3, 4, 2, 3];
 
-    controller.createCartClear44(body, function(error, response, context) {
+    controller.sendIntegerEnumArray(suites, function(error, response, context) {
 
     
     });
 ```
+
+
 
+[Back to List of Controllers](#list_of_controllers)
 
+## <a name="form_params_controller"></a>![Class: ](https://apidocs.io/img/class.png ".FormParamsController") FormParamsController
 
-### <a name="create_cart_modify43"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify43") createCartModify43
+### Get singleton instance
 
-> *Tags:*  ``` Skips Authentication ``` 
+The singleton instance of the ``` FormParamsController ``` class can be accessed from the API Client.
 
+```javascript
+var controller = lib.FormParamsController;
+```
+
+### <a name="send_date_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendDateArray") sendDateArray
+
 > TODO: Add a method description
 
 
 ```javascript
-function createCartModify43(body, callback)
+function sendDateArray(dates, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| dates |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -1903,9 +1186,9 @@ function createCartModify43(body, callback)
 
 ```javascript
 
-    var body = new CartModifyRequestMsg({"key":"value"});
+    var dates = ["1994-02-13","1994-02-13"];
 
-    controller.createCartModify43(body, function(error, response, context) {
+    controller.sendDateArray(dates, function(error, response, context) {
 
     
     });
@@ -1913,21 +1196,19 @@ function createCartModify43(body, callback)
 
 
 
-### <a name="create_cart_create42"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate42") createCartCreate42
+### <a name="send_date"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendDate") sendDate
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```javascript
-function createCartCreate42(body, callback)
+function sendDate(date, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| date |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -1935,31 +1216,29 @@ function createCartCreate42(body, callback)
 
 ```javascript
 
-    var body = new CartCreateRequestMsg({"key":"value"});
+    var date = "1994-02-13";
 
-    controller.createCartCreate42(body, function(error, response, context) {
+    controller.sendDate(date, function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_cart_add41"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd41") createCartAdd41
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_unix_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendUnixDateTime") sendUnixDateTime
 
 > TODO: Add a method description
 
 
 ```javascript
-function createCartAdd41(body, callback)
+function sendUnixDateTime(datetime, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -1967,9 +1246,9 @@ function createCartAdd41(body, callback)
 
 ```javascript
 
-    var body = new CartAddRequestMsg({"key":"value"});
+    var datetime = 1484719381;
 
-    controller.createCartAdd41(body, function(error, response, context) {
+    controller.sendUnixDateTime(datetime, function(error, response, context) {
 
     
     });
@@ -1977,21 +1256,19 @@ function createCartAdd41(body, callback)
 
 
 
-### <a name="create_cart_get40"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet40") createCartGet40
+### <a name="send_rfc1123_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendRfc1123DateTime") sendRfc1123DateTime
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```javascript
-function createCartGet40(body, callback)
+function sendRfc1123DateTime(datetime, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -1999,31 +1276,29 @@ function createCartGet40(body, callback)
 
 ```javascript
 
-    var body = new CartGetRequestMsg({"key":"value"});
+    var datetime = "Sun, 06 Nov 1994 08:49:37 GMT";
 
-    controller.createCartGet40(body, function(error, response, context) {
+    controller.sendRfc1123DateTime(datetime, function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_similarity_lookup39"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup39") createSimilarityLookup39
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_rfc3339_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendRfc3339DateTime") sendRfc3339DateTime
 
 > TODO: Add a method description
 
 
 ```javascript
-function createSimilarityLookup39(body, callback)
+function sendRfc3339DateTime(datetime, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -2031,9 +1306,9 @@ function createSimilarityLookup39(body, callback)
 
 ```javascript
 
-    var body = new SimilarityLookupRequestMsg({"key":"value"});
+    var datetime = "1994-02-13T14:01:54.9571247Z";
 
-    controller.createSimilarityLookup39(body, function(error, response, context) {
+    controller.sendRfc3339DateTime(datetime, function(error, response, context) {
 
     
     });
@@ -2041,21 +1316,19 @@ function createSimilarityLookup39(body, callback)
 
 
 
-### <a name="create_browse_node_lookup38"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup38") createBrowseNodeLookup38
+### <a name="send_unix_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendUnixDateTimeArray") sendUnixDateTimeArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```javascript
-function createBrowseNodeLookup38(body, callback)
+function sendUnixDateTimeArray(datetimes, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -2063,31 +1336,29 @@ function createBrowseNodeLookup38(body, callback)
 
 ```javascript
 
-    var body = new BrowseNodeLookupRequestMsg({"key":"value"});
+    var datetimes = [1484719381,1484719381];
 
-    controller.createBrowseNodeLookup38(body, function(error, response, context) {
+    controller.sendUnixDateTimeArray(datetimes, function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_item_lookup37"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup37") createItemLookup37
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_rfc1123_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendRfc1123DateTimeArray") sendRfc1123DateTimeArray
 
 > TODO: Add a method description
 
 
 ```javascript
-function createItemLookup37(body, callback)
+function sendRfc1123DateTimeArray(datetimes, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -2095,9 +1366,9 @@ function createItemLookup37(body, callback)
 
 ```javascript
 
-    var body = new ItemLookupRequestMsg({"key":"value"});
+    var datetimes = ["Sun, 06 Nov 1994 08:49:37 GMT","Sun, 06 Nov 1994 08:49:37 GMT"];
 
-    controller.createItemLookup37(body, function(error, response, context) {
+    controller.sendRfc1123DateTimeArray(datetimes, function(error, response, context) {
 
     
     });
@@ -2105,21 +1376,19 @@ function createItemLookup37(body, callback)
 
 
 
-### <a name="create_item_search36"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch36") createItemSearch36
+### <a name="send_long"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendLong") sendLong
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```javascript
-function createItemSearch36(body, callback)
+function sendLong(value, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| value |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -2127,31 +1396,29 @@ function createItemSearch36(body, callback)
 
 ```javascript
 
-    var body = new ItemSearchRequestMsg({"key":"value"});
+    var value = 5147483647;
 
-    controller.createItemSearch36(body, function(error, response, context) {
+    controller.sendLong(value, function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_cart_clear35"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear35") createCartClear35
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_integer_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendIntegerArray") sendIntegerArray
 
 > TODO: Add a method description
 
 
 ```javascript
-function createCartClear35(body, callback)
+function sendIntegerArray(integers, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| integers |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -2159,9 +1426,9 @@ function createCartClear35(body, callback)
 
 ```javascript
 
-    var body = new CartClearRequestMsg({"key":"value"});
+    var integers = [1,2,3,4,5];
 
-    controller.createCartClear35(body, function(error, response, context) {
+    controller.sendIntegerArray(integers, function(error, response, context) {
 
     
     });
@@ -2169,21 +1436,19 @@ function createCartClear35(body, callback)
 
 
 
-### <a name="create_cart_modify34"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify34") createCartModify34
+### <a name="send_string_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendStringArray") sendStringArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```javascript
-function createCartModify34(body, callback)
+function sendStringArray(strings, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| strings |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -2191,31 +1456,29 @@ function createCartModify34(body, callback)
 
 ```javascript
 
-    var body = new CartModifyRequestMsg({"key":"value"});
+    var strings = ["abc", "def"];
 
-    controller.createCartModify34(body, function(error, response, context) {
+    controller.sendStringArray(strings, function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_cart_create33"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate33") createCartCreate33
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_model"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendModel") sendModel
 
 > TODO: Add a method description
 
 
 ```javascript
-function createCartCreate33(body, callback)
+function sendModel(model, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| model |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -2223,9 +1486,9 @@ function createCartCreate33(body, callback)
 
 ```javascript
 
-    var body = new CartCreateRequestMsg({"key":"value"});
+    var model = new Employee({"name":"Shahid Khaliq","age":5147483645,"address":"H # 531, S # 20","uid":"123321","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z","salary":20000,"department":"Software Development","joiningDay":"Saturday","workingDays":["Monday","Tuesday","Friday"],"boss":{"personType":"Boss","name":"Zeeshan Ejaz","age":5147483645,"address":"H # 531, S # 20","uid":"123321","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z","salary":20000,"department":"Software Development","joiningDay":"Saturday","workingDays":["Monday","Tuesday","Friday"],"dependents":[{"name":"Future Wife","age":5147483649,"address":"H # 531, S # 20","uid":"123412","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z"},{"name":"Future Kid","age":5147483648,"address":"H # 531, S # 20","uid":"312341","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z"}],"hiredAt":"Sun, 06 Nov 1994 08:49:37 GMT","promotedAt":1484719381},"dependents":[{"name":"Future Wife","age":5147483649,"address":"H # 531, S # 20","uid":"123412","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z"},{"name":"Future Kid","age":5147483648,"address":"H # 531, S # 20","uid":"312341","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z"}],"hiredAt":"Sun, 06 Nov 1994 08:49:37 GMT"});
 
-    controller.createCartCreate33(body, function(error, response, context) {
+    controller.sendModel(model, function(error, response, context) {
 
     
     });
@@ -2233,21 +1496,19 @@ function createCartCreate33(body, callback)
 
 
 
-### <a name="create_cart_add32"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd32") createCartAdd32
+### <a name="send_model_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendModelArray") sendModelArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```javascript
-function createCartAdd32(body, callback)
+function sendModelArray(models, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| models |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -2255,9 +1516,11 @@ function createCartAdd32(body, callback)
 
 ```javascript
 
-    var body = new CartAddRequestMsg({"key":"value"});
+    var models = [{"name":"Shahid Khaliq","age":5147483645,"address":"H # 531, S # 20","uid":"123321","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z","salary":20000,"department":"Software Development","joiningDay":"Saturday","workingDays":["Monday","Tuesday","Friday"],"boss":{"personType":"Boss","name":"Zeeshan Ejaz","age":5147483645,"address":"H # 531, S # 20","uid":"123321","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z","salary":20000,"department":"Software Development","joiningDay":"Saturday","workingDays":["Monday","Tuesday","Friday"],"dependents":[{"name":"Future Wife","age":5147483649,"address":"H # 531, S # 20","uid":"123412","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z"},{"name":"Future Kid","age":5147483648,"address":"H # 531, S # 20","uid":"312341","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z"}],"hiredAt":"Sun, 06 Nov 1994 08:49:37 GMT","promotedAt":1484719381},"dependents":[{"name":"Future Wife","age":5147483649,"address":"H # 531, S # 20","uid":"123412","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z"},{"name":"Future Kid","age":5147483648,"address":"H # 531, S # 20","uid":"312341","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z"}],"hiredAt":"Sun, 06 Nov 1994 08:49:37 GMT"},{"name":"Shahid Khaliq","age":5147483645,"address":"H # 531, S # 20","uid":"123321","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z","salary":20000,"department":"Software Development","joiningDay":"Saturday","workingDays":["Monday","Tuesday","Friday"],"boss":{"personType":"Boss","name":"Zeeshan Ejaz","age":5147483645,"address":"H # 531, S # 20","uid":"123321","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z","salary":20000,"department":"Software Development","joiningDay":"Saturday","workingDays":["Monday","Tuesday","Friday"],"dependents":[{"name":"Future Wife","age":5147483649,"address":"H # 531, S # 20","uid":"123412","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z"},{"name":"Future Kid","age":5147483648,"address":"H # 531, S # 20","uid":"312341","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z"}],"hiredAt":"Sun, 06 Nov 1994 08:49:37 GMT","promotedAt":1484719381},"dependents":[{"name":"Future Wife","age":5147483649,"address":"H # 531, S # 20","uid":"123412","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z"},{"name":"Future Kid","age":5147483648,"address":"H # 531, S # 20","uid":"312341","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z"}],"hiredAt":"Sun, 06 Nov 1994 08:49:37 GMT"}].map(function(elem) {
+        return new Employee(elem);
+    });
 
-    controller.createCartAdd32(body, function(error, response, context) {
+    controller.sendModelArray(models, function(error, response, context) {
 
     
     });
@@ -2265,21 +1528,19 @@ function createCartAdd32(body, callback)
 
 
 
-### <a name="create_cart_get31"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet31") createCartGet31
+### <a name="send_file"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendFile") sendFile
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```javascript
-function createCartGet31(body, callback)
+function sendFile(file, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| file |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -2287,31 +1548,30 @@ function createCartGet31(body, callback)
 
 ```javascript
 
-    var body = new CartGetRequestMsg({"key":"value"});
+    TestHelper.getFilePath('http://localhost:3000/response/image', function(data) {
+        var file = data;
 
-    controller.createCartGet31(body, function(error, response, context) {
+        controller.sendFile(file, function(error, response, context) {
 
-    
+        });
     });
 ```
 
 
 
-### <a name="create_similarity_lookup30"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup30") createSimilarityLookup30
+### <a name="send_string"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendString") sendString
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```javascript
-function createSimilarityLookup30(body, callback)
+function sendString(value, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| value |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -2319,31 +1579,29 @@ function createSimilarityLookup30(body, callback)
 
 ```javascript
 
-    var body = new SimilarityLookupRequestMsg({"key":"value"});
+    var value = 'TestString';
 
-    controller.createSimilarityLookup30(body, function(error, response, context) {
+    controller.sendString(value, function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_browse_node_lookup29"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup29") createBrowseNodeLookup29
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_rfc3339_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendRfc3339DateTimeArray") sendRfc3339DateTimeArray
 
 > TODO: Add a method description
 
 
 ```javascript
-function createBrowseNodeLookup29(body, callback)
+function sendRfc3339DateTimeArray(datetimes, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -2351,9 +1609,9 @@ function createBrowseNodeLookup29(body, callback)
 
 ```javascript
 
-    var body = new BrowseNodeLookupRequestMsg({"key":"value"});
+    var datetimes = ["1994-02-13T14:01:54.9571247Z","1994-02-13T14:01:54.9571247Z"];
 
-    controller.createBrowseNodeLookup29(body, function(error, response, context) {
+    controller.sendRfc3339DateTimeArray(datetimes, function(error, response, context) {
 
     
     });
@@ -2361,21 +1619,22 @@ function createBrowseNodeLookup29(body, callback)
 
 
 
-### <a name="create_item_lookup28"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup28") createItemLookup28
+### <a name="send_mixed_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendMixedArray") sendMixedArray
 
-> *Tags:*  ``` Skips Authentication ``` 
+> Send a variety for form params. Returns file count and body params
 
-> TODO: Add a method description
-
 
 ```javascript
-function createItemLookup28(body, callback)
+function sendMixedArray(input, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| file |  ``` Required ```  | TODO: Add a parameter description |
+| integers |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
+| models |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
+| strings |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -2383,31 +1642,36 @@ function createItemLookup28(body, callback)
 
 ```javascript
 
-    var body = new ItemLookupRequestMsg({"key":"value"});
+    TestHelper.getFilePath('http://localhost:3000/response/image', function(data) {
+        var input = [];
+        input['file'] = data;
+        input['integers'] = [1,2,3,4,5];
+        input['models'] = [{"name":"Shahid Khaliq","age":5147483645,"address":"H # 531, S # 20","uid":"123321","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z","salary":20000,"department":"Software Development","joiningDay":"Saturday","workingDays":["Monday","Tuesday","Friday"],"boss":{"personType":"Boss","name":"Zeeshan Ejaz","age":5147483645,"address":"H # 531, S # 20","uid":"123321","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z","salary":20000,"department":"Software Development","joiningDay":"Saturday","workingDays":["Monday","Tuesday","Friday"],"dependents":[{"name":"Future Wife","age":5147483649,"address":"H # 531, S # 20","uid":"123412","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z"},{"name":"Future Kid","age":5147483648,"address":"H # 531, S # 20","uid":"312341","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z"}],"hiredAt":"Sun, 06 Nov 1994 08:49:37 GMT","promotedAt":1484719381},"dependents":[{"name":"Future Wife","age":5147483649,"address":"H # 531, S # 20","uid":"123412","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z"},{"name":"Future Kid","age":5147483648,"address":"H # 531, S # 20","uid":"312341","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z"}],"hiredAt":"Sun, 06 Nov 1994 08:49:37 GMT"},{"name":"Shahid Khaliq","age":5147483645,"address":"H # 531, S # 20","uid":"123321","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z","salary":20000,"department":"Software Development","joiningDay":"Saturday","workingDays":["Monday","Tuesday","Friday"],"boss":{"personType":"Boss","name":"Zeeshan Ejaz","age":5147483645,"address":"H # 531, S # 20","uid":"123321","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z","salary":20000,"department":"Software Development","joiningDay":"Saturday","workingDays":["Monday","Tuesday","Friday"],"dependents":[{"name":"Future Wife","age":5147483649,"address":"H # 531, S # 20","uid":"123412","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z"},{"name":"Future Kid","age":5147483648,"address":"H # 531, S # 20","uid":"312341","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z"}],"hiredAt":"Sun, 06 Nov 1994 08:49:37 GMT","promotedAt":1484719381},"dependents":[{"name":"Future Wife","age":5147483649,"address":"H # 531, S # 20","uid":"123412","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z"},{"name":"Future Kid","age":5147483648,"address":"H # 531, S # 20","uid":"312341","birthday":"1994-02-13","birthtime":"1994-02-13T14:01:54.9571247Z"}],"hiredAt":"Sun, 06 Nov 1994 08:49:37 GMT"}].map(function(elem) {
+        return new Employee(elem);
+    });
+        input['strings'] = ["abc", "def"];
 
-    controller.createItemLookup28(body, function(error, response, context) {
+        controller.sendMixedArray(input, function(error, response, context) {
 
-    
+        });
     });
 ```
 
 
 
-### <a name="create_item_search27"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch27") createItemSearch27
+### <a name="send_integer_enum_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendIntegerEnumArray") sendIntegerEnumArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```javascript
-function createItemSearch27(body, callback)
+function sendIntegerEnumArray(suites, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| suites |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -2415,31 +1679,29 @@ function createItemSearch27(body, callback)
 
 ```javascript
 
-    var body = new ItemSearchRequestMsg({"key":"value"});
+    var suites = [1, 3, 4, 2, 3];
 
-    controller.createItemSearch27(body, function(error, response, context) {
+    controller.sendIntegerEnumArray(suites, function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_cart_clear26"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear26") createCartClear26
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_string_enum_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendStringEnumArray") sendStringEnumArray
 
 > TODO: Add a method description
 
 
 ```javascript
-function createCartClear26(body, callback)
+function sendStringEnumArray(days, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| days |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -2447,31 +1709,41 @@ function createCartClear26(body, callback)
 
 ```javascript
 
-    var body = new CartClearRequestMsg({"key":"value"});
+    var days = ["Tuesday", "Saturday", "Wednesday", "Monday", "Sunday"];
 
-    controller.createCartClear26(body, function(error, response, context) {
+    controller.sendStringEnumArray(days, function(error, response, context) {
 
     
     });
 ```
+
+
 
+[Back to List of Controllers](#list_of_controllers)
 
+## <a name="query_param_controller"></a>![Class: ](https://apidocs.io/img/class.png ".QueryParamController") QueryParamController
 
-### <a name="create_cart_modify25"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify25") createCartModify25
+### Get singleton instance
+
+The singleton instance of the ``` QueryParamController ``` class can be accessed from the API Client.
+
+```javascript
+var controller = lib.QueryParamController;
+```
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="date_array"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.dateArray") dateArray
 
 > TODO: Add a method description
 
 
 ```javascript
-function createCartModify25(body, callback)
+function dateArray(dates, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| dates |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -2479,9 +1751,9 @@ function createCartModify25(body, callback)
 
 ```javascript
 
-    var body = new CartModifyRequestMsg({"key":"value"});
+    var dates = ["1994-02-13","1994-02-13"];
 
-    controller.createCartModify25(body, function(error, response, context) {
+    controller.dateArray(dates, function(error, response, context) {
 
     
     });
@@ -2489,21 +1761,19 @@ function createCartModify25(body, callback)
 
 
 
-### <a name="create_cart_create24"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate24") createCartCreate24
+### <a name="date"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.date") date
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```javascript
-function createCartCreate24(body, callback)
+function date(date, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| date |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -2511,31 +1781,29 @@ function createCartCreate24(body, callback)
 
 ```javascript
 
-    var body = new CartCreateRequestMsg({"key":"value"});
+    var date = "1994-02-13";
 
-    controller.createCartCreate24(body, function(error, response, context) {
+    controller.date(date, function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_cart_add23"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd23") createCartAdd23
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="unix_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.unixDateTimeArray") unixDateTimeArray
 
 > TODO: Add a method description
 
 
 ```javascript
-function createCartAdd23(body, callback)
+function unixDateTimeArray(datetimes, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -2543,9 +1811,9 @@ function createCartAdd23(body, callback)
 
 ```javascript
 
-    var body = new CartAddRequestMsg({"key":"value"});
+    var datetimes = [1484719381,1484719381];
 
-    controller.createCartAdd23(body, function(error, response, context) {
+    controller.unixDateTimeArray(datetimes, function(error, response, context) {
 
     
     });
@@ -2553,21 +1821,19 @@ function createCartAdd23(body, callback)
 
 
 
-### <a name="create_cart_get22"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet22") createCartGet22
+### <a name="unix_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.unixDateTime") unixDateTime
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```javascript
-function createCartGet22(body, callback)
+function unixDateTime(datetime, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -2575,31 +1841,29 @@ function createCartGet22(body, callback)
 
 ```javascript
 
-    var body = new CartGetRequestMsg({"key":"value"});
+    var datetime = 1484719381;
 
-    controller.createCartGet22(body, function(error, response, context) {
+    controller.unixDateTime(datetime, function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_similarity_lookup21"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup21") createSimilarityLookup21
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="rfc1123_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.rfc1123DateTime") rfc1123DateTime
 
 > TODO: Add a method description
 
 
 ```javascript
-function createSimilarityLookup21(body, callback)
+function rfc1123DateTime(datetime, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -2607,9 +1871,9 @@ function createSimilarityLookup21(body, callback)
 
 ```javascript
 
-    var body = new SimilarityLookupRequestMsg({"key":"value"});
+    var datetime = "Sun, 06 Nov 1994 08:49:37 GMT";
 
-    controller.createSimilarityLookup21(body, function(error, response, context) {
+    controller.rfc1123DateTime(datetime, function(error, response, context) {
 
     
     });
@@ -2617,21 +1881,19 @@ function createSimilarityLookup21(body, callback)
 
 
 
-### <a name="create_browse_node_lookup20"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup20") createBrowseNodeLookup20
+### <a name="rfc1123_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.rfc1123DateTimeArray") rfc1123DateTimeArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```javascript
-function createBrowseNodeLookup20(body, callback)
+function rfc1123DateTimeArray(datetimes, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -2639,31 +1901,29 @@ function createBrowseNodeLookup20(body, callback)
 
 ```javascript
 
-    var body = new BrowseNodeLookupRequestMsg({"key":"value"});
+    var datetimes = ["Sun, 06 Nov 1994 08:49:37 GMT","Sun, 06 Nov 1994 08:49:37 GMT"];
 
-    controller.createBrowseNodeLookup20(body, function(error, response, context) {
+    controller.rfc1123DateTimeArray(datetimes, function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_item_lookup19"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup19") createItemLookup19
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="rfc3339_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.rfc3339DateTimeArray") rfc3339DateTimeArray
 
 > TODO: Add a method description
 
 
 ```javascript
-function createItemLookup19(body, callback)
+function rfc3339DateTimeArray(datetimes, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -2671,9 +1931,9 @@ function createItemLookup19(body, callback)
 
 ```javascript
 
-    var body = new ItemLookupRequestMsg({"key":"value"});
+    var datetimes = ["1994-02-13T14:01:54.9571247Z","1994-02-13T14:01:54.9571247Z"];
 
-    controller.createItemLookup19(body, function(error, response, context) {
+    controller.rfc3339DateTimeArray(datetimes, function(error, response, context) {
 
     
     });
@@ -2681,21 +1941,19 @@ function createItemLookup19(body, callback)
 
 
 
-### <a name="create_item_search18"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch18") createItemSearch18
+### <a name="rfc3339_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.rfc3339DateTime") rfc3339DateTime
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```javascript
-function createItemSearch18(body, callback)
+function rfc3339DateTime(datetime, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -2703,41 +1961,31 @@ function createItemSearch18(body, callback)
 
 ```javascript
 
-    var body = new ItemSearchRequestMsg({"key":"value"});
+    var datetime = "1994-02-13T14:01:54.9571247Z";
 
-    controller.createItemSearch18(body, function(error, response, context) {
+    controller.rfc3339DateTime(datetime, function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_cart_clear17"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear17") createCartClear17
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="no_params"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.noParams") noParams
 
 > TODO: Add a method description
 
 
 ```javascript
-function createCartClear17(body, callback)
+function noParams(callback)
 ```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
-
 #### Example Usage
 
 ```javascript
 
-    var body = new CartClearRequestMsg({"key":"value"});
 
-    controller.createCartClear17(body, function(error, response, context) {
+    controller.noParams(function(error, response, context) {
 
     
     });
@@ -2745,21 +1993,19 @@ function createCartClear17(body, callback)
 
 
 
-### <a name="create_cart_modify16"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify16") createCartModify16
+### <a name="string_param"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.stringParam") stringParam
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```javascript
-function createCartModify16(body, callback)
+function stringParam(string, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| string |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -2767,31 +2013,29 @@ function createCartModify16(body, callback)
 
 ```javascript
 
-    var body = new CartModifyRequestMsg({"key":"value"});
+    var string = 'l;asd;asdwe[2304&&;\'.d??\\a\\\\\\;sd//';
 
-    controller.createCartModify16(body, function(error, response, context) {
+    controller.stringParam(string, function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_cart_create15"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate15") createCartCreate15
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="url_param"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.urlParam") urlParam
 
 > TODO: Add a method description
 
 
 ```javascript
-function createCartCreate15(body, callback)
+function urlParam(url, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| url |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -2799,9 +2043,9 @@ function createCartCreate15(body, callback)
 
 ```javascript
 
-    var body = new CartCreateRequestMsg({"key":"value"});
+    var url = 'https://www.shahidisawesome.com/and/also/a/narcissist?thisis=aparameter&another=one';
 
-    controller.createCartCreate15(body, function(error, response, context) {
+    controller.urlParam(url, function(error, response, context) {
 
     
     });
@@ -2809,21 +2053,19 @@ function createCartCreate15(body, callback)
 
 
 
-### <a name="create_cart_add14"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd14") createCartAdd14
+### <a name="number_array"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.numberArray") numberArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```javascript
-function createCartAdd14(body, callback)
+function numberArray(integers, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| integers |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -2831,31 +2073,29 @@ function createCartAdd14(body, callback)
 
 ```javascript
 
-    var body = new CartAddRequestMsg({"key":"value"});
+    var integers = [1,2,3,4,5];
 
-    controller.createCartAdd14(body, function(error, response, context) {
+    controller.numberArray(integers, function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_cart_get13"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet13") createCartGet13
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="string_array"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.stringArray") stringArray
 
 > TODO: Add a method description
 
 
 ```javascript
-function createCartGet13(body, callback)
+function stringArray(strings, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| strings |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -2863,9 +2103,9 @@ function createCartGet13(body, callback)
 
 ```javascript
 
-    var body = new CartGetRequestMsg({"key":"value"});
+    var strings = ["abc", "def"];
 
-    controller.createCartGet13(body, function(error, response, context) {
+    controller.stringArray(strings, function(error, response, context) {
 
     
     });
@@ -2873,31 +2113,37 @@ function createCartGet13(body, callback)
 
 
 
-### <a name="create_similarity_lookup12"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup12") createSimilarityLookup12
+### <a name="simple_query"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.simpleQuery") simpleQuery
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```javascript
-function createSimilarityLookup12(body, callback)
+function simpleQuery(mboolean, number, string, queryParams, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| mboolean |  ``` Required ```  | TODO: Add a parameter description |
+| number |  ``` Required ```  | TODO: Add a parameter description |
+| string |  ``` Required ```  | TODO: Add a parameter description |
+| queryParameters | ``` Optional ``` | Additional optional query parameters are supported by this method |
 
 
 
 #### Example Usage
 
 ```javascript
+
+    var mboolean = true;
+    var number = 4;
+    var string = 'TestString';
 
-    var body = new SimilarityLookupRequestMsg({"key":"value"});
+    // key-value map for optional query parameters
+    var queryParams = [];
 
-    controller.createSimilarityLookup12(body, function(error, response, context) {
+    controller.simpleQuery(mboolean, number, string, queryParams, function(error, response, context) {
 
     
     });
@@ -2905,21 +2151,19 @@ function createSimilarityLookup12(body, callback)
 
 
 
-### <a name="create_browse_node_lookup11"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup11") createBrowseNodeLookup11
+### <a name="string_enum_array"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.stringEnumArray") stringEnumArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```javascript
-function createBrowseNodeLookup11(body, callback)
+function stringEnumArray(days, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| days |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -2927,31 +2171,32 @@ function createBrowseNodeLookup11(body, callback)
 
 ```javascript
 
-    var body = new BrowseNodeLookupRequestMsg({"key":"value"});
+    var days = ["Tuesday", "Saturday", "Wednesday", "Monday", "Sunday"];
 
-    controller.createBrowseNodeLookup11(body, function(error, response, context) {
+    controller.stringEnumArray(days, function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_item_lookup10"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup10") createItemLookup10
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="multiple_params"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.multipleParams") multipleParams
 
 > TODO: Add a method description
 
 
 ```javascript
-function createItemLookup10(body, callback)
+function multipleParams(number, precision, string, url, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| number |  ``` Required ```  | TODO: Add a parameter description |
+| precision |  ``` Required ```  | TODO: Add a parameter description |
+| string |  ``` Required ```  | TODO: Add a parameter description |
+| url |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -2959,9 +2204,12 @@ function createItemLookup10(body, callback)
 
 ```javascript
 
-    var body = new ItemLookupRequestMsg({"key":"value"});
+    var number = 123412312;
+    var precision = 1112.34;
+    var string = '""test./;";12&&3asl"";"qw1&34"///..//.';
+    var url = 'http://www.abc.com/test?a=b&c="http://lolol.com?param=no&another=lol"';
 
-    controller.createItemLookup10(body, function(error, response, context) {
+    controller.multipleParams(number, precision, string, url, function(error, response, context) {
 
     
     });
@@ -2969,21 +2217,19 @@ function createItemLookup10(body, callback)
 
 
 
-### <a name="create_item_search9"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch9") createItemSearch9
+### <a name="integer_enum_array"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.integerEnumArray") integerEnumArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```javascript
-function createItemSearch9(body, callback)
+function integerEnumArray(suites, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| suites |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -2991,9 +2237,9 @@ function createItemSearch9(body, callback)
 
 ```javascript
 
-    var body = new ItemSearchRequestMsg({"key":"value"});
+    var suites = [1, 3, 4, 2, 3];
 
-    controller.createItemSearch9(body, function(error, response, context) {
+    controller.integerEnumArray(suites, function(error, response, context) {
 
     
     });
@@ -3001,63 +2247,55 @@ function createItemSearch9(body, callback)
 
 
 
-### <a name="create_cart_clear"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear") createCartClear
+[Back to List of Controllers](#list_of_controllers)
 
-> *Tags:*  ``` Skips Authentication ``` 
+## <a name="error_codes_controller"></a>![Class: ](https://apidocs.io/img/class.png ".ErrorCodesController") ErrorCodesController
 
-> TODO: Add a method description
+### Get singleton instance
 
+The singleton instance of the ``` ErrorCodesController ``` class can be accessed from the API Client.
 
 ```javascript
-function createCartClear(body, callback)
+var controller = lib.ErrorCodesController;
 ```
-#### Parameters
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+### <a name="get400"></a>![Method: ](https://apidocs.io/img/method.png ".ErrorCodesController.get400") get400
+
+> TODO: Add a method description
 
 
+```javascript
+function get400(callback)
+```
 
 #### Example Usage
 
 ```javascript
 
-    var body = new CartClearRequestMsg({"key":"value"});
 
-    controller.createCartClear(body, function(error, response, context) {
+    controller.get400(function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_cart_modify"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify") createCartModify
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get500"></a>![Method: ](https://apidocs.io/img/method.png ".ErrorCodesController.get500") get500
 
 > TODO: Add a method description
 
 
 ```javascript
-function createCartModify(body, callback)
+function get500(callback)
 ```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
-
 #### Example Usage
 
 ```javascript
 
-    var body = new CartModifyRequestMsg({"key":"value"});
 
-    controller.createCartModify(body, function(error, response, context) {
+    controller.get500(function(error, response, context) {
 
     
     });
@@ -3065,53 +2303,65 @@ function createCartModify(body, callback)
 
 
 
-### <a name="create_cart_create"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate") createCartCreate
+### <a name="get401"></a>![Method: ](https://apidocs.io/img/method.png ".ErrorCodesController.get401") get401
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```javascript
-function createCartCreate(body, callback)
+function get401(callback)
 ```
-#### Parameters
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
 #### Example Usage
 
 ```javascript
 
-    var body = new CartCreateRequestMsg({"key":"value"});
 
-    controller.createCartCreate(body, function(error, response, context) {
+    controller.get401(function(error, response, context) {
 
     
     });
 ```
 
+#### Errors
 
+| Error Code | Error Description |
+|------------|-------------------|
+| 401 | 401 Local |
+| 421 | Default |
+| 431 | Default |
+| 432 | Default |
+| 441 | Default |
+| 0 | Invalid response. |
 
-### <a name="create_cart_add"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd") createCartAdd
 
-> *Tags:*  ``` Skips Authentication ``` 
 
-> TODO: Add a method description
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="echo_controller"></a>![Class: ](https://apidocs.io/img/class.png ".EchoController") EchoController
 
+### Get singleton instance
 
+The singleton instance of the ``` EchoController ``` class can be accessed from the API Client.
+
+```javascript
+var controller = lib.EchoController;
+```
+
+### <a name="json_echo"></a>![Method: ](https://apidocs.io/img/method.png ".EchoController.jsonEcho") jsonEcho
+
+> Echo's back the request
+
+
 ```javascript
-function createCartAdd(body, callback)
+function jsonEcho(input, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| input |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -3119,31 +2369,29 @@ function createCartAdd(body, callback)
 
 ```javascript
 
-    var body = new CartAddRequestMsg({"key":"value"});
+    var input = {"uid": "1123213", "name": "Shahid"};
 
-    controller.createCartAdd(body, function(error, response, context) {
+    controller.jsonEcho(input, function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_cart_get"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet") createCartGet
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="form_echo"></a>![Method: ](https://apidocs.io/img/method.png ".EchoController.formEcho") formEcho
 
-> TODO: Add a method description
+> Sends the request including any form params as JSON
 
 
 ```javascript
-function createCartGet(body, callback)
+function formEcho(input, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| input |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -3151,31 +2399,29 @@ function createCartGet(body, callback)
 
 ```javascript
 
-    var body = new CartGetRequestMsg({"key":"value"});
+    var input = {"uid": "1123213", "name": "Shahid"};
 
-    controller.createCartGet(body, function(error, response, context) {
+    controller.formEcho(input, function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_similarity_lookup"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup") createSimilarityLookup
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="query_echo"></a>![Method: ](https://apidocs.io/img/method.png ".EchoController.queryEcho") queryEcho
 
 > TODO: Add a method description
 
 
 ```javascript
-function createSimilarityLookup(body, callback)
+function queryEcho(queryParams, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| queryParameters | ``` Optional ``` | Additional optional query parameters are supported by this method |
 
 
 
@@ -3183,31 +2429,44 @@ function createSimilarityLookup(body, callback)
 
 ```javascript
 
-    var body = new SimilarityLookupRequestMsg({"key":"value"});
 
-    controller.createSimilarityLookup(body, function(error, response, context) {
+    // key-value map for optional query parameters
+    var queryParams = [];
 
+    controller.queryEcho(queryParams, function(error, response, context) {
+
     
     });
 ```
 
 
 
-### <a name="create_browse_node_lookup"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup") createBrowseNodeLookup
+[Back to List of Controllers](#list_of_controllers)
 
-> *Tags:*  ``` Skips Authentication ``` 
+## <a name="header_controller"></a>![Class: ](https://apidocs.io/img/class.png ".HeaderController") HeaderController
 
-> TODO: Add a method description
+### Get singleton instance
+
+The singleton instance of the ``` HeaderController ``` class can be accessed from the API Client.
+
+```javascript
+var controller = lib.HeaderController;
+```
 
+### <a name="send_headers"></a>![Method: ](https://apidocs.io/img/method.png ".HeaderController.sendHeaders") sendHeaders
 
+> Sends a single header params
+
+
 ```javascript
-function createBrowseNodeLookup(body, callback)
+function sendHeaders(customHeader, value, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| customHeader |  ``` Required ```  | TODO: Add a parameter description |
+| value |  ``` Required ```  | Represents the value of the custom header |
 
 
 
@@ -3215,31 +2474,42 @@ function createBrowseNodeLookup(body, callback)
 
 ```javascript
 
-    var body = new BrowseNodeLookupRequestMsg({"key":"value"});
+    var customHeader = 'TestString';
+    var value = 'TestString';
 
-    controller.createBrowseNodeLookup(body, function(error, response, context) {
+    controller.sendHeaders(customHeader, value, function(error, response, context) {
 
     
     });
 ```
+
+
 
+[Back to List of Controllers](#list_of_controllers)
 
+## <a name="template_params_controller"></a>![Class: ](https://apidocs.io/img/class.png ".TemplateParamsController") TemplateParamsController
 
-### <a name="create_item_lookup"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup") createItemLookup
+### Get singleton instance
 
-> *Tags:*  ``` Skips Authentication ``` 
+The singleton instance of the ``` TemplateParamsController ``` class can be accessed from the API Client.
 
+```javascript
+var controller = lib.TemplateParamsController;
+```
+
+### <a name="send_string_array"></a>![Method: ](https://apidocs.io/img/method.png ".TemplateParamsController.sendStringArray") sendStringArray
+
 > TODO: Add a method description
 
 
 ```javascript
-function createItemLookup(body, callback)
+function sendStringArray(strings, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| strings |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -3247,31 +2517,29 @@ function createItemLookup(body, callback)
 
 ```javascript
 
-    var body = new ItemLookupRequestMsg({"key":"value"});
+    var strings = ["abc", "def"];
 
-    controller.createItemLookup(body, function(error, response, context) {
+    controller.sendStringArray(strings, function(error, response, context) {
 
     
     });
 ```
-
 
 
-### <a name="create_item_search"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch") createItemSearch
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_integer_array"></a>![Method: ](https://apidocs.io/img/method.png ".TemplateParamsController.sendIntegerArray") sendIntegerArray
 
 > TODO: Add a method description
 
 
 ```javascript
-function createItemSearch(body, callback)
+function sendIntegerArray(integers, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| integers |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -3279,9 +2547,9 @@ function createItemSearch(body, callback)
 
 ```javascript
 
-    var body = new ItemSearchRequestMsg({"key":"value"});
+    var integers = [1,2,3,4,5];
 
-    controller.createItemSearch(body, function(error, response, context) {
+    controller.sendIntegerArray(integers, function(error, response, context) {
 
     
     });

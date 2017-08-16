@@ -1,5 +1,9 @@
 # Getting started
 
+Testing various
+ api 
+features
+
 ## How to Build
 
 
@@ -13,12 +17,12 @@ This should display the version of the PIP Dependency Manager installed if your 
 * Using command line, navigate to the directory containing the generated files (including ```requirements.txt```) for the SDK.
 * Run the command ```pip install -r requirements.txt```. This should install all the required dependencies.
 
-![Building SDK - Step 1](https://apidocs.io/illustration/python?step=installDependencies&workspaceFolder=AWSECommerceService-Python)
+![Building SDK - Step 1](https://apidocs.io/illustration/python?step=installDependencies&workspaceFolder=Tester-Python)
 
 
 ## How to Use
 
-The following section explains how to use the Awsecommerceservice SDK package in a new project.
+The following section explains how to use the Tester SDK package in a new project.
 
 ### 1. Open Project in an IDE
 
@@ -28,17 +32,17 @@ Open up a Python IDE like PyCharm. The basic workflow presented here is also app
 
 Click on ```Open``` in PyCharm to browse to your generated SDK directory and then click ```OK```.
 
-![Open project in PyCharm - Step 2](https://apidocs.io/illustration/python?step=openProject0&workspaceFolder=AWSECommerceService-Python)     
+![Open project in PyCharm - Step 2](https://apidocs.io/illustration/python?step=openProject0&workspaceFolder=Tester-Python)     
 
 The project files will be displayed in the side bar as follows:
 
-![Open project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=openProject1&workspaceFolder=AWSECommerceService-Python&projectName=awsecommerceservice)     
+![Open project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=openProject1&workspaceFolder=Tester-Python&projectName=tester)     
 
 ### 2. Add a new Test Project
 
 Create a new directory by right clicking on the solution name as shown below:
 
-![Add a new project in PyCharm - Step 1](https://apidocs.io/illustration/python?step=createDirectory&workspaceFolder=AWSECommerceService-Python&projectName=awsecommerceservice)
+![Add a new project in PyCharm - Step 1](https://apidocs.io/illustration/python?step=createDirectory&workspaceFolder=Tester-Python&projectName=tester)
 
 Name the directory as "test"
 
@@ -46,7 +50,7 @@ Name the directory as "test"
    
 Add a python file to this project with the name "testsdk"
 
-![Add a new project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=createFile&workspaceFolder=AWSECommerceService-Python&projectName=awsecommerceservice)
+![Add a new project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=createFile&workspaceFolder=Tester-Python&projectName=tester)
 
 Name it "testsdk"
 
@@ -55,10 +59,10 @@ Name it "testsdk"
 In your python file you will be required to import the generated python library using the following code lines
 
 ```Python
-from awsecommerceservice.awsecommerceservice_client import AwsecommerceserviceClient
+from tester.tester_client import TesterClient
 ```
 
-![Add a new project in PyCharm - Step 4](https://apidocs.io/illustration/python?step=projectFiles&workspaceFolder=AWSECommerceService-Python&libraryName=awsecommerceservice.awsecommerceservice_client&projectName=awsecommerceservice)
+![Add a new project in PyCharm - Step 4](https://apidocs.io/illustration/python?step=projectFiles&workspaceFolder=Tester-Python&libraryName=tester.tester_client&projectName=tester)
 
 After this you can write code to instantiate an API client object, get a controller object and  make API calls. Sample code is given in the subsequent sections.
 
@@ -66,7 +70,7 @@ After this you can write code to instantiate an API client object, get a control
 
 To run the file within your test project, right click on your Python file inside your Test project and click on ```Run```
 
-![Run Test Project - Step 1](https://apidocs.io/illustration/python?step=runProject&workspaceFolder=AWSECommerceService-Python&libraryName=awsecommerceservice.awsecommerceservice_client&projectName=awsecommerceservice)
+![Run Test Project - Step 1](https://apidocs.io/illustration/python?step=runProject&workspaceFolder=Tester-Python&libraryName=tester.tester_client&projectName=tester)
 
 
 ## How to Test
@@ -87,7 +91,7 @@ API client can be initialized as following.
 
 ```python
 
-client = AwsecommerceserviceClient()
+client = TesterClient()
 ```
 
 
@@ -96,2885 +100,2177 @@ client = AwsecommerceserviceClient()
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [AWSECommerceServiceBindingController](#awse_commerce_service_binding_controller)
+* [ResponseTypesController](#response_types_controller)
+* [BodyParamsController](#body_params_controller)
+* [FormParamsController](#form_params_controller)
+* [QueryParamController](#query_param_controller)
+* [ErrorCodesController](#error_codes_controller)
+* [EchoController](#echo_controller)
+* [HeaderController](#header_controller)
+* [TemplateParamsController](#template_params_controller)
 
-## <a name="awse_commerce_service_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png ".AWSECommerceServiceBindingController") AWSECommerceServiceBindingController
+## <a name="response_types_controller"></a>![Class: ](https://apidocs.io/img/class.png ".ResponseTypesController") ResponseTypesController
 
 ### Get controller instance
 
-An instance of the ``` AWSECommerceServiceBindingController ``` class can be accessed from the API Client.
+An instance of the ``` ResponseTypesController ``` class can be accessed from the API Client.
 
 ```python
- awse_commerce_service_binding_client = client.awse_commerce_service_binding
+ response_types_client = client.response_types
 ```
 
-### <a name="create_cart_modify_97"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_modify_97") create_cart_modify_97
+### <a name="get_date_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_date_array") get_date_array
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-```python
-def create_cart_modify_97(self,
-                              body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```python
-body = CartModifyRequestMsg()
-
-result = awse_commerce_service_binding_client.create_cart_modify_97(body)
-
-```
-
-
-### <a name="create_cart_clear_98"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_clear_98") create_cart_clear_98
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-```python
-def create_cart_clear_98(self,
-                             body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```python
-body = CartClearRequestMsg()
-
-result = awse_commerce_service_binding_client.create_cart_clear_98(body)
-
-```
-
-
-### <a name="create_cart_create_96"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_create_96") create_cart_create_96
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-```python
-def create_cart_create_96(self,
-                              body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```python
-body = CartCreateRequestMsg()
-
-result = awse_commerce_service_binding_client.create_cart_create_96(body)
-
-```
-
-
-### <a name="create_cart_add_95"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_add_95") create_cart_add_95
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-```python
-def create_cart_add_95(self,
-                           body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```python
-body = CartAddRequestMsg()
-
-result = awse_commerce_service_binding_client.create_cart_add_95(body)
-
-```
-
-
-### <a name="create_cart_get_94"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_get_94") create_cart_get_94
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-```python
-def create_cart_get_94(self,
-                           body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```python
-body = CartGetRequestMsg()
-
-result = awse_commerce_service_binding_client.create_cart_get_94(body)
-
-```
-
-
-### <a name="create_similarity_lookup_93"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_similarity_lookup_93") create_similarity_lookup_93
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-```python
-def create_similarity_lookup_93(self,
-                                    body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```python
-body = SimilarityLookupRequestMsg()
-
-result = awse_commerce_service_binding_client.create_similarity_lookup_93(body)
-
-```
-
-
-### <a name="create_browse_node_lookup_92"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_browse_node_lookup_92") create_browse_node_lookup_92
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-```python
-def create_browse_node_lookup_92(self,
-                                     body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```python
-body = BrowseNodeLookupRequestMsg()
-
-result = awse_commerce_service_binding_client.create_browse_node_lookup_92(body)
-
-```
-
-
-### <a name="create_item_lookup_91"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_lookup_91") create_item_lookup_91
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-```python
-def create_item_lookup_91(self,
-                              body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```python
-body = ItemLookupRequestMsg()
-
-result = awse_commerce_service_binding_client.create_item_lookup_91(body)
-
-```
-
-
-### <a name="create_item_search_90"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_search_90") create_item_search_90
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-```python
-def create_item_search_90(self,
-                              body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```python
-body = ItemSearchRequestMsg()
-
-result = awse_commerce_service_binding_client.create_item_search_90(body)
-
-```
-
-
-### <a name="create_cart_clear_89"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_clear_89") create_cart_clear_89
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-```python
-def create_cart_clear_89(self,
-                             body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```python
-body = CartClearRequestMsg()
-
-result = awse_commerce_service_binding_client.create_cart_clear_89(body)
-
-```
-
-
-### <a name="create_cart_modify_88"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_modify_88") create_cart_modify_88
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-```python
-def create_cart_modify_88(self,
-                              body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```python
-body = CartModifyRequestMsg()
-
-result = awse_commerce_service_binding_client.create_cart_modify_88(body)
-
-```
-
-
-### <a name="create_cart_create_87"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_create_87") create_cart_create_87
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-```python
-def create_cart_create_87(self,
-                              body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```python
-body = CartCreateRequestMsg()
-
-result = awse_commerce_service_binding_client.create_cart_create_87(body)
-
-```
-
-
-### <a name="create_cart_add_86"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_add_86") create_cart_add_86
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-```python
-def create_cart_add_86(self,
-                           body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```python
-body = CartAddRequestMsg()
-
-result = awse_commerce_service_binding_client.create_cart_add_86(body)
-
-```
-
-
-### <a name="create_cart_get_85"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_get_85") create_cart_get_85
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-```python
-def create_cart_get_85(self,
-                           body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```python
-body = CartGetRequestMsg()
-
-result = awse_commerce_service_binding_client.create_cart_get_85(body)
-
-```
-
-
-### <a name="create_similarity_lookup_84"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_similarity_lookup_84") create_similarity_lookup_84
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-```python
-def create_similarity_lookup_84(self,
-                                    body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```python
-body = SimilarityLookupRequestMsg()
-
-result = awse_commerce_service_binding_client.create_similarity_lookup_84(body)
-
-```
-
-
-### <a name="create_browse_node_lookup_83"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_browse_node_lookup_83") create_browse_node_lookup_83
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-```python
-def create_browse_node_lookup_83(self,
-                                     body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```python
-body = BrowseNodeLookupRequestMsg()
-
-result = awse_commerce_service_binding_client.create_browse_node_lookup_83(body)
-
-```
-
-
-### <a name="create_item_lookup_82"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_lookup_82") create_item_lookup_82
-
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_item_lookup_82(self,
-                              body)
+def get_date_array(self)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 
 #### Example Usage
 
 ```python
-body = ItemLookupRequestMsg()
 
-result = awse_commerce_service_binding_client.create_item_lookup_82(body)
+result = response_types_client.get_date_array()
 
 ```
 
 
-### <a name="create_item_search_81"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_search_81") create_item_search_81
+### <a name="get_date"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_date") get_date
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_item_search_81(self,
-                              body)
+def get_date(self)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
-
 #### Example Usage
 
 ```python
-body = ItemSearchRequestMsg()
 
-result = awse_commerce_service_binding_client.create_item_search_81(body)
+result = response_types_client.get_date()
 
 ```
 
 
-### <a name="create_cart_clear_80"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_clear_80") create_cart_clear_80
+### <a name="get_long"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_long") get_long
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_cart_clear_80(self,
-                             body)
+def get_long(self)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
-
 #### Example Usage
 
 ```python
-body = CartClearRequestMsg()
 
-result = awse_commerce_service_binding_client.create_cart_clear_80(body)
+result = response_types_client.get_long()
 
 ```
-
 
-### <a name="create_cart_modify_79"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_modify_79") create_cart_modify_79
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_model"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_model") get_model
 
 > TODO: Add a method description
 
 ```python
-def create_cart_modify_79(self,
-                              body)
+def get_model(self)
 ```
 
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
 #### Example Usage
 
 ```python
-body = CartModifyRequestMsg()
 
-result = awse_commerce_service_binding_client.create_cart_modify_79(body)
+result = response_types_client.get_model()
 
 ```
 
 
-### <a name="create_cart_create_78"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_create_78") create_cart_create_78
+### <a name="get_string_enum_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_string_enum_array") get_string_enum_array
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_cart_create_78(self,
-                              body)
+def get_string_enum_array(self)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
-
 #### Example Usage
 
 ```python
-body = CartCreateRequestMsg()
 
-result = awse_commerce_service_binding_client.create_cart_create_78(body)
+result = response_types_client.get_string_enum_array()
 
 ```
-
 
-### <a name="create_cart_add_77"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_add_77") create_cart_add_77
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_string_enum"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_string_enum") get_string_enum
 
 > TODO: Add a method description
 
 ```python
-def create_cart_add_77(self,
-                           body)
+def get_string_enum(self)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
-
 #### Example Usage
 
 ```python
-body = CartAddRequestMsg()
 
-result = awse_commerce_service_binding_client.create_cart_add_77(body)
+result = response_types_client.get_string_enum()
 
 ```
-
 
-### <a name="create_cart_get_76"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_get_76") create_cart_get_76
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_model_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_model_array") get_model_array
 
 > TODO: Add a method description
 
 ```python
-def create_cart_get_76(self,
-                           body)
+def get_model_array(self)
 ```
-
-#### Parameters
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
 #### Example Usage
 
 ```python
-body = CartGetRequestMsg()
 
-result = awse_commerce_service_binding_client.create_cart_get_76(body)
+result = response_types_client.get_model_array()
 
 ```
 
 
-### <a name="create_similarity_lookup_75"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_similarity_lookup_75") create_similarity_lookup_75
+### <a name="get_int_enum"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_int_enum") get_int_enum
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_similarity_lookup_75(self,
-                                    body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
+def get_int_enum(self)
+```
 
 #### Example Usage
 
 ```python
-body = SimilarityLookupRequestMsg()
 
-result = awse_commerce_service_binding_client.create_similarity_lookup_75(body)
+result = response_types_client.get_int_enum()
 
 ```
-
 
-### <a name="create_browse_node_lookup_74"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_browse_node_lookup_74") create_browse_node_lookup_74
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_int_enum_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_int_enum_array") get_int_enum_array
 
 > TODO: Add a method description
 
 ```python
-def create_browse_node_lookup_74(self,
-                                     body)
+def get_int_enum_array(self)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
-
 #### Example Usage
 
 ```python
-body = BrowseNodeLookupRequestMsg()
 
-result = awse_commerce_service_binding_client.create_browse_node_lookup_74(body)
+result = response_types_client.get_int_enum_array()
 
 ```
-
 
-### <a name="create_item_lookup_73"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_lookup_73") create_item_lookup_73
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_precision"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_precision") get_precision
 
 > TODO: Add a method description
 
 ```python
-def create_item_lookup_73(self,
-                              body)
+def get_precision(self)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
-
 #### Example Usage
 
 ```python
-body = ItemLookupRequestMsg()
 
-result = awse_commerce_service_binding_client.create_item_lookup_73(body)
+result = response_types_client.get_precision()
 
 ```
-
 
-### <a name="create_item_search_72"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_search_72") create_item_search_72
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_binary"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_binary") get_binary
 
-> TODO: Add a method description
+> gets a binary object
 
 ```python
-def create_item_search_72(self,
-                              body)
+def get_binary(self)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
-
 #### Example Usage
 
 ```python
-body = ItemSearchRequestMsg()
 
-result = awse_commerce_service_binding_client.create_item_search_72(body)
+result = response_types_client.get_binary()
 
 ```
 
 
-### <a name="create_cart_clear_71"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_clear_71") create_cart_clear_71
+### <a name="get_integer"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_integer") get_integer
 
-> *Tags:*  ``` Skips Authentication ``` 
+> Gets a integer response
 
-> TODO: Add a method description
+```python
+def get_integer(self)
+```
+
+#### Example Usage
 
 ```python
-def create_cart_clear_71(self,
-                             body)
+
+result = response_types_client.get_integer()
+
 ```
 
-#### Parameters
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+### <a name="get_integer_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_integer_array") get_integer_array
 
+> Get an array of integers.
 
+```python
+def get_integer_array(self)
+```
 
 #### Example Usage
 
 ```python
-body = CartClearRequestMsg()
 
-result = awse_commerce_service_binding_client.create_cart_clear_71(body)
+result = response_types_client.get_integer_array()
 
 ```
 
 
-### <a name="create_cart_modify_70"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_modify_70") create_cart_modify_70
+### <a name="get_dynamic"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_dynamic") get_dynamic
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_cart_modify_70(self,
-                              body)
+def get_dynamic(self)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
-
 #### Example Usage
 
 ```python
-body = CartModifyRequestMsg()
 
-result = awse_commerce_service_binding_client.create_cart_modify_70(body)
+result = response_types_client.get_dynamic()
 
 ```
 
 
-### <a name="create_cart_create_69"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_create_69") create_cart_create_69
+### <a name="get_dynamic_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_dynamic_array") get_dynamic_array
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_cart_create_69(self,
-                              body)
+def get_dynamic_array(self)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
-
 #### Example Usage
 
 ```python
-body = CartCreateRequestMsg()
 
-result = awse_commerce_service_binding_client.create_cart_create_69(body)
+result = response_types_client.get_dynamic_array()
 
 ```
 
 
-### <a name="create_cart_add_68"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_add_68") create_cart_add_68
+### <a name="get_3339_datetime"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_3339_datetime") get_3339_datetime
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_cart_add_68(self,
-                           body)
+def get_3339_datetime(self)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
-
 #### Example Usage
 
 ```python
-body = CartAddRequestMsg()
 
-result = awse_commerce_service_binding_client.create_cart_add_68(body)
+result = response_types_client.get_3339_datetime()
 
 ```
 
 
-### <a name="create_cart_get_67"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_get_67") create_cart_get_67
+### <a name="get_3339_datetime_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_3339_datetime_array") get_3339_datetime_array
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_cart_get_67(self,
-                           body)
+def get_3339_datetime_array(self)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
-
 #### Example Usage
 
 ```python
-body = CartGetRequestMsg()
 
-result = awse_commerce_service_binding_client.create_cart_get_67(body)
+result = response_types_client.get_3339_datetime_array()
 
 ```
 
 
-### <a name="create_similarity_lookup_66"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_similarity_lookup_66") create_similarity_lookup_66
+### <a name="get_boolean"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_boolean") get_boolean
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_similarity_lookup_66(self,
-                                    body)
+def get_boolean(self)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
-
 #### Example Usage
 
 ```python
-body = SimilarityLookupRequestMsg()
 
-result = awse_commerce_service_binding_client.create_similarity_lookup_66(body)
+result = response_types_client.get_boolean()
 
 ```
 
 
-### <a name="create_browse_node_lookup_65"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_browse_node_lookup_65") create_browse_node_lookup_65
+### <a name="get_boolean_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_boolean_array") get_boolean_array
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_browse_node_lookup_65(self,
-                                     body)
+def get_boolean_array(self)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
-
 #### Example Usage
 
 ```python
-body = BrowseNodeLookupRequestMsg()
 
-result = awse_commerce_service_binding_client.create_browse_node_lookup_65(body)
+result = response_types_client.get_boolean_array()
 
 ```
 
 
-### <a name="create_item_lookup_64"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_lookup_64") create_item_lookup_64
+### <a name="get_headers"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_headers") get_headers
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_item_lookup_64(self,
-                              body)
+def get_headers(self)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
-
 #### Example Usage
 
 ```python
-body = ItemLookupRequestMsg()
 
-result = awse_commerce_service_binding_client.create_item_lookup_64(body)
+response_types_client.get_headers()
 
 ```
 
 
-### <a name="create_item_search_63"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_search_63") create_item_search_63
+### <a name="get_1123_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_1123_date_time") get_1123_date_time
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_item_search_63(self,
-                              body)
+def get_1123_date_time(self)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
-
 #### Example Usage
 
 ```python
-body = ItemSearchRequestMsg()
 
-result = awse_commerce_service_binding_client.create_item_search_63(body)
+result = response_types_client.get_1123_date_time()
 
 ```
 
 
-### <a name="create_cart_clear_62"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_clear_62") create_cart_clear_62
+### <a name="get_unix_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_unix_date_time") get_unix_date_time
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_cart_clear_62(self,
-                             body)
+def get_unix_date_time(self)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
-
 #### Example Usage
 
 ```python
-body = CartClearRequestMsg()
 
-result = awse_commerce_service_binding_client.create_cart_clear_62(body)
+result = response_types_client.get_unix_date_time()
 
 ```
 
 
-### <a name="create_cart_modify_61"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_modify_61") create_cart_modify_61
+### <a name="get_1123_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_1123_date_time_array") get_1123_date_time_array
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_cart_modify_61(self,
-                              body)
+def get_1123_date_time_array(self)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
-
 #### Example Usage
 
 ```python
-body = CartModifyRequestMsg()
 
-result = awse_commerce_service_binding_client.create_cart_modify_61(body)
+result = response_types_client.get_1123_date_time_array()
 
 ```
 
 
-### <a name="create_cart_create_60"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_create_60") create_cart_create_60
+### <a name="get_unix_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get_unix_date_time_array") get_unix_date_time_array
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_cart_create_60(self,
-                              body)
+def get_unix_date_time_array(self)
 ```
 
-#### Parameters
+#### Example Usage
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+```python
 
+result = response_types_client.get_unix_date_time_array()
 
+```
 
-#### Example Usage
 
-```python
-body = CartCreateRequestMsg()
+[Back to List of Controllers](#list_of_controllers)
 
-result = awse_commerce_service_binding_client.create_cart_create_60(body)
+## <a name="body_params_controller"></a>![Class: ](https://apidocs.io/img/class.png ".BodyParamsController") BodyParamsController
 
-```
+### Get controller instance
 
+An instance of the ``` BodyParamsController ``` class can be accessed from the API Client.
 
-### <a name="create_cart_add_59"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_add_59") create_cart_add_59
+```python
+ body_params_client = client.body_params
+```
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_date_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.send_date_array") send_date_array
 
 > TODO: Add a method description
 
 ```python
-def create_cart_add_59(self,
-                           body)
+def send_date_array(self,
+                        dates)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| dates |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = CartAddRequestMsg()
+dates_value = ["1994-02-13", "1994-02-13"]
+dates = json.loads(dates_value)
 
-result = awse_commerce_service_binding_client.create_cart_add_59(body)
+result = body_params_client.send_date_array(dates)
 
 ```
 
 
-### <a name="create_cart_get_58"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_get_58") create_cart_get_58
+### <a name="send_date"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.send_date") send_date
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_cart_get_58(self,
-                           body)
+def send_date(self,
+                  date)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| date |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = CartGetRequestMsg()
+date = 1994-02-13
 
-result = awse_commerce_service_binding_client.create_cart_get_58(body)
+result = body_params_client.send_date(date)
 
 ```
-
 
-### <a name="create_similarity_lookup_57"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_similarity_lookup_57") create_similarity_lookup_57
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_unix_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.send_unix_date_time") send_unix_date_time
 
 > TODO: Add a method description
 
 ```python
-def create_similarity_lookup_57(self,
-                                    body)
+def send_unix_date_time(self,
+                            datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = SimilarityLookupRequestMsg()
+datetime = 1484719381
 
-result = awse_commerce_service_binding_client.create_similarity_lookup_57(body)
+result = body_params_client.send_unix_date_time(datetime)
 
 ```
 
 
-### <a name="create_browse_node_lookup_56"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_browse_node_lookup_56") create_browse_node_lookup_56
+### <a name="send_rfc_1123_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.send_rfc_1123_date_time") send_rfc_1123_date_time
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_browse_node_lookup_56(self,
-                                     body)
+def send_rfc_1123_date_time(self,
+                                datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = BrowseNodeLookupRequestMsg()
+datetime = Sun, 06 Nov 1994 08:49:37 GMT
 
-result = awse_commerce_service_binding_client.create_browse_node_lookup_56(body)
+result = body_params_client.send_rfc_1123_date_time(datetime)
 
 ```
-
 
-### <a name="create_item_lookup_55"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_lookup_55") create_item_lookup_55
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_rfc_3339_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.send_rfc_3339_date_time") send_rfc_3339_date_time
 
 > TODO: Add a method description
 
 ```python
-def create_item_lookup_55(self,
-                              body)
+def send_rfc_3339_date_time(self,
+                                datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = ItemLookupRequestMsg()
+datetime = 1994-02-13T14:01:54.9571247Z
 
-result = awse_commerce_service_binding_client.create_item_lookup_55(body)
+result = body_params_client.send_rfc_3339_date_time(datetime)
 
 ```
 
 
-### <a name="create_item_search_54"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_search_54") create_item_search_54
+### <a name="send_unix_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.send_unix_date_time_array") send_unix_date_time_array
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_item_search_54(self,
-                              body)
+def send_unix_date_time_array(self,
+                                  datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = ItemSearchRequestMsg()
+datetimes_value = [1484719381,1484719381]
+datetimes = json.loads(datetimes_value)
 
-result = awse_commerce_service_binding_client.create_item_search_54(body)
+result = body_params_client.send_unix_date_time_array(datetimes)
 
 ```
-
 
-### <a name="create_cart_clear_53"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_clear_53") create_cart_clear_53
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_rfc_1123_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.send_rfc_1123_date_time_array") send_rfc_1123_date_time_array
 
 > TODO: Add a method description
 
 ```python
-def create_cart_clear_53(self,
-                             body)
+def send_rfc_1123_date_time_array(self,
+                                      datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = CartClearRequestMsg()
+datetimes_value = ["Sun, 06 Nov 1994 08:49:37 GMT","Sun, 06 Nov 1994 08:49:37 GMT"]
+datetimes = json.loads(datetimes_value)
 
-result = awse_commerce_service_binding_client.create_cart_clear_53(body)
+result = body_params_client.send_rfc_1123_date_time_array(datetimes)
 
 ```
 
 
-### <a name="create_cart_modify_52"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_modify_52") create_cart_modify_52
+### <a name="send_rfc_3339_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.send_rfc_3339_date_time_array") send_rfc_3339_date_time_array
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_cart_modify_52(self,
-                              body)
+def send_rfc_3339_date_time_array(self,
+                                      datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = CartModifyRequestMsg()
+datetimes_value = ["1994-02-13T14:01:54.9571247Z","1994-02-13T14:01:54.9571247Z"]
+datetimes = json.loads(datetimes_value)
 
-result = awse_commerce_service_binding_client.create_cart_modify_52(body)
+result = body_params_client.send_rfc_3339_date_time_array(datetimes)
 
 ```
-
 
-### <a name="create_cart_create_51"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_create_51") create_cart_create_51
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_string_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.send_string_array") send_string_array
 
-> TODO: Add a method description
+> sends a string body param
 
 ```python
-def create_cart_create_51(self,
-                              body)
+def send_string_array(self,
+                          sarray)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| sarray |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = CartCreateRequestMsg()
+sarray_value = '["abc", "def"]'
+sarray = json.loads(sarray_value)
 
-result = awse_commerce_service_binding_client.create_cart_create_51(body)
+result = body_params_client.send_string_array(sarray)
 
 ```
-
 
-### <a name="create_cart_add_50"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_add_50") create_cart_add_50
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_integer_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.send_integer_array") send_integer_array
 
 > TODO: Add a method description
 
 ```python
-def create_cart_add_50(self,
-                           body)
+def send_integer_array(self,
+                           integers)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| integers |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = CartAddRequestMsg()
+integers_value = "[1,2,3,4,5]"
+integers = json.loads(integers_value)
 
-result = awse_commerce_service_binding_client.create_cart_add_50(body)
+result = body_params_client.send_integer_array(integers)
 
 ```
 
 
-### <a name="create_cart_get_49"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_get_49") create_cart_get_49
+### <a name="send_model"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.send_model") send_model
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_cart_get_49(self,
-                           body)
+def send_model(self,
+                   model)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| model |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = CartGetRequestMsg()
+model_value = "{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"}"
+model = json.loads(model_value)
 
-result = awse_commerce_service_binding_client.create_cart_get_49(body)
+result = body_params_client.send_model(model)
 
 ```
-
 
-### <a name="create_similarity_lookup_48"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_similarity_lookup_48") create_similarity_lookup_48
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_model_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.send_model_array") send_model_array
 
 > TODO: Add a method description
 
 ```python
-def create_similarity_lookup_48(self,
-                                    body)
+def send_model_array(self,
+                         models)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| models |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = SimilarityLookupRequestMsg()
+models_value = "[{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"},{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"}]"
+models = json.loads(models_value)
 
-result = awse_commerce_service_binding_client.create_similarity_lookup_48(body)
+result = body_params_client.send_model_array(models)
 
 ```
 
 
-### <a name="create_browse_node_lookup_47"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_browse_node_lookup_47") create_browse_node_lookup_47
+### <a name="send_dynamic"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.send_dynamic") send_dynamic
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_browse_node_lookup_47(self,
-                                     body)
+def send_dynamic(self,
+                     dynamic)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| dynamic |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = BrowseNodeLookupRequestMsg()
+dynamic_value = "{\"uid\": \"1123213\", \"name\": \"Shahid\"}"
+dynamic = json.loads(dynamic_value)
 
-result = awse_commerce_service_binding_client.create_browse_node_lookup_47(body)
+result = body_params_client.send_dynamic(dynamic)
 
 ```
-
 
-### <a name="create_item_lookup_46"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_lookup_46") create_item_lookup_46
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_string"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.send_string") send_string
 
 > TODO: Add a method description
 
 ```python
-def create_item_lookup_46(self,
-                              body)
+def send_string(self,
+                    value)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| value |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = ItemLookupRequestMsg()
+value = 'TestString'
 
-result = awse_commerce_service_binding_client.create_item_lookup_46(body)
+result = body_params_client.send_string(value)
 
 ```
 
 
-### <a name="create_item_search_45"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_search_45") create_item_search_45
+### <a name="send_string_enum_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.send_string_enum_array") send_string_enum_array
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_item_search_45(self,
-                              body)
+def send_string_enum_array(self,
+                               days)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| days |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = ItemSearchRequestMsg()
+days = [Days.TUESDAY,Days.SATURDAY,Days.MONDAY,Days.SUNDAY]
 
-result = awse_commerce_service_binding_client.create_item_search_45(body)
+result = body_params_client.send_string_enum_array(days)
 
 ```
-
 
-### <a name="create_cart_clear_44"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_clear_44") create_cart_clear_44
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_integer_enum_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.send_integer_enum_array") send_integer_enum_array
 
 > TODO: Add a method description
 
 ```python
-def create_cart_clear_44(self,
-                             body)
+def send_integer_enum_array(self,
+                                suites)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| suites |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = CartClearRequestMsg()
+suites = [SuiteCode.HEARTS,SuiteCode.CLUBS,SuiteCode.DIAMONDS,SuiteCode.SPADES,SuiteCode.CLUBS]
 
-result = awse_commerce_service_binding_client.create_cart_clear_44(body)
+result = body_params_client.send_integer_enum_array(suites)
 
 ```
+
+
+[Back to List of Controllers](#list_of_controllers)
 
+## <a name="form_params_controller"></a>![Class: ](https://apidocs.io/img/class.png ".FormParamsController") FormParamsController
 
-### <a name="create_cart_modify_43"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_modify_43") create_cart_modify_43
+### Get controller instance
+
+An instance of the ``` FormParamsController ``` class can be accessed from the API Client.
+
+```python
+ form_params_client = client.form_params
+```
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_date_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_date_array") send_date_array
 
 > TODO: Add a method description
 
 ```python
-def create_cart_modify_43(self,
-                              body)
+def send_date_array(self,
+                        dates)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| dates |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = CartModifyRequestMsg()
+dates_value = ["1994-02-13","1994-02-13"]
+dates = json.loads(dates_value)
 
-result = awse_commerce_service_binding_client.create_cart_modify_43(body)
+result = form_params_client.send_date_array(dates)
 
 ```
 
 
-### <a name="create_cart_create_42"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_create_42") create_cart_create_42
+### <a name="send_date"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_date") send_date
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_cart_create_42(self,
-                              body)
+def send_date(self,
+                  date)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| date |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = CartCreateRequestMsg()
+date = 1994-02-13
 
-result = awse_commerce_service_binding_client.create_cart_create_42(body)
+result = form_params_client.send_date(date)
 
 ```
-
 
-### <a name="create_cart_add_41"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_add_41") create_cart_add_41
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_unix_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_unix_date_time") send_unix_date_time
 
 > TODO: Add a method description
 
 ```python
-def create_cart_add_41(self,
-                           body)
+def send_unix_date_time(self,
+                            datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = CartAddRequestMsg()
+datetime = 1484719381
 
-result = awse_commerce_service_binding_client.create_cart_add_41(body)
+result = form_params_client.send_unix_date_time(datetime)
 
 ```
 
 
-### <a name="create_cart_get_40"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_get_40") create_cart_get_40
+### <a name="send_rfc_1123_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_rfc_1123_date_time") send_rfc_1123_date_time
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_cart_get_40(self,
-                           body)
+def send_rfc_1123_date_time(self,
+                                datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = CartGetRequestMsg()
+datetime = Sun, 06 Nov 1994 08:49:37 GMT
 
-result = awse_commerce_service_binding_client.create_cart_get_40(body)
+result = form_params_client.send_rfc_1123_date_time(datetime)
 
 ```
-
 
-### <a name="create_similarity_lookup_39"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_similarity_lookup_39") create_similarity_lookup_39
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_rfc_3339_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_rfc_3339_date_time") send_rfc_3339_date_time
 
 > TODO: Add a method description
 
 ```python
-def create_similarity_lookup_39(self,
-                                    body)
+def send_rfc_3339_date_time(self,
+                                datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = SimilarityLookupRequestMsg()
+datetime = 1994-02-13T14:01:54.9571247Z
 
-result = awse_commerce_service_binding_client.create_similarity_lookup_39(body)
+result = form_params_client.send_rfc_3339_date_time(datetime)
 
 ```
 
 
-### <a name="create_browse_node_lookup_38"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_browse_node_lookup_38") create_browse_node_lookup_38
+### <a name="send_unix_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_unix_date_time_array") send_unix_date_time_array
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_browse_node_lookup_38(self,
-                                     body)
+def send_unix_date_time_array(self,
+                                  datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = BrowseNodeLookupRequestMsg()
+datetimes_value = [1484719381,1484719381]
+datetimes = json.loads(datetimes_value)
 
-result = awse_commerce_service_binding_client.create_browse_node_lookup_38(body)
+result = form_params_client.send_unix_date_time_array(datetimes)
 
 ```
-
 
-### <a name="create_item_lookup_37"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_lookup_37") create_item_lookup_37
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_rfc_1123_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_rfc_1123_date_time_array") send_rfc_1123_date_time_array
 
 > TODO: Add a method description
 
 ```python
-def create_item_lookup_37(self,
-                              body)
+def send_rfc_1123_date_time_array(self,
+                                      datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = ItemLookupRequestMsg()
+datetimes_value = ["Sun, 06 Nov 1994 08:49:37 GMT","Sun, 06 Nov 1994 08:49:37 GMT"]
+datetimes = json.loads(datetimes_value)
 
-result = awse_commerce_service_binding_client.create_item_lookup_37(body)
+result = form_params_client.send_rfc_1123_date_time_array(datetimes)
 
 ```
 
 
-### <a name="create_item_search_36"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_search_36") create_item_search_36
+### <a name="send_long"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_long") send_long
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_item_search_36(self,
-                              body)
+def send_long(self,
+                  value)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| value |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = ItemSearchRequestMsg()
+value = 5147483647
 
-result = awse_commerce_service_binding_client.create_item_search_36(body)
+result = form_params_client.send_long(value)
 
 ```
-
 
-### <a name="create_cart_clear_35"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_clear_35") create_cart_clear_35
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_integer_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_integer_array") send_integer_array
 
 > TODO: Add a method description
 
 ```python
-def create_cart_clear_35(self,
-                             body)
+def send_integer_array(self,
+                           integers)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| integers |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = CartClearRequestMsg()
+integers_value = "[1,2,3,4,5]"
+integers = json.loads(integers_value)
 
-result = awse_commerce_service_binding_client.create_cart_clear_35(body)
+result = form_params_client.send_integer_array(integers)
 
 ```
 
 
-### <a name="create_cart_modify_34"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_modify_34") create_cart_modify_34
+### <a name="send_string_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_string_array") send_string_array
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_cart_modify_34(self,
-                              body)
+def send_string_array(self,
+                          strings)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| strings |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = CartModifyRequestMsg()
+strings_value = '["abc", "def"]'
+strings = json.loads(strings_value)
 
-result = awse_commerce_service_binding_client.create_cart_modify_34(body)
+result = form_params_client.send_string_array(strings)
 
 ```
-
 
-### <a name="create_cart_create_33"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_create_33") create_cart_create_33
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_model"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_model") send_model
 
 > TODO: Add a method description
 
 ```python
-def create_cart_create_33(self,
-                              body)
+def send_model(self,
+                   model)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| model |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = CartCreateRequestMsg()
+model_value = "{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"}"
+model = json.loads(model_value)
 
-result = awse_commerce_service_binding_client.create_cart_create_33(body)
+result = form_params_client.send_model(model)
 
 ```
 
 
-### <a name="create_cart_add_32"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_add_32") create_cart_add_32
+### <a name="send_model_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_model_array") send_model_array
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_cart_add_32(self,
-                           body)
+def send_model_array(self,
+                         models)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| models |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = CartAddRequestMsg()
+models_value = "[{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"},{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"}]"
+models = json.loads(models_value)
 
-result = awse_commerce_service_binding_client.create_cart_add_32(body)
+result = form_params_client.send_model_array(models)
 
 ```
-
 
-### <a name="create_cart_get_31"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_get_31") create_cart_get_31
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_file"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_file") send_file
 
 > TODO: Add a method description
 
 ```python
-def create_cart_get_31(self,
-                           body)
+def send_file(self,
+                  file)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| file |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = CartGetRequestMsg()
+file = open("pathtofile", 'rb')
 
-result = awse_commerce_service_binding_client.create_cart_get_31(body)
+result = form_params_client.send_file(file)
 
 ```
 
 
-### <a name="create_similarity_lookup_30"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_similarity_lookup_30") create_similarity_lookup_30
+### <a name="send_string"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_string") send_string
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_similarity_lookup_30(self,
-                                    body)
+def send_string(self,
+                    value)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| value |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = SimilarityLookupRequestMsg()
+value = 'TestString'
 
-result = awse_commerce_service_binding_client.create_similarity_lookup_30(body)
+result = form_params_client.send_string(value)
 
 ```
-
 
-### <a name="create_browse_node_lookup_29"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_browse_node_lookup_29") create_browse_node_lookup_29
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_rfc_3339_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_rfc_3339_date_time_array") send_rfc_3339_date_time_array
 
 > TODO: Add a method description
 
 ```python
-def create_browse_node_lookup_29(self,
-                                     body)
+def send_rfc_3339_date_time_array(self,
+                                      datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = BrowseNodeLookupRequestMsg()
+datetimes_value = ["1994-02-13T14:01:54.9571247Z","1994-02-13T14:01:54.9571247Z"]
+datetimes = json.loads(datetimes_value)
 
-result = awse_commerce_service_binding_client.create_browse_node_lookup_29(body)
+result = form_params_client.send_rfc_3339_date_time_array(datetimes)
 
 ```
 
 
-### <a name="create_item_lookup_28"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_lookup_28") create_item_lookup_28
+### <a name="send_mixed_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_mixed_array") send_mixed_array
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
+> Send a variety for form params. Returns file count and body params
 
 ```python
-def create_item_lookup_28(self,
-                              body)
+def send_mixed_array(self,
+                         options=dict())
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| file |  ``` Required ```  | TODO: Add a parameter description |
+| integers |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
+| models |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
+| strings |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = ItemLookupRequestMsg()
+collect = {}
 
-result = awse_commerce_service_binding_client.create_item_lookup_28(body)
+file = open("pathtofile", 'rb')
+collect['file'] = file
 
-```
+integers_value = "[1,2,3,4,5]"
+integers = json.loads(integers_value)
+collect['integers'] = integers
+
+models_value = "[{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"},{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"}]"
+models = json.loads(models_value)
+collect['models'] = models
+
+strings_value = '["abc", "def"]'
+strings = json.loads(strings_value)
+collect['strings'] = strings
+
 
+result = form_params_client.send_mixed_array(collect)
 
-### <a name="create_item_search_27"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_search_27") create_item_search_27
+```
+
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_integer_enum_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_integer_enum_array") send_integer_enum_array
 
 > TODO: Add a method description
 
 ```python
-def create_item_search_27(self,
-                              body)
+def send_integer_enum_array(self,
+                                suites)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| suites |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = ItemSearchRequestMsg()
+suites = [SuiteCode.HEARTS,SuiteCode.CLUBS,SuiteCode.DIAMONDS,SuiteCode.SPADES,SuiteCode.CLUBS]
 
-result = awse_commerce_service_binding_client.create_item_search_27(body)
+result = form_params_client.send_integer_enum_array(suites)
 
 ```
 
 
-### <a name="create_cart_clear_26"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_clear_26") create_cart_clear_26
+### <a name="send_string_enum_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.send_string_enum_array") send_string_enum_array
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_cart_clear_26(self,
-                             body)
+def send_string_enum_array(self,
+                               days)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| days |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = CartClearRequestMsg()
+days = [Days.TUESDAY,Days.SATURDAY,Days.MONDAY,Days.SUNDAY]
 
-result = awse_commerce_service_binding_client.create_cart_clear_26(body)
+result = form_params_client.send_string_enum_array(days)
 
 ```
+
 
+[Back to List of Controllers](#list_of_controllers)
 
-### <a name="create_cart_modify_25"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_modify_25") create_cart_modify_25
+## <a name="query_param_controller"></a>![Class: ](https://apidocs.io/img/class.png ".QueryParamController") QueryParamController
 
-> *Tags:*  ``` Skips Authentication ``` 
+### Get controller instance
 
+An instance of the ``` QueryParamController ``` class can be accessed from the API Client.
+
+```python
+ query_param_client = client.query_param
+```
+
+### <a name="date_array"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.date_array") date_array
+
 > TODO: Add a method description
 
 ```python
-def create_cart_modify_25(self,
-                              body)
+def date_array(self,
+                   dates)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| dates |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = CartModifyRequestMsg()
+dates_value = ["1994-02-13","1994-02-13"]
+dates = json.loads(dates_value)
 
-result = awse_commerce_service_binding_client.create_cart_modify_25(body)
+result = query_param_client.date_array(dates)
 
 ```
-
 
-### <a name="create_cart_create_24"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_create_24") create_cart_create_24
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="date"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.date") date
 
 > TODO: Add a method description
 
 ```python
-def create_cart_create_24(self,
-                              body)
+def date(self,
+                date)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| date |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = CartCreateRequestMsg()
+date = 1994-02-13
 
-result = awse_commerce_service_binding_client.create_cart_create_24(body)
+result = query_param_client.date(date)
 
 ```
 
 
-### <a name="create_cart_add_23"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_add_23") create_cart_add_23
+### <a name="unix_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.unix_date_time_array") unix_date_time_array
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_cart_add_23(self,
-                           body)
+def unix_date_time_array(self,
+                             datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = CartAddRequestMsg()
+datetimes_value = [1484719381,1484719381]
+datetimes = json.loads(datetimes_value)
 
-result = awse_commerce_service_binding_client.create_cart_add_23(body)
+result = query_param_client.unix_date_time_array(datetimes)
 
 ```
-
 
-### <a name="create_cart_get_22"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_get_22") create_cart_get_22
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="unix_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.unix_date_time") unix_date_time
 
 > TODO: Add a method description
 
 ```python
-def create_cart_get_22(self,
-                           body)
+def unix_date_time(self,
+                       datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = CartGetRequestMsg()
+datetime = 1484719381
 
-result = awse_commerce_service_binding_client.create_cart_get_22(body)
+result = query_param_client.unix_date_time(datetime)
 
 ```
 
 
-### <a name="create_similarity_lookup_21"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_similarity_lookup_21") create_similarity_lookup_21
+### <a name="rfc_1123_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.rfc_1123_date_time") rfc_1123_date_time
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_similarity_lookup_21(self,
-                                    body)
+def rfc_1123_date_time(self,
+                           datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = SimilarityLookupRequestMsg()
+datetime = Sun, 06 Nov 1994 08:49:37 GMT
 
-result = awse_commerce_service_binding_client.create_similarity_lookup_21(body)
+result = query_param_client.rfc_1123_date_time(datetime)
 
 ```
-
 
-### <a name="create_browse_node_lookup_20"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_browse_node_lookup_20") create_browse_node_lookup_20
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="rfc_1123_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.rfc_1123_date_time_array") rfc_1123_date_time_array
 
 > TODO: Add a method description
 
 ```python
-def create_browse_node_lookup_20(self,
-                                     body)
+def rfc_1123_date_time_array(self,
+                                 datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = BrowseNodeLookupRequestMsg()
+datetimes_value = ["Sun, 06 Nov 1994 08:49:37 GMT","Sun, 06 Nov 1994 08:49:37 GMT"]
+datetimes = json.loads(datetimes_value)
 
-result = awse_commerce_service_binding_client.create_browse_node_lookup_20(body)
+result = query_param_client.rfc_1123_date_time_array(datetimes)
 
 ```
 
 
-### <a name="create_item_lookup_19"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_lookup_19") create_item_lookup_19
+### <a name="rfc_3339_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.rfc_3339_date_time_array") rfc_3339_date_time_array
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_item_lookup_19(self,
-                              body)
+def rfc_3339_date_time_array(self,
+                                 datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = ItemLookupRequestMsg()
+datetimes_value = ["1994-02-13T14:01:54.9571247Z","1994-02-13T14:01:54.9571247Z"]
+datetimes = json.loads(datetimes_value)
 
-result = awse_commerce_service_binding_client.create_item_lookup_19(body)
+result = query_param_client.rfc_3339_date_time_array(datetimes)
 
 ```
-
 
-### <a name="create_item_search_18"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_search_18") create_item_search_18
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="rfc_3339_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.rfc_3339_date_time") rfc_3339_date_time
 
 > TODO: Add a method description
 
 ```python
-def create_item_search_18(self,
-                              body)
+def rfc_3339_date_time(self,
+                           datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = ItemSearchRequestMsg()
+datetime = 1994-02-13T14:01:54.9571247Z
 
-result = awse_commerce_service_binding_client.create_item_search_18(body)
+result = query_param_client.rfc_3339_date_time(datetime)
 
 ```
 
 
-### <a name="create_cart_clear_17"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_clear_17") create_cart_clear_17
+### <a name="no_params"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.no_params") no_params
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_cart_clear_17(self,
-                             body)
+def no_params(self)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 
 #### Example Usage
 
 ```python
-body = CartClearRequestMsg()
 
-result = awse_commerce_service_binding_client.create_cart_clear_17(body)
+result = query_param_client.no_params()
 
 ```
 
 
-### <a name="create_cart_modify_16"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_modify_16") create_cart_modify_16
+### <a name="string_param"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.string_param") string_param
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_cart_modify_16(self,
-                              body)
+def string_param(self,
+                     string)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| string |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = CartModifyRequestMsg()
+string = 'l;asd;asdwe[2304&&;\'.d??\\a\\\\\\;sd//'
 
-result = awse_commerce_service_binding_client.create_cart_modify_16(body)
+result = query_param_client.string_param(string)
 
 ```
-
 
-### <a name="create_cart_create_15"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_create_15") create_cart_create_15
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="url_param"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.url_param") url_param
 
 > TODO: Add a method description
 
 ```python
-def create_cart_create_15(self,
-                              body)
+def url_param(self,
+                  url)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| url |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = CartCreateRequestMsg()
+url = 'https://www.shahidisawesome.com/and/also/a/narcissist?thisis=aparameter&another=one'
 
-result = awse_commerce_service_binding_client.create_cart_create_15(body)
+result = query_param_client.url_param(url)
 
 ```
 
 
-### <a name="create_cart_add_14"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_add_14") create_cart_add_14
+### <a name="number_array"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.number_array") number_array
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_cart_add_14(self,
-                           body)
+def number_array(self,
+                     integers)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| integers |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = CartAddRequestMsg()
+integers_value = "[1,2,3,4,5]"
+integers = json.loads(integers_value)
 
-result = awse_commerce_service_binding_client.create_cart_add_14(body)
+result = query_param_client.number_array(integers)
 
 ```
-
 
-### <a name="create_cart_get_13"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_get_13") create_cart_get_13
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="string_array"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.string_array") string_array
 
 > TODO: Add a method description
 
 ```python
-def create_cart_get_13(self,
-                           body)
+def string_array(self,
+                     strings)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| strings |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = CartGetRequestMsg()
+strings_value = '["abc", "def"]'
+strings = json.loads(strings_value)
 
-result = awse_commerce_service_binding_client.create_cart_get_13(body)
+result = query_param_client.string_array(strings)
 
 ```
 
 
-### <a name="create_similarity_lookup_12"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_similarity_lookup_12") create_similarity_lookup_12
+### <a name="simple_query"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.simple_query") simple_query
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_similarity_lookup_12(self,
-                                    body)
+def simple_query(self,
+                     boolean,
+                     number,
+                     string,
+                     _optional_query_parameters=None)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| boolean |  ``` Required ```  | TODO: Add a parameter description |
+| number |  ``` Required ```  | TODO: Add a parameter description |
+| string |  ``` Required ```  | TODO: Add a parameter description |
+| _optional_query_parameters | ``` Optional ``` | Additional optional query parameters are supported by this method |
 
 
 
 #### Example Usage
 
 ```python
-body = SimilarityLookupRequestMsg()
+boolean = True
+number = 4
+string = 'TestString'
+# key-value map for optional query parameters
+optional_query_parameters = { }
 
-result = awse_commerce_service_binding_client.create_similarity_lookup_12(body)
 
-```
+result = query_param_client.simple_query(boolean, number, string, optional_query_parameters)
 
+```
 
-### <a name="create_browse_node_lookup_11"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_browse_node_lookup_11") create_browse_node_lookup_11
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="string_enum_array"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.string_enum_array") string_enum_array
 
 > TODO: Add a method description
 
 ```python
-def create_browse_node_lookup_11(self,
-                                     body)
+def string_enum_array(self,
+                          days)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| days |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = BrowseNodeLookupRequestMsg()
+days = [Days.TUESDAY,Days.SATURDAY,Days.MONDAY,Days.SUNDAY]
 
-result = awse_commerce_service_binding_client.create_browse_node_lookup_11(body)
+result = query_param_client.string_enum_array(days)
 
 ```
-
 
-### <a name="create_item_lookup_10"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_lookup_10") create_item_lookup_10
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="multiple_params"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.multiple_params") multiple_params
 
 > TODO: Add a method description
 
 ```python
-def create_item_lookup_10(self,
-                              body)
+def multiple_params(self,
+                        number,
+                        precision,
+                        string,
+                        url)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| number |  ``` Required ```  | TODO: Add a parameter description |
+| precision |  ``` Required ```  | TODO: Add a parameter description |
+| string |  ``` Required ```  | TODO: Add a parameter description |
+| url |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = ItemLookupRequestMsg()
+number = 123412312
+precision = 1112.34
+string = '""test./;";12&&3asl"";"qw1&34"///..//.'
+url = 'http://www.abc.com/test?a=b&c="http://lolol.com?param=no&another=lol"'
 
-result = awse_commerce_service_binding_client.create_item_lookup_10(body)
+result = query_param_client.multiple_params(number, precision, string, url)
 
 ```
 
 
-### <a name="create_item_search_9"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_search_9") create_item_search_9
+### <a name="integer_enum_array"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.integer_enum_array") integer_enum_array
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_item_search_9(self,
-                             body)
+def integer_enum_array(self,
+                           suites)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| suites |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = ItemSearchRequestMsg()
+suites = [SuiteCode.HEARTS,SuiteCode.CLUBS,SuiteCode.DIAMONDS,SuiteCode.SPADES,SuiteCode.CLUBS]
 
-result = awse_commerce_service_binding_client.create_item_search_9(body)
+result = query_param_client.integer_enum_array(suites)
 
 ```
 
 
-### <a name="create_cart_clear"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_clear") create_cart_clear
+[Back to List of Controllers](#list_of_controllers)
 
-> *Tags:*  ``` Skips Authentication ``` 
+## <a name="error_codes_controller"></a>![Class: ](https://apidocs.io/img/class.png ".ErrorCodesController") ErrorCodesController
 
-> TODO: Add a method description
+### Get controller instance
 
+An instance of the ``` ErrorCodesController ``` class can be accessed from the API Client.
+
 ```python
-def create_cart_clear(self,
-                          body)
+ error_codes_client = client.error_codes
 ```
-
-#### Parameters
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+### <a name="get_400"></a>![Method: ](https://apidocs.io/img/method.png ".ErrorCodesController.get_400") get_400
 
+> TODO: Add a method description
 
+```python
+def get_400(self)
+```
 
 #### Example Usage
 
 ```python
-body = CartClearRequestMsg()
 
-result = awse_commerce_service_binding_client.create_cart_clear(body)
+result = error_codes_client.get_400()
 
 ```
 
 
-### <a name="create_cart_modify"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_modify") create_cart_modify
+### <a name="get_500"></a>![Method: ](https://apidocs.io/img/method.png ".ErrorCodesController.get_500") get_500
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_cart_modify(self,
-                           body)
+def get_500(self)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
-
 #### Example Usage
 
 ```python
-body = CartModifyRequestMsg()
 
-result = awse_commerce_service_binding_client.create_cart_modify(body)
+result = error_codes_client.get_500()
 
 ```
 
 
-### <a name="create_cart_create"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_create") create_cart_create
+### <a name="get_401"></a>![Method: ](https://apidocs.io/img/method.png ".ErrorCodesController.get_401") get_401
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 ```python
-def create_cart_create(self,
-                           body)
+def get_401(self)
 ```
 
-#### Parameters
+#### Example Usage
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+```python
 
+result = error_codes_client.get_401()
 
+```
 
-#### Example Usage
+#### Errors
 
-```python
-body = CartCreateRequestMsg()
+| Error Code | Error Description |
+|------------|-------------------|
+| 401 | 401 Local |
+| 421 | Default |
+| 431 | Default |
+| 432 | Default |
+| 441 | Default |
+| 0 | Invalid response. |
 
-result = awse_commerce_service_binding_client.create_cart_create(body)
 
-```
 
 
-### <a name="create_cart_add"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_add") create_cart_add
+[Back to List of Controllers](#list_of_controllers)
 
-> *Tags:*  ``` Skips Authentication ``` 
+## <a name="echo_controller"></a>![Class: ](https://apidocs.io/img/class.png ".EchoController") EchoController
 
-> TODO: Add a method description
+### Get controller instance
+
+An instance of the ``` EchoController ``` class can be accessed from the API Client.
+
+```python
+ echo_client = client.echo
+```
+
+### <a name="json_echo"></a>![Method: ](https://apidocs.io/img/method.png ".EchoController.json_echo") json_echo
 
+> Echo's back the request
+
 ```python
-def create_cart_add(self,
-                        body)
+def json_echo(self,
+                  input)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| input |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = CartAddRequestMsg()
+input_value = "{\"uid\": \"1123213\", \"name\": \"Shahid\"}"
+input = json.loads(input_value)
 
-result = awse_commerce_service_binding_client.create_cart_add(body)
+result = echo_client.json_echo(input)
 
 ```
-
 
-### <a name="create_cart_get"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_get") create_cart_get
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="form_echo"></a>![Method: ](https://apidocs.io/img/method.png ".EchoController.form_echo") form_echo
 
-> TODO: Add a method description
+> Sends the request including any form params as JSON
 
 ```python
-def create_cart_get(self,
-                        body)
+def form_echo(self,
+                  input)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| input |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = CartGetRequestMsg()
+input_value = "{\"uid\": \"1123213\", \"name\": \"Shahid\"}"
+input = json.loads(input_value)
 
-result = awse_commerce_service_binding_client.create_cart_get(body)
+result = echo_client.form_echo(input)
 
 ```
-
 
-### <a name="create_similarity_lookup"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_similarity_lookup") create_similarity_lookup
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="query_echo"></a>![Method: ](https://apidocs.io/img/method.png ".EchoController.query_echo") query_echo
 
 > TODO: Add a method description
 
 ```python
-def create_similarity_lookup(self,
-                                 body)
+def query_echo(self,
+                   _optional_query_parameters=None)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| _optional_query_parameters | ``` Optional ``` | Additional optional query parameters are supported by this method |
 
 
 
 #### Example Usage
 
 ```python
-body = SimilarityLookupRequestMsg()
+# key-value map for optional query parameters
+optional_query_parameters = { }
 
-result = awse_commerce_service_binding_client.create_similarity_lookup(body)
 
+result = echo_client.query_echo(optional_query_parameters)
+
 ```
 
 
-### <a name="create_browse_node_lookup"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_browse_node_lookup") create_browse_node_lookup
+[Back to List of Controllers](#list_of_controllers)
 
-> *Tags:*  ``` Skips Authentication ``` 
+## <a name="header_controller"></a>![Class: ](https://apidocs.io/img/class.png ".HeaderController") HeaderController
 
-> TODO: Add a method description
+### Get controller instance
+
+An instance of the ``` HeaderController ``` class can be accessed from the API Client.
+
+```python
+ header_client = client.header
+```
 
+### <a name="send_headers"></a>![Method: ](https://apidocs.io/img/method.png ".HeaderController.send_headers") send_headers
+
+> Sends a single header params
+
 ```python
-def create_browse_node_lookup(self,
-                                  body)
+def send_headers(self,
+                     custom_header,
+                     value)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| customHeader |  ``` Required ```  | TODO: Add a parameter description |
+| value |  ``` Required ```  | Represents the value of the custom header |
 
 
 
 #### Example Usage
 
 ```python
-body = BrowseNodeLookupRequestMsg()
+custom_header = 'TestString'
+value = 'TestString'
 
-result = awse_commerce_service_binding_client.create_browse_node_lookup(body)
+result = header_client.send_headers(custom_header, value)
 
 ```
+
+
+[Back to List of Controllers](#list_of_controllers)
 
+## <a name="template_params_controller"></a>![Class: ](https://apidocs.io/img/class.png ".TemplateParamsController") TemplateParamsController
 
-### <a name="create_item_lookup"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_lookup") create_item_lookup
+### Get controller instance
 
-> *Tags:*  ``` Skips Authentication ``` 
+An instance of the ``` TemplateParamsController ``` class can be accessed from the API Client.
 
+```python
+ template_params_client = client.template_params
+```
+
+### <a name="send_string_array"></a>![Method: ](https://apidocs.io/img/method.png ".TemplateParamsController.send_string_array") send_string_array
+
 > TODO: Add a method description
 
 ```python
-def create_item_lookup(self,
-                           body)
+def send_string_array(self,
+                          strings)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| strings |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = ItemLookupRequestMsg()
+strings_value = '["abc", "def"]'
+strings = json.loads(strings_value)
 
-result = awse_commerce_service_binding_client.create_item_lookup(body)
+result = template_params_client.send_string_array(strings)
 
 ```
-
 
-### <a name="create_item_search"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_search") create_item_search
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_integer_array"></a>![Method: ](https://apidocs.io/img/method.png ".TemplateParamsController.send_integer_array") send_integer_array
 
 > TODO: Add a method description
 
 ```python
-def create_item_search(self,
-                           body)
+def send_integer_array(self,
+                           integers)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| integers |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = ItemSearchRequestMsg()
+integers_value = "[1,2,3,4,5]"
+integers = json.loads(integers_value)
 
-result = awse_commerce_service_binding_client.create_item_search(body)
+result = template_params_client.send_integer_array(integers)
 
 ```
 

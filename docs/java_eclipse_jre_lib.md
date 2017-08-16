@@ -1,5 +1,9 @@
 # Getting started
 
+Testing various
+ api 
+features
+
 ## How to Build
 
 The generated code uses a few Maven dependencies e.g., Jackson, UniRest,
@@ -9,62 +13,62 @@ you will need internet access for a successful build.
 
 * In order to open the client library in Eclipse click on ``` File -> Import ```.
 
-![Importing SDK into Eclipse - Step 1](https://apidocs.io/illustration/java?step=import0&workspaceFolder=AWSECommerceService-Java&workspaceName=AWSECommerceService&projectName=AWSECommerceServiceLib&rootNamespace=com.amazon.webservices)
+![Importing SDK into Eclipse - Step 1](https://apidocs.io/illustration/java?step=import0&workspaceFolder=Tester-Java&workspaceName=Tester&projectName=TesterLib&rootNamespace=org.hopto.apimatic)
 
 * In the import dialog, select ``` Existing Java Project ``` and click ``` Next ```.
 
-![Importing SDK into Eclipse - Step 2](https://apidocs.io/illustration/java?step=import1&workspaceFolder=AWSECommerceService-Java&workspaceName=AWSECommerceService&projectName=AWSECommerceServiceLib&rootNamespace=com.amazon.webservices)
+![Importing SDK into Eclipse - Step 2](https://apidocs.io/illustration/java?step=import1&workspaceFolder=Tester-Java&workspaceName=Tester&projectName=TesterLib&rootNamespace=org.hopto.apimatic)
 
 * Browse to locate the folder containing the source code. Select the detected location of the project and click ``` Finish ```.
 
-![Importing SDK into Eclipse - Step 3](https://apidocs.io/illustration/java?step=import2&workspaceFolder=AWSECommerceService-Java&workspaceName=AWSECommerceService&projectName=AWSECommerceServiceLib&rootNamespace=com.amazon.webservices)
+![Importing SDK into Eclipse - Step 3](https://apidocs.io/illustration/java?step=import2&workspaceFolder=Tester-Java&workspaceName=Tester&projectName=TesterLib&rootNamespace=org.hopto.apimatic)
 
 * Upon successful import, the project will be automatically built by Eclipse after automatically resolving the dependencies.
 
-![Importing SDK into Eclipse - Step 4](https://apidocs.io/illustration/java?step=import3&workspaceFolder=AWSECommerceService-Java&workspaceName=AWSECommerceService&projectName=AWSECommerceServiceLib&rootNamespace=com.amazon.webservices)
+![Importing SDK into Eclipse - Step 4](https://apidocs.io/illustration/java?step=import3&workspaceFolder=Tester-Java&workspaceName=Tester&projectName=TesterLib&rootNamespace=org.hopto.apimatic)
 
 ## How to Use
 
-The following section explains how to use the AWSECommerceService library in a new console project.
+The following section explains how to use the Tester library in a new console project.
 
 ### 1. Starting a new project
 
 For starting a new project, click the menu command ``` File > New > Project ```.
 
-![Add a new project in Eclipse](https://apidocs.io/illustration/java?step=createNewProject0&workspaceFolder=AWSECommerceService-Java&workspaceName=AWSECommerceService&projectName=AWSECommerceServiceLib&rootNamespace=com.amazon.webservices)
+![Add a new project in Eclipse](https://apidocs.io/illustration/java?step=createNewProject0&workspaceFolder=Tester-Java&workspaceName=Tester&projectName=TesterLib&rootNamespace=org.hopto.apimatic)
 
 Next, choose ``` Maven > Maven Project ```and click ``` Next ```.
 
-![Create a new Maven Project - Step 1](https://apidocs.io/illustration/java?step=createNewProject1&workspaceFolder=AWSECommerceService-Java&workspaceName=AWSECommerceService&projectName=AWSECommerceServiceLib&rootNamespace=com.amazon.webservices)
+![Create a new Maven Project - Step 1](https://apidocs.io/illustration/java?step=createNewProject1&workspaceFolder=Tester-Java&workspaceName=Tester&projectName=TesterLib&rootNamespace=org.hopto.apimatic)
 
 Here, make sure to use the current workspace by choosing ``` Use default Workspace location ```, as shown in the picture below and click ``` Next ```.
 
-![Create a new Maven Project - Step 2](https://apidocs.io/illustration/java?step=createNewProject2&workspaceFolder=AWSECommerceService-Java&workspaceName=AWSECommerceService&projectName=AWSECommerceServiceLib&rootNamespace=com.amazon.webservices)
+![Create a new Maven Project - Step 2](https://apidocs.io/illustration/java?step=createNewProject2&workspaceFolder=Tester-Java&workspaceName=Tester&projectName=TesterLib&rootNamespace=org.hopto.apimatic)
 
 Following this, select the *quick start* project type to create a simple project with an existing class and a ``` main ``` method. To do this, choose ``` maven-archetype-quickstart ``` item from the list and click ``` Next ```.
 
-![Create a new Maven Project - Step 3](https://apidocs.io/illustration/java?step=createNewProject3&workspaceFolder=AWSECommerceService-Java&workspaceName=AWSECommerceService&projectName=AWSECommerceServiceLib&rootNamespace=com.amazon.webservices)
+![Create a new Maven Project - Step 3](https://apidocs.io/illustration/java?step=createNewProject3&workspaceFolder=Tester-Java&workspaceName=Tester&projectName=TesterLib&rootNamespace=org.hopto.apimatic)
 
 In the last step, provide a ``` Group Id ``` and ``` Artifact Id ``` as shown in the picture below and click ``` Finish ```.
 
-![Create a new Maven Project - Step 4](https://apidocs.io/illustration/java?step=createNewProject4&workspaceFolder=AWSECommerceService-Java&workspaceName=AWSECommerceService&projectName=AWSECommerceServiceLib&rootNamespace=com.amazon.webservices)
+![Create a new Maven Project - Step 4](https://apidocs.io/illustration/java?step=createNewProject4&workspaceFolder=Tester-Java&workspaceName=Tester&projectName=TesterLib&rootNamespace=org.hopto.apimatic)
 
 ### 2. Add reference of the library project
 
-The created Maven project manages its dependencies using its ``` pom.xml ``` file. In order to add a dependency on the *AWSECommerceServiceLib* client library, double click on the ``` pom.xml ``` file in the ``` Package Explorer ```. Opening the ``` pom.xml ``` file will render a graphical view on the cavas. Here, switch to the ``` Dependencies ``` tab and click the ``` Add ``` button as shown in the picture below.
+The created Maven project manages its dependencies using its ``` pom.xml ``` file. In order to add a dependency on the *TesterLib* client library, double click on the ``` pom.xml ``` file in the ``` Package Explorer ```. Opening the ``` pom.xml ``` file will render a graphical view on the cavas. Here, switch to the ``` Dependencies ``` tab and click the ``` Add ``` button as shown in the picture below.
 
-![Adding dependency to the client library - Step 1](https://apidocs.io/illustration/java?step=testProject0&workspaceFolder=AWSECommerceService-Java&workspaceName=AWSECommerceService&projectName=AWSECommerceServiceLib&rootNamespace=com.amazon.webservices)
+![Adding dependency to the client library - Step 1](https://apidocs.io/illustration/java?step=testProject0&workspaceFolder=Tester-Java&workspaceName=Tester&projectName=TesterLib&rootNamespace=org.hopto.apimatic)
 
-Clicking the ``` Add ``` button will open a dialog where you need to specify AWSECommerceService in ``` Group Id ``` and AWSECommerceServiceLib in the ``` Artifact Id ``` fields. Once added click ``` OK ```. Save the ``` pom.xml ``` file.
+Clicking the ``` Add ``` button will open a dialog where you need to specify Tester in ``` Group Id ``` and TesterLib in the ``` Artifact Id ``` fields. Once added click ``` OK ```. Save the ``` pom.xml ``` file.
 
-![Adding dependency to the client library - Step 2](https://apidocs.io/illustration/java?step=testProject1&workspaceFolder=AWSECommerceService-Java&workspaceName=AWSECommerceService&projectName=AWSECommerceServiceLib&rootNamespace=com.amazon.webservices)
+![Adding dependency to the client library - Step 2](https://apidocs.io/illustration/java?step=testProject1&workspaceFolder=Tester-Java&workspaceName=Tester&projectName=TesterLib&rootNamespace=org.hopto.apimatic)
 
 ### 3. Write sample code
 
 Once the ``` SimpleConsoleApp ``` is created, a file named ``` App.java ``` will be visible in the *Package Explorer* with a ``` main ``` method. This is the entry point for the execution of the created project.
 Here, you can add code to initialize the client library and instantiate a *Controller* class. Sample code to initialize the client library and using controller methods is given in the subsequent sections.
 
-![Adding dependency to the client library - Step 2](https://apidocs.io/illustration/java?step=testProject2&workspaceFolder=AWSECommerceService-Java&workspaceName=AWSECommerceService&projectName=AWSECommerceServiceLib&rootNamespace=com.amazon.webservices)
+![Adding dependency to the client library - Step 2](https://apidocs.io/illustration/java?step=testProject2&workspaceFolder=Tester-Java&workspaceName=Tester&projectName=TesterLib&rootNamespace=org.hopto.apimatic)
 
 ## How to Test
 
@@ -73,7 +77,7 @@ JUnit is used as the testing framework and test runner.
 
 In Eclipse, for running the tests do the following:
 
-1. Select the project *AWSECommerceServiceLib* from the package explorer.
+1. Select the project *TesterLib* from the package explorer.
 2. Select "Run -> Run as -> JUnit Test" or use "Alt + Shift + X" followed by "T" to run the Tests.
 
 ## Initialization
@@ -84,7 +88,7 @@ API client can be initialized as following.
 
 ```java
 
-AWSECommerceServiceClient client = new AWSECommerceServiceClient();
+TesterClient client = new TesterClient();
 ```
 
 
@@ -92,1645 +96,664 @@ AWSECommerceServiceClient client = new AWSECommerceServiceClient();
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [AWSECommerceServiceBindingController](#awse_commerce_service_binding_controller)
+* [ResponseTypesController](#response_types_controller)
+* [BodyParamsController](#body_params_controller)
+* [FormParamsController](#form_params_controller)
+* [QueryParamController](#query_param_controller)
+* [ErrorCodesController](#error_codes_controller)
+* [EchoController](#echo_controller)
+* [HeaderController](#header_controller)
+* [TemplateParamsController](#template_params_controller)
 
-## <a name="awse_commerce_service_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController") AWSECommerceServiceBindingController
+## <a name="response_types_controller"></a>![Class: ](https://apidocs.io/img/class.png "org.hopto.apimatic.controllers.ResponseTypesController") ResponseTypesController
 
 ### Get singleton instance
 
-The singleton instance of the ``` AWSECommerceServiceBindingController ``` class can be accessed from the API Client.
+The singleton instance of the ``` ResponseTypesController ``` class can be accessed from the API Client.
 
 ```java
-AWSECommerceServiceBindingController aWSECommerceServiceBinding = client.getAWSECommerceServiceBinding();
+ResponseTypesController responseTypes = client.getResponseTypes();
 ```
 
-### <a name="create_cart_modify97_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartModify97Async") createCartModify97Async
+### <a name="get_date_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.ResponseTypesController.getDateArrayAsync") getDateArrayAsync
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```java
-void createCartModify97Async(
-        final CartModifyRequestMsg body,
-        final APICallBack<CartModifyResponseMsg> callBack)
+void getDateArrayAsync(final APICallBack<List<Date>> callBack)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```java
-try {
-    CartModifyRequestMsg body = new CartModifyRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartModify97Async(body, new APICallBack<CartModifyResponseMsg>() {
-        public void onSuccess(HttpContext context, CartModifyResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+// Invoking the API call with sample inputs
+responseTypes.getDateArrayAsync(new APICallBack<List<Date>>() {
+    public void onSuccess(HttpContext context, List<Date> response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_cart_clear98_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartClear98Async") createCartClear98Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_date_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.ResponseTypesController.getDateAsync") getDateAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createCartClear98Async(
-        final CartClearRequestMsg body,
-        final APICallBack<CartClearResponseMsg> callBack)
+void getDateAsync(final APICallBack<Date> callBack)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```java
-try {
-    CartClearRequestMsg body = new CartClearRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartClear98Async(body, new APICallBack<CartClearResponseMsg>() {
-        public void onSuccess(HttpContext context, CartClearResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+// Invoking the API call with sample inputs
+responseTypes.getDateAsync(new APICallBack<Date>() {
+    public void onSuccess(HttpContext context, Date response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_cart_create96_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartCreate96Async") createCartCreate96Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_long_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.ResponseTypesController.getLongAsync") getLongAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createCartCreate96Async(
-        final CartCreateRequestMsg body,
-        final APICallBack<CartCreateResponseMsg> callBack)
+void getLongAsync(final APICallBack<Long> callBack)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```java
-try {
-    CartCreateRequestMsg body = new CartCreateRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartCreate96Async(body, new APICallBack<CartCreateResponseMsg>() {
-        public void onSuccess(HttpContext context, CartCreateResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+// Invoking the API call with sample inputs
+responseTypes.getLongAsync(new APICallBack<Long>() {
+    public void onSuccess(HttpContext context, Long response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_cart_add95_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartAdd95Async") createCartAdd95Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_model_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.ResponseTypesController.getModelAsync") getModelAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createCartAdd95Async(
-        final CartAddRequestMsg body,
-        final APICallBack<CartAddResponseMsg> callBack)
+void getModelAsync(final APICallBack<Person> callBack)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```java
-try {
-    CartAddRequestMsg body = new CartAddRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartAdd95Async(body, new APICallBack<CartAddResponseMsg>() {
-        public void onSuccess(HttpContext context, CartAddResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+// Invoking the API call with sample inputs
+responseTypes.getModelAsync(new APICallBack<Person>() {
+    public void onSuccess(HttpContext context, Person response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_cart_get94_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartGet94Async") createCartGet94Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_string_enum_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.ResponseTypesController.getStringEnumArrayAsync") getStringEnumArrayAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createCartGet94Async(
-        final CartGetRequestMsg body,
-        final APICallBack<CartGetResponseMsg> callBack)
+void getStringEnumArrayAsync(final APICallBack<List<Days>> callBack)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```java
-try {
-    CartGetRequestMsg body = new CartGetRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartGet94Async(body, new APICallBack<CartGetResponseMsg>() {
-        public void onSuccess(HttpContext context, CartGetResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+// Invoking the API call with sample inputs
+responseTypes.getStringEnumArrayAsync(new APICallBack<List<Days>>() {
+    public void onSuccess(HttpContext context, List<Days> response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_similarity_lookup93_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createSimilarityLookup93Async") createSimilarityLookup93Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_string_enum_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.ResponseTypesController.getStringEnumAsync") getStringEnumAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createSimilarityLookup93Async(
-        final SimilarityLookupRequestMsg body,
-        final APICallBack<SimilarityLookupResponseMsg> callBack)
+void getStringEnumAsync(final APICallBack<Days> callBack)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```java
-try {
-    SimilarityLookupRequestMsg body = new SimilarityLookupRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createSimilarityLookup93Async(body, new APICallBack<SimilarityLookupResponseMsg>() {
-        public void onSuccess(HttpContext context, SimilarityLookupResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+// Invoking the API call with sample inputs
+responseTypes.getStringEnumAsync(new APICallBack<Days>() {
+    public void onSuccess(HttpContext context, Days response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_browse_node_lookup92_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createBrowseNodeLookup92Async") createBrowseNodeLookup92Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_model_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.ResponseTypesController.getModelArrayAsync") getModelArrayAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createBrowseNodeLookup92Async(
-        final BrowseNodeLookupRequestMsg body,
-        final APICallBack<BrowseNodeLookupResponseMsg> callBack)
+void getModelArrayAsync(final APICallBack<List<Person>> callBack)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```java
-try {
-    BrowseNodeLookupRequestMsg body = new BrowseNodeLookupRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createBrowseNodeLookup92Async(body, new APICallBack<BrowseNodeLookupResponseMsg>() {
-        public void onSuccess(HttpContext context, BrowseNodeLookupResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+// Invoking the API call with sample inputs
+responseTypes.getModelArrayAsync(new APICallBack<List<Person>>() {
+    public void onSuccess(HttpContext context, List<Person> response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_item_lookup91_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemLookup91Async") createItemLookup91Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_int_enum_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.ResponseTypesController.getIntEnumAsync") getIntEnumAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createItemLookup91Async(
-        final ItemLookupRequestMsg body,
-        final APICallBack<ItemLookupResponseMsg> callBack)
+void getIntEnumAsync(final APICallBack<SuiteCode> callBack)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```java
-try {
-    ItemLookupRequestMsg body = new ItemLookupRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createItemLookup91Async(body, new APICallBack<ItemLookupResponseMsg>() {
-        public void onSuccess(HttpContext context, ItemLookupResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+// Invoking the API call with sample inputs
+responseTypes.getIntEnumAsync(new APICallBack<SuiteCode>() {
+    public void onSuccess(HttpContext context, SuiteCode response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_item_search90_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemSearch90Async") createItemSearch90Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_int_enum_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.ResponseTypesController.getIntEnumArrayAsync") getIntEnumArrayAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createItemSearch90Async(
-        final ItemSearchRequestMsg body,
-        final APICallBack<ItemSearchResponseMsg> callBack)
+void getIntEnumArrayAsync(final APICallBack<List<SuiteCode>> callBack)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```java
-try {
-    ItemSearchRequestMsg body = new ItemSearchRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createItemSearch90Async(body, new APICallBack<ItemSearchResponseMsg>() {
-        public void onSuccess(HttpContext context, ItemSearchResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+// Invoking the API call with sample inputs
+responseTypes.getIntEnumArrayAsync(new APICallBack<List<SuiteCode>>() {
+    public void onSuccess(HttpContext context, List<SuiteCode> response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_cart_clear89_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartClear89Async") createCartClear89Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_precision_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.ResponseTypesController.getPrecisionAsync") getPrecisionAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createCartClear89Async(
-        final CartClearRequestMsg body,
-        final APICallBack<CartClearResponseMsg> callBack)
+void getPrecisionAsync(final APICallBack<Double> callBack)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```java
-try {
-    CartClearRequestMsg body = new CartClearRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartClear89Async(body, new APICallBack<CartClearResponseMsg>() {
-        public void onSuccess(HttpContext context, CartClearResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
+// Invoking the API call with sample inputs
+responseTypes.getPrecisionAsync(new APICallBack<Double>() {
+    public void onSuccess(HttpContext context, Double response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
 ```
 
 
-### <a name="create_cart_modify88_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartModify88Async") createCartModify88Async
+### <a name="get_binary_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.ResponseTypesController.getBinaryAsync") getBinaryAsync
 
-> *Tags:*  ``` Skips Authentication ``` 
+> gets a binary object
 
-> TODO: Add a method description
+
+```java
+void getBinaryAsync(final APICallBack<InputStream> callBack)
+```
 
+#### Example Usage
 
 ```java
-void createCartModify88Async(
-        final CartModifyRequestMsg body,
-        final APICallBack<CartModifyResponseMsg> callBack)
+// Invoking the API call with sample inputs
+responseTypes.getBinaryAsync(new APICallBack<InputStream>() {
+    public void onSuccess(HttpContext context, InputStream response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
 ```
 
-#### Parameters
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+### <a name="get_integer_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.ResponseTypesController.getIntegerAsync") getIntegerAsync
+
+> Gets a integer response
 
+
+```java
+void getIntegerAsync(final APICallBack<Integer> callBack)
+```
 
 #### Example Usage
 
 ```java
-try {
-    CartModifyRequestMsg body = new CartModifyRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartModify88Async(body, new APICallBack<CartModifyResponseMsg>() {
-        public void onSuccess(HttpContext context, CartModifyResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
+// Invoking the API call with sample inputs
+responseTypes.getIntegerAsync(new APICallBack<Integer>() {
+    public void onSuccess(HttpContext context, Integer response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
 ```
 
 
-### <a name="create_cart_create87_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartCreate87Async") createCartCreate87Async
+### <a name="get_integer_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.ResponseTypesController.getIntegerArrayAsync") getIntegerArrayAsync
 
-> *Tags:*  ``` Skips Authentication ``` 
+> Get an array of integers.
 
-> TODO: Add a method description
+
+```java
+void getIntegerArrayAsync(final APICallBack<List<Integer>> callBack)
+```
 
+#### Example Usage
 
 ```java
-void createCartCreate87Async(
-        final CartCreateRequestMsg body,
-        final APICallBack<CartCreateResponseMsg> callBack)
+// Invoking the API call with sample inputs
+responseTypes.getIntegerArrayAsync(new APICallBack<List<Integer>>() {
+    public void onSuccess(HttpContext context, List<Integer> response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
 ```
 
-#### Parameters
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+### <a name="get_dynamic_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.ResponseTypesController.getDynamicAsync") getDynamicAsync
 
+> TODO: Add a method description
 
-#### Example Usage
 
 ```java
-try {
-    CartCreateRequestMsg body = new CartCreateRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartCreate87Async(body, new APICallBack<CartCreateResponseMsg>() {
-        public void onSuccess(HttpContext context, CartCreateResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
+void getDynamicAsync(final APICallBack<DynamicResponse> callBack)
 ```
+
+#### Example Usage
+
+```java
+// Invoking the API call with sample inputs
+responseTypes.getDynamicAsync(new APICallBack<DynamicResponse>() {
+    public void onSuccess(HttpContext context, DynamicResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_cart_add86_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartAdd86Async") createCartAdd86Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_dynamic_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.ResponseTypesController.getDynamicArrayAsync") getDynamicArrayAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createCartAdd86Async(
-        final CartAddRequestMsg body,
-        final APICallBack<CartAddResponseMsg> callBack)
+void getDynamicArrayAsync(final APICallBack<DynamicResponse> callBack)
 ```
 
-#### Parameters
+#### Example Usage
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    CartAddRequestMsg body = new CartAddRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartAdd86Async(body, new APICallBack<CartAddResponseMsg>() {
-        public void onSuccess(HttpContext context, CartAddResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-
-### <a name="create_cart_get85_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartGet85Async") createCartGet85Async
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```java
-void createCartGet85Async(
-        final CartGetRequestMsg body,
-        final APICallBack<CartGetResponseMsg> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    CartGetRequestMsg body = new CartGetRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartGet85Async(body, new APICallBack<CartGetResponseMsg>() {
-        public void onSuccess(HttpContext context, CartGetResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-
-### <a name="create_similarity_lookup84_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createSimilarityLookup84Async") createSimilarityLookup84Async
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```java
-void createSimilarityLookup84Async(
-        final SimilarityLookupRequestMsg body,
-        final APICallBack<SimilarityLookupResponseMsg> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    SimilarityLookupRequestMsg body = new SimilarityLookupRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createSimilarityLookup84Async(body, new APICallBack<SimilarityLookupResponseMsg>() {
-        public void onSuccess(HttpContext context, SimilarityLookupResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-
-### <a name="create_browse_node_lookup83_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createBrowseNodeLookup83Async") createBrowseNodeLookup83Async
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```java
-void createBrowseNodeLookup83Async(
-        final BrowseNodeLookupRequestMsg body,
-        final APICallBack<BrowseNodeLookupResponseMsg> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    BrowseNodeLookupRequestMsg body = new BrowseNodeLookupRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createBrowseNodeLookup83Async(body, new APICallBack<BrowseNodeLookupResponseMsg>() {
-        public void onSuccess(HttpContext context, BrowseNodeLookupResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-
-### <a name="create_item_lookup82_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemLookup82Async") createItemLookup82Async
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```java
-void createItemLookup82Async(
-        final ItemLookupRequestMsg body,
-        final APICallBack<ItemLookupResponseMsg> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    ItemLookupRequestMsg body = new ItemLookupRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createItemLookup82Async(body, new APICallBack<ItemLookupResponseMsg>() {
-        public void onSuccess(HttpContext context, ItemLookupResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-
-### <a name="create_item_search81_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemSearch81Async") createItemSearch81Async
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```java
-void createItemSearch81Async(
-        final ItemSearchRequestMsg body,
-        final APICallBack<ItemSearchResponseMsg> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    ItemSearchRequestMsg body = new ItemSearchRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createItemSearch81Async(body, new APICallBack<ItemSearchResponseMsg>() {
-        public void onSuccess(HttpContext context, ItemSearchResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-
-### <a name="create_cart_clear80_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartClear80Async") createCartClear80Async
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```java
-void createCartClear80Async(
-        final CartClearRequestMsg body,
-        final APICallBack<CartClearResponseMsg> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    CartClearRequestMsg body = new CartClearRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartClear80Async(body, new APICallBack<CartClearResponseMsg>() {
-        public void onSuccess(HttpContext context, CartClearResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-
-### <a name="create_cart_modify79_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartModify79Async") createCartModify79Async
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```java
-void createCartModify79Async(
-        final CartModifyRequestMsg body,
-        final APICallBack<CartModifyResponseMsg> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    CartModifyRequestMsg body = new CartModifyRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartModify79Async(body, new APICallBack<CartModifyResponseMsg>() {
-        public void onSuccess(HttpContext context, CartModifyResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-
-### <a name="create_cart_create78_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartCreate78Async") createCartCreate78Async
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```java
-void createCartCreate78Async(
-        final CartCreateRequestMsg body,
-        final APICallBack<CartCreateResponseMsg> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    CartCreateRequestMsg body = new CartCreateRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartCreate78Async(body, new APICallBack<CartCreateResponseMsg>() {
-        public void onSuccess(HttpContext context, CartCreateResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-
-### <a name="create_cart_add77_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartAdd77Async") createCartAdd77Async
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```java
-void createCartAdd77Async(
-        final CartAddRequestMsg body,
-        final APICallBack<CartAddResponseMsg> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    CartAddRequestMsg body = new CartAddRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartAdd77Async(body, new APICallBack<CartAddResponseMsg>() {
-        public void onSuccess(HttpContext context, CartAddResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-
-### <a name="create_cart_get76_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartGet76Async") createCartGet76Async
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```java
-void createCartGet76Async(
-        final CartGetRequestMsg body,
-        final APICallBack<CartGetResponseMsg> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    CartGetRequestMsg body = new CartGetRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartGet76Async(body, new APICallBack<CartGetResponseMsg>() {
-        public void onSuccess(HttpContext context, CartGetResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-
-### <a name="create_similarity_lookup75_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createSimilarityLookup75Async") createSimilarityLookup75Async
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```java
-void createSimilarityLookup75Async(
-        final SimilarityLookupRequestMsg body,
-        final APICallBack<SimilarityLookupResponseMsg> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    SimilarityLookupRequestMsg body = new SimilarityLookupRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createSimilarityLookup75Async(body, new APICallBack<SimilarityLookupResponseMsg>() {
-        public void onSuccess(HttpContext context, SimilarityLookupResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-
-### <a name="create_browse_node_lookup74_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createBrowseNodeLookup74Async") createBrowseNodeLookup74Async
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```java
-void createBrowseNodeLookup74Async(
-        final BrowseNodeLookupRequestMsg body,
-        final APICallBack<BrowseNodeLookupResponseMsg> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    BrowseNodeLookupRequestMsg body = new BrowseNodeLookupRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createBrowseNodeLookup74Async(body, new APICallBack<BrowseNodeLookupResponseMsg>() {
-        public void onSuccess(HttpContext context, BrowseNodeLookupResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-
-### <a name="create_item_lookup73_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemLookup73Async") createItemLookup73Async
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```java
-void createItemLookup73Async(
-        final ItemLookupRequestMsg body,
-        final APICallBack<ItemLookupResponseMsg> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    ItemLookupRequestMsg body = new ItemLookupRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createItemLookup73Async(body, new APICallBack<ItemLookupResponseMsg>() {
-        public void onSuccess(HttpContext context, ItemLookupResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-
-### <a name="create_item_search72_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemSearch72Async") createItemSearch72Async
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```java
-void createItemSearch72Async(
-        final ItemSearchRequestMsg body,
-        final APICallBack<ItemSearchResponseMsg> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    ItemSearchRequestMsg body = new ItemSearchRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createItemSearch72Async(body, new APICallBack<ItemSearchResponseMsg>() {
-        public void onSuccess(HttpContext context, ItemSearchResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-
-### <a name="create_cart_clear71_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartClear71Async") createCartClear71Async
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```java
-void createCartClear71Async(
-        final CartClearRequestMsg body,
-        final APICallBack<CartClearResponseMsg> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    CartClearRequestMsg body = new CartClearRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartClear71Async(body, new APICallBack<CartClearResponseMsg>() {
-        public void onSuccess(HttpContext context, CartClearResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-
-### <a name="create_cart_modify70_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartModify70Async") createCartModify70Async
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
 ```java
-void createCartModify70Async(
-        final CartModifyRequestMsg body,
-        final APICallBack<CartModifyResponseMsg> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
+// Invoking the API call with sample inputs
+responseTypes.getDynamicArrayAsync(new APICallBack<DynamicResponse>() {
+    public void onSuccess(HttpContext context, DynamicResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
-```java
-try {
-    CartModifyRequestMsg body = new CartModifyRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartModify70Async(body, new APICallBack<CartModifyResponseMsg>() {
-        public void onSuccess(HttpContext context, CartModifyResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
 ```
-
 
-### <a name="create_cart_create69_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartCreate69Async") createCartCreate69Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get3339_datetime_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.ResponseTypesController.get3339DatetimeAsync") get3339DatetimeAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createCartCreate69Async(
-        final CartCreateRequestMsg body,
-        final APICallBack<CartCreateResponseMsg> callBack)
+void get3339DatetimeAsync(final APICallBack<Date> callBack)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
 #### Example Usage
-
-```java
-try {
-    CartCreateRequestMsg body = new CartCreateRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartCreate69Async(body, new APICallBack<CartCreateResponseMsg>() {
-        public void onSuccess(HttpContext context, CartCreateResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
 
-### <a name="create_cart_add68_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartAdd68Async") createCartAdd68Async
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
 ```java
-void createCartAdd68Async(
-        final CartAddRequestMsg body,
-        final APICallBack<CartAddResponseMsg> callBack)
-```
-
-#### Parameters
+// Invoking the API call with sample inputs
+responseTypes.get3339DatetimeAsync(new APICallBack<Date>() {
+    public void onSuccess(HttpContext context, Date response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    CartAddRequestMsg body = new CartAddRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartAdd68Async(body, new APICallBack<CartAddResponseMsg>() {
-        public void onSuccess(HttpContext context, CartAddResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
 ```
-
 
-### <a name="create_cart_get67_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartGet67Async") createCartGet67Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get3339_datetime_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.ResponseTypesController.get3339DatetimeArrayAsync") get3339DatetimeArrayAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createCartGet67Async(
-        final CartGetRequestMsg body,
-        final APICallBack<CartGetResponseMsg> callBack)
+void get3339DatetimeArrayAsync(final APICallBack<List<Date>> callBack)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
 #### Example Usage
 
 ```java
-try {
-    CartGetRequestMsg body = new CartGetRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartGet67Async(body, new APICallBack<CartGetResponseMsg>() {
-        public void onSuccess(HttpContext context, CartGetResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+// Invoking the API call with sample inputs
+responseTypes.get3339DatetimeArrayAsync(new APICallBack<List<Date>>() {
+    public void onSuccess(HttpContext context, List<Date> response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_similarity_lookup66_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createSimilarityLookup66Async") createSimilarityLookup66Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_boolean_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.ResponseTypesController.getBooleanAsync") getBooleanAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createSimilarityLookup66Async(
-        final SimilarityLookupRequestMsg body,
-        final APICallBack<SimilarityLookupResponseMsg> callBack)
+void getBooleanAsync(final APICallBack<Boolean> callBack)
 ```
 
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 #### Example Usage
 
 ```java
-try {
-    SimilarityLookupRequestMsg body = new SimilarityLookupRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createSimilarityLookup66Async(body, new APICallBack<SimilarityLookupResponseMsg>() {
-        public void onSuccess(HttpContext context, SimilarityLookupResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+// Invoking the API call with sample inputs
+responseTypes.getBooleanAsync(new APICallBack<Boolean>() {
+    public void onSuccess(HttpContext context, Boolean response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_browse_node_lookup65_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createBrowseNodeLookup65Async") createBrowseNodeLookup65Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_boolean_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.ResponseTypesController.getBooleanArrayAsync") getBooleanArrayAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createBrowseNodeLookup65Async(
-        final BrowseNodeLookupRequestMsg body,
-        final APICallBack<BrowseNodeLookupResponseMsg> callBack)
+void getBooleanArrayAsync(final APICallBack<List<Boolean>> callBack)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
 #### Example Usage
 
 ```java
-try {
-    BrowseNodeLookupRequestMsg body = new BrowseNodeLookupRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createBrowseNodeLookup65Async(body, new APICallBack<BrowseNodeLookupResponseMsg>() {
-        public void onSuccess(HttpContext context, BrowseNodeLookupResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+// Invoking the API call with sample inputs
+responseTypes.getBooleanArrayAsync(new APICallBack<List<Boolean>>() {
+    public void onSuccess(HttpContext context, List<Boolean> response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_item_lookup64_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemLookup64Async") createItemLookup64Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_headers_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.ResponseTypesController.getHeadersAsync") getHeadersAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createItemLookup64Async(
-        final ItemLookupRequestMsg body,
-        final APICallBack<ItemLookupResponseMsg> callBack)
+void getHeadersAsync(final APICallBack<Object> callBack)
 ```
 
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 #### Example Usage
 
 ```java
-try {
-    ItemLookupRequestMsg body = new ItemLookupRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createItemLookup64Async(body, new APICallBack<ItemLookupResponseMsg>() {
-        public void onSuccess(HttpContext context, ItemLookupResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+// Invoking the API call with sample inputs
+responseTypes.getHeadersAsync(new APICallBack<void>() {
+    public void onSuccess(HttpContext context, void response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_item_search63_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemSearch63Async") createItemSearch63Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get1123_date_time_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.ResponseTypesController.get1123DateTimeAsync") get1123DateTimeAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createItemSearch63Async(
-        final ItemSearchRequestMsg body,
-        final APICallBack<ItemSearchResponseMsg> callBack)
+void get1123DateTimeAsync(final APICallBack<Date> callBack)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
 #### Example Usage
 
 ```java
-try {
-    ItemSearchRequestMsg body = new ItemSearchRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createItemSearch63Async(body, new APICallBack<ItemSearchResponseMsg>() {
-        public void onSuccess(HttpContext context, ItemSearchResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+// Invoking the API call with sample inputs
+responseTypes.get1123DateTimeAsync(new APICallBack<Date>() {
+    public void onSuccess(HttpContext context, Date response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_cart_clear62_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartClear62Async") createCartClear62Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_unix_date_time_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.ResponseTypesController.getUnixDateTimeAsync") getUnixDateTimeAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createCartClear62Async(
-        final CartClearRequestMsg body,
-        final APICallBack<CartClearResponseMsg> callBack)
+void getUnixDateTimeAsync(final APICallBack<Date> callBack)
 ```
 
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 #### Example Usage
 
 ```java
-try {
-    CartClearRequestMsg body = new CartClearRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartClear62Async(body, new APICallBack<CartClearResponseMsg>() {
-        public void onSuccess(HttpContext context, CartClearResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+// Invoking the API call with sample inputs
+responseTypes.getUnixDateTimeAsync(new APICallBack<Date>() {
+    public void onSuccess(HttpContext context, Date response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_cart_modify61_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartModify61Async") createCartModify61Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get1123_date_time_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.ResponseTypesController.get1123DateTimeArrayAsync") get1123DateTimeArrayAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createCartModify61Async(
-        final CartModifyRequestMsg body,
-        final APICallBack<CartModifyResponseMsg> callBack)
+void get1123DateTimeArrayAsync(final APICallBack<List<Date>> callBack)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
 #### Example Usage
 
 ```java
-try {
-    CartModifyRequestMsg body = new CartModifyRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartModify61Async(body, new APICallBack<CartModifyResponseMsg>() {
-        public void onSuccess(HttpContext context, CartModifyResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
+// Invoking the API call with sample inputs
+responseTypes.get1123DateTimeArrayAsync(new APICallBack<List<Date>>() {
+    public void onSuccess(HttpContext context, List<Date> response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
-### <a name="create_cart_create60_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartCreate60Async") createCartCreate60Async
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```java
-void createCartCreate60Async(
-        final CartCreateRequestMsg body,
-        final APICallBack<CartCreateResponseMsg> callBack)
 ```
-
-#### Parameters
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
+### <a name="get_unix_date_time_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.ResponseTypesController.getUnixDateTimeArrayAsync") getUnixDateTimeArrayAsync
 
-#### Example Usage
+> TODO: Add a method description
 
-```java
-try {
-    CartCreateRequestMsg body = new CartCreateRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartCreate60Async(body, new APICallBack<CartCreateResponseMsg>() {
-        public void onSuccess(HttpContext context, CartCreateResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
+
+```java
+void getUnixDateTimeArrayAsync(final APICallBack<List<Date>> callBack)
+```
+
+#### Example Usage
+
+```java
+// Invoking the API call with sample inputs
+responseTypes.getUnixDateTimeArrayAsync(new APICallBack<List<Date>>() {
+    public void onSuccess(HttpContext context, List<Date> response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
 ```
 
 
-### <a name="create_cart_add59_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartAdd59Async") createCartAdd59Async
+[Back to List of Controllers](#list_of_controllers)
 
-> *Tags:*  ``` Skips Authentication ``` 
+## <a name="body_params_controller"></a>![Class: ](https://apidocs.io/img/class.png "org.hopto.apimatic.controllers.BodyParamsController") BodyParamsController
 
+### Get singleton instance
+
+The singleton instance of the ``` BodyParamsController ``` class can be accessed from the API Client.
+
+```java
+BodyParamsController bodyParams = client.getBodyParams();
+```
+
+### <a name="send_date_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.BodyParamsController.sendDateArrayAsync") sendDateArrayAsync
+
 > TODO: Add a method description
 
 
 ```java
-void createCartAdd59Async(
-        final CartAddRequestMsg body,
-        final APICallBack<CartAddResponseMsg> callBack)
+void sendDateArrayAsync(
+        final List<Date> dates,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| dates |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
 try {
-    CartAddRequestMsg body = new CartAddRequestMsg();
+    String datesValue = ["1994-02-13", "1994-02-13"];
+    List<Date> dates = mapper.readValue(datesValue,new TypeReference<List<Date>> (){});
     // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartAdd59Async(body, new APICallBack<CartAddResponseMsg>() {
-        public void onSuccess(HttpContext context, CartAddResponseMsg response) {
+    bodyParams.sendDateArrayAsync(dates, new APICallBack<ServerResponse>() {
+        public void onSuccess(HttpContext context, ServerResponse response) {
             // TODO success callback handler
         }
         public void onFailure(HttpContext context, Throwable error) {
@@ -1744,198 +767,173 @@ try {
 ```
 
 
-### <a name="create_cart_get58_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartGet58Async") createCartGet58Async
+### <a name="send_date_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.BodyParamsController.sendDateAsync") sendDateAsync
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```java
-void createCartGet58Async(
-        final CartGetRequestMsg body,
-        final APICallBack<CartGetResponseMsg> callBack)
+void sendDateAsync(
+        final Date date,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| date |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    CartGetRequestMsg body = new CartGetRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartGet58Async(body, new APICallBack<CartGetResponseMsg>() {
-        public void onSuccess(HttpContext context, CartGetResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+Date date = 1994-02-13;
+// Invoking the API call with sample inputs
+bodyParams.sendDateAsync(date, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_similarity_lookup57_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createSimilarityLookup57Async") createSimilarityLookup57Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_unix_date_time_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.BodyParamsController.sendUnixDateTimeAsync") sendUnixDateTimeAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createSimilarityLookup57Async(
-        final SimilarityLookupRequestMsg body,
-        final APICallBack<SimilarityLookupResponseMsg> callBack)
+void sendUnixDateTimeAsync(
+        final Date datetime,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    SimilarityLookupRequestMsg body = new SimilarityLookupRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createSimilarityLookup57Async(body, new APICallBack<SimilarityLookupResponseMsg>() {
-        public void onSuccess(HttpContext context, SimilarityLookupResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+Date datetime = 1484719381;
+// Invoking the API call with sample inputs
+bodyParams.sendUnixDateTimeAsync(datetime, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_browse_node_lookup56_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createBrowseNodeLookup56Async") createBrowseNodeLookup56Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_rfc1123_date_time_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.BodyParamsController.sendRfc1123DateTimeAsync") sendRfc1123DateTimeAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createBrowseNodeLookup56Async(
-        final BrowseNodeLookupRequestMsg body,
-        final APICallBack<BrowseNodeLookupResponseMsg> callBack)
+void sendRfc1123DateTimeAsync(
+        final Date datetime,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    BrowseNodeLookupRequestMsg body = new BrowseNodeLookupRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createBrowseNodeLookup56Async(body, new APICallBack<BrowseNodeLookupResponseMsg>() {
-        public void onSuccess(HttpContext context, BrowseNodeLookupResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+Date datetime = Sun, 06 Nov 1994 08:49:37 GMT;
+// Invoking the API call with sample inputs
+bodyParams.sendRfc1123DateTimeAsync(datetime, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_item_lookup55_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemLookup55Async") createItemLookup55Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_rfc3339_date_time_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.BodyParamsController.sendRfc3339DateTimeAsync") sendRfc3339DateTimeAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createItemLookup55Async(
-        final ItemLookupRequestMsg body,
-        final APICallBack<ItemLookupResponseMsg> callBack)
+void sendRfc3339DateTimeAsync(
+        final Date datetime,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    ItemLookupRequestMsg body = new ItemLookupRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createItemLookup55Async(body, new APICallBack<ItemLookupResponseMsg>() {
-        public void onSuccess(HttpContext context, ItemLookupResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+Date datetime = 1994-02-13T14:01:54.9571247Z;
+// Invoking the API call with sample inputs
+bodyParams.sendRfc3339DateTimeAsync(datetime, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_item_search54_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemSearch54Async") createItemSearch54Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_unix_date_time_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.BodyParamsController.sendUnixDateTimeArrayAsync") sendUnixDateTimeArrayAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createItemSearch54Async(
-        final ItemSearchRequestMsg body,
-        final APICallBack<ItemSearchResponseMsg> callBack)
+void sendUnixDateTimeArrayAsync(
+        final List<Date> datetimes,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
 try {
-    ItemSearchRequestMsg body = new ItemSearchRequestMsg();
+    String datetimesValue = [1484719381,1484719381];
+    List<Date> datetimes = mapper.readValue(datetimesValue,new TypeReference<List<Date>> (){});
     // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createItemSearch54Async(body, new APICallBack<ItemSearchResponseMsg>() {
-        public void onSuccess(HttpContext context, ItemSearchResponseMsg response) {
+    bodyParams.sendUnixDateTimeArrayAsync(datetimes, new APICallBack<ServerResponse>() {
+        public void onSuccess(HttpContext context, ServerResponse response) {
             // TODO success callback handler
         }
         public void onFailure(HttpContext context, Throwable error) {
@@ -1947,36 +945,35 @@ try {
     e.printStackTrace();
 }
 ```
-
 
-### <a name="create_cart_clear53_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartClear53Async") createCartClear53Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_rfc1123_date_time_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.BodyParamsController.sendRfc1123DateTimeArrayAsync") sendRfc1123DateTimeArrayAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createCartClear53Async(
-        final CartClearRequestMsg body,
-        final APICallBack<CartClearResponseMsg> callBack)
+void sendRfc1123DateTimeArrayAsync(
+        final List<Date> datetimes,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
 try {
-    CartClearRequestMsg body = new CartClearRequestMsg();
+    String datetimesValue = ["Sun, 06 Nov 1994 08:49:37 GMT","Sun, 06 Nov 1994 08:49:37 GMT"];
+    List<Date> datetimes = mapper.readValue(datetimesValue,new TypeReference<List<Date>> (){});
     // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartClear53Async(body, new APICallBack<CartClearResponseMsg>() {
-        public void onSuccess(HttpContext context, CartClearResponseMsg response) {
+    bodyParams.sendRfc1123DateTimeArrayAsync(datetimes, new APICallBack<ServerResponse>() {
+        public void onSuccess(HttpContext context, ServerResponse response) {
             // TODO success callback handler
         }
         public void onFailure(HttpContext context, Throwable error) {
@@ -1990,34 +987,33 @@ try {
 ```
 
 
-### <a name="create_cart_modify52_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartModify52Async") createCartModify52Async
+### <a name="send_rfc3339_date_time_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.BodyParamsController.sendRfc3339DateTimeArrayAsync") sendRfc3339DateTimeArrayAsync
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```java
-void createCartModify52Async(
-        final CartModifyRequestMsg body,
-        final APICallBack<CartModifyResponseMsg> callBack)
+void sendRfc3339DateTimeArrayAsync(
+        final List<Date> datetimes,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
 try {
-    CartModifyRequestMsg body = new CartModifyRequestMsg();
+    String datetimesValue = ["1994-02-13T14:01:54.9571247Z","1994-02-13T14:01:54.9571247Z"];
+    List<Date> datetimes = mapper.readValue(datetimesValue,new TypeReference<List<Date>> (){});
     // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartModify52Async(body, new APICallBack<CartModifyResponseMsg>() {
-        public void onSuccess(HttpContext context, CartModifyResponseMsg response) {
+    bodyParams.sendRfc3339DateTimeArrayAsync(datetimes, new APICallBack<ServerResponse>() {
+        public void onSuccess(HttpContext context, ServerResponse response) {
             // TODO success callback handler
         }
         public void onFailure(HttpContext context, Throwable error) {
@@ -2029,36 +1025,35 @@ try {
     e.printStackTrace();
 }
 ```
-
 
-### <a name="create_cart_create51_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartCreate51Async") createCartCreate51Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_string_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.BodyParamsController.sendStringArrayAsync") sendStringArrayAsync
 
-> TODO: Add a method description
+> sends a string body param
 
 
 ```java
-void createCartCreate51Async(
-        final CartCreateRequestMsg body,
-        final APICallBack<CartCreateResponseMsg> callBack)
+void sendStringArrayAsync(
+        final List<String> sarray,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| sarray |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
 try {
-    CartCreateRequestMsg body = new CartCreateRequestMsg();
+    String sarrayValue = "[\"abc\", \"def\"]";
+    List<String> sarray = mapper.readValue(sarrayValue,new TypeReference<List<String>> (){});
     // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartCreate51Async(body, new APICallBack<CartCreateResponseMsg>() {
-        public void onSuccess(HttpContext context, CartCreateResponseMsg response) {
+    bodyParams.sendStringArrayAsync(sarray, new APICallBack<ServerResponse>() {
+        public void onSuccess(HttpContext context, ServerResponse response) {
             // TODO success callback handler
         }
         public void onFailure(HttpContext context, Throwable error) {
@@ -2070,36 +1065,35 @@ try {
     e.printStackTrace();
 }
 ```
-
 
-### <a name="create_cart_add50_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartAdd50Async") createCartAdd50Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_integer_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.BodyParamsController.sendIntegerArrayAsync") sendIntegerArrayAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createCartAdd50Async(
-        final CartAddRequestMsg body,
-        final APICallBack<CartAddResponseMsg> callBack)
+void sendIntegerArrayAsync(
+        final List<Integer> integers,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| integers |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
 try {
-    CartAddRequestMsg body = new CartAddRequestMsg();
+    String integersValue = "[1,2,3,4,5]";
+    List<Integer> integers = mapper.readValue(integersValue,new TypeReference<List<Integer>> (){});
     // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartAdd50Async(body, new APICallBack<CartAddResponseMsg>() {
-        public void onSuccess(HttpContext context, CartAddResponseMsg response) {
+    bodyParams.sendIntegerArrayAsync(integers, new APICallBack<ServerResponse>() {
+        public void onSuccess(HttpContext context, ServerResponse response) {
             // TODO success callback handler
         }
         public void onFailure(HttpContext context, Throwable error) {
@@ -2113,34 +1107,33 @@ try {
 ```
 
 
-### <a name="create_cart_get49_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartGet49Async") createCartGet49Async
+### <a name="send_model_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.BodyParamsController.sendModelAsync") sendModelAsync
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```java
-void createCartGet49Async(
-        final CartGetRequestMsg body,
-        final APICallBack<CartGetResponseMsg> callBack)
+void sendModelAsync(
+        final Employee model,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| model |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
 try {
-    CartGetRequestMsg body = new CartGetRequestMsg();
+    String modelValue = "{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"}";
+    Employee model = mapper.readValue(modelValue,new TypeReference<Employee> (){});
     // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartGet49Async(body, new APICallBack<CartGetResponseMsg>() {
-        public void onSuccess(HttpContext context, CartGetResponseMsg response) {
+    bodyParams.sendModelAsync(model, new APICallBack<ServerResponse>() {
+        public void onSuccess(HttpContext context, ServerResponse response) {
             // TODO success callback handler
         }
         public void onFailure(HttpContext context, Throwable error) {
@@ -2152,36 +1145,35 @@ try {
     e.printStackTrace();
 }
 ```
-
 
-### <a name="create_similarity_lookup48_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createSimilarityLookup48Async") createSimilarityLookup48Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_model_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.BodyParamsController.sendModelArrayAsync") sendModelArrayAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createSimilarityLookup48Async(
-        final SimilarityLookupRequestMsg body,
-        final APICallBack<SimilarityLookupResponseMsg> callBack)
+void sendModelArrayAsync(
+        final List<Employee> models,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| models |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
 try {
-    SimilarityLookupRequestMsg body = new SimilarityLookupRequestMsg();
+    String modelsValue = "[{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"},{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"}]";
+    List<Employee> models = mapper.readValue(modelsValue,new TypeReference<List<Employee>> (){});
     // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createSimilarityLookup48Async(body, new APICallBack<SimilarityLookupResponseMsg>() {
-        public void onSuccess(HttpContext context, SimilarityLookupResponseMsg response) {
+    bodyParams.sendModelArrayAsync(models, new APICallBack<ServerResponse>() {
+        public void onSuccess(HttpContext context, ServerResponse response) {
             // TODO success callback handler
         }
         public void onFailure(HttpContext context, Throwable error) {
@@ -2195,34 +1187,33 @@ try {
 ```
 
 
-### <a name="create_browse_node_lookup47_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createBrowseNodeLookup47Async") createBrowseNodeLookup47Async
+### <a name="send_dynamic_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.BodyParamsController.sendDynamicAsync") sendDynamicAsync
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```java
-void createBrowseNodeLookup47Async(
-        final BrowseNodeLookupRequestMsg body,
-        final APICallBack<BrowseNodeLookupResponseMsg> callBack)
+void sendDynamicAsync(
+        final Object dynamic,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| dynamic |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
 try {
-    BrowseNodeLookupRequestMsg body = new BrowseNodeLookupRequestMsg();
+    String dynamicValue = "{\"uid\": \"1123213\", \"name\": \"Shahid\"}";
+    Object dynamic = mapper.readValue(dynamicValue,new TypeReference<Object> (){});
     // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createBrowseNodeLookup47Async(body, new APICallBack<BrowseNodeLookupResponseMsg>() {
-        public void onSuccess(HttpContext context, BrowseNodeLookupResponseMsg response) {
+    bodyParams.sendDynamicAsync(dynamic, new APICallBack<ServerResponse>() {
+        public void onSuccess(HttpContext context, ServerResponse response) {
             // TODO success callback handler
         }
         public void onFailure(HttpContext context, Throwable error) {
@@ -2234,77 +1225,70 @@ try {
     e.printStackTrace();
 }
 ```
-
 
-### <a name="create_item_lookup46_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemLookup46Async") createItemLookup46Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_string_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.BodyParamsController.sendStringAsync") sendStringAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createItemLookup46Async(
-        final ItemLookupRequestMsg body,
-        final APICallBack<ItemLookupResponseMsg> callBack)
+void sendStringAsync(
+        final String value,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| value |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    ItemLookupRequestMsg body = new ItemLookupRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createItemLookup46Async(body, new APICallBack<ItemLookupResponseMsg>() {
-        public void onSuccess(HttpContext context, ItemLookupResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+String value = "TestString";
+// Invoking the API call with sample inputs
+bodyParams.sendStringAsync(value, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_item_search45_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemSearch45Async") createItemSearch45Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_string_enum_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.BodyParamsController.sendStringEnumArrayAsync") sendStringEnumArrayAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createItemSearch45Async(
-        final ItemSearchRequestMsg body,
-        final APICallBack<ItemSearchResponseMsg> callBack)
+void sendStringEnumArrayAsync(
+        final List<Days> days,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| days |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
 try {
-    ItemSearchRequestMsg body = new ItemSearchRequestMsg();
+    String daysValue = "[\"Tuesday\", \"Saturday\", \"Wednesday\", \"Monday\", \"Sunday\"]";
+    List<Days> days = mapper.readValue(daysValue,new TypeReference<List<Days>> (){});
     // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createItemSearch45Async(body, new APICallBack<ItemSearchResponseMsg>() {
-        public void onSuccess(HttpContext context, ItemSearchResponseMsg response) {
+    bodyParams.sendStringEnumArrayAsync(days, new APICallBack<ServerResponse>() {
+        public void onSuccess(HttpContext context, ServerResponse response) {
             // TODO success callback handler
         }
         public void onFailure(HttpContext context, Throwable error) {
@@ -2318,34 +1302,33 @@ try {
 ```
 
 
-### <a name="create_cart_clear44_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartClear44Async") createCartClear44Async
+### <a name="send_integer_enum_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.BodyParamsController.sendIntegerEnumArrayAsync") sendIntegerEnumArrayAsync
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```java
-void createCartClear44Async(
-        final CartClearRequestMsg body,
-        final APICallBack<CartClearResponseMsg> callBack)
+void sendIntegerEnumArrayAsync(
+        final List<SuiteCode> suites,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| suites |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
 try {
-    CartClearRequestMsg body = new CartClearRequestMsg();
+    String suitesValue = "[1, 3, 4, 2, 3]";
+    List<SuiteCode> suites = mapper.readValue(suitesValue,new TypeReference<List<SuiteCode>> (){});
     // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartClear44Async(body, new APICallBack<CartClearResponseMsg>() {
-        public void onSuccess(HttpContext context, CartClearResponseMsg response) {
+    bodyParams.sendIntegerEnumArrayAsync(suites, new APICallBack<ServerResponse>() {
+        public void onSuccess(HttpContext context, ServerResponse response) {
             // TODO success callback handler
         }
         public void onFailure(HttpContext context, Throwable error) {
@@ -2357,1594 +1340,1442 @@ try {
     e.printStackTrace();
 }
 ```
+
 
+[Back to List of Controllers](#list_of_controllers)
 
-### <a name="create_cart_modify43_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartModify43Async") createCartModify43Async
+## <a name="form_params_controller"></a>![Class: ](https://apidocs.io/img/class.png "org.hopto.apimatic.controllers.FormParamsController") FormParamsController
 
-> *Tags:*  ``` Skips Authentication ``` 
+### Get singleton instance
 
+The singleton instance of the ``` FormParamsController ``` class can be accessed from the API Client.
+
+```java
+FormParamsController formParams = client.getFormParams();
+```
+
+### <a name="send_date_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.FormParamsController.sendDateArrayAsync") sendDateArrayAsync
+
 > TODO: Add a method description
 
 
 ```java
-void createCartModify43Async(
-        final CartModifyRequestMsg body,
-        final APICallBack<CartModifyResponseMsg> callBack)
+void sendDateArrayAsync(
+        final List<Date> dates,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| dates |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    CartModifyRequestMsg body = new CartModifyRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartModify43Async(body, new APICallBack<CartModifyResponseMsg>() {
-        public void onSuccess(HttpContext context, CartModifyResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+String datesValue = ["1994-02-13","1994-02-13"];
+List<Date> dates = mapper.readValue(datesValue,new TypeReference<List<Date>> (){});
+// Invoking the API call with sample inputs
+formParams.sendDateArrayAsync(dates, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_cart_create42_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartCreate42Async") createCartCreate42Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_date_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.FormParamsController.sendDateAsync") sendDateAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createCartCreate42Async(
-        final CartCreateRequestMsg body,
-        final APICallBack<CartCreateResponseMsg> callBack)
+void sendDateAsync(
+        final Date date,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| date |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    CartCreateRequestMsg body = new CartCreateRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartCreate42Async(body, new APICallBack<CartCreateResponseMsg>() {
-        public void onSuccess(HttpContext context, CartCreateResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+Date date = 1994-02-13;
+// Invoking the API call with sample inputs
+formParams.sendDateAsync(date, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_cart_add41_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartAdd41Async") createCartAdd41Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_unix_date_time_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.FormParamsController.sendUnixDateTimeAsync") sendUnixDateTimeAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createCartAdd41Async(
-        final CartAddRequestMsg body,
-        final APICallBack<CartAddResponseMsg> callBack)
+void sendUnixDateTimeAsync(
+        final Date datetime,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    CartAddRequestMsg body = new CartAddRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartAdd41Async(body, new APICallBack<CartAddResponseMsg>() {
-        public void onSuccess(HttpContext context, CartAddResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+Date datetime = 1484719381;
+// Invoking the API call with sample inputs
+formParams.sendUnixDateTimeAsync(datetime, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_cart_get40_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartGet40Async") createCartGet40Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_rfc1123_date_time_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.FormParamsController.sendRfc1123DateTimeAsync") sendRfc1123DateTimeAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createCartGet40Async(
-        final CartGetRequestMsg body,
-        final APICallBack<CartGetResponseMsg> callBack)
+void sendRfc1123DateTimeAsync(
+        final Date datetime,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    CartGetRequestMsg body = new CartGetRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartGet40Async(body, new APICallBack<CartGetResponseMsg>() {
-        public void onSuccess(HttpContext context, CartGetResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+Date datetime = Sun, 06 Nov 1994 08:49:37 GMT;
+// Invoking the API call with sample inputs
+formParams.sendRfc1123DateTimeAsync(datetime, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_similarity_lookup39_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createSimilarityLookup39Async") createSimilarityLookup39Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_rfc3339_date_time_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.FormParamsController.sendRfc3339DateTimeAsync") sendRfc3339DateTimeAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createSimilarityLookup39Async(
-        final SimilarityLookupRequestMsg body,
-        final APICallBack<SimilarityLookupResponseMsg> callBack)
+void sendRfc3339DateTimeAsync(
+        final Date datetime,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    SimilarityLookupRequestMsg body = new SimilarityLookupRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createSimilarityLookup39Async(body, new APICallBack<SimilarityLookupResponseMsg>() {
-        public void onSuccess(HttpContext context, SimilarityLookupResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+Date datetime = 1994-02-13T14:01:54.9571247Z;
+// Invoking the API call with sample inputs
+formParams.sendRfc3339DateTimeAsync(datetime, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_browse_node_lookup38_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createBrowseNodeLookup38Async") createBrowseNodeLookup38Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_unix_date_time_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.FormParamsController.sendUnixDateTimeArrayAsync") sendUnixDateTimeArrayAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createBrowseNodeLookup38Async(
-        final BrowseNodeLookupRequestMsg body,
-        final APICallBack<BrowseNodeLookupResponseMsg> callBack)
+void sendUnixDateTimeArrayAsync(
+        final List<Date> datetimes,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    BrowseNodeLookupRequestMsg body = new BrowseNodeLookupRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createBrowseNodeLookup38Async(body, new APICallBack<BrowseNodeLookupResponseMsg>() {
-        public void onSuccess(HttpContext context, BrowseNodeLookupResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+String datetimesValue = [1484719381,1484719381];
+List<Date> datetimes = mapper.readValue(datetimesValue,new TypeReference<List<Date>> (){});
+// Invoking the API call with sample inputs
+formParams.sendUnixDateTimeArrayAsync(datetimes, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_item_lookup37_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemLookup37Async") createItemLookup37Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_rfc1123_date_time_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.FormParamsController.sendRfc1123DateTimeArrayAsync") sendRfc1123DateTimeArrayAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createItemLookup37Async(
-        final ItemLookupRequestMsg body,
-        final APICallBack<ItemLookupResponseMsg> callBack)
+void sendRfc1123DateTimeArrayAsync(
+        final List<Date> datetimes,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    ItemLookupRequestMsg body = new ItemLookupRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createItemLookup37Async(body, new APICallBack<ItemLookupResponseMsg>() {
-        public void onSuccess(HttpContext context, ItemLookupResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+String datetimesValue = ["Sun, 06 Nov 1994 08:49:37 GMT","Sun, 06 Nov 1994 08:49:37 GMT"];
+List<Date> datetimes = mapper.readValue(datetimesValue,new TypeReference<List<Date>> (){});
+// Invoking the API call with sample inputs
+formParams.sendRfc1123DateTimeArrayAsync(datetimes, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_item_search36_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemSearch36Async") createItemSearch36Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_long_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.FormParamsController.sendLongAsync") sendLongAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createItemSearch36Async(
-        final ItemSearchRequestMsg body,
-        final APICallBack<ItemSearchResponseMsg> callBack)
+void sendLongAsync(
+        final long value,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| value |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    ItemSearchRequestMsg body = new ItemSearchRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createItemSearch36Async(body, new APICallBack<ItemSearchResponseMsg>() {
-        public void onSuccess(HttpContext context, ItemSearchResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+long value = 5147483647L;
+// Invoking the API call with sample inputs
+formParams.sendLongAsync(value, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_cart_clear35_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartClear35Async") createCartClear35Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_integer_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.FormParamsController.sendIntegerArrayAsync") sendIntegerArrayAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createCartClear35Async(
-        final CartClearRequestMsg body,
-        final APICallBack<CartClearResponseMsg> callBack)
+void sendIntegerArrayAsync(
+        final List<Integer> integers,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| integers |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    CartClearRequestMsg body = new CartClearRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartClear35Async(body, new APICallBack<CartClearResponseMsg>() {
-        public void onSuccess(HttpContext context, CartClearResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+String integersValue = "[1,2,3,4,5]";
+List<Integer> integers = mapper.readValue(integersValue,new TypeReference<List<Integer>> (){});
+// Invoking the API call with sample inputs
+formParams.sendIntegerArrayAsync(integers, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_cart_modify34_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartModify34Async") createCartModify34Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_string_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.FormParamsController.sendStringArrayAsync") sendStringArrayAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createCartModify34Async(
-        final CartModifyRequestMsg body,
-        final APICallBack<CartModifyResponseMsg> callBack)
+void sendStringArrayAsync(
+        final List<String> strings,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| strings |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    CartModifyRequestMsg body = new CartModifyRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartModify34Async(body, new APICallBack<CartModifyResponseMsg>() {
-        public void onSuccess(HttpContext context, CartModifyResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+String stringsValue = "[\"abc\", \"def\"]";
+List<String> strings = mapper.readValue(stringsValue,new TypeReference<List<String>> (){});
+// Invoking the API call with sample inputs
+formParams.sendStringArrayAsync(strings, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_cart_create33_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartCreate33Async") createCartCreate33Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_model_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.FormParamsController.sendModelAsync") sendModelAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createCartCreate33Async(
-        final CartCreateRequestMsg body,
-        final APICallBack<CartCreateResponseMsg> callBack)
+void sendModelAsync(
+        final Employee model,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
+| model |  ``` Required ```  | TODO: Add a parameter description |
 
-#### Example Usage
 
-```java
-try {
-    CartCreateRequestMsg body = new CartCreateRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartCreate33Async(body, new APICallBack<CartCreateResponseMsg>() {
-        public void onSuccess(HttpContext context, CartCreateResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+#### Example Usage
+
+```java
+String modelValue = "{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"}";
+Employee model = mapper.readValue(modelValue,new TypeReference<Employee> (){});
+// Invoking the API call with sample inputs
+formParams.sendModelAsync(model, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_cart_add32_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartAdd32Async") createCartAdd32Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_model_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.FormParamsController.sendModelArrayAsync") sendModelArrayAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createCartAdd32Async(
-        final CartAddRequestMsg body,
-        final APICallBack<CartAddResponseMsg> callBack)
+void sendModelArrayAsync(
+        final List<Employee> models,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| models |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    CartAddRequestMsg body = new CartAddRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartAdd32Async(body, new APICallBack<CartAddResponseMsg>() {
-        public void onSuccess(HttpContext context, CartAddResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+String modelsValue = "[{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"},{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"}]";
+List<Employee> models = mapper.readValue(modelsValue,new TypeReference<List<Employee>> (){});
+// Invoking the API call with sample inputs
+formParams.sendModelArrayAsync(models, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_cart_get31_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartGet31Async") createCartGet31Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_file_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.FormParamsController.sendFileAsync") sendFileAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createCartGet31Async(
-        final CartGetRequestMsg body,
-        final APICallBack<CartGetResponseMsg> callBack)
+void sendFileAsync(
+        final File file,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| file |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    CartGetRequestMsg body = new CartGetRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartGet31Async(body, new APICallBack<CartGetResponseMsg>() {
-        public void onSuccess(HttpContext context, CartGetResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+File file = new File("PathToFile");
+// Invoking the API call with sample inputs
+formParams.sendFileAsync(file, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_similarity_lookup30_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createSimilarityLookup30Async") createSimilarityLookup30Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_string_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.FormParamsController.sendStringAsync") sendStringAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createSimilarityLookup30Async(
-        final SimilarityLookupRequestMsg body,
-        final APICallBack<SimilarityLookupResponseMsg> callBack)
+void sendStringAsync(
+        final String value,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| value |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    SimilarityLookupRequestMsg body = new SimilarityLookupRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createSimilarityLookup30Async(body, new APICallBack<SimilarityLookupResponseMsg>() {
-        public void onSuccess(HttpContext context, SimilarityLookupResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+String value = "TestString";
+// Invoking the API call with sample inputs
+formParams.sendStringAsync(value, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_browse_node_lookup29_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createBrowseNodeLookup29Async") createBrowseNodeLookup29Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_rfc3339_date_time_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.FormParamsController.sendRfc3339DateTimeArrayAsync") sendRfc3339DateTimeArrayAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createBrowseNodeLookup29Async(
-        final BrowseNodeLookupRequestMsg body,
-        final APICallBack<BrowseNodeLookupResponseMsg> callBack)
+void sendRfc3339DateTimeArrayAsync(
+        final List<Date> datetimes,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    BrowseNodeLookupRequestMsg body = new BrowseNodeLookupRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createBrowseNodeLookup29Async(body, new APICallBack<BrowseNodeLookupResponseMsg>() {
-        public void onSuccess(HttpContext context, BrowseNodeLookupResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+String datetimesValue = ["1994-02-13T14:01:54.9571247Z","1994-02-13T14:01:54.9571247Z"];
+List<Date> datetimes = mapper.readValue(datetimesValue,new TypeReference<List<Date>> (){});
+// Invoking the API call with sample inputs
+formParams.sendRfc3339DateTimeArrayAsync(datetimes, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_item_lookup28_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemLookup28Async") createItemLookup28Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_mixed_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.FormParamsController.sendMixedArrayAsync") sendMixedArrayAsync
 
-> TODO: Add a method description
+> Send a variety for form params. Returns file count and body params
 
 
 ```java
-void createItemLookup28Async(
-        final ItemLookupRequestMsg body,
-        final APICallBack<ItemLookupResponseMsg> callBack)
+void sendMixedArrayAsync(
+        final SendMixedArrayInput input,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| file |  ``` Required ```  | TODO: Add a parameter description |
+| integers |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
+| models |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
+| strings |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    ItemLookupRequestMsg body = new ItemLookupRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createItemLookup28Async(body, new APICallBack<ItemLookupResponseMsg>() {
-        public void onSuccess(HttpContext context, ItemLookupResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
+SendMixedArrayInput collect = new SendMixedArrayInput();
+
+File file = new File("PathToFile");
+collect.setFile(file);
+
+String integersValue = "[1,2,3,4,5]";
+List<Integer> integers = mapper.readValue(integersValue,new TypeReference<List<Integer>> (){});
+collect.setIntegers(integers);
+
+String modelsValue = "[{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"},{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"}]";
+List<Employee> models = mapper.readValue(modelsValue,new TypeReference<List<Employee>> (){});
+collect.setModels(models);
+
+String stringsValue = "[\"abc\", \"def\"]";
+List<String> strings = mapper.readValue(stringsValue,new TypeReference<List<String>> (){});
+collect.setStrings(strings);
+
+// Invoking the API call with sample inputs
+formParams.sendMixedArrayAsync(collect, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
 }
-```
+);
 
+```
 
-### <a name="create_item_search27_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemSearch27Async") createItemSearch27Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_integer_enum_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.FormParamsController.sendIntegerEnumArrayAsync") sendIntegerEnumArrayAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createItemSearch27Async(
-        final ItemSearchRequestMsg body,
-        final APICallBack<ItemSearchResponseMsg> callBack)
+void sendIntegerEnumArrayAsync(
+        final List<SuiteCode> suites,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| suites |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    ItemSearchRequestMsg body = new ItemSearchRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createItemSearch27Async(body, new APICallBack<ItemSearchResponseMsg>() {
-        public void onSuccess(HttpContext context, ItemSearchResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+String suitesValue = "[1, 3, 4, 2, 3]";
+List<SuiteCode> suites = mapper.readValue(suitesValue,new TypeReference<List<SuiteCode>> (){});
+// Invoking the API call with sample inputs
+formParams.sendIntegerEnumArrayAsync(suites, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_cart_clear26_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartClear26Async") createCartClear26Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_string_enum_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.FormParamsController.sendStringEnumArrayAsync") sendStringEnumArrayAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createCartClear26Async(
-        final CartClearRequestMsg body,
-        final APICallBack<CartClearResponseMsg> callBack)
+void sendStringEnumArrayAsync(
+        final List<Days> days,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| days |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    CartClearRequestMsg body = new CartClearRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartClear26Async(body, new APICallBack<CartClearResponseMsg>() {
-        public void onSuccess(HttpContext context, CartClearResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
+String daysValue = "[\"Tuesday\", \"Saturday\", \"Wednesday\", \"Monday\", \"Sunday\"]";
+List<Days> days = mapper.readValue(daysValue,new TypeReference<List<Days>> (){});
+// Invoking the API call with sample inputs
+formParams.sendStringEnumArrayAsync(days, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
 ```
+
+
+[Back to List of Controllers](#list_of_controllers)
 
+## <a name="query_param_controller"></a>![Class: ](https://apidocs.io/img/class.png "org.hopto.apimatic.controllers.QueryParamController") QueryParamController
 
-### <a name="create_cart_modify25_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartModify25Async") createCartModify25Async
+### Get singleton instance
+
+The singleton instance of the ``` QueryParamController ``` class can be accessed from the API Client.
+
+```java
+QueryParamController queryParam = client.getQueryParam();
+```
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="date_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.QueryParamController.dateArrayAsync") dateArrayAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createCartModify25Async(
-        final CartModifyRequestMsg body,
-        final APICallBack<CartModifyResponseMsg> callBack)
+void dateArrayAsync(
+        final List<Date> dates,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| dates |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    CartModifyRequestMsg body = new CartModifyRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartModify25Async(body, new APICallBack<CartModifyResponseMsg>() {
-        public void onSuccess(HttpContext context, CartModifyResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+String datesValue = ["1994-02-13","1994-02-13"];
+List<Date> dates = mapper.readValue(datesValue,new TypeReference<List<Date>> (){});
+// Invoking the API call with sample inputs
+queryParam.dateArrayAsync(dates, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_cart_create24_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartCreate24Async") createCartCreate24Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="date_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.QueryParamController.dateAsync") dateAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createCartCreate24Async(
-        final CartCreateRequestMsg body,
-        final APICallBack<CartCreateResponseMsg> callBack)
+void dateAsync(
+        final Date date,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| date |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    CartCreateRequestMsg body = new CartCreateRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartCreate24Async(body, new APICallBack<CartCreateResponseMsg>() {
-        public void onSuccess(HttpContext context, CartCreateResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+Date date = 1994-02-13;
+// Invoking the API call with sample inputs
+queryParam.dateAsync(date, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_cart_add23_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartAdd23Async") createCartAdd23Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="unix_date_time_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.QueryParamController.unixDateTimeArrayAsync") unixDateTimeArrayAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createCartAdd23Async(
-        final CartAddRequestMsg body,
-        final APICallBack<CartAddResponseMsg> callBack)
+void unixDateTimeArrayAsync(
+        final List<Date> datetimes,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    CartAddRequestMsg body = new CartAddRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartAdd23Async(body, new APICallBack<CartAddResponseMsg>() {
-        public void onSuccess(HttpContext context, CartAddResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+String datetimesValue = [1484719381,1484719381];
+List<Date> datetimes = mapper.readValue(datetimesValue,new TypeReference<List<Date>> (){});
+// Invoking the API call with sample inputs
+queryParam.unixDateTimeArrayAsync(datetimes, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_cart_get22_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartGet22Async") createCartGet22Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="unix_date_time_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.QueryParamController.unixDateTimeAsync") unixDateTimeAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createCartGet22Async(
-        final CartGetRequestMsg body,
-        final APICallBack<CartGetResponseMsg> callBack)
+void unixDateTimeAsync(
+        final Date datetime,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    CartGetRequestMsg body = new CartGetRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartGet22Async(body, new APICallBack<CartGetResponseMsg>() {
-        public void onSuccess(HttpContext context, CartGetResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+Date datetime = 1484719381;
+// Invoking the API call with sample inputs
+queryParam.unixDateTimeAsync(datetime, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_similarity_lookup21_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createSimilarityLookup21Async") createSimilarityLookup21Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="rfc1123_date_time_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.QueryParamController.rfc1123DateTimeAsync") rfc1123DateTimeAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createSimilarityLookup21Async(
-        final SimilarityLookupRequestMsg body,
-        final APICallBack<SimilarityLookupResponseMsg> callBack)
+void rfc1123DateTimeAsync(
+        final Date datetime,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    SimilarityLookupRequestMsg body = new SimilarityLookupRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createSimilarityLookup21Async(body, new APICallBack<SimilarityLookupResponseMsg>() {
-        public void onSuccess(HttpContext context, SimilarityLookupResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+Date datetime = Sun, 06 Nov 1994 08:49:37 GMT;
+// Invoking the API call with sample inputs
+queryParam.rfc1123DateTimeAsync(datetime, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_browse_node_lookup20_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createBrowseNodeLookup20Async") createBrowseNodeLookup20Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="rfc1123_date_time_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.QueryParamController.rfc1123DateTimeArrayAsync") rfc1123DateTimeArrayAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createBrowseNodeLookup20Async(
-        final BrowseNodeLookupRequestMsg body,
-        final APICallBack<BrowseNodeLookupResponseMsg> callBack)
+void rfc1123DateTimeArrayAsync(
+        final List<Date> datetimes,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    BrowseNodeLookupRequestMsg body = new BrowseNodeLookupRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createBrowseNodeLookup20Async(body, new APICallBack<BrowseNodeLookupResponseMsg>() {
-        public void onSuccess(HttpContext context, BrowseNodeLookupResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+String datetimesValue = ["Sun, 06 Nov 1994 08:49:37 GMT","Sun, 06 Nov 1994 08:49:37 GMT"];
+List<Date> datetimes = mapper.readValue(datetimesValue,new TypeReference<List<Date>> (){});
+// Invoking the API call with sample inputs
+queryParam.rfc1123DateTimeArrayAsync(datetimes, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_item_lookup19_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemLookup19Async") createItemLookup19Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="rfc3339_date_time_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.QueryParamController.rfc3339DateTimeArrayAsync") rfc3339DateTimeArrayAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createItemLookup19Async(
-        final ItemLookupRequestMsg body,
-        final APICallBack<ItemLookupResponseMsg> callBack)
+void rfc3339DateTimeArrayAsync(
+        final List<Date> datetimes,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    ItemLookupRequestMsg body = new ItemLookupRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createItemLookup19Async(body, new APICallBack<ItemLookupResponseMsg>() {
-        public void onSuccess(HttpContext context, ItemLookupResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+String datetimesValue = ["1994-02-13T14:01:54.9571247Z","1994-02-13T14:01:54.9571247Z"];
+List<Date> datetimes = mapper.readValue(datetimesValue,new TypeReference<List<Date>> (){});
+// Invoking the API call with sample inputs
+queryParam.rfc3339DateTimeArrayAsync(datetimes, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_item_search18_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemSearch18Async") createItemSearch18Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="rfc3339_date_time_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.QueryParamController.rfc3339DateTimeAsync") rfc3339DateTimeAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createItemSearch18Async(
-        final ItemSearchRequestMsg body,
-        final APICallBack<ItemSearchResponseMsg> callBack)
+void rfc3339DateTimeAsync(
+        final Date datetime,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    ItemSearchRequestMsg body = new ItemSearchRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createItemSearch18Async(body, new APICallBack<ItemSearchResponseMsg>() {
-        public void onSuccess(HttpContext context, ItemSearchResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+Date datetime = 1994-02-13T14:01:54.9571247Z;
+// Invoking the API call with sample inputs
+queryParam.rfc3339DateTimeAsync(datetime, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_cart_clear17_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartClear17Async") createCartClear17Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="no_params_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.QueryParamController.noParamsAsync") noParamsAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createCartClear17Async(
-        final CartClearRequestMsg body,
-        final APICallBack<CartClearResponseMsg> callBack)
+void noParamsAsync(final APICallBack<ServerResponse> callBack)
 ```
 
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 #### Example Usage
 
 ```java
-try {
-    CartClearRequestMsg body = new CartClearRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartClear17Async(body, new APICallBack<CartClearResponseMsg>() {
-        public void onSuccess(HttpContext context, CartClearResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+// Invoking the API call with sample inputs
+queryParam.noParamsAsync(new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_cart_modify16_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartModify16Async") createCartModify16Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="string_param_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.QueryParamController.stringParamAsync") stringParamAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createCartModify16Async(
-        final CartModifyRequestMsg body,
-        final APICallBack<CartModifyResponseMsg> callBack)
+void stringParamAsync(
+        final String string,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| string |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    CartModifyRequestMsg body = new CartModifyRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartModify16Async(body, new APICallBack<CartModifyResponseMsg>() {
-        public void onSuccess(HttpContext context, CartModifyResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+String string = "l;asd;asdwe[2304&&;'.d??\\a\\\\\\;sd//";
+// Invoking the API call with sample inputs
+queryParam.stringParamAsync(string, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_cart_create15_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartCreate15Async") createCartCreate15Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="url_param_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.QueryParamController.urlParamAsync") urlParamAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createCartCreate15Async(
-        final CartCreateRequestMsg body,
-        final APICallBack<CartCreateResponseMsg> callBack)
+void urlParamAsync(
+        final String url,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| url |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    CartCreateRequestMsg body = new CartCreateRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartCreate15Async(body, new APICallBack<CartCreateResponseMsg>() {
-        public void onSuccess(HttpContext context, CartCreateResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+String url = "https://www.shahidisawesome.com/and/also/a/narcissist?thisis=aparameter&another=one";
+// Invoking the API call with sample inputs
+queryParam.urlParamAsync(url, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_cart_add14_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartAdd14Async") createCartAdd14Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="number_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.QueryParamController.numberArrayAsync") numberArrayAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createCartAdd14Async(
-        final CartAddRequestMsg body,
-        final APICallBack<CartAddResponseMsg> callBack)
+void numberArrayAsync(
+        final List<Integer> integers,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| integers |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    CartAddRequestMsg body = new CartAddRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartAdd14Async(body, new APICallBack<CartAddResponseMsg>() {
-        public void onSuccess(HttpContext context, CartAddResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+String integersValue = "[1,2,3,4,5]";
+List<Integer> integers = mapper.readValue(integersValue,new TypeReference<List<Integer>> (){});
+// Invoking the API call with sample inputs
+queryParam.numberArrayAsync(integers, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_cart_get13_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartGet13Async") createCartGet13Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="string_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.QueryParamController.stringArrayAsync") stringArrayAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createCartGet13Async(
-        final CartGetRequestMsg body,
-        final APICallBack<CartGetResponseMsg> callBack)
+void stringArrayAsync(
+        final List<String> strings,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| strings |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    CartGetRequestMsg body = new CartGetRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartGet13Async(body, new APICallBack<CartGetResponseMsg>() {
-        public void onSuccess(HttpContext context, CartGetResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+String stringsValue = "[\"abc\", \"def\"]";
+List<String> strings = mapper.readValue(stringsValue,new TypeReference<List<String>> (){});
+// Invoking the API call with sample inputs
+queryParam.stringArrayAsync(strings, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_similarity_lookup12_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createSimilarityLookup12Async") createSimilarityLookup12Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="simple_query_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.QueryParamController.simpleQueryAsync") simpleQueryAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createSimilarityLookup12Async(
-        final SimilarityLookupRequestMsg body,
-        final APICallBack<SimilarityLookupResponseMsg> callBack)
+void simpleQueryAsync(
+        final boolean mboolean,
+        final int number,
+        final String string,
+        Map<String, Object> queryParameters,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| mboolean |  ``` Required ```  | TODO: Add a parameter description |
+| number |  ``` Required ```  | TODO: Add a parameter description |
+| string |  ``` Required ```  | TODO: Add a parameter description |
+| queryParameters | ``` Optional ``` | Additional optional query parameters are supported by this method |
 
 
 #### Example Usage
 
 ```java
-try {
-    SimilarityLookupRequestMsg body = new SimilarityLookupRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createSimilarityLookup12Async(body, new APICallBack<SimilarityLookupResponseMsg>() {
-        public void onSuccess(HttpContext context, SimilarityLookupResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+boolean mboolean = true;
+int number = 4;
+String string = "TestString";
+// key-value map for optional query parameters
+Map<String, Object> queryParams = new LinkedHashMap<String, Object>();
+// Invoking the API call with sample inputs
+queryParam.simpleQueryAsync(mboolean, number, string, queryParams, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_browse_node_lookup11_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createBrowseNodeLookup11Async") createBrowseNodeLookup11Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="string_enum_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.QueryParamController.stringEnumArrayAsync") stringEnumArrayAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createBrowseNodeLookup11Async(
-        final BrowseNodeLookupRequestMsg body,
-        final APICallBack<BrowseNodeLookupResponseMsg> callBack)
+void stringEnumArrayAsync(
+        final List<Days> days,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| days |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    BrowseNodeLookupRequestMsg body = new BrowseNodeLookupRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createBrowseNodeLookup11Async(body, new APICallBack<BrowseNodeLookupResponseMsg>() {
-        public void onSuccess(HttpContext context, BrowseNodeLookupResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+String daysValue = "[\"Tuesday\", \"Saturday\", \"Wednesday\", \"Monday\", \"Sunday\"]";
+List<Days> days = mapper.readValue(daysValue,new TypeReference<List<Days>> (){});
+// Invoking the API call with sample inputs
+queryParam.stringEnumArrayAsync(days, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_item_lookup10_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemLookup10Async") createItemLookup10Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="multiple_params_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.QueryParamController.multipleParamsAsync") multipleParamsAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createItemLookup10Async(
-        final ItemLookupRequestMsg body,
-        final APICallBack<ItemLookupResponseMsg> callBack)
+void multipleParamsAsync(
+        final int number,
+        final double precision,
+        final String string,
+        final String url,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| number |  ``` Required ```  | TODO: Add a parameter description |
+| precision |  ``` Required ```  | TODO: Add a parameter description |
+| string |  ``` Required ```  | TODO: Add a parameter description |
+| url |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    ItemLookupRequestMsg body = new ItemLookupRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createItemLookup10Async(body, new APICallBack<ItemLookupResponseMsg>() {
-        public void onSuccess(HttpContext context, ItemLookupResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+int number = 123412312;
+double precision = 1112.34;
+String string = "\"\"test./;\";12&&3asl\"\";\"qw1&34\"///..//.";
+String url = "http://www.abc.com/test?a=b&c=\"http://lolol.com?param=no&another=lol\"";
+// Invoking the API call with sample inputs
+queryParam.multipleParamsAsync(number, precision, string, url, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_item_search9_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemSearch9Async") createItemSearch9Async
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="integer_enum_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.QueryParamController.integerEnumArrayAsync") integerEnumArrayAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createItemSearch9Async(
-        final ItemSearchRequestMsg body,
-        final APICallBack<ItemSearchResponseMsg> callBack)
+void integerEnumArrayAsync(
+        final List<SuiteCode> suites,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| suites |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    ItemSearchRequestMsg body = new ItemSearchRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createItemSearch9Async(body, new APICallBack<ItemSearchResponseMsg>() {
-        public void onSuccess(HttpContext context, ItemSearchResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
+String suitesValue = "[1, 3, 4, 2, 3]";
+List<SuiteCode> suites = mapper.readValue(suitesValue,new TypeReference<List<SuiteCode>> (){});
+// Invoking the API call with sample inputs
+queryParam.integerEnumArrayAsync(suites, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
 ```
 
 
-### <a name="create_cart_clear_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartClearAsync") createCartClearAsync
+[Back to List of Controllers](#list_of_controllers)
 
-> *Tags:*  ``` Skips Authentication ``` 
+## <a name="error_codes_controller"></a>![Class: ](https://apidocs.io/img/class.png "org.hopto.apimatic.controllers.ErrorCodesController") ErrorCodesController
 
-> TODO: Add a method description
+### Get singleton instance
 
+The singleton instance of the ``` ErrorCodesController ``` class can be accessed from the API Client.
 
 ```java
-void createCartClearAsync(
-        final CartClearRequestMsg body,
-        final APICallBack<CartClearResponseMsg> callBack)
+ErrorCodesController errorCodes = client.getErrorCodes();
 ```
 
-#### Parameters
+### <a name="get400_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.ErrorCodesController.get400Async") get400Async
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+> TODO: Add a method description
+
 
+```java
+void get400Async(final APICallBack<DynamicResponse> callBack)
+```
 
 #### Example Usage
 
 ```java
-try {
-    CartClearRequestMsg body = new CartClearRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartClearAsync(body, new APICallBack<CartClearResponseMsg>() {
-        public void onSuccess(HttpContext context, CartClearResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+// Invoking the API call with sample inputs
+errorCodes.get400Async(new APICallBack<DynamicResponse>() {
+    public void onSuccess(HttpContext context, DynamicResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_cart_modify_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartModifyAsync") createCartModifyAsync
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get500_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.ErrorCodesController.get500Async") get500Async
 
 > TODO: Add a method description
 
 
 ```java
-void createCartModifyAsync(
-        final CartModifyRequestMsg body,
-        final APICallBack<CartModifyResponseMsg> callBack)
+void get500Async(final APICallBack<DynamicResponse> callBack)
 ```
 
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 #### Example Usage
 
 ```java
-try {
-    CartModifyRequestMsg body = new CartModifyRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartModifyAsync(body, new APICallBack<CartModifyResponseMsg>() {
-        public void onSuccess(HttpContext context, CartModifyResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+// Invoking the API call with sample inputs
+errorCodes.get500Async(new APICallBack<DynamicResponse>() {
+    public void onSuccess(HttpContext context, DynamicResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_cart_create_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartCreateAsync") createCartCreateAsync
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get401_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.ErrorCodesController.get401Async") get401Async
 
 > TODO: Add a method description
 
 
 ```java
-void createCartCreateAsync(
-        final CartCreateRequestMsg body,
-        final APICallBack<CartCreateResponseMsg> callBack)
+void get401Async(final APICallBack<DynamicResponse> callBack)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
 #### Example Usage
 
 ```java
-try {
-    CartCreateRequestMsg body = new CartCreateRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartCreateAsync(body, new APICallBack<CartCreateResponseMsg>() {
-        public void onSuccess(HttpContext context, CartCreateResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
+// Invoking the API call with sample inputs
+errorCodes.get401Async(new APICallBack<DynamicResponse>() {
+    public void onSuccess(HttpContext context, DynamicResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
 ```
 
+#### Errors
 
-### <a name="create_cart_add_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartAddAsync") createCartAddAsync
+| Error Code | Error Description |
+|------------|-------------------|
+| 401 | 401 Local |
+| 421 | Default |
+| 431 | Default |
+| 432 | Default |
+| 441 | Default |
+| 0 | Invalid response. |
 
-> *Tags:*  ``` Skips Authentication ``` 
 
-> TODO: Add a method description
 
+[Back to List of Controllers](#list_of_controllers)
 
+## <a name="echo_controller"></a>![Class: ](https://apidocs.io/img/class.png "org.hopto.apimatic.controllers.EchoController") EchoController
+
+### Get singleton instance
+
+The singleton instance of the ``` EchoController ``` class can be accessed from the API Client.
+
+```java
+EchoController echo = client.getEcho();
+```
+
+### <a name="json_echo_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.EchoController.jsonEchoAsync") jsonEchoAsync
+
+> Echo's back the request
+
+
 ```java
-void createCartAddAsync(
-        final CartAddRequestMsg body,
-        final APICallBack<CartAddResponseMsg> callBack)
+void jsonEchoAsync(
+        final Object input,
+        final APICallBack<DynamicResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| input |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
 try {
-    CartAddRequestMsg body = new CartAddRequestMsg();
+    String inputValue = "{\"uid\": \"1123213\", \"name\": \"Shahid\"}";
+    Object input = mapper.readValue(inputValue,new TypeReference<Object> (){});
     // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartAddAsync(body, new APICallBack<CartAddResponseMsg>() {
-        public void onSuccess(HttpContext context, CartAddResponseMsg response) {
+    echo.jsonEchoAsync(input, new APICallBack<DynamicResponse>() {
+        public void onSuccess(HttpContext context, DynamicResponse response) {
             // TODO success callback handler
         }
         public void onFailure(HttpContext context, Throwable error) {
@@ -3956,210 +2787,204 @@ try {
     e.printStackTrace();
 }
 ```
-
 
-### <a name="create_cart_get_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartGetAsync") createCartGetAsync
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="form_echo_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.EchoController.formEchoAsync") formEchoAsync
 
-> TODO: Add a method description
+> Sends the request including any form params as JSON
 
 
 ```java
-void createCartGetAsync(
-        final CartGetRequestMsg body,
-        final APICallBack<CartGetResponseMsg> callBack)
+void formEchoAsync(
+        final Object input,
+        final APICallBack<DynamicResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| input |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    CartGetRequestMsg body = new CartGetRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createCartGetAsync(body, new APICallBack<CartGetResponseMsg>() {
-        public void onSuccess(HttpContext context, CartGetResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+String inputValue = "{\"uid\": \"1123213\", \"name\": \"Shahid\"}";
+Object input = mapper.readValue(inputValue,new TypeReference<Object> (){});
+// Invoking the API call with sample inputs
+echo.formEchoAsync(input, new APICallBack<DynamicResponse>() {
+    public void onSuccess(HttpContext context, DynamicResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_similarity_lookup_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createSimilarityLookupAsync") createSimilarityLookupAsync
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="query_echo_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.EchoController.queryEchoAsync") queryEchoAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createSimilarityLookupAsync(
-        final SimilarityLookupRequestMsg body,
-        final APICallBack<SimilarityLookupResponseMsg> callBack)
+void queryEchoAsync(
+        Map<String, Object> queryParameters,
+        final APICallBack<EchoResponse> callBack)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```java
-try {
-    SimilarityLookupRequestMsg body = new SimilarityLookupRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createSimilarityLookupAsync(body, new APICallBack<SimilarityLookupResponseMsg>() {
-        public void onSuccess(HttpContext context, SimilarityLookupResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
+// key-value map for optional query parameters
+Map<String, Object> queryParams = new LinkedHashMap<String, Object>();
+// Invoking the API call with sample inputs
+echo.queryEchoAsync(queryParams, new APICallBack<EchoResponse>() {
+    public void onSuccess(HttpContext context, EchoResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
 ```
 
 
-### <a name="create_browse_node_lookup_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createBrowseNodeLookupAsync") createBrowseNodeLookupAsync
+[Back to List of Controllers](#list_of_controllers)
 
-> *Tags:*  ``` Skips Authentication ``` 
+## <a name="header_controller"></a>![Class: ](https://apidocs.io/img/class.png "org.hopto.apimatic.controllers.HeaderController") HeaderController
 
-> TODO: Add a method description
+### Get singleton instance
+
+The singleton instance of the ``` HeaderController ``` class can be accessed from the API Client.
+
+```java
+HeaderController header = client.getHeader();
+```
+
+### <a name="send_headers_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.HeaderController.sendHeadersAsync") sendHeadersAsync
 
+> Sends a single header params
 
+
 ```java
-void createBrowseNodeLookupAsync(
-        final BrowseNodeLookupRequestMsg body,
-        final APICallBack<BrowseNodeLookupResponseMsg> callBack)
+void sendHeadersAsync(
+        final String customHeader,
+        final String value,
+        final APICallBack<ServerResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| customHeader |  ``` Required ```  | TODO: Add a parameter description |
+| value |  ``` Required ```  | Represents the value of the custom header |
 
 
 #### Example Usage
 
 ```java
-try {
-    BrowseNodeLookupRequestMsg body = new BrowseNodeLookupRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createBrowseNodeLookupAsync(body, new APICallBack<BrowseNodeLookupResponseMsg>() {
-        public void onSuccess(HttpContext context, BrowseNodeLookupResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
+String customHeader = "TestString";
+String value = "TestString";
+// Invoking the API call with sample inputs
+header.sendHeadersAsync(customHeader, value, new APICallBack<ServerResponse>() {
+    public void onSuccess(HttpContext context, ServerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
 ```
 
 
-### <a name="create_item_lookup_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemLookupAsync") createItemLookupAsync
+[Back to List of Controllers](#list_of_controllers)
 
-> *Tags:*  ``` Skips Authentication ``` 
+## <a name="template_params_controller"></a>![Class: ](https://apidocs.io/img/class.png "org.hopto.apimatic.controllers.TemplateParamsController") TemplateParamsController
 
+### Get singleton instance
+
+The singleton instance of the ``` TemplateParamsController ``` class can be accessed from the API Client.
+
+```java
+TemplateParamsController templateParams = client.getTemplateParams();
+```
+
+### <a name="send_string_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.TemplateParamsController.sendStringArrayAsync") sendStringArrayAsync
+
 > TODO: Add a method description
 
 
 ```java
-void createItemLookupAsync(
-        final ItemLookupRequestMsg body,
-        final APICallBack<ItemLookupResponseMsg> callBack)
+void sendStringArrayAsync(
+        final List<String> strings,
+        final APICallBack<EchoResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| strings |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    ItemLookupRequestMsg body = new ItemLookupRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createItemLookupAsync(body, new APICallBack<ItemLookupResponseMsg>() {
-        public void onSuccess(HttpContext context, ItemLookupResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
+String stringsValue = "[\"abc\", \"def\"]";
+List<String> strings = mapper.readValue(stringsValue,new TypeReference<List<String>> (){});
+// Invoking the API call with sample inputs
+templateParams.sendStringArrayAsync(strings, new APICallBack<EchoResponse>() {
+    public void onSuccess(HttpContext context, EchoResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
 
+```
 
-### <a name="create_item_search_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemSearchAsync") createItemSearchAsync
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_integer_array_async"></a>![Method: ](https://apidocs.io/img/method.png "org.hopto.apimatic.controllers.TemplateParamsController.sendIntegerArrayAsync") sendIntegerArrayAsync
 
 > TODO: Add a method description
 
 
 ```java
-void createItemSearchAsync(
-        final ItemSearchRequestMsg body,
-        final APICallBack<ItemSearchResponseMsg> callBack)
+void sendIntegerArrayAsync(
+        final List<Integer> integers,
+        final APICallBack<EchoResponse> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| integers |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    ItemSearchRequestMsg body = new ItemSearchRequestMsg();
-    // Invoking the API call with sample inputs
-    aWSECommerceServiceBinding.createItemSearchAsync(body, new APICallBack<ItemSearchResponseMsg>() {
-        public void onSuccess(HttpContext context, ItemSearchResponseMsg response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
+String integersValue = "[1,2,3,4,5]";
+List<Integer> integers = mapper.readValue(integersValue,new TypeReference<List<Integer>> (){});
+// Invoking the API call with sample inputs
+templateParams.sendIntegerArrayAsync(integers, new APICallBack<EchoResponse>() {
+    public void onSuccess(HttpContext context, EchoResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
 ```
 
 

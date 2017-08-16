@@ -1,55 +1,59 @@
 # Getting started
 
+Testing various
+ api 
+features
+
 ## How to Build
 
 The generated code uses the Newtonsoft Json.NET NuGet Package. If the automatic NuGet package restore
 is enabled, these dependencies will be installed automatically. Therefore,
 you will need internet access for build.
 
-1. Open the solution (AWSECommerceService.sln) file.
+1. Open the solution (Tester.sln) file.
 2. Invoke the build process using `Ctrl+Shift+B` shortcut key or using the `Build` menu as shown below.
 
-![Building SDK using Visual Studio](https://apidocs.io/illustration/cs?step=buildSDK&workspaceFolder=AWSECommerceService-CSharp&workspaceName=AWSECommerceService&projectName=AWSECommerceService.PCL)
+![Building SDK using Visual Studio](https://apidocs.io/illustration/cs?step=buildSDK&workspaceFolder=Tester-CSharp&workspaceName=Tester&projectName=Tester.Tests)
 
 ## How to Use
 
 The build process generates a portable class library, which can be used like a normal class library. The generated library is compatible with Windows Forms, Windows RT, Windows Phone 8,
 Silverlight 5, Xamarin iOS, Xamarin Android and Mono. More information on how to use can be found at the [MSDN Portable Class Libraries documentation](http://msdn.microsoft.com/en-us/library/vstudio/gg597391%28v=vs.100%29.aspx).
 
-The following section explains how to use the AWSECommerceService library in a new console project.
+The following section explains how to use the Tester library in a new console project.
 
 ### 1. Starting a new project
 
 For starting a new project, right click on the current solution from the *solution explorer* and choose  ``` Add -> New Project ```.
 
-![Add a new project in the existing solution using Visual Studio](https://apidocs.io/illustration/cs?step=addProject&workspaceFolder=AWSECommerceService-CSharp&workspaceName=AWSECommerceService&projectName=AWSECommerceService.PCL)
+![Add a new project in the existing solution using Visual Studio](https://apidocs.io/illustration/cs?step=addProject&workspaceFolder=Tester-CSharp&workspaceName=Tester&projectName=Tester.Tests)
 
 Next, choose "Console Application", provide a ``` TestConsoleProject ``` as the project name and click ``` OK ```.
 
-![Create a new console project using Visual Studio](https://apidocs.io/illustration/cs?step=createProject&workspaceFolder=AWSECommerceService-CSharp&workspaceName=AWSECommerceService&projectName=AWSECommerceService.PCL)
+![Create a new console project using Visual Studio](https://apidocs.io/illustration/cs?step=createProject&workspaceFolder=Tester-CSharp&workspaceName=Tester&projectName=Tester.Tests)
 
 ### 2. Set as startup project
 
 The new console project is the entry point for the eventual execution. This requires us to set the ``` TestConsoleProject ``` as the start-up project. To do this, right-click on the  ``` TestConsoleProject ``` and choose  ``` Set as StartUp Project ``` form the context menu.
 
-![Set the new cosole project as the start up project](https://apidocs.io/illustration/cs?step=setStartup&workspaceFolder=AWSECommerceService-CSharp&workspaceName=AWSECommerceService&projectName=AWSECommerceService.PCL)
+![Set the new cosole project as the start up project](https://apidocs.io/illustration/cs?step=setStartup&workspaceFolder=Tester-CSharp&workspaceName=Tester&projectName=Tester.Tests)
 
 ### 3. Add reference of the library project
 
-In order to use the AWSECommerceService library in the new project, first we must add a projet reference to the ``` TestConsoleProject ```. First, right click on the ``` References ``` node in the *solution explorer* and click ``` Add Reference... ```.
+In order to use the Tester library in the new project, first we must add a projet reference to the ``` TestConsoleProject ```. First, right click on the ``` References ``` node in the *solution explorer* and click ``` Add Reference... ```.
 
-![Open references of the TestConsoleProject](https://apidocs.io/illustration/cs?step=addReference&workspaceFolder=AWSECommerceService-CSharp&workspaceName=AWSECommerceService&projectName=AWSECommerceService.PCL)
+![Open references of the TestConsoleProject](https://apidocs.io/illustration/cs?step=addReference&workspaceFolder=Tester-CSharp&workspaceName=Tester&projectName=Tester.Tests)
 
-Next, a window will be displayed where we must set the ``` checkbox ``` on ``` AWSECommerceService.PCL ``` and click ``` OK ```. By doing this, we have added a reference of the ```AWSECommerceService.PCL``` project into the new ``` TestConsoleProject ```.
+Next, a window will be displayed where we must set the ``` checkbox ``` on ``` Tester.Tests ``` and click ``` OK ```. By doing this, we have added a reference of the ```Tester.Tests``` project into the new ``` TestConsoleProject ```.
 
-![Add a reference to the TestConsoleProject](https://apidocs.io/illustration/cs?step=createReference&workspaceFolder=AWSECommerceService-CSharp&workspaceName=AWSECommerceService&projectName=AWSECommerceService.PCL)
+![Add a reference to the TestConsoleProject](https://apidocs.io/illustration/cs?step=createReference&workspaceFolder=Tester-CSharp&workspaceName=Tester&projectName=Tester.Tests)
 
 ### 4. Write sample code
 
 Once the ``` TestConsoleProject ``` is created, a file named ``` Program.cs ``` will be visible in the *solution explorer* with an empty ``` Main ``` method. This is the entry point for the execution of the entire solution.
 Here, you can add code to initialize the client library and acquire the instance of a *Controller* class. Sample code to initialize the client library and using controller methods is given in the subsequent sections.
 
-![Add a reference to the TestConsoleProject](https://apidocs.io/illustration/cs?step=addCode&workspaceFolder=AWSECommerceService-CSharp&workspaceName=AWSECommerceService&projectName=AWSECommerceService.PCL)
+![Add a reference to the TestConsoleProject](https://apidocs.io/illustration/cs?step=addCode&workspaceFolder=Tester-CSharp&workspaceName=Tester&projectName=Tester.Tests)
 
 ## How to Test
 
@@ -66,7 +70,7 @@ API client can be initialized as following.
 
 ```csharp
 
-AWSECommerceServiceClient client = new AWSECommerceServiceClient();
+TesterClient client = new TesterClient();
 ```
 
 
@@ -75,2786 +79,2154 @@ AWSECommerceServiceClient client = new AWSECommerceServiceClient();
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [AWSECommerceServiceBindingController](#awse_commerce_service_binding_controller)
+* [ResponseTypesController](#response_types_controller)
+* [BodyParamsController](#body_params_controller)
+* [FormParamsController](#form_params_controller)
+* [QueryParamController](#query_param_controller)
+* [ErrorCodesController](#error_codes_controller)
+* [EchoController](#echo_controller)
+* [HeaderController](#header_controller)
+* [TemplateParamsController](#template_params_controller)
 
-## <a name="awse_commerce_service_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController") AWSECommerceServiceBindingController
+## <a name="response_types_controller"></a>![Class: ](https://apidocs.io/img/class.png "Tester.Tests.Controllers.ResponseTypesController") ResponseTypesController
 
 ### Get singleton instance
 
-The singleton instance of the ``` AWSECommerceServiceBindingController ``` class can be accessed from the API Client.
+The singleton instance of the ``` ResponseTypesController ``` class can be accessed from the API Client.
 
 ```csharp
-AWSECommerceServiceBindingController aWSECommerceServiceBinding = client.AWSECommerceServiceBinding;
+IResponseTypesController responseTypes = client.ResponseTypes;
 ```
 
-### <a name="create_cart_modify97"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartModify97") CreateCartModify97
+### <a name="get_date_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.ResponseTypesController.GetDateArray") GetDateArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartModifyResponseMsg> CreateCartModify97(Models.CartModifyRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartModifyRequestMsg();
-
-Models.CartModifyResponseMsg result = await aWSECommerceServiceBinding.CreateCartModify97(body);
-
-```
-
-
-### <a name="create_cart_clear98"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartClear98") CreateCartClear98
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartClearResponseMsg> CreateCartClear98(Models.CartClearRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartClearRequestMsg();
-
-Models.CartClearResponseMsg result = await aWSECommerceServiceBinding.CreateCartClear98(body);
-
-```
-
-
-### <a name="create_cart_create96"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartCreate96") CreateCartCreate96
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartCreateResponseMsg> CreateCartCreate96(Models.CartCreateRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartCreateRequestMsg();
-
-Models.CartCreateResponseMsg result = await aWSECommerceServiceBinding.CreateCartCreate96(body);
-
-```
-
-
-### <a name="create_cart_add95"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartAdd95") CreateCartAdd95
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartAddResponseMsg> CreateCartAdd95(Models.CartAddRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartAddRequestMsg();
-
-Models.CartAddResponseMsg result = await aWSECommerceServiceBinding.CreateCartAdd95(body);
-
-```
-
-
-### <a name="create_cart_get94"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartGet94") CreateCartGet94
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartGetResponseMsg> CreateCartGet94(Models.CartGetRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartGetRequestMsg();
-
-Models.CartGetResponseMsg result = await aWSECommerceServiceBinding.CreateCartGet94(body);
-
-```
-
-
-### <a name="create_similarity_lookup93"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateSimilarityLookup93") CreateSimilarityLookup93
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.SimilarityLookupResponseMsg> CreateSimilarityLookup93(Models.SimilarityLookupRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.SimilarityLookupRequestMsg();
-
-Models.SimilarityLookupResponseMsg result = await aWSECommerceServiceBinding.CreateSimilarityLookup93(body);
-
-```
-
-
-### <a name="create_browse_node_lookup92"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateBrowseNodeLookup92") CreateBrowseNodeLookup92
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.BrowseNodeLookupResponseMsg> CreateBrowseNodeLookup92(Models.BrowseNodeLookupRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.BrowseNodeLookupRequestMsg();
-
-Models.BrowseNodeLookupResponseMsg result = await aWSECommerceServiceBinding.CreateBrowseNodeLookup92(body);
-
-```
-
-
-### <a name="create_item_lookup91"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemLookup91") CreateItemLookup91
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.ItemLookupResponseMsg> CreateItemLookup91(Models.ItemLookupRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.ItemLookupRequestMsg();
-
-Models.ItemLookupResponseMsg result = await aWSECommerceServiceBinding.CreateItemLookup91(body);
-
-```
-
-
-### <a name="create_item_search90"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemSearch90") CreateItemSearch90
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.ItemSearchResponseMsg> CreateItemSearch90(Models.ItemSearchRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.ItemSearchRequestMsg();
-
-Models.ItemSearchResponseMsg result = await aWSECommerceServiceBinding.CreateItemSearch90(body);
-
-```
-
-
-### <a name="create_cart_clear89"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartClear89") CreateCartClear89
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartClearResponseMsg> CreateCartClear89(Models.CartClearRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartClearRequestMsg();
-
-Models.CartClearResponseMsg result = await aWSECommerceServiceBinding.CreateCartClear89(body);
-
-```
-
-
-### <a name="create_cart_modify88"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartModify88") CreateCartModify88
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartModifyResponseMsg> CreateCartModify88(Models.CartModifyRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartModifyRequestMsg();
-
-Models.CartModifyResponseMsg result = await aWSECommerceServiceBinding.CreateCartModify88(body);
-
-```
-
-
-### <a name="create_cart_create87"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartCreate87") CreateCartCreate87
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartCreateResponseMsg> CreateCartCreate87(Models.CartCreateRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartCreateRequestMsg();
-
-Models.CartCreateResponseMsg result = await aWSECommerceServiceBinding.CreateCartCreate87(body);
-
-```
-
-
-### <a name="create_cart_add86"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartAdd86") CreateCartAdd86
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartAddResponseMsg> CreateCartAdd86(Models.CartAddRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartAddRequestMsg();
-
-Models.CartAddResponseMsg result = await aWSECommerceServiceBinding.CreateCartAdd86(body);
-
-```
-
-
-### <a name="create_cart_get85"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartGet85") CreateCartGet85
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartGetResponseMsg> CreateCartGet85(Models.CartGetRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartGetRequestMsg();
-
-Models.CartGetResponseMsg result = await aWSECommerceServiceBinding.CreateCartGet85(body);
-
-```
-
-
-### <a name="create_similarity_lookup84"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateSimilarityLookup84") CreateSimilarityLookup84
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.SimilarityLookupResponseMsg> CreateSimilarityLookup84(Models.SimilarityLookupRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.SimilarityLookupRequestMsg();
-
-Models.SimilarityLookupResponseMsg result = await aWSECommerceServiceBinding.CreateSimilarityLookup84(body);
-
-```
-
-
-### <a name="create_browse_node_lookup83"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateBrowseNodeLookup83") CreateBrowseNodeLookup83
-
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.BrowseNodeLookupResponseMsg> CreateBrowseNodeLookup83(Models.BrowseNodeLookupRequestMsg body)
+Task<List<DateTime>> GetDateArray()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
 #### Example Usage
 
 ```csharp
-var body = new Models.BrowseNodeLookupRequestMsg();
 
-Models.BrowseNodeLookupResponseMsg result = await aWSECommerceServiceBinding.CreateBrowseNodeLookup83(body);
+List<DateTime> result = await responseTypes.GetDateArray();
 
 ```
 
 
-### <a name="create_item_lookup82"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemLookup82") CreateItemLookup82
+### <a name="get_date"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.ResponseTypesController.GetDate") GetDate
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.ItemLookupResponseMsg> CreateItemLookup82(Models.ItemLookupRequestMsg body)
+Task<DateTime?> GetDate()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```csharp
-var body = new Models.ItemLookupRequestMsg();
 
-Models.ItemLookupResponseMsg result = await aWSECommerceServiceBinding.CreateItemLookup82(body);
+DateTime? result = await responseTypes.GetDate();
 
 ```
 
 
-### <a name="create_item_search81"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemSearch81") CreateItemSearch81
+### <a name="get_long"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.ResponseTypesController.GetLong") GetLong
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.ItemSearchResponseMsg> CreateItemSearch81(Models.ItemSearchRequestMsg body)
+Task<long?> GetLong()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```csharp
-var body = new Models.ItemSearchRequestMsg();
 
-Models.ItemSearchResponseMsg result = await aWSECommerceServiceBinding.CreateItemSearch81(body);
+long? result = await responseTypes.GetLong();
 
 ```
-
 
-### <a name="create_cart_clear80"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartClear80") CreateCartClear80
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_model"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.ResponseTypesController.GetModel") GetModel
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartClearResponseMsg> CreateCartClear80(Models.CartClearRequestMsg body)
+Task<PCL.Models.Person> GetModel()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CartClearRequestMsg();
 
-Models.CartClearResponseMsg result = await aWSECommerceServiceBinding.CreateCartClear80(body);
+PCL.Models.Person result = await responseTypes.GetModel();
 
 ```
 
 
-### <a name="create_cart_modify79"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartModify79") CreateCartModify79
+### <a name="get_string_enum_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.ResponseTypesController.GetStringEnumArray") GetStringEnumArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartModifyResponseMsg> CreateCartModify79(Models.CartModifyRequestMsg body)
+Task<List<PCL.Models.Days>> GetStringEnumArray()
 ```
-
-#### Parameters
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 #### Example Usage
 
 ```csharp
-var body = new Models.CartModifyRequestMsg();
 
-Models.CartModifyResponseMsg result = await aWSECommerceServiceBinding.CreateCartModify79(body);
+List<PCL.Models.Days> result = await responseTypes.GetStringEnumArray();
 
 ```
 
 
-### <a name="create_cart_create78"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartCreate78") CreateCartCreate78
+### <a name="get_string_enum"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.ResponseTypesController.GetStringEnum") GetStringEnum
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartCreateResponseMsg> CreateCartCreate78(Models.CartCreateRequestMsg body)
+Task<PCL.Models.Days?> GetStringEnum()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```csharp
-var body = new Models.CartCreateRequestMsg();
 
-Models.CartCreateResponseMsg result = await aWSECommerceServiceBinding.CreateCartCreate78(body);
+PCL.Models.Days? result = await responseTypes.GetStringEnum();
 
 ```
-
 
-### <a name="create_cart_add77"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartAdd77") CreateCartAdd77
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_model_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.ResponseTypesController.GetModelArray") GetModelArray
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartAddResponseMsg> CreateCartAdd77(Models.CartAddRequestMsg body)
+Task<List<PCL.Models.Person>> GetModelArray()
 ```
 
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 #### Example Usage
 
 ```csharp
-var body = new Models.CartAddRequestMsg();
 
-Models.CartAddResponseMsg result = await aWSECommerceServiceBinding.CreateCartAdd77(body);
+List<PCL.Models.Person> result = await responseTypes.GetModelArray();
 
 ```
 
 
-### <a name="create_cart_get76"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartGet76") CreateCartGet76
+### <a name="get_int_enum"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.ResponseTypesController.GetIntEnum") GetIntEnum
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartGetResponseMsg> CreateCartGet76(Models.CartGetRequestMsg body)
+Task<PCL.Models.SuiteCode?> GetIntEnum()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```csharp
-var body = new Models.CartGetRequestMsg();
 
-Models.CartGetResponseMsg result = await aWSECommerceServiceBinding.CreateCartGet76(body);
+PCL.Models.SuiteCode? result = await responseTypes.GetIntEnum();
 
 ```
-
 
-### <a name="create_similarity_lookup75"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateSimilarityLookup75") CreateSimilarityLookup75
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_int_enum_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.ResponseTypesController.GetIntEnumArray") GetIntEnumArray
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.SimilarityLookupResponseMsg> CreateSimilarityLookup75(Models.SimilarityLookupRequestMsg body)
+Task<List<PCL.Models.SuiteCode>> GetIntEnumArray()
 ```
-
-#### Parameters
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 #### Example Usage
 
 ```csharp
-var body = new Models.SimilarityLookupRequestMsg();
 
-Models.SimilarityLookupResponseMsg result = await aWSECommerceServiceBinding.CreateSimilarityLookup75(body);
+List<PCL.Models.SuiteCode> result = await responseTypes.GetIntEnumArray();
 
 ```
 
 
-### <a name="create_browse_node_lookup74"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateBrowseNodeLookup74") CreateBrowseNodeLookup74
+### <a name="get_precision"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.ResponseTypesController.GetPrecision") GetPrecision
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.BrowseNodeLookupResponseMsg> CreateBrowseNodeLookup74(Models.BrowseNodeLookupRequestMsg body)
+Task<double?> GetPrecision()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```csharp
-var body = new Models.BrowseNodeLookupRequestMsg();
 
-Models.BrowseNodeLookupResponseMsg result = await aWSECommerceServiceBinding.CreateBrowseNodeLookup74(body);
+double? result = await responseTypes.GetPrecision();
 
 ```
-
 
-### <a name="create_item_lookup73"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemLookup73") CreateItemLookup73
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_binary"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.ResponseTypesController.GetBinary") GetBinary
 
-> TODO: Add a method description
+> gets a binary object
 
 
 ```csharp
-Task<Models.ItemLookupResponseMsg> CreateItemLookup73(Models.ItemLookupRequestMsg body)
+Task<Stream> GetBinary()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```csharp
-var body = new Models.ItemLookupRequestMsg();
 
-Models.ItemLookupResponseMsg result = await aWSECommerceServiceBinding.CreateItemLookup73(body);
+Stream result = await responseTypes.GetBinary();
 
 ```
-
 
-### <a name="create_item_search72"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemSearch72") CreateItemSearch72
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_integer"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.ResponseTypesController.GetInteger") GetInteger
 
-> TODO: Add a method description
+> Gets a integer response
 
 
 ```csharp
-Task<Models.ItemSearchResponseMsg> CreateItemSearch72(Models.ItemSearchRequestMsg body)
+Task<int?> GetInteger()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```csharp
-var body = new Models.ItemSearchRequestMsg();
 
-Models.ItemSearchResponseMsg result = await aWSECommerceServiceBinding.CreateItemSearch72(body);
+int? result = await responseTypes.GetInteger();
 
 ```
-
 
-### <a name="create_cart_clear71"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartClear71") CreateCartClear71
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_integer_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.ResponseTypesController.GetIntegerArray") GetIntegerArray
 
-> TODO: Add a method description
+> Get an array of integers.
 
 
 ```csharp
-Task<Models.CartClearResponseMsg> CreateCartClear71(Models.CartClearRequestMsg body)
+Task<List<int>> GetIntegerArray()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```csharp
-var body = new Models.CartClearRequestMsg();
 
-Models.CartClearResponseMsg result = await aWSECommerceServiceBinding.CreateCartClear71(body);
+List<int> result = await responseTypes.GetIntegerArray();
 
 ```
-
 
-### <a name="create_cart_modify70"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartModify70") CreateCartModify70
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_dynamic"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.ResponseTypesController.GetDynamic") GetDynamic
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartModifyResponseMsg> CreateCartModify70(Models.CartModifyRequestMsg body)
+Task<dynamic> GetDynamic()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CartModifyRequestMsg();
 
-Models.CartModifyResponseMsg result = await aWSECommerceServiceBinding.CreateCartModify70(body);
+dynamic result = await responseTypes.GetDynamic();
 
 ```
 
 
-### <a name="create_cart_create69"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartCreate69") CreateCartCreate69
+### <a name="get_dynamic_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.ResponseTypesController.GetDynamicArray") GetDynamicArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartCreateResponseMsg> CreateCartCreate69(Models.CartCreateRequestMsg body)
+Task<dynamic> GetDynamicArray()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```csharp
-var body = new Models.CartCreateRequestMsg();
 
-Models.CartCreateResponseMsg result = await aWSECommerceServiceBinding.CreateCartCreate69(body);
+dynamic result = await responseTypes.GetDynamicArray();
 
 ```
-
 
-### <a name="create_cart_add68"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartAdd68") CreateCartAdd68
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get3339_datetime"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.ResponseTypesController.Get3339Datetime") Get3339Datetime
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartAddResponseMsg> CreateCartAdd68(Models.CartAddRequestMsg body)
+Task<DateTime?> Get3339Datetime()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CartAddRequestMsg();
 
-Models.CartAddResponseMsg result = await aWSECommerceServiceBinding.CreateCartAdd68(body);
+DateTime? result = await responseTypes.Get3339Datetime();
 
 ```
 
 
-### <a name="create_cart_get67"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartGet67") CreateCartGet67
+### <a name="get3339_datetime_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.ResponseTypesController.Get3339DatetimeArray") Get3339DatetimeArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartGetResponseMsg> CreateCartGet67(Models.CartGetRequestMsg body)
+Task<List<DateTime>> Get3339DatetimeArray()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```csharp
-var body = new Models.CartGetRequestMsg();
 
-Models.CartGetResponseMsg result = await aWSECommerceServiceBinding.CreateCartGet67(body);
+List<DateTime> result = await responseTypes.Get3339DatetimeArray();
 
 ```
-
 
-### <a name="create_similarity_lookup66"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateSimilarityLookup66") CreateSimilarityLookup66
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_boolean"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.ResponseTypesController.GetBoolean") GetBoolean
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.SimilarityLookupResponseMsg> CreateSimilarityLookup66(Models.SimilarityLookupRequestMsg body)
+Task<bool?> GetBoolean()
 ```
 
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 #### Example Usage
 
 ```csharp
-var body = new Models.SimilarityLookupRequestMsg();
 
-Models.SimilarityLookupResponseMsg result = await aWSECommerceServiceBinding.CreateSimilarityLookup66(body);
+bool? result = await responseTypes.GetBoolean();
 
 ```
 
 
-### <a name="create_browse_node_lookup65"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateBrowseNodeLookup65") CreateBrowseNodeLookup65
+### <a name="get_boolean_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.ResponseTypesController.GetBooleanArray") GetBooleanArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.BrowseNodeLookupResponseMsg> CreateBrowseNodeLookup65(Models.BrowseNodeLookupRequestMsg body)
+Task<List<bool>> GetBooleanArray()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```csharp
-var body = new Models.BrowseNodeLookupRequestMsg();
 
-Models.BrowseNodeLookupResponseMsg result = await aWSECommerceServiceBinding.CreateBrowseNodeLookup65(body);
+List<bool> result = await responseTypes.GetBooleanArray();
 
 ```
-
 
-### <a name="create_item_lookup64"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemLookup64") CreateItemLookup64
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_headers"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.ResponseTypesController.GetHeaders") GetHeaders
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.ItemLookupResponseMsg> CreateItemLookup64(Models.ItemLookupRequestMsg body)
+Task GetHeaders()
 ```
-
-#### Parameters
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 #### Example Usage
 
 ```csharp
-var body = new Models.ItemLookupRequestMsg();
 
-Models.ItemLookupResponseMsg result = await aWSECommerceServiceBinding.CreateItemLookup64(body);
+await responseTypes.GetHeaders();
 
 ```
 
 
-### <a name="create_item_search63"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemSearch63") CreateItemSearch63
+### <a name="get1123_date_time"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.ResponseTypesController.Get1123DateTime") Get1123DateTime
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.ItemSearchResponseMsg> CreateItemSearch63(Models.ItemSearchRequestMsg body)
+Task<DateTime?> Get1123DateTime()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```csharp
-var body = new Models.ItemSearchRequestMsg();
 
-Models.ItemSearchResponseMsg result = await aWSECommerceServiceBinding.CreateItemSearch63(body);
+DateTime? result = await responseTypes.Get1123DateTime();
 
 ```
-
 
-### <a name="create_cart_clear62"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartClear62") CreateCartClear62
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_unix_date_time"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.ResponseTypesController.GetUnixDateTime") GetUnixDateTime
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartClearResponseMsg> CreateCartClear62(Models.CartClearRequestMsg body)
+Task<DateTime?> GetUnixDateTime()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CartClearRequestMsg();
 
-Models.CartClearResponseMsg result = await aWSECommerceServiceBinding.CreateCartClear62(body);
+DateTime? result = await responseTypes.GetUnixDateTime();
 
 ```
 
 
-### <a name="create_cart_modify61"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartModify61") CreateCartModify61
+### <a name="get1123_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.ResponseTypesController.Get1123DateTimeArray") Get1123DateTimeArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartModifyResponseMsg> CreateCartModify61(Models.CartModifyRequestMsg body)
+Task<List<DateTime>> Get1123DateTimeArray()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```csharp
-var body = new Models.CartModifyRequestMsg();
 
-Models.CartModifyResponseMsg result = await aWSECommerceServiceBinding.CreateCartModify61(body);
+List<DateTime> result = await responseTypes.Get1123DateTimeArray();
 
 ```
-
 
-### <a name="create_cart_create60"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartCreate60") CreateCartCreate60
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_unix_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.ResponseTypesController.GetUnixDateTimeArray") GetUnixDateTimeArray
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartCreateResponseMsg> CreateCartCreate60(Models.CartCreateRequestMsg body)
+Task<List<DateTime>> GetUnixDateTimeArray()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CartCreateRequestMsg();
 
-Models.CartCreateResponseMsg result = await aWSECommerceServiceBinding.CreateCartCreate60(body);
+List<DateTime> result = await responseTypes.GetUnixDateTimeArray();
 
 ```
 
 
-### <a name="create_cart_add59"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartAdd59") CreateCartAdd59
+[Back to List of Controllers](#list_of_controllers)
 
-> *Tags:*  ``` Skips Authentication ``` 
+## <a name="body_params_controller"></a>![Class: ](https://apidocs.io/img/class.png "Tester.Tests.Controllers.BodyParamsController") BodyParamsController
 
+### Get singleton instance
+
+The singleton instance of the ``` BodyParamsController ``` class can be accessed from the API Client.
+
+```csharp
+IBodyParamsController bodyParams = client.BodyParams;
+```
+
+### <a name="send_date_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.BodyParamsController.SendDateArray") SendDateArray
+
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartAddResponseMsg> CreateCartAdd59(Models.CartAddRequestMsg body)
+Task<PCL.Models.ServerResponse> SendDateArray(List<DateTime> dates)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| dates |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CartAddRequestMsg();
+string datesValue = ["1994-02-13", "1994-02-13"];
+var dates = Newtonsoft.Json.JsonConvert.DeserializeObject<List<DateTime>>(datesValue);
 
-Models.CartAddResponseMsg result = await aWSECommerceServiceBinding.CreateCartAdd59(body);
+PCL.Models.ServerResponse result = await bodyParams.SendDateArray(dates);
 
 ```
 
 
-### <a name="create_cart_get58"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartGet58") CreateCartGet58
+### <a name="send_date"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.BodyParamsController.SendDate") SendDate
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartGetResponseMsg> CreateCartGet58(Models.CartGetRequestMsg body)
+Task<PCL.Models.ServerResponse> SendDate(DateTime date)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| date |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CartGetRequestMsg();
+DateTime date = 1994-02-13;
 
-Models.CartGetResponseMsg result = await aWSECommerceServiceBinding.CreateCartGet58(body);
+PCL.Models.ServerResponse result = await bodyParams.SendDate(date);
 
 ```
-
 
-### <a name="create_similarity_lookup57"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateSimilarityLookup57") CreateSimilarityLookup57
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_unix_date_time"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.BodyParamsController.SendUnixDateTime") SendUnixDateTime
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.SimilarityLookupResponseMsg> CreateSimilarityLookup57(Models.SimilarityLookupRequestMsg body)
+Task<PCL.Models.ServerResponse> SendUnixDateTime(DateTime datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.SimilarityLookupRequestMsg();
+DateTime datetime = 1484719381;
 
-Models.SimilarityLookupResponseMsg result = await aWSECommerceServiceBinding.CreateSimilarityLookup57(body);
+PCL.Models.ServerResponse result = await bodyParams.SendUnixDateTime(datetime);
 
 ```
 
 
-### <a name="create_browse_node_lookup56"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateBrowseNodeLookup56") CreateBrowseNodeLookup56
+### <a name="send_rfc1123_date_time"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.BodyParamsController.SendRfc1123DateTime") SendRfc1123DateTime
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.BrowseNodeLookupResponseMsg> CreateBrowseNodeLookup56(Models.BrowseNodeLookupRequestMsg body)
+Task<PCL.Models.ServerResponse> SendRfc1123DateTime(DateTime datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.BrowseNodeLookupRequestMsg();
+DateTime datetime = Sun, 06 Nov 1994 08:49:37 GMT;
 
-Models.BrowseNodeLookupResponseMsg result = await aWSECommerceServiceBinding.CreateBrowseNodeLookup56(body);
+PCL.Models.ServerResponse result = await bodyParams.SendRfc1123DateTime(datetime);
 
 ```
-
 
-### <a name="create_item_lookup55"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemLookup55") CreateItemLookup55
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_rfc3339_date_time"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.BodyParamsController.SendRfc3339DateTime") SendRfc3339DateTime
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.ItemLookupResponseMsg> CreateItemLookup55(Models.ItemLookupRequestMsg body)
+Task<PCL.Models.ServerResponse> SendRfc3339DateTime(DateTime datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.ItemLookupRequestMsg();
+DateTime datetime = 1994-02-13T14:01:54.9571247Z;
 
-Models.ItemLookupResponseMsg result = await aWSECommerceServiceBinding.CreateItemLookup55(body);
+PCL.Models.ServerResponse result = await bodyParams.SendRfc3339DateTime(datetime);
 
 ```
 
 
-### <a name="create_item_search54"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemSearch54") CreateItemSearch54
+### <a name="send_unix_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.BodyParamsController.SendUnixDateTimeArray") SendUnixDateTimeArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.ItemSearchResponseMsg> CreateItemSearch54(Models.ItemSearchRequestMsg body)
+Task<PCL.Models.ServerResponse> SendUnixDateTimeArray(List<DateTime> datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.ItemSearchRequestMsg();
+string datetimesValue = [1484719381,1484719381];
+var datetimes = Newtonsoft.Json.JsonConvert.DeserializeObject<List<DateTime>>(datetimesValue);
 
-Models.ItemSearchResponseMsg result = await aWSECommerceServiceBinding.CreateItemSearch54(body);
+PCL.Models.ServerResponse result = await bodyParams.SendUnixDateTimeArray(datetimes);
 
 ```
-
 
-### <a name="create_cart_clear53"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartClear53") CreateCartClear53
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_rfc1123_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.BodyParamsController.SendRfc1123DateTimeArray") SendRfc1123DateTimeArray
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartClearResponseMsg> CreateCartClear53(Models.CartClearRequestMsg body)
+Task<PCL.Models.ServerResponse> SendRfc1123DateTimeArray(List<DateTime> datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CartClearRequestMsg();
+string datetimesValue = ["Sun, 06 Nov 1994 08:49:37 GMT","Sun, 06 Nov 1994 08:49:37 GMT"];
+var datetimes = Newtonsoft.Json.JsonConvert.DeserializeObject<List<DateTime>>(datetimesValue);
 
-Models.CartClearResponseMsg result = await aWSECommerceServiceBinding.CreateCartClear53(body);
+PCL.Models.ServerResponse result = await bodyParams.SendRfc1123DateTimeArray(datetimes);
 
 ```
 
 
-### <a name="create_cart_modify52"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartModify52") CreateCartModify52
+### <a name="send_rfc3339_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.BodyParamsController.SendRfc3339DateTimeArray") SendRfc3339DateTimeArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartModifyResponseMsg> CreateCartModify52(Models.CartModifyRequestMsg body)
+Task<PCL.Models.ServerResponse> SendRfc3339DateTimeArray(List<DateTime> datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CartModifyRequestMsg();
+string datetimesValue = ["1994-02-13T14:01:54.9571247Z","1994-02-13T14:01:54.9571247Z"];
+var datetimes = Newtonsoft.Json.JsonConvert.DeserializeObject<List<DateTime>>(datetimesValue);
 
-Models.CartModifyResponseMsg result = await aWSECommerceServiceBinding.CreateCartModify52(body);
+PCL.Models.ServerResponse result = await bodyParams.SendRfc3339DateTimeArray(datetimes);
 
 ```
-
 
-### <a name="create_cart_create51"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartCreate51") CreateCartCreate51
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_string_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.BodyParamsController.SendStringArray") SendStringArray
 
-> TODO: Add a method description
+> sends a string body param
 
 
 ```csharp
-Task<Models.CartCreateResponseMsg> CreateCartCreate51(Models.CartCreateRequestMsg body)
+Task<PCL.Models.ServerResponse> SendStringArray(List<string> sarray)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| sarray |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CartCreateRequestMsg();
+string sarrayValue = "[\"abc\", \"def\"]";
+var sarray = Newtonsoft.Json.JsonConvert.DeserializeObject<List<string>>(sarrayValue);
 
-Models.CartCreateResponseMsg result = await aWSECommerceServiceBinding.CreateCartCreate51(body);
+PCL.Models.ServerResponse result = await bodyParams.SendStringArray(sarray);
 
 ```
-
 
-### <a name="create_cart_add50"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartAdd50") CreateCartAdd50
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_integer_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.BodyParamsController.SendIntegerArray") SendIntegerArray
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartAddResponseMsg> CreateCartAdd50(Models.CartAddRequestMsg body)
+Task<PCL.Models.ServerResponse> SendIntegerArray(List<int> integers)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| integers |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CartAddRequestMsg();
+string integersValue = "[1,2,3,4,5]";
+var integers = Newtonsoft.Json.JsonConvert.DeserializeObject<List<int>>(integersValue);
 
-Models.CartAddResponseMsg result = await aWSECommerceServiceBinding.CreateCartAdd50(body);
+PCL.Models.ServerResponse result = await bodyParams.SendIntegerArray(integers);
 
 ```
 
 
-### <a name="create_cart_get49"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartGet49") CreateCartGet49
+### <a name="send_model"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.BodyParamsController.SendModel") SendModel
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartGetResponseMsg> CreateCartGet49(Models.CartGetRequestMsg body)
+Task<PCL.Models.ServerResponse> SendModel(PCL.Models.Employee model)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| model |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CartGetRequestMsg();
+string modelValue = "{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"}";
+var model = Newtonsoft.Json.JsonConvert.DeserializeObject<PCL.Models.Employee>(modelValue);
 
-Models.CartGetResponseMsg result = await aWSECommerceServiceBinding.CreateCartGet49(body);
+PCL.Models.ServerResponse result = await bodyParams.SendModel(model);
 
 ```
-
 
-### <a name="create_similarity_lookup48"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateSimilarityLookup48") CreateSimilarityLookup48
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_model_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.BodyParamsController.SendModelArray") SendModelArray
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.SimilarityLookupResponseMsg> CreateSimilarityLookup48(Models.SimilarityLookupRequestMsg body)
+Task<PCL.Models.ServerResponse> SendModelArray(List<PCL.Models.Employee> models)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| models |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.SimilarityLookupRequestMsg();
+string modelsValue = "[{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"},{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"}]";
+var models = Newtonsoft.Json.JsonConvert.DeserializeObject<List<PCL.Models.Employee>>(modelsValue);
 
-Models.SimilarityLookupResponseMsg result = await aWSECommerceServiceBinding.CreateSimilarityLookup48(body);
+PCL.Models.ServerResponse result = await bodyParams.SendModelArray(models);
 
 ```
 
 
-### <a name="create_browse_node_lookup47"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateBrowseNodeLookup47") CreateBrowseNodeLookup47
+### <a name="send_dynamic"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.BodyParamsController.SendDynamic") SendDynamic
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.BrowseNodeLookupResponseMsg> CreateBrowseNodeLookup47(Models.BrowseNodeLookupRequestMsg body)
+Task<PCL.Models.ServerResponse> SendDynamic(object mdynamic)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| mdynamic |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.BrowseNodeLookupRequestMsg();
+string mdynamicValue = "{\"uid\": \"1123213\", \"name\": \"Shahid\"}";
+var mdynamic = Newtonsoft.Json.JsonConvert.DeserializeObject(mdynamicValue);
 
-Models.BrowseNodeLookupResponseMsg result = await aWSECommerceServiceBinding.CreateBrowseNodeLookup47(body);
+PCL.Models.ServerResponse result = await bodyParams.SendDynamic(mdynamic);
 
 ```
-
 
-### <a name="create_item_lookup46"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemLookup46") CreateItemLookup46
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_string"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.BodyParamsController.SendString") SendString
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.ItemLookupResponseMsg> CreateItemLookup46(Models.ItemLookupRequestMsg body)
+Task<PCL.Models.ServerResponse> SendString(string mvalue)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| mvalue |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.ItemLookupRequestMsg();
+string mvalue = "TestString";
 
-Models.ItemLookupResponseMsg result = await aWSECommerceServiceBinding.CreateItemLookup46(body);
+PCL.Models.ServerResponse result = await bodyParams.SendString(mvalue);
 
 ```
 
 
-### <a name="create_item_search45"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemSearch45") CreateItemSearch45
+### <a name="send_string_enum_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.BodyParamsController.SendStringEnumArray") SendStringEnumArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.ItemSearchResponseMsg> CreateItemSearch45(Models.ItemSearchRequestMsg body)
+Task<PCL.Models.ServerResponse> SendStringEnumArray(List<PCL.Models.Days> days)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| days |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.ItemSearchRequestMsg();
+string daysValue = "[\"Tuesday\", \"Saturday\", \"Wednesday\", \"Monday\", \"Sunday\"]";
+var days = Newtonsoft.Json.JsonConvert.DeserializeObject<List<PCL.Models.Days>>(daysValue);
 
-Models.ItemSearchResponseMsg result = await aWSECommerceServiceBinding.CreateItemSearch45(body);
+PCL.Models.ServerResponse result = await bodyParams.SendStringEnumArray(days);
 
 ```
-
 
-### <a name="create_cart_clear44"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartClear44") CreateCartClear44
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_integer_enum_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.BodyParamsController.SendIntegerEnumArray") SendIntegerEnumArray
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartClearResponseMsg> CreateCartClear44(Models.CartClearRequestMsg body)
+Task<PCL.Models.ServerResponse> SendIntegerEnumArray(List<PCL.Models.SuiteCode> suites)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| suites |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CartClearRequestMsg();
+string suitesValue = "[1, 3, 4, 2, 3]";
+var suites = Newtonsoft.Json.JsonConvert.DeserializeObject<List<PCL.Models.SuiteCode>>(suitesValue);
 
-Models.CartClearResponseMsg result = await aWSECommerceServiceBinding.CreateCartClear44(body);
+PCL.Models.ServerResponse result = await bodyParams.SendIntegerEnumArray(suites);
 
 ```
+
+
+[Back to List of Controllers](#list_of_controllers)
 
+## <a name="form_params_controller"></a>![Class: ](https://apidocs.io/img/class.png "Tester.Tests.Controllers.FormParamsController") FormParamsController
 
-### <a name="create_cart_modify43"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartModify43") CreateCartModify43
+### Get singleton instance
 
-> *Tags:*  ``` Skips Authentication ``` 
+The singleton instance of the ``` FormParamsController ``` class can be accessed from the API Client.
 
+```csharp
+IFormParamsController formParams = client.FormParams;
+```
+
+### <a name="send_date_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.FormParamsController.SendDateArray") SendDateArray
+
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartModifyResponseMsg> CreateCartModify43(Models.CartModifyRequestMsg body)
+Task<PCL.Models.ServerResponse> SendDateArray(List<DateTime> dates)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| dates |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CartModifyRequestMsg();
+string datesValue = ["1994-02-13","1994-02-13"];
+var dates = Newtonsoft.Json.JsonConvert.DeserializeObject<List<DateTime>>(datesValue);
 
-Models.CartModifyResponseMsg result = await aWSECommerceServiceBinding.CreateCartModify43(body);
+PCL.Models.ServerResponse result = await formParams.SendDateArray(dates);
 
 ```
 
 
-### <a name="create_cart_create42"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartCreate42") CreateCartCreate42
+### <a name="send_date"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.FormParamsController.SendDate") SendDate
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartCreateResponseMsg> CreateCartCreate42(Models.CartCreateRequestMsg body)
+Task<PCL.Models.ServerResponse> SendDate(DateTime date)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| date |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CartCreateRequestMsg();
+DateTime date = 1994-02-13;
 
-Models.CartCreateResponseMsg result = await aWSECommerceServiceBinding.CreateCartCreate42(body);
+PCL.Models.ServerResponse result = await formParams.SendDate(date);
 
 ```
-
 
-### <a name="create_cart_add41"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartAdd41") CreateCartAdd41
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_unix_date_time"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.FormParamsController.SendUnixDateTime") SendUnixDateTime
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartAddResponseMsg> CreateCartAdd41(Models.CartAddRequestMsg body)
+Task<PCL.Models.ServerResponse> SendUnixDateTime(DateTime datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CartAddRequestMsg();
+DateTime datetime = 1484719381;
 
-Models.CartAddResponseMsg result = await aWSECommerceServiceBinding.CreateCartAdd41(body);
+PCL.Models.ServerResponse result = await formParams.SendUnixDateTime(datetime);
 
 ```
 
 
-### <a name="create_cart_get40"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartGet40") CreateCartGet40
+### <a name="send_rfc1123_date_time"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.FormParamsController.SendRfc1123DateTime") SendRfc1123DateTime
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartGetResponseMsg> CreateCartGet40(Models.CartGetRequestMsg body)
+Task<PCL.Models.ServerResponse> SendRfc1123DateTime(DateTime datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CartGetRequestMsg();
+DateTime datetime = Sun, 06 Nov 1994 08:49:37 GMT;
 
-Models.CartGetResponseMsg result = await aWSECommerceServiceBinding.CreateCartGet40(body);
+PCL.Models.ServerResponse result = await formParams.SendRfc1123DateTime(datetime);
 
 ```
-
 
-### <a name="create_similarity_lookup39"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateSimilarityLookup39") CreateSimilarityLookup39
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_rfc3339_date_time"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.FormParamsController.SendRfc3339DateTime") SendRfc3339DateTime
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.SimilarityLookupResponseMsg> CreateSimilarityLookup39(Models.SimilarityLookupRequestMsg body)
+Task<PCL.Models.ServerResponse> SendRfc3339DateTime(DateTime datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.SimilarityLookupRequestMsg();
+DateTime datetime = 1994-02-13T14:01:54.9571247Z;
 
-Models.SimilarityLookupResponseMsg result = await aWSECommerceServiceBinding.CreateSimilarityLookup39(body);
+PCL.Models.ServerResponse result = await formParams.SendRfc3339DateTime(datetime);
 
 ```
 
 
-### <a name="create_browse_node_lookup38"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateBrowseNodeLookup38") CreateBrowseNodeLookup38
+### <a name="send_unix_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.FormParamsController.SendUnixDateTimeArray") SendUnixDateTimeArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.BrowseNodeLookupResponseMsg> CreateBrowseNodeLookup38(Models.BrowseNodeLookupRequestMsg body)
+Task<PCL.Models.ServerResponse> SendUnixDateTimeArray(List<DateTime> datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.BrowseNodeLookupRequestMsg();
+string datetimesValue = [1484719381,1484719381];
+var datetimes = Newtonsoft.Json.JsonConvert.DeserializeObject<List<DateTime>>(datetimesValue);
 
-Models.BrowseNodeLookupResponseMsg result = await aWSECommerceServiceBinding.CreateBrowseNodeLookup38(body);
+PCL.Models.ServerResponse result = await formParams.SendUnixDateTimeArray(datetimes);
 
 ```
-
 
-### <a name="create_item_lookup37"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemLookup37") CreateItemLookup37
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_rfc1123_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.FormParamsController.SendRfc1123DateTimeArray") SendRfc1123DateTimeArray
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.ItemLookupResponseMsg> CreateItemLookup37(Models.ItemLookupRequestMsg body)
+Task<PCL.Models.ServerResponse> SendRfc1123DateTimeArray(List<DateTime> datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.ItemLookupRequestMsg();
+string datetimesValue = ["Sun, 06 Nov 1994 08:49:37 GMT","Sun, 06 Nov 1994 08:49:37 GMT"];
+var datetimes = Newtonsoft.Json.JsonConvert.DeserializeObject<List<DateTime>>(datetimesValue);
 
-Models.ItemLookupResponseMsg result = await aWSECommerceServiceBinding.CreateItemLookup37(body);
+PCL.Models.ServerResponse result = await formParams.SendRfc1123DateTimeArray(datetimes);
 
 ```
 
 
-### <a name="create_item_search36"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemSearch36") CreateItemSearch36
+### <a name="send_long"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.FormParamsController.SendLong") SendLong
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.ItemSearchResponseMsg> CreateItemSearch36(Models.ItemSearchRequestMsg body)
+Task<PCL.Models.ServerResponse> SendLong(long mvalue)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| mvalue |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.ItemSearchRequestMsg();
+long mvalue = 5147483647L;
 
-Models.ItemSearchResponseMsg result = await aWSECommerceServiceBinding.CreateItemSearch36(body);
+PCL.Models.ServerResponse result = await formParams.SendLong(mvalue);
 
 ```
-
 
-### <a name="create_cart_clear35"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartClear35") CreateCartClear35
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_integer_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.FormParamsController.SendIntegerArray") SendIntegerArray
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartClearResponseMsg> CreateCartClear35(Models.CartClearRequestMsg body)
+Task<PCL.Models.ServerResponse> SendIntegerArray(List<int> integers)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| integers |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CartClearRequestMsg();
+string integersValue = "[1,2,3,4,5]";
+var integers = Newtonsoft.Json.JsonConvert.DeserializeObject<List<int>>(integersValue);
 
-Models.CartClearResponseMsg result = await aWSECommerceServiceBinding.CreateCartClear35(body);
+PCL.Models.ServerResponse result = await formParams.SendIntegerArray(integers);
 
 ```
 
 
-### <a name="create_cart_modify34"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartModify34") CreateCartModify34
+### <a name="send_string_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.FormParamsController.SendStringArray") SendStringArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartModifyResponseMsg> CreateCartModify34(Models.CartModifyRequestMsg body)
+Task<PCL.Models.ServerResponse> SendStringArray(List<string> strings)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| strings |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CartModifyRequestMsg();
+string stringsValue = "[\"abc\", \"def\"]";
+var strings = Newtonsoft.Json.JsonConvert.DeserializeObject<List<string>>(stringsValue);
 
-Models.CartModifyResponseMsg result = await aWSECommerceServiceBinding.CreateCartModify34(body);
+PCL.Models.ServerResponse result = await formParams.SendStringArray(strings);
 
 ```
-
 
-### <a name="create_cart_create33"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartCreate33") CreateCartCreate33
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_model"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.FormParamsController.SendModel") SendModel
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartCreateResponseMsg> CreateCartCreate33(Models.CartCreateRequestMsg body)
+Task<PCL.Models.ServerResponse> SendModel(PCL.Models.Employee model)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| model |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CartCreateRequestMsg();
+string modelValue = "{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"}";
+var model = Newtonsoft.Json.JsonConvert.DeserializeObject<PCL.Models.Employee>(modelValue);
 
-Models.CartCreateResponseMsg result = await aWSECommerceServiceBinding.CreateCartCreate33(body);
+PCL.Models.ServerResponse result = await formParams.SendModel(model);
 
 ```
 
 
-### <a name="create_cart_add32"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartAdd32") CreateCartAdd32
+### <a name="send_model_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.FormParamsController.SendModelArray") SendModelArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartAddResponseMsg> CreateCartAdd32(Models.CartAddRequestMsg body)
+Task<PCL.Models.ServerResponse> SendModelArray(List<PCL.Models.Employee> models)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| models |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CartAddRequestMsg();
+string modelsValue = "[{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"},{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"}]";
+var models = Newtonsoft.Json.JsonConvert.DeserializeObject<List<PCL.Models.Employee>>(modelsValue);
 
-Models.CartAddResponseMsg result = await aWSECommerceServiceBinding.CreateCartAdd32(body);
+PCL.Models.ServerResponse result = await formParams.SendModelArray(models);
 
 ```
-
 
-### <a name="create_cart_get31"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartGet31") CreateCartGet31
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_file"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.FormParamsController.SendFile") SendFile
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartGetResponseMsg> CreateCartGet31(Models.CartGetRequestMsg body)
+Task<PCL.Models.ServerResponse> SendFile(FileStreamInfo file)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| file |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CartGetRequestMsg();
+FileStreamInfo file = new FileStreamInfo(new FileStream(@"pathToFile",FileMode.Open));
 
-Models.CartGetResponseMsg result = await aWSECommerceServiceBinding.CreateCartGet31(body);
+PCL.Models.ServerResponse result = await formParams.SendFile(file);
 
 ```
 
 
-### <a name="create_similarity_lookup30"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateSimilarityLookup30") CreateSimilarityLookup30
+### <a name="send_string"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.FormParamsController.SendString") SendString
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.SimilarityLookupResponseMsg> CreateSimilarityLookup30(Models.SimilarityLookupRequestMsg body)
+Task<PCL.Models.ServerResponse> SendString(string mvalue)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| mvalue |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.SimilarityLookupRequestMsg();
+string mvalue = "TestString";
 
-Models.SimilarityLookupResponseMsg result = await aWSECommerceServiceBinding.CreateSimilarityLookup30(body);
+PCL.Models.ServerResponse result = await formParams.SendString(mvalue);
 
 ```
-
 
-### <a name="create_browse_node_lookup29"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateBrowseNodeLookup29") CreateBrowseNodeLookup29
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_rfc3339_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.FormParamsController.SendRfc3339DateTimeArray") SendRfc3339DateTimeArray
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.BrowseNodeLookupResponseMsg> CreateBrowseNodeLookup29(Models.BrowseNodeLookupRequestMsg body)
+Task<PCL.Models.ServerResponse> SendRfc3339DateTimeArray(List<DateTime> datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.BrowseNodeLookupRequestMsg();
+string datetimesValue = ["1994-02-13T14:01:54.9571247Z","1994-02-13T14:01:54.9571247Z"];
+var datetimes = Newtonsoft.Json.JsonConvert.DeserializeObject<List<DateTime>>(datetimesValue);
 
-Models.BrowseNodeLookupResponseMsg result = await aWSECommerceServiceBinding.CreateBrowseNodeLookup29(body);
+PCL.Models.ServerResponse result = await formParams.SendRfc3339DateTimeArray(datetimes);
 
 ```
 
 
-### <a name="create_item_lookup28"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemLookup28") CreateItemLookup28
+### <a name="send_mixed_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.FormParamsController.SendMixedArray") SendMixedArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
+> Send a variety for form params. Returns file count and body params
 
 
 ```csharp
-Task<Models.ItemLookupResponseMsg> CreateItemLookup28(Models.ItemLookupRequestMsg body)
+Task<PCL.Models.ServerResponse> SendMixedArray(PCL.Models.SendMixedArrayInput input)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| file |  ``` Required ```  | TODO: Add a parameter description |
+| integers |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
+| models |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
+| strings |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.ItemLookupRequestMsg();
+SendMixedArrayInput collect = new SendMixedArrayInput();
 
-Models.ItemLookupResponseMsg result = await aWSECommerceServiceBinding.CreateItemLookup28(body);
+FileStreamInfo file = new FileStreamInfo(new FileStream(@"pathToFile",FileMode.Open));
+collect.File = file;
 
-```
+string integersValue = "[1,2,3,4,5]";
+var integers = Newtonsoft.Json.JsonConvert.DeserializeObject<List<int>>(integersValue);
+collect.Integers = integers;
+
+string modelsValue = "[{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"},{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"}]";
+var models = Newtonsoft.Json.JsonConvert.DeserializeObject<List<PCL.Models.Employee>>(modelsValue);
+collect.Models = models;
+
+string stringsValue = "[\"abc\", \"def\"]";
+var strings = Newtonsoft.Json.JsonConvert.DeserializeObject<List<string>>(stringsValue);
+collect.Strings = strings;
+
 
+PCL.Models.ServerResponse result = await formParams.SendMixedArray(collect);
 
-### <a name="create_item_search27"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemSearch27") CreateItemSearch27
+```
+
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_integer_enum_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.FormParamsController.SendIntegerEnumArray") SendIntegerEnumArray
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.ItemSearchResponseMsg> CreateItemSearch27(Models.ItemSearchRequestMsg body)
+Task<PCL.Models.ServerResponse> SendIntegerEnumArray(List<PCL.Models.SuiteCode> suites)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| suites |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.ItemSearchRequestMsg();
+string suitesValue = "[1, 3, 4, 2, 3]";
+var suites = Newtonsoft.Json.JsonConvert.DeserializeObject<List<PCL.Models.SuiteCode>>(suitesValue);
 
-Models.ItemSearchResponseMsg result = await aWSECommerceServiceBinding.CreateItemSearch27(body);
+PCL.Models.ServerResponse result = await formParams.SendIntegerEnumArray(suites);
 
 ```
 
 
-### <a name="create_cart_clear26"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartClear26") CreateCartClear26
+### <a name="send_string_enum_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.FormParamsController.SendStringEnumArray") SendStringEnumArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartClearResponseMsg> CreateCartClear26(Models.CartClearRequestMsg body)
+Task<PCL.Models.ServerResponse> SendStringEnumArray(List<PCL.Models.Days> days)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| days |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CartClearRequestMsg();
+string daysValue = "[\"Tuesday\", \"Saturday\", \"Wednesday\", \"Monday\", \"Sunday\"]";
+var days = Newtonsoft.Json.JsonConvert.DeserializeObject<List<PCL.Models.Days>>(daysValue);
 
-Models.CartClearResponseMsg result = await aWSECommerceServiceBinding.CreateCartClear26(body);
+PCL.Models.ServerResponse result = await formParams.SendStringEnumArray(days);
 
 ```
+
 
+[Back to List of Controllers](#list_of_controllers)
 
-### <a name="create_cart_modify25"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartModify25") CreateCartModify25
+## <a name="query_param_controller"></a>![Class: ](https://apidocs.io/img/class.png "Tester.Tests.Controllers.QueryParamController") QueryParamController
+
+### Get singleton instance
+
+The singleton instance of the ``` QueryParamController ``` class can be accessed from the API Client.
+
+```csharp
+IQueryParamController queryParam = client.QueryParam;
+```
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="date_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.QueryParamController.DateArray") DateArray
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartModifyResponseMsg> CreateCartModify25(Models.CartModifyRequestMsg body)
+Task<PCL.Models.ServerResponse> DateArray(List<DateTime> dates)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| dates |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CartModifyRequestMsg();
+string datesValue = ["1994-02-13","1994-02-13"];
+var dates = Newtonsoft.Json.JsonConvert.DeserializeObject<List<DateTime>>(datesValue);
 
-Models.CartModifyResponseMsg result = await aWSECommerceServiceBinding.CreateCartModify25(body);
+PCL.Models.ServerResponse result = await queryParam.DateArray(dates);
 
 ```
-
 
-### <a name="create_cart_create24"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartCreate24") CreateCartCreate24
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="date"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.QueryParamController.Date") Date
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartCreateResponseMsg> CreateCartCreate24(Models.CartCreateRequestMsg body)
+Task<PCL.Models.ServerResponse> Date(DateTime date)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| date |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CartCreateRequestMsg();
+DateTime date = 1994-02-13;
 
-Models.CartCreateResponseMsg result = await aWSECommerceServiceBinding.CreateCartCreate24(body);
+PCL.Models.ServerResponse result = await queryParam.Date(date);
 
 ```
 
 
-### <a name="create_cart_add23"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartAdd23") CreateCartAdd23
+### <a name="unix_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.QueryParamController.UnixDateTimeArray") UnixDateTimeArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartAddResponseMsg> CreateCartAdd23(Models.CartAddRequestMsg body)
+Task<PCL.Models.ServerResponse> UnixDateTimeArray(List<DateTime> datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CartAddRequestMsg();
+string datetimesValue = [1484719381,1484719381];
+var datetimes = Newtonsoft.Json.JsonConvert.DeserializeObject<List<DateTime>>(datetimesValue);
 
-Models.CartAddResponseMsg result = await aWSECommerceServiceBinding.CreateCartAdd23(body);
+PCL.Models.ServerResponse result = await queryParam.UnixDateTimeArray(datetimes);
 
 ```
-
 
-### <a name="create_cart_get22"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartGet22") CreateCartGet22
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="unix_date_time"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.QueryParamController.UnixDateTime") UnixDateTime
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartGetResponseMsg> CreateCartGet22(Models.CartGetRequestMsg body)
+Task<PCL.Models.ServerResponse> UnixDateTime(DateTime datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CartGetRequestMsg();
+DateTime datetime = 1484719381;
 
-Models.CartGetResponseMsg result = await aWSECommerceServiceBinding.CreateCartGet22(body);
+PCL.Models.ServerResponse result = await queryParam.UnixDateTime(datetime);
 
 ```
 
 
-### <a name="create_similarity_lookup21"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateSimilarityLookup21") CreateSimilarityLookup21
+### <a name="rfc1123_date_time"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.QueryParamController.Rfc1123DateTime") Rfc1123DateTime
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.SimilarityLookupResponseMsg> CreateSimilarityLookup21(Models.SimilarityLookupRequestMsg body)
+Task<PCL.Models.ServerResponse> Rfc1123DateTime(DateTime datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.SimilarityLookupRequestMsg();
+DateTime datetime = Sun, 06 Nov 1994 08:49:37 GMT;
 
-Models.SimilarityLookupResponseMsg result = await aWSECommerceServiceBinding.CreateSimilarityLookup21(body);
+PCL.Models.ServerResponse result = await queryParam.Rfc1123DateTime(datetime);
 
 ```
-
 
-### <a name="create_browse_node_lookup20"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateBrowseNodeLookup20") CreateBrowseNodeLookup20
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="rfc1123_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.QueryParamController.Rfc1123DateTimeArray") Rfc1123DateTimeArray
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.BrowseNodeLookupResponseMsg> CreateBrowseNodeLookup20(Models.BrowseNodeLookupRequestMsg body)
+Task<PCL.Models.ServerResponse> Rfc1123DateTimeArray(List<DateTime> datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.BrowseNodeLookupRequestMsg();
+string datetimesValue = ["Sun, 06 Nov 1994 08:49:37 GMT","Sun, 06 Nov 1994 08:49:37 GMT"];
+var datetimes = Newtonsoft.Json.JsonConvert.DeserializeObject<List<DateTime>>(datetimesValue);
 
-Models.BrowseNodeLookupResponseMsg result = await aWSECommerceServiceBinding.CreateBrowseNodeLookup20(body);
+PCL.Models.ServerResponse result = await queryParam.Rfc1123DateTimeArray(datetimes);
 
 ```
 
 
-### <a name="create_item_lookup19"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemLookup19") CreateItemLookup19
+### <a name="rfc3339_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.QueryParamController.Rfc3339DateTimeArray") Rfc3339DateTimeArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.ItemLookupResponseMsg> CreateItemLookup19(Models.ItemLookupRequestMsg body)
+Task<PCL.Models.ServerResponse> Rfc3339DateTimeArray(List<DateTime> datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.ItemLookupRequestMsg();
+string datetimesValue = ["1994-02-13T14:01:54.9571247Z","1994-02-13T14:01:54.9571247Z"];
+var datetimes = Newtonsoft.Json.JsonConvert.DeserializeObject<List<DateTime>>(datetimesValue);
 
-Models.ItemLookupResponseMsg result = await aWSECommerceServiceBinding.CreateItemLookup19(body);
+PCL.Models.ServerResponse result = await queryParam.Rfc3339DateTimeArray(datetimes);
 
 ```
-
 
-### <a name="create_item_search18"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemSearch18") CreateItemSearch18
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="rfc3339_date_time"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.QueryParamController.Rfc3339DateTime") Rfc3339DateTime
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.ItemSearchResponseMsg> CreateItemSearch18(Models.ItemSearchRequestMsg body)
+Task<PCL.Models.ServerResponse> Rfc3339DateTime(DateTime datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.ItemSearchRequestMsg();
+DateTime datetime = 1994-02-13T14:01:54.9571247Z;
 
-Models.ItemSearchResponseMsg result = await aWSECommerceServiceBinding.CreateItemSearch18(body);
+PCL.Models.ServerResponse result = await queryParam.Rfc3339DateTime(datetime);
 
 ```
 
 
-### <a name="create_cart_clear17"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartClear17") CreateCartClear17
+### <a name="no_params"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.QueryParamController.NoParams") NoParams
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartClearResponseMsg> CreateCartClear17(Models.CartClearRequestMsg body)
+Task<PCL.Models.ServerResponse> NoParams()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```csharp
-var body = new Models.CartClearRequestMsg();
 
-Models.CartClearResponseMsg result = await aWSECommerceServiceBinding.CreateCartClear17(body);
+PCL.Models.ServerResponse result = await queryParam.NoParams();
 
 ```
-
 
-### <a name="create_cart_modify16"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartModify16") CreateCartModify16
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="string_param"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.QueryParamController.StringParam") StringParam
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartModifyResponseMsg> CreateCartModify16(Models.CartModifyRequestMsg body)
+Task<PCL.Models.ServerResponse> StringParam(string mstring)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| mstring |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CartModifyRequestMsg();
+string mstring = "l;asd;asdwe[2304&&;'.d??\\a\\\\\\;sd//";
 
-Models.CartModifyResponseMsg result = await aWSECommerceServiceBinding.CreateCartModify16(body);
+PCL.Models.ServerResponse result = await queryParam.StringParam(mstring);
 
 ```
 
 
-### <a name="create_cart_create15"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartCreate15") CreateCartCreate15
+### <a name="url_param"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.QueryParamController.UrlParam") UrlParam
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartCreateResponseMsg> CreateCartCreate15(Models.CartCreateRequestMsg body)
+Task<PCL.Models.ServerResponse> UrlParam(string url)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| url |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CartCreateRequestMsg();
+string url = "https://www.shahidisawesome.com/and/also/a/narcissist?thisis=aparameter&another=one";
 
-Models.CartCreateResponseMsg result = await aWSECommerceServiceBinding.CreateCartCreate15(body);
+PCL.Models.ServerResponse result = await queryParam.UrlParam(url);
 
 ```
-
 
-### <a name="create_cart_add14"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartAdd14") CreateCartAdd14
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="number_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.QueryParamController.NumberArray") NumberArray
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartAddResponseMsg> CreateCartAdd14(Models.CartAddRequestMsg body)
+Task<PCL.Models.ServerResponse> NumberArray(List<int> integers)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| integers |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CartAddRequestMsg();
+string integersValue = "[1,2,3,4,5]";
+var integers = Newtonsoft.Json.JsonConvert.DeserializeObject<List<int>>(integersValue);
 
-Models.CartAddResponseMsg result = await aWSECommerceServiceBinding.CreateCartAdd14(body);
+PCL.Models.ServerResponse result = await queryParam.NumberArray(integers);
 
 ```
 
 
-### <a name="create_cart_get13"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartGet13") CreateCartGet13
+### <a name="string_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.QueryParamController.StringArray") StringArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartGetResponseMsg> CreateCartGet13(Models.CartGetRequestMsg body)
+Task<PCL.Models.ServerResponse> StringArray(List<string> strings)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| strings |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CartGetRequestMsg();
+string stringsValue = "[\"abc\", \"def\"]";
+var strings = Newtonsoft.Json.JsonConvert.DeserializeObject<List<string>>(stringsValue);
 
-Models.CartGetResponseMsg result = await aWSECommerceServiceBinding.CreateCartGet13(body);
+PCL.Models.ServerResponse result = await queryParam.StringArray(strings);
 
 ```
-
 
-### <a name="create_similarity_lookup12"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateSimilarityLookup12") CreateSimilarityLookup12
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="simple_query"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.QueryParamController.SimpleQuery") SimpleQuery
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.SimilarityLookupResponseMsg> CreateSimilarityLookup12(Models.SimilarityLookupRequestMsg body)
+Task<PCL.Models.ServerResponse> SimpleQuery(
+        bool boolean,
+        int number,
+        string mstring,
+        Dictionary<string, object> queryParameters = null)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| boolean |  ``` Required ```  | TODO: Add a parameter description |
+| number |  ``` Required ```  | TODO: Add a parameter description |
+| mstring |  ``` Required ```  | TODO: Add a parameter description |
+| queryParameters | ``` Optional ``` | Additional optional query parameters are supported by this method |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.SimilarityLookupRequestMsg();
+bool boolean = true;
+int number = 4;
+string mstring = "TestString";
+// key-value map for optional query parameters
+var queryParams = new Dictionary<string, object>();
 
-Models.SimilarityLookupResponseMsg result = await aWSECommerceServiceBinding.CreateSimilarityLookup12(body);
 
-```
+PCL.Models.ServerResponse result = await queryParam.SimpleQuery(boolean, number, mstring, queryParams);
 
+```
 
-### <a name="create_browse_node_lookup11"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateBrowseNodeLookup11") CreateBrowseNodeLookup11
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="string_enum_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.QueryParamController.StringEnumArray") StringEnumArray
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.BrowseNodeLookupResponseMsg> CreateBrowseNodeLookup11(Models.BrowseNodeLookupRequestMsg body)
+Task<PCL.Models.ServerResponse> StringEnumArray(List<PCL.Models.Days> days)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| days |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.BrowseNodeLookupRequestMsg();
+string daysValue = "[\"Tuesday\", \"Saturday\", \"Wednesday\", \"Monday\", \"Sunday\"]";
+var days = Newtonsoft.Json.JsonConvert.DeserializeObject<List<PCL.Models.Days>>(daysValue);
 
-Models.BrowseNodeLookupResponseMsg result = await aWSECommerceServiceBinding.CreateBrowseNodeLookup11(body);
+PCL.Models.ServerResponse result = await queryParam.StringEnumArray(days);
 
 ```
 
 
-### <a name="create_item_lookup10"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemLookup10") CreateItemLookup10
+### <a name="multiple_params"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.QueryParamController.MultipleParams") MultipleParams
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.ItemLookupResponseMsg> CreateItemLookup10(Models.ItemLookupRequestMsg body)
+Task<PCL.Models.ServerResponse> MultipleParams(
+        int number,
+        double precision,
+        string mstring,
+        string url)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| number |  ``` Required ```  | TODO: Add a parameter description |
+| precision |  ``` Required ```  | TODO: Add a parameter description |
+| mstring |  ``` Required ```  | TODO: Add a parameter description |
+| url |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.ItemLookupRequestMsg();
+int number = 123412312;
+double precision = 1112.34;
+string mstring = "\"\"test./;\";12&&3asl\"\";\"qw1&34\"///..//.";
+string url = "http://www.abc.com/test?a=b&c=\"http://lolol.com?param=no&another=lol\"";
 
-Models.ItemLookupResponseMsg result = await aWSECommerceServiceBinding.CreateItemLookup10(body);
+PCL.Models.ServerResponse result = await queryParam.MultipleParams(number, precision, mstring, url);
 
 ```
-
 
-### <a name="create_item_search9"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemSearch9") CreateItemSearch9
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="integer_enum_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.QueryParamController.IntegerEnumArray") IntegerEnumArray
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.ItemSearchResponseMsg> CreateItemSearch9(Models.ItemSearchRequestMsg body)
+Task<PCL.Models.ServerResponse> IntegerEnumArray(List<PCL.Models.SuiteCode> suites)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| suites |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.ItemSearchRequestMsg();
+string suitesValue = "[1, 3, 4, 2, 3]";
+var suites = Newtonsoft.Json.JsonConvert.DeserializeObject<List<PCL.Models.SuiteCode>>(suitesValue);
 
-Models.ItemSearchResponseMsg result = await aWSECommerceServiceBinding.CreateItemSearch9(body);
+PCL.Models.ServerResponse result = await queryParam.IntegerEnumArray(suites);
 
 ```
 
 
-### <a name="create_cart_clear"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartClear") CreateCartClear
+[Back to List of Controllers](#list_of_controllers)
 
-> *Tags:*  ``` Skips Authentication ``` 
+## <a name="error_codes_controller"></a>![Class: ](https://apidocs.io/img/class.png "Tester.Tests.Controllers.ErrorCodesController") ErrorCodesController
 
-> TODO: Add a method description
+### Get singleton instance
 
+The singleton instance of the ``` ErrorCodesController ``` class can be accessed from the API Client.
 
 ```csharp
-Task<Models.CartClearResponseMsg> CreateCartClear(Models.CartClearRequestMsg body)
+IErrorCodesController errorCodes = client.ErrorCodes;
 ```
 
-#### Parameters
+### <a name="get400"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.ErrorCodesController.Get400") Get400
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+> TODO: Add a method description
+
 
+```csharp
+Task<dynamic> Get400()
+```
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CartClearRequestMsg();
 
-Models.CartClearResponseMsg result = await aWSECommerceServiceBinding.CreateCartClear(body);
+dynamic result = await errorCodes.Get400();
 
 ```
 
 
-### <a name="create_cart_modify"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartModify") CreateCartModify
+### <a name="get500"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.ErrorCodesController.Get500") Get500
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartModifyResponseMsg> CreateCartModify(Models.CartModifyRequestMsg body)
+Task<dynamic> Get500()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
 #### Example Usage
 
 ```csharp
-var body = new Models.CartModifyRequestMsg();
 
-Models.CartModifyResponseMsg result = await aWSECommerceServiceBinding.CreateCartModify(body);
+dynamic result = await errorCodes.Get500();
 
 ```
-
 
-### <a name="create_cart_create"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartCreate") CreateCartCreate
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get401"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.ErrorCodesController.Get401") Get401
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.CartCreateResponseMsg> CreateCartCreate(Models.CartCreateRequestMsg body)
+Task<dynamic> Get401()
 ```
 
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 #### Example Usage
 
 ```csharp
-var body = new Models.CartCreateRequestMsg();
 
-Models.CartCreateResponseMsg result = await aWSECommerceServiceBinding.CreateCartCreate(body);
+dynamic result = await errorCodes.Get401();
 
 ```
 
+#### Errors
 
-### <a name="create_cart_add"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartAdd") CreateCartAdd
+| Error Code | Error Description |
+|------------|-------------------|
+| 401 | 401 Local |
+| 421 | Default |
+| 431 | Default |
+| 432 | Default |
+| 441 | Default |
+| 0 | Invalid response. |
 
-> *Tags:*  ``` Skips Authentication ``` 
 
-> TODO: Add a method description
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="echo_controller"></a>![Class: ](https://apidocs.io/img/class.png "Tester.Tests.Controllers.EchoController") EchoController
 
+### Get singleton instance
 
+The singleton instance of the ``` EchoController ``` class can be accessed from the API Client.
+
+```csharp
+IEchoController echo = client.Echo;
+```
+
+### <a name="json_echo"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.EchoController.JsonEcho") JsonEcho
+
+> Echo's back the request
+
+
 ```csharp
-Task<Models.CartAddResponseMsg> CreateCartAdd(Models.CartAddRequestMsg body)
+Task<dynamic> JsonEcho(object input)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| input |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CartAddRequestMsg();
+string inputValue = "{\"uid\": \"1123213\", \"name\": \"Shahid\"}";
+var input = Newtonsoft.Json.JsonConvert.DeserializeObject(inputValue);
 
-Models.CartAddResponseMsg result = await aWSECommerceServiceBinding.CreateCartAdd(body);
+dynamic result = await echo.JsonEcho(input);
 
 ```
-
 
-### <a name="create_cart_get"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartGet") CreateCartGet
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="form_echo"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.EchoController.FormEcho") FormEcho
 
-> TODO: Add a method description
+> Sends the request including any form params as JSON
 
 
 ```csharp
-Task<Models.CartGetResponseMsg> CreateCartGet(Models.CartGetRequestMsg body)
+Task<dynamic> FormEcho(object input)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| input |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.CartGetRequestMsg();
+string inputValue = "{\"uid\": \"1123213\", \"name\": \"Shahid\"}";
+var input = Newtonsoft.Json.JsonConvert.DeserializeObject(inputValue);
 
-Models.CartGetResponseMsg result = await aWSECommerceServiceBinding.CreateCartGet(body);
+dynamic result = await echo.FormEcho(input);
 
 ```
-
 
-### <a name="create_similarity_lookup"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateSimilarityLookup") CreateSimilarityLookup
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="query_echo"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.EchoController.QueryEcho") QueryEcho
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.SimilarityLookupResponseMsg> CreateSimilarityLookup(Models.SimilarityLookupRequestMsg body)
+Task<PCL.Models.EchoResponse> QueryEcho(Dictionary<string, object> queryParameters = null)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| queryParameters | ``` Optional ``` | Additional optional query parameters are supported by this method |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.SimilarityLookupRequestMsg();
+// key-value map for optional query parameters
+var queryParams = new Dictionary<string, object>();
 
-Models.SimilarityLookupResponseMsg result = await aWSECommerceServiceBinding.CreateSimilarityLookup(body);
 
+PCL.Models.EchoResponse result = await echo.QueryEcho(queryParams);
+
 ```
 
 
-### <a name="create_browse_node_lookup"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateBrowseNodeLookup") CreateBrowseNodeLookup
+[Back to List of Controllers](#list_of_controllers)
 
-> *Tags:*  ``` Skips Authentication ``` 
+## <a name="header_controller"></a>![Class: ](https://apidocs.io/img/class.png "Tester.Tests.Controllers.HeaderController") HeaderController
 
-> TODO: Add a method description
+### Get singleton instance
+
+The singleton instance of the ``` HeaderController ``` class can be accessed from the API Client.
+
+```csharp
+IHeaderController header = client.Header;
+```
 
+### <a name="send_headers"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.HeaderController.SendHeaders") SendHeaders
 
+> Sends a single header params
+
+
 ```csharp
-Task<Models.BrowseNodeLookupResponseMsg> CreateBrowseNodeLookup(Models.BrowseNodeLookupRequestMsg body)
+Task<PCL.Models.ServerResponse> SendHeaders(string customHeader, string mvalue)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| customHeader |  ``` Required ```  | TODO: Add a parameter description |
+| mvalue |  ``` Required ```  | Represents the value of the custom header |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.BrowseNodeLookupRequestMsg();
+string customHeader = "TestString";
+string mvalue = "TestString";
 
-Models.BrowseNodeLookupResponseMsg result = await aWSECommerceServiceBinding.CreateBrowseNodeLookup(body);
+PCL.Models.ServerResponse result = await header.SendHeaders(customHeader, mvalue);
 
 ```
+
+
+[Back to List of Controllers](#list_of_controllers)
 
+## <a name="template_params_controller"></a>![Class: ](https://apidocs.io/img/class.png "Tester.Tests.Controllers.TemplateParamsController") TemplateParamsController
 
-### <a name="create_item_lookup"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemLookup") CreateItemLookup
+### Get singleton instance
 
-> *Tags:*  ``` Skips Authentication ``` 
+The singleton instance of the ``` TemplateParamsController ``` class can be accessed from the API Client.
 
+```csharp
+ITemplateParamsController templateParams = client.TemplateParams;
+```
+
+### <a name="send_string_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.TemplateParamsController.SendStringArray") SendStringArray
+
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.ItemLookupResponseMsg> CreateItemLookup(Models.ItemLookupRequestMsg body)
+Task<PCL.Models.EchoResponse> SendStringArray(List<string> strings)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| strings |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.ItemLookupRequestMsg();
+string stringsValue = "[\"abc\", \"def\"]";
+var strings = Newtonsoft.Json.JsonConvert.DeserializeObject<List<string>>(stringsValue);
 
-Models.ItemLookupResponseMsg result = await aWSECommerceServiceBinding.CreateItemLookup(body);
+PCL.Models.EchoResponse result = await templateParams.SendStringArray(strings);
 
 ```
-
 
-### <a name="create_item_search"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemSearch") CreateItemSearch
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_integer_array"></a>![Method: ](https://apidocs.io/img/method.png "Tester.Tests.Controllers.TemplateParamsController.SendIntegerArray") SendIntegerArray
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.ItemSearchResponseMsg> CreateItemSearch(Models.ItemSearchRequestMsg body)
+Task<PCL.Models.EchoResponse> SendIntegerArray(List<int> integers)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| integers |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var body = new Models.ItemSearchRequestMsg();
+string integersValue = "[1,2,3,4,5]";
+var integers = Newtonsoft.Json.JsonConvert.DeserializeObject<List<int>>(integersValue);
 
-Models.ItemSearchResponseMsg result = await aWSECommerceServiceBinding.CreateItemSearch(body);
+PCL.Models.EchoResponse result = await templateParams.SendIntegerArray(integers);
 
 ```
 

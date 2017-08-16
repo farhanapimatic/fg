@@ -1,5 +1,9 @@
 # Getting started
 
+Testing various
+ api 
+features
+
 ## How to Build
 
 
@@ -11,58 +15,67 @@ Open command prompt and type ```pod --version```. This should display the curren
 Using command line, navigate to the directory containing the generated files (including ```PodFile```) for the SDK. 
 Run the command ```pod install```. This should install all the required dependencies and create the ```pods``` directory in your project directory.
 
-![Installing dependencies using Cocoapods](https://apidocs.io/illustration/objc?step=AddDependencies&workspaceFolder=AWSECommerceService-ObjC&workspaceName=AWSECommerceService&projectName=AWSECommerceService&rootNamespace=AWSECommerceService)
+![Installing dependencies using Cocoapods](https://apidocs.io/illustration/objc?step=AddDependencies&workspaceFolder=Tester-ObjC&workspaceName=Tester&projectName=Tester&rootNamespace=Tester)
 
-Open the project workspace using the (AWSECommerceService.xcworkspace) file. Invoke the build process using `Command(⌘)+B` shortcut key or using the `Build` menu as shown below.
+Open the project workspace using the (Tester.xcworkspace) file. Invoke the build process using `Command(⌘)+B` shortcut key or using the `Build` menu as shown below.
 
-![Building SDK using Xcode](https://apidocs.io/illustration/objc?step=BuildSDK&workspaceFolder=AWSECommerceService-ObjC&workspaceName=AWSECommerceService&projectName=AWSECommerceService&rootNamespace=AWSECommerceService)
+![Building SDK using Xcode](https://apidocs.io/illustration/objc?step=BuildSDK&workspaceFolder=Tester-ObjC&workspaceName=Tester&projectName=Tester&rootNamespace=Tester)
 
 
 ## How to Use
 
 The generated code is a Cocoa Touch Static Library which can be used in any iOS project. The support for these generated libraries go all the way back to iOS 6.
 
-The following section explains how to use the AWSECommerceService library in a new iOS project.     
+The following section explains how to use the Tester library in a new iOS project.     
 ### 1. Starting a new project
 To start a new project, left-click on the ```Create a new Xcode project```.
-![Create Test Project - Step 1](https://apidocs.io/illustration/objc?step=Test1&workspaceFolder=AWSECommerceService-ObjC&workspaceName=AWSECommerceService&projectName=AWSECommerceService&rootNamespace=AWSECommerceService)
+![Create Test Project - Step 1](https://apidocs.io/illustration/objc?step=Test1&workspaceFolder=Tester-ObjC&workspaceName=Tester&projectName=Tester&rootNamespace=Tester)
 
 Next, choose **Single View Application** and click ```Next```.
-![Create Test Project - Step 2](https://apidocs.io/illustration/objc?step=Test2&workspaceFolder=AWSECommerceService-ObjC&workspaceName=AWSECommerceService&projectName=AWSECommerceService&rootNamespace=AWSECommerceService)
+![Create Test Project - Step 2](https://apidocs.io/illustration/objc?step=Test2&workspaceFolder=Tester-ObjC&workspaceName=Tester&projectName=Tester&rootNamespace=Tester)
 
 Provide **Test-Project** as the product name click ```Next```.
-![Create Test Project - Step 3](https://apidocs.io/illustration/objc?step=Test3&workspaceFolder=AWSECommerceService-ObjC&workspaceName=AWSECommerceService&projectName=AWSECommerceService&rootNamespace=AWSECommerceService)
+![Create Test Project - Step 3](https://apidocs.io/illustration/objc?step=Test3&workspaceFolder=Tester-ObjC&workspaceName=Tester&projectName=Tester&rootNamespace=Tester)
 
 Choose the desired location of your project folder and click ```Create```.
-![Create Test Project - Step 4](https://apidocs.io/illustration/objc?step=Test4&workspaceFolder=AWSECommerceService-ObjC&workspaceName=AWSECommerceService&projectName=AWSECommerceService&rootNamespace=AWSECommerceService)
+![Create Test Project - Step 4](https://apidocs.io/illustration/objc?step=Test4&workspaceFolder=Tester-ObjC&workspaceName=Tester&projectName=Tester&rootNamespace=Tester)
 
 ### 2. Adding the static library dependency
 To add this dependency open a terminal and navigate to your project folder. Next, input ```pod init``` and press enter.
-![Add dependency - Step 1](https://apidocs.io/illustration/objc?step=Add0&workspaceFolder=AWSECommerceService-ObjC&workspaceName=AWSECommerceService&projectName=AWSECommerceService&rootNamespace=AWSECommerceService)
+![Add dependency - Step 1](https://apidocs.io/illustration/objc?step=Add0&workspaceFolder=Tester-ObjC&workspaceName=Tester&projectName=Tester&rootNamespace=Tester)
 
-Next, open the newly created ```PodFile``` in your favourite text editor. Add the following line : pod 'AWSECommerceService', :path => 'Vendor/AWSECommerceService'
-![Add dependency - Step 2](https://apidocs.io/illustration/objc?step=Add1&workspaceFolder=AWSECommerceService-ObjC&workspaceName=AWSECommerceService&projectName=AWSECommerceService&rootNamespace=AWSECommerceService)
+Next, open the newly created ```PodFile``` in your favourite text editor. Add the following line : pod 'Tester', :path => 'Vendor/Tester'
+![Add dependency - Step 2](https://apidocs.io/illustration/objc?step=Add1&workspaceFolder=Tester-ObjC&workspaceName=Tester&projectName=Tester&rootNamespace=Tester)
 
 Execute `pod install` from terminal to install the dependecy in your project. This would add the dependency to the newly created test project.
-![Add dependency - Step 3](https://apidocs.io/illustration/objc?step=Add2&workspaceFolder=AWSECommerceService-ObjC&workspaceName=AWSECommerceService&projectName=AWSECommerceService&rootNamespace=AWSECommerceService)
+![Add dependency - Step 3](https://apidocs.io/illustration/objc?step=Add2&workspaceFolder=Tester-ObjC&workspaceName=Tester&projectName=Tester&rootNamespace=Tester)
 
 
 ## How to Test
 
 Unit tests in this SDK can be run using Xcode. 
 
-First build the SDK as shown in the steps above and naivgate to the project directory and open the AWSECommerceService.xcworkspace file.
+First build the SDK as shown in the steps above and naivgate to the project directory and open the Tester.xcworkspace file.
 
 Go to the test explorer in Xcode as shown in the picture below and click on `run tests` from the menu. 
-![Run tests](https://apidocs.io/illustration/objc?step=RunTests&workspaceFolder=AWSECommerceService-ObjC&workspaceName=AWSECommerceService&projectName=AWSECommerceService&rootNamespace=AWSECommerceService)
+![Run tests](https://apidocs.io/illustration/objc?step=RunTests&workspaceFolder=Tester-ObjC&workspaceName=Tester&projectName=Tester&rootNamespace=Tester)
 
 
 ## Initialization
 
 ### 
+You need the following information for initializing the API client.
+
+| Parameter | Description |
+|-----------|-------------|
+| suites | TODO: add a description |
+
+
 
 Configuration variables can be set as following.
 ```Objc
+// Configuration parameters
+Configuration_Suites = "Configuration_Suites";
 
 ```
 
@@ -70,1358 +83,550 @@ Configuration variables can be set as following.
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [AWSECommerceServiceBindingController](#awse_commerce_service_binding_controller)
+* [ResponseTypesController](#response_types_controller)
+* [BodyParamsController](#body_params_controller)
+* [FormParamsController](#form_params_controller)
+* [QueryParamController](#query_param_controller)
+* [ErrorCodesController](#error_codes_controller)
+* [EchoController](#echo_controller)
+* [HeaderController](#header_controller)
+* [TemplateParamsController](#template_params_controller)
 
-## <a name="awse_commerce_service_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png ".AWSECommerceServiceBindingController") AWSECommerceServiceBindingController
+## <a name="response_types_controller"></a>![Class: ](https://apidocs.io/img/class.png ".ResponseTypesController") ResponseTypesController
 
 ### Get singleton instance
 ```objc
-AWSECommerceServiceBinding* aWSECommerceServiceBinding = [[AWSECommerceServiceBinding alloc]init] ;
+ResponseTypes* responseTypes = [[ResponseTypes alloc]init] ;
 ```
 
-### <a name="create_cart_modify97_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify97AsyncWithBody") createCartModify97AsyncWithBody
+### <a name="get_date_array_with_completion_block"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getDateArrayWithCompletionBlock") getDateArrayWithCompletionBlock
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```objc
-function createCartModify97AsyncWithBody:(CartModifyRequestMsg*) body
-                completionBlock:(CompletedPostCartModify97) onCompleted(body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    CartModifyRequestMsg* body = [[CartModifyRequestMsg alloc]init];
-
-    [self.aWSECommerceServiceBinding createCartModify97AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartModifyResponseMsg* response, NSError* error) { 
-       //Add code here
-    }];
-```
-
-
-### <a name="create_cart_clear98_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear98AsyncWithBody") createCartClear98AsyncWithBody
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```objc
-function createCartClear98AsyncWithBody:(CartClearRequestMsg*) body
-                completionBlock:(CompletedPostCartClear98) onCompleted(body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    CartClearRequestMsg* body = [[CartClearRequestMsg alloc]init];
-
-    [self.aWSECommerceServiceBinding createCartClear98AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartClearResponseMsg* response, NSError* error) { 
-       //Add code here
-    }];
-```
-
-
-### <a name="create_cart_create96_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate96AsyncWithBody") createCartCreate96AsyncWithBody
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```objc
-function createCartCreate96AsyncWithBody:(CartCreateRequestMsg*) body
-                completionBlock:(CompletedPostCartCreate96) onCompleted(body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    CartCreateRequestMsg* body = [[CartCreateRequestMsg alloc]init];
-
-    [self.aWSECommerceServiceBinding createCartCreate96AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartCreateResponseMsg* response, NSError* error) { 
-       //Add code here
-    }];
-```
-
-
-### <a name="create_cart_add95_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd95AsyncWithBody") createCartAdd95AsyncWithBody
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```objc
-function createCartAdd95AsyncWithBody:(CartAddRequestMsg*) body
-                completionBlock:(CompletedPostCartAdd95) onCompleted(body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    CartAddRequestMsg* body = [[CartAddRequestMsg alloc]init];
-
-    [self.aWSECommerceServiceBinding createCartAdd95AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartAddResponseMsg* response, NSError* error) { 
-       //Add code here
-    }];
-```
-
-
-### <a name="create_cart_get94_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet94AsyncWithBody") createCartGet94AsyncWithBody
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```objc
-function createCartGet94AsyncWithBody:(CartGetRequestMsg*) body
-                completionBlock:(CompletedPostCartGet94) onCompleted(body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    CartGetRequestMsg* body = [[CartGetRequestMsg alloc]init];
-
-    [self.aWSECommerceServiceBinding createCartGet94AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartGetResponseMsg* response, NSError* error) { 
-       //Add code here
-    }];
-```
-
-
-### <a name="create_similarity_lookup93_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup93AsyncWithBody") createSimilarityLookup93AsyncWithBody
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```objc
-function createSimilarityLookup93AsyncWithBody:(SimilarityLookupRequestMsg*) body
-                completionBlock:(CompletedPostSimilarityLookup93) onCompleted(body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    SimilarityLookupRequestMsg* body = [[SimilarityLookupRequestMsg alloc]init];
-
-    [self.aWSECommerceServiceBinding createSimilarityLookup93AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, SimilarityLookupResponseMsg* response, NSError* error) { 
-       //Add code here
-    }];
-```
-
-
-### <a name="create_browse_node_lookup92_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup92AsyncWithBody") createBrowseNodeLookup92AsyncWithBody
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```objc
-function createBrowseNodeLookup92AsyncWithBody:(BrowseNodeLookupRequestMsg*) body
-                completionBlock:(CompletedPostBrowseNodeLookup92) onCompleted(body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    BrowseNodeLookupRequestMsg* body = [[BrowseNodeLookupRequestMsg alloc]init];
-
-    [self.aWSECommerceServiceBinding createBrowseNodeLookup92AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, BrowseNodeLookupResponseMsg* response, NSError* error) { 
-       //Add code here
-    }];
-```
-
-
-### <a name="create_item_lookup91_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup91AsyncWithBody") createItemLookup91AsyncWithBody
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```objc
-function createItemLookup91AsyncWithBody:(ItemLookupRequestMsg*) body
-                completionBlock:(CompletedPostItemLookup91) onCompleted(body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    ItemLookupRequestMsg* body = [[ItemLookupRequestMsg alloc]init];
-
-    [self.aWSECommerceServiceBinding createItemLookup91AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemLookupResponseMsg* response, NSError* error) { 
-       //Add code here
-    }];
-```
-
-
-### <a name="create_item_search90_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch90AsyncWithBody") createItemSearch90AsyncWithBody
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```objc
-function createItemSearch90AsyncWithBody:(ItemSearchRequestMsg*) body
-                completionBlock:(CompletedPostItemSearch90) onCompleted(body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    ItemSearchRequestMsg* body = [[ItemSearchRequestMsg alloc]init];
-
-    [self.aWSECommerceServiceBinding createItemSearch90AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemSearchResponseMsg* response, NSError* error) { 
-       //Add code here
-    }];
-```
-
-
-### <a name="create_cart_clear89_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear89AsyncWithBody") createCartClear89AsyncWithBody
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```objc
-function createCartClear89AsyncWithBody:(CartClearRequestMsg*) body
-                completionBlock:(CompletedPostCartClear89) onCompleted(body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    CartClearRequestMsg* body = [[CartClearRequestMsg alloc]init];
-
-    [self.aWSECommerceServiceBinding createCartClear89AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartClearResponseMsg* response, NSError* error) { 
-       //Add code here
-    }];
-```
-
-
-### <a name="create_cart_modify88_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify88AsyncWithBody") createCartModify88AsyncWithBody
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```objc
-function createCartModify88AsyncWithBody:(CartModifyRequestMsg*) body
-                completionBlock:(CompletedPostCartModify88) onCompleted(body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    CartModifyRequestMsg* body = [[CartModifyRequestMsg alloc]init];
-
-    [self.aWSECommerceServiceBinding createCartModify88AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartModifyResponseMsg* response, NSError* error) { 
-       //Add code here
-    }];
-```
-
-
-### <a name="create_cart_create87_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate87AsyncWithBody") createCartCreate87AsyncWithBody
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```objc
-function createCartCreate87AsyncWithBody:(CartCreateRequestMsg*) body
-                completionBlock:(CompletedPostCartCreate87) onCompleted(body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    CartCreateRequestMsg* body = [[CartCreateRequestMsg alloc]init];
-
-    [self.aWSECommerceServiceBinding createCartCreate87AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartCreateResponseMsg* response, NSError* error) { 
-       //Add code here
-    }];
-```
-
-
-### <a name="create_cart_add86_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd86AsyncWithBody") createCartAdd86AsyncWithBody
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```objc
-function createCartAdd86AsyncWithBody:(CartAddRequestMsg*) body
-                completionBlock:(CompletedPostCartAdd86) onCompleted(body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    CartAddRequestMsg* body = [[CartAddRequestMsg alloc]init];
-
-    [self.aWSECommerceServiceBinding createCartAdd86AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartAddResponseMsg* response, NSError* error) { 
-       //Add code here
-    }];
-```
-
-
-### <a name="create_cart_get85_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet85AsyncWithBody") createCartGet85AsyncWithBody
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```objc
-function createCartGet85AsyncWithBody:(CartGetRequestMsg*) body
-                completionBlock:(CompletedPostCartGet85) onCompleted(body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    CartGetRequestMsg* body = [[CartGetRequestMsg alloc]init];
-
-    [self.aWSECommerceServiceBinding createCartGet85AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartGetResponseMsg* response, NSError* error) { 
-       //Add code here
-    }];
-```
-
-
-### <a name="create_similarity_lookup84_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup84AsyncWithBody") createSimilarityLookup84AsyncWithBody
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```objc
-function createSimilarityLookup84AsyncWithBody:(SimilarityLookupRequestMsg*) body
-                completionBlock:(CompletedPostSimilarityLookup84) onCompleted(body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    SimilarityLookupRequestMsg* body = [[SimilarityLookupRequestMsg alloc]init];
-
-    [self.aWSECommerceServiceBinding createSimilarityLookup84AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, SimilarityLookupResponseMsg* response, NSError* error) { 
-       //Add code here
-    }];
-```
-
-
-### <a name="create_browse_node_lookup83_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup83AsyncWithBody") createBrowseNodeLookup83AsyncWithBody
-
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createBrowseNodeLookup83AsyncWithBody:(BrowseNodeLookupRequestMsg*) body
-                completionBlock:(CompletedPostBrowseNodeLookup83) onCompleted(body)
+function getDateArrayWithCompletionBlock:(CompletedGetDateArray) onCompleted()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
 
 
-
 #### Example Usage
 
 ```objc
-    // Parameters for the API call
-    BrowseNodeLookupRequestMsg* body = [[BrowseNodeLookupRequestMsg alloc]init];
 
-    [self.aWSECommerceServiceBinding createBrowseNodeLookup83AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, BrowseNodeLookupResponseMsg* response, NSError* error) { 
+    [self.responseTypes getDateArrayWithCompletionBlock:  ^(BOOL success, HttpContext* context, NSArray* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_item_lookup82_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup82AsyncWithBody") createItemLookup82AsyncWithBody
+### <a name="get_date_with_completion_block"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getDateWithCompletionBlock") getDateWithCompletionBlock
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createItemLookup82AsyncWithBody:(ItemLookupRequestMsg*) body
-                completionBlock:(CompletedPostItemLookup82) onCompleted(body)
+function getDateWithCompletionBlock:(CompletedGetDate) onCompleted()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 
 
 
 #### Example Usage
 
 ```objc
-    // Parameters for the API call
-    ItemLookupRequestMsg* body = [[ItemLookupRequestMsg alloc]init];
 
-    [self.aWSECommerceServiceBinding createItemLookup82AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemLookupResponseMsg* response, NSError* error) { 
+    [self.responseTypes getDateWithCompletionBlock:  ^(BOOL success, HttpContext* context, NSDate* response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_item_search81_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch81AsyncWithBody") createItemSearch81AsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_long_with_completion_block"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getLongWithCompletionBlock") getLongWithCompletionBlock
 
 > TODO: Add a method description
 
 
 ```objc
-function createItemSearch81AsyncWithBody:(ItemSearchRequestMsg*) body
-                completionBlock:(CompletedPostItemSearch81) onCompleted(body)
+function getLongWithCompletionBlock:(CompletedGetLong) onCompleted()
 ```
-
-#### Parameters
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
 
-
-
 #### Example Usage
 
 ```objc
-    // Parameters for the API call
-    ItemSearchRequestMsg* body = [[ItemSearchRequestMsg alloc]init];
 
-    [self.aWSECommerceServiceBinding createItemSearch81AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemSearchResponseMsg* response, NSError* error) { 
+    [self.responseTypes getLongWithCompletionBlock:  ^(BOOL success, HttpContext* context, NSNumber* response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_cart_clear80_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear80AsyncWithBody") createCartClear80AsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_model_with_completion_block"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getModelWithCompletionBlock") getModelWithCompletionBlock
 
 > TODO: Add a method description
 
 
 ```objc
-function createCartClear80AsyncWithBody:(CartClearRequestMsg*) body
-                completionBlock:(CompletedPostCartClear80) onCompleted(body)
+function getModelWithCompletionBlock:(CompletedGetModel) onCompleted()
 ```
 
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
-
-
-
 #### Example Usage
 
 ```objc
-    // Parameters for the API call
-    CartClearRequestMsg* body = [[CartClearRequestMsg alloc]init];
 
-    [self.aWSECommerceServiceBinding createCartClear80AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartClearResponseMsg* response, NSError* error) { 
+    [self.responseTypes getModelWithCompletionBlock:  ^(BOOL success, HttpContext* context, Person* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_cart_modify79_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify79AsyncWithBody") createCartModify79AsyncWithBody
+### <a name="get_string_enum_array_with_completion_block"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getStringEnumArrayWithCompletionBlock") getStringEnumArrayWithCompletionBlock
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createCartModify79AsyncWithBody:(CartModifyRequestMsg*) body
-                completionBlock:(CompletedPostCartModify79) onCompleted(body)
+function getStringEnumArrayWithCompletionBlock:(CompletedGetStringEnumArray) onCompleted()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
 
 
-
 #### Example Usage
 
 ```objc
-    // Parameters for the API call
-    CartModifyRequestMsg* body = [[CartModifyRequestMsg alloc]init];
 
-    [self.aWSECommerceServiceBinding createCartModify79AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartModifyResponseMsg* response, NSError* error) { 
+    [self.responseTypes getStringEnumArrayWithCompletionBlock:  ^(BOOL success, HttpContext* context, NSArray<NSNumber*>* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_cart_create78_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate78AsyncWithBody") createCartCreate78AsyncWithBody
+### <a name="get_string_enum_with_completion_block"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getStringEnumWithCompletionBlock") getStringEnumWithCompletionBlock
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createCartCreate78AsyncWithBody:(CartCreateRequestMsg*) body
-                completionBlock:(CompletedPostCartCreate78) onCompleted(body)
+function getStringEnumWithCompletionBlock:(CompletedGetStringEnum) onCompleted()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
-
-
 #### Example Usage
 
 ```objc
-    // Parameters for the API call
-    CartCreateRequestMsg* body = [[CartCreateRequestMsg alloc]init];
 
-    [self.aWSECommerceServiceBinding createCartCreate78AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartCreateResponseMsg* response, NSError* error) { 
+    [self.responseTypes getStringEnumWithCompletionBlock:  ^(BOOL success, HttpContext* context, enum Days response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_cart_add77_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd77AsyncWithBody") createCartAdd77AsyncWithBody
+### <a name="get_model_array_with_completion_block"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getModelArrayWithCompletionBlock") getModelArrayWithCompletionBlock
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createCartAdd77AsyncWithBody:(CartAddRequestMsg*) body
-                completionBlock:(CompletedPostCartAdd77) onCompleted(body)
+function getModelArrayWithCompletionBlock:(CompletedGetModelArray) onCompleted()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 
 
 
 #### Example Usage
 
 ```objc
-    // Parameters for the API call
-    CartAddRequestMsg* body = [[CartAddRequestMsg alloc]init];
 
-    [self.aWSECommerceServiceBinding createCartAdd77AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartAddResponseMsg* response, NSError* error) { 
+    [self.responseTypes getModelArrayWithCompletionBlock:  ^(BOOL success, HttpContext* context, NSArray<Person> * response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_cart_get76_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet76AsyncWithBody") createCartGet76AsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_int_enum_with_completion_block"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getIntEnumWithCompletionBlock") getIntEnumWithCompletionBlock
 
 > TODO: Add a method description
 
 
 ```objc
-function createCartGet76AsyncWithBody:(CartGetRequestMsg*) body
-                completionBlock:(CompletedPostCartGet76) onCompleted(body)
+function getIntEnumWithCompletionBlock:(CompletedGetIntEnum) onCompleted()
 ```
-
-#### Parameters
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 
 
-
 #### Example Usage
 
 ```objc
-    // Parameters for the API call
-    CartGetRequestMsg* body = [[CartGetRequestMsg alloc]init];
 
-    [self.aWSECommerceServiceBinding createCartGet76AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartGetResponseMsg* response, NSError* error) { 
+    [self.responseTypes getIntEnumWithCompletionBlock:  ^(BOOL success, HttpContext* context, enum SuiteCode response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_similarity_lookup75_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup75AsyncWithBody") createSimilarityLookup75AsyncWithBody
+### <a name="get_int_enum_array_with_completion_block"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getIntEnumArrayWithCompletionBlock") getIntEnumArrayWithCompletionBlock
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createSimilarityLookup75AsyncWithBody:(SimilarityLookupRequestMsg*) body
-                completionBlock:(CompletedPostSimilarityLookup75) onCompleted(body)
+function getIntEnumArrayWithCompletionBlock:(CompletedGetIntEnumArray) onCompleted()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
-
-
 #### Example Usage
 
 ```objc
-    // Parameters for the API call
-    SimilarityLookupRequestMsg* body = [[SimilarityLookupRequestMsg alloc]init];
 
-    [self.aWSECommerceServiceBinding createSimilarityLookup75AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, SimilarityLookupResponseMsg* response, NSError* error) { 
+    [self.responseTypes getIntEnumArrayWithCompletionBlock:  ^(BOOL success, HttpContext* context, NSArray<NSNumber*>* response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_browse_node_lookup74_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup74AsyncWithBody") createBrowseNodeLookup74AsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_precision_with_completion_block"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getPrecisionWithCompletionBlock") getPrecisionWithCompletionBlock
 
 > TODO: Add a method description
 
 
 ```objc
-function createBrowseNodeLookup74AsyncWithBody:(BrowseNodeLookupRequestMsg*) body
-                completionBlock:(CompletedPostBrowseNodeLookup74) onCompleted(body)
+function getPrecisionWithCompletionBlock:(CompletedGetPrecision) onCompleted()
 ```
 
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
-
-
-
 #### Example Usage
 
 ```objc
-    // Parameters for the API call
-    BrowseNodeLookupRequestMsg* body = [[BrowseNodeLookupRequestMsg alloc]init];
 
-    [self.aWSECommerceServiceBinding createBrowseNodeLookup74AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, BrowseNodeLookupResponseMsg* response, NSError* error) { 
+    [self.responseTypes getPrecisionWithCompletionBlock:  ^(BOOL success, HttpContext* context, NSNumber* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_item_lookup73_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup73AsyncWithBody") createItemLookup73AsyncWithBody
+### <a name="get_binary_with_completion_block"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getBinaryWithCompletionBlock") getBinaryWithCompletionBlock
 
-> *Tags:*  ``` Skips Authentication ``` 
+> gets a binary object
 
-> TODO: Add a method description
-
 
 ```objc
-function createItemLookup73AsyncWithBody:(ItemLookupRequestMsg*) body
-                completionBlock:(CompletedPostItemLookup73) onCompleted(body)
+function getBinaryWithCompletionBlock:(CompletedGetBinary) onCompleted()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
 
 
-
 #### Example Usage
 
 ```objc
-    // Parameters for the API call
-    ItemLookupRequestMsg* body = [[ItemLookupRequestMsg alloc]init];
 
-    [self.aWSECommerceServiceBinding createItemLookup73AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemLookupResponseMsg* response, NSError* error) { 
+    [self.responseTypes getBinaryWithCompletionBlock:  ^(BOOL success, HttpContext* context, NSData* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_item_search72_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch72AsyncWithBody") createItemSearch72AsyncWithBody
+### <a name="get_integer_with_completion_block"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getIntegerWithCompletionBlock") getIntegerWithCompletionBlock
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
+> Gets a integer response
 
 
 ```objc
-function createItemSearch72AsyncWithBody:(ItemSearchRequestMsg*) body
-                completionBlock:(CompletedPostItemSearch72) onCompleted(body)
+function getIntegerWithCompletionBlock:(CompletedGetInteger) onCompleted()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
 
 
-
 #### Example Usage
 
 ```objc
-    // Parameters for the API call
-    ItemSearchRequestMsg* body = [[ItemSearchRequestMsg alloc]init];
 
-    [self.aWSECommerceServiceBinding createItemSearch72AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemSearchResponseMsg* response, NSError* error) { 
+    [self.responseTypes getIntegerWithCompletionBlock:  ^(BOOL success, HttpContext* context, NSNumber* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_cart_clear71_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear71AsyncWithBody") createCartClear71AsyncWithBody
+### <a name="get_integer_array_with_completion_block"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getIntegerArrayWithCompletionBlock") getIntegerArrayWithCompletionBlock
 
-> *Tags:*  ``` Skips Authentication ``` 
+> Get an array of integers.
 
-> TODO: Add a method description
-
 
 ```objc
-function createCartClear71AsyncWithBody:(CartClearRequestMsg*) body
-                completionBlock:(CompletedPostCartClear71) onCompleted(body)
+function getIntegerArrayWithCompletionBlock:(CompletedGetIntegerArray) onCompleted()
 ```
-
-#### Parameters
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 
 
-
 #### Example Usage
 
 ```objc
-    // Parameters for the API call
-    CartClearRequestMsg* body = [[CartClearRequestMsg alloc]init];
 
-    [self.aWSECommerceServiceBinding createCartClear71AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartClearResponseMsg* response, NSError* error) { 
+    [self.responseTypes getIntegerArrayWithCompletionBlock:  ^(BOOL success, HttpContext* context, NSArray* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_cart_modify70_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify70AsyncWithBody") createCartModify70AsyncWithBody
+### <a name="get_dynamic_with_completion_block"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getDynamicWithCompletionBlock") getDynamicWithCompletionBlock
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createCartModify70AsyncWithBody:(CartModifyRequestMsg*) body
-                completionBlock:(CompletedPostCartModify70) onCompleted(body)
+function getDynamicWithCompletionBlock:(CompletedGetDynamic) onCompleted()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
-
-
 #### Example Usage
 
 ```objc
-    // Parameters for the API call
-    CartModifyRequestMsg* body = [[CartModifyRequestMsg alloc]init];
 
-    [self.aWSECommerceServiceBinding createCartModify70AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartModifyResponseMsg* response, NSError* error) { 
+    [self.responseTypes getDynamicWithCompletionBlock:  ^(BOOL success, HttpContext* context, id response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_cart_create69_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate69AsyncWithBody") createCartCreate69AsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_dynamic_array_with_completion_block"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getDynamicArrayWithCompletionBlock") getDynamicArrayWithCompletionBlock
 
 > TODO: Add a method description
 
 
 ```objc
-function createCartCreate69AsyncWithBody:(CartCreateRequestMsg*) body
-                completionBlock:(CompletedPostCartCreate69) onCompleted(body)
+function getDynamicArrayWithCompletionBlock:(CompletedGetDynamicArray) onCompleted()
 ```
 
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
-
-
-
 #### Example Usage
 
 ```objc
-    // Parameters for the API call
-    CartCreateRequestMsg* body = [[CartCreateRequestMsg alloc]init];
 
-    [self.aWSECommerceServiceBinding createCartCreate69AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartCreateResponseMsg* response, NSError* error) { 
+    [self.responseTypes getDynamicArrayWithCompletionBlock:  ^(BOOL success, HttpContext* context, id response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_cart_add68_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd68AsyncWithBody") createCartAdd68AsyncWithBody
+### <a name="get3339_datetime_with_completion_block"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get3339DatetimeWithCompletionBlock") get3339DatetimeWithCompletionBlock
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createCartAdd68AsyncWithBody:(CartAddRequestMsg*) body
-                completionBlock:(CompletedPostCartAdd68) onCompleted(body)
+function get3339DatetimeWithCompletionBlock:(CompletedGet3339Datetime) onCompleted()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 
 
 
 #### Example Usage
 
 ```objc
-    // Parameters for the API call
-    CartAddRequestMsg* body = [[CartAddRequestMsg alloc]init];
 
-    [self.aWSECommerceServiceBinding createCartAdd68AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartAddResponseMsg* response, NSError* error) { 
+    [self.responseTypes get3339DatetimeWithCompletionBlock:  ^(BOOL success, HttpContext* context, NSDate* response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_cart_get67_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet67AsyncWithBody") createCartGet67AsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get3339_datetime_array_with_completion_block"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get3339DatetimeArrayWithCompletionBlock") get3339DatetimeArrayWithCompletionBlock
 
 > TODO: Add a method description
 
 
 ```objc
-function createCartGet67AsyncWithBody:(CartGetRequestMsg*) body
-                completionBlock:(CompletedPostCartGet67) onCompleted(body)
+function get3339DatetimeArrayWithCompletionBlock:(CompletedGet3339DatetimeArray) onCompleted()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
 
 
-
 #### Example Usage
 
 ```objc
-    // Parameters for the API call
-    CartGetRequestMsg* body = [[CartGetRequestMsg alloc]init];
 
-    [self.aWSECommerceServiceBinding createCartGet67AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartGetResponseMsg* response, NSError* error) { 
+    [self.responseTypes get3339DatetimeArrayWithCompletionBlock:  ^(BOOL success, HttpContext* context, NSArray* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_similarity_lookup66_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup66AsyncWithBody") createSimilarityLookup66AsyncWithBody
+### <a name="get_boolean_with_completion_block"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getBooleanWithCompletionBlock") getBooleanWithCompletionBlock
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createSimilarityLookup66AsyncWithBody:(SimilarityLookupRequestMsg*) body
-                completionBlock:(CompletedPostSimilarityLookup66) onCompleted(body)
+function getBooleanWithCompletionBlock:(CompletedGetBoolean) onCompleted()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
-
-
 #### Example Usage
 
 ```objc
-    // Parameters for the API call
-    SimilarityLookupRequestMsg* body = [[SimilarityLookupRequestMsg alloc]init];
 
-    [self.aWSECommerceServiceBinding createSimilarityLookup66AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, SimilarityLookupResponseMsg* response, NSError* error) { 
+    [self.responseTypes getBooleanWithCompletionBlock:  ^(BOOL success, HttpContext* context, NSNumber* response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_browse_node_lookup65_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup65AsyncWithBody") createBrowseNodeLookup65AsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_boolean_array_with_completion_block"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getBooleanArrayWithCompletionBlock") getBooleanArrayWithCompletionBlock
 
 > TODO: Add a method description
 
 
 ```objc
-function createBrowseNodeLookup65AsyncWithBody:(BrowseNodeLookupRequestMsg*) body
-                completionBlock:(CompletedPostBrowseNodeLookup65) onCompleted(body)
+function getBooleanArrayWithCompletionBlock:(CompletedGetBooleanArray) onCompleted()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
 
 
-
 #### Example Usage
 
 ```objc
-    // Parameters for the API call
-    BrowseNodeLookupRequestMsg* body = [[BrowseNodeLookupRequestMsg alloc]init];
 
-    [self.aWSECommerceServiceBinding createBrowseNodeLookup65AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, BrowseNodeLookupResponseMsg* response, NSError* error) { 
+    [self.responseTypes getBooleanArrayWithCompletionBlock:  ^(BOOL success, HttpContext* context, NSArray* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_item_lookup64_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup64AsyncWithBody") createItemLookup64AsyncWithBody
+### <a name="get_headers_with_completion_block"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getHeadersWithCompletionBlock") getHeadersWithCompletionBlock
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createItemLookup64AsyncWithBody:(ItemLookupRequestMsg*) body
-                completionBlock:(CompletedPostItemLookup64) onCompleted(body)
+function getHeadersWithCompletionBlock:(CompletedGetHeaders) onCompleted()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 
 
 
 #### Example Usage
 
 ```objc
-    // Parameters for the API call
-    ItemLookupRequestMsg* body = [[ItemLookupRequestMsg alloc]init];
 
-    [self.aWSECommerceServiceBinding createItemLookup64AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemLookupResponseMsg* response, NSError* error) { 
+    [self.responseTypes getHeadersWithCompletionBlock:  ^(BOOL success, HttpContext* context, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_item_search63_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch63AsyncWithBody") createItemSearch63AsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get1123_date_time_with_completion_block"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get1123DateTimeWithCompletionBlock") get1123DateTimeWithCompletionBlock
 
 > TODO: Add a method description
 
 
 ```objc
-function createItemSearch63AsyncWithBody:(ItemSearchRequestMsg*) body
-                completionBlock:(CompletedPostItemSearch63) onCompleted(body)
+function get1123DateTimeWithCompletionBlock:(CompletedGet1123DateTime) onCompleted()
 ```
-
-#### Parameters
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 
 
-
 #### Example Usage
 
 ```objc
-    // Parameters for the API call
-    ItemSearchRequestMsg* body = [[ItemSearchRequestMsg alloc]init];
 
-    [self.aWSECommerceServiceBinding createItemSearch63AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemSearchResponseMsg* response, NSError* error) { 
+    [self.responseTypes get1123DateTimeWithCompletionBlock:  ^(BOOL success, HttpContext* context, NSDate* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_cart_clear62_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear62AsyncWithBody") createCartClear62AsyncWithBody
+### <a name="get_unix_date_time_with_completion_block"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getUnixDateTimeWithCompletionBlock") getUnixDateTimeWithCompletionBlock
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createCartClear62AsyncWithBody:(CartClearRequestMsg*) body
-                completionBlock:(CompletedPostCartClear62) onCompleted(body)
+function getUnixDateTimeWithCompletionBlock:(CompletedGetUnixDateTime) onCompleted()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
-
-
 #### Example Usage
 
 ```objc
-    // Parameters for the API call
-    CartClearRequestMsg* body = [[CartClearRequestMsg alloc]init];
 
-    [self.aWSECommerceServiceBinding createCartClear62AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartClearResponseMsg* response, NSError* error) { 
+    [self.responseTypes getUnixDateTimeWithCompletionBlock:  ^(BOOL success, HttpContext* context, NSDate* response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_cart_modify61_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify61AsyncWithBody") createCartModify61AsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get1123_date_time_array_with_completion_block"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get1123DateTimeArrayWithCompletionBlock") get1123DateTimeArrayWithCompletionBlock
 
 > TODO: Add a method description
 
 
 ```objc
-function createCartModify61AsyncWithBody:(CartModifyRequestMsg*) body
-                completionBlock:(CompletedPostCartModify61) onCompleted(body)
+function get1123DateTimeArrayWithCompletionBlock:(CompletedGet1123DateTimeArray) onCompleted()
 ```
 
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
-
-
-
 #### Example Usage
 
 ```objc
-    // Parameters for the API call
-    CartModifyRequestMsg* body = [[CartModifyRequestMsg alloc]init];
 
-    [self.aWSECommerceServiceBinding createCartModify61AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartModifyResponseMsg* response, NSError* error) { 
+    [self.responseTypes get1123DateTimeArrayWithCompletionBlock:  ^(BOOL success, HttpContext* context, NSArray* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_cart_create60_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate60AsyncWithBody") createCartCreate60AsyncWithBody
+### <a name="get_unix_date_time_array_with_completion_block"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getUnixDateTimeArrayWithCompletionBlock") getUnixDateTimeArrayWithCompletionBlock
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createCartCreate60AsyncWithBody:(CartCreateRequestMsg*) body
-                completionBlock:(CompletedPostCartCreate60) onCompleted(body)
+function getUnixDateTimeArrayWithCompletionBlock:(CompletedGetUnixDateTimeArray) onCompleted()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 
 
 
 #### Example Usage
 
 ```objc
-    // Parameters for the API call
-    CartCreateRequestMsg* body = [[CartCreateRequestMsg alloc]init];
 
-    [self.aWSECommerceServiceBinding createCartCreate60AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartCreateResponseMsg* response, NSError* error) { 
+    [self.responseTypes getUnixDateTimeArrayWithCompletionBlock:  ^(BOOL success, HttpContext* context, NSArray* response, NSError* error) { 
        //Add code here
     }];
 ```
+
 
+[Back to List of Controllers](#list_of_controllers)
 
-### <a name="create_cart_add59_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd59AsyncWithBody") createCartAdd59AsyncWithBody
+## <a name="body_params_controller"></a>![Class: ](https://apidocs.io/img/class.png ".BodyParamsController") BodyParamsController
+
+### Get singleton instance
+```objc
+BodyParams* bodyParams = [[BodyParams alloc]init] ;
+```
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_date_array_async_with_dates"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendDateArrayAsyncWithDates") sendDateArrayAsyncWithDates
 
 > TODO: Add a method description
 
 
 ```objc
-function createCartAdd59AsyncWithBody:(CartAddRequestMsg*) body
-                completionBlock:(CompletedPostCartAdd59) onCompleted(body)
+function sendDateArrayAsyncWithDates:(NSArray*) dates
+                completionBlock:(CompletedPostSendDateArray) onCompleted(dates)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| dates |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -1431,31 +636,29 @@ function createCartAdd59AsyncWithBody:(CartAddRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    CartAddRequestMsg* body = [[CartAddRequestMsg alloc]init];
+    NSArray* dates = (NSArray*) [APIHelper jsonDeserializeArray: @"[\"1994-02-13\", \"1994-02-13\"]"];
 
-    [self.aWSECommerceServiceBinding createCartAdd59AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartAddResponseMsg* response, NSError* error) { 
+    [self.bodyParams sendDateArrayAsyncWithDates: dates  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_cart_get58_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet58AsyncWithBody") createCartGet58AsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_date_async_with_date"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendDateAsyncWithDate") sendDateAsyncWithDate
 
 > TODO: Add a method description
 
 
 ```objc
-function createCartGet58AsyncWithBody:(CartGetRequestMsg*) body
-                completionBlock:(CompletedPostCartGet58) onCompleted(body)
+function sendDateAsyncWithDate:(NSDate*) date
+                completionBlock:(CompletedPostSendDate) onCompleted(date)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| date |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -1465,31 +668,29 @@ function createCartGet58AsyncWithBody:(CartGetRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    CartGetRequestMsg* body = [[CartGetRequestMsg alloc]init];
+    NSDate* date = [NSDate NSDateFromNSString: @"1994-02-13"];
 
-    [self.aWSECommerceServiceBinding createCartGet58AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartGetResponseMsg* response, NSError* error) { 
+    [self.bodyParams sendDateAsyncWithDate: date  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_similarity_lookup57_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup57AsyncWithBody") createSimilarityLookup57AsyncWithBody
+### <a name="send_unix_date_time_async_with_datetime"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendUnixDateTimeAsyncWithDatetime") sendUnixDateTimeAsyncWithDatetime
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createSimilarityLookup57AsyncWithBody:(SimilarityLookupRequestMsg*) body
-                completionBlock:(CompletedPostSimilarityLookup57) onCompleted(body)
+function sendUnixDateTimeAsyncWithDatetime:(NSDate*) datetime
+                completionBlock:(CompletedPostSendUnixDateTime) onCompleted(datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -1499,31 +700,29 @@ function createSimilarityLookup57AsyncWithBody:(SimilarityLookupRequestMsg*) bod
 
 ```objc
     // Parameters for the API call
-    SimilarityLookupRequestMsg* body = [[SimilarityLookupRequestMsg alloc]init];
+    NSDate* datetime = [NSDate NSDateFromNSString: @"1484719381"];
 
-    [self.aWSECommerceServiceBinding createSimilarityLookup57AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, SimilarityLookupResponseMsg* response, NSError* error) { 
+    [self.bodyParams sendUnixDateTimeAsyncWithDatetime: datetime  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_browse_node_lookup56_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup56AsyncWithBody") createBrowseNodeLookup56AsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_rfc1123_date_time_async_with_datetime"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendRfc1123DateTimeAsyncWithDatetime") sendRfc1123DateTimeAsyncWithDatetime
 
 > TODO: Add a method description
 
 
 ```objc
-function createBrowseNodeLookup56AsyncWithBody:(BrowseNodeLookupRequestMsg*) body
-                completionBlock:(CompletedPostBrowseNodeLookup56) onCompleted(body)
+function sendRfc1123DateTimeAsyncWithDatetime:(NSDate*) datetime
+                completionBlock:(CompletedPostSendRfc1123DateTime) onCompleted(datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -1533,31 +732,29 @@ function createBrowseNodeLookup56AsyncWithBody:(BrowseNodeLookupRequestMsg*) bod
 
 ```objc
     // Parameters for the API call
-    BrowseNodeLookupRequestMsg* body = [[BrowseNodeLookupRequestMsg alloc]init];
+    NSDate* datetime = [NSDate NSDateFromNSString: @"Sun, 06 Nov 1994 08:49:37 GMT"];
 
-    [self.aWSECommerceServiceBinding createBrowseNodeLookup56AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, BrowseNodeLookupResponseMsg* response, NSError* error) { 
+    [self.bodyParams sendRfc1123DateTimeAsyncWithDatetime: datetime  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_item_lookup55_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup55AsyncWithBody") createItemLookup55AsyncWithBody
+### <a name="send_rfc3339_date_time_async_with_datetime"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendRfc3339DateTimeAsyncWithDatetime") sendRfc3339DateTimeAsyncWithDatetime
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createItemLookup55AsyncWithBody:(ItemLookupRequestMsg*) body
-                completionBlock:(CompletedPostItemLookup55) onCompleted(body)
+function sendRfc3339DateTimeAsyncWithDatetime:(NSDate*) datetime
+                completionBlock:(CompletedPostSendRfc3339DateTime) onCompleted(datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -1567,31 +764,29 @@ function createItemLookup55AsyncWithBody:(ItemLookupRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    ItemLookupRequestMsg* body = [[ItemLookupRequestMsg alloc]init];
+    NSDate* datetime = [NSDate NSDateFromNSString: @"1994-02-13T14:01:54.9571247Z"];
 
-    [self.aWSECommerceServiceBinding createItemLookup55AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemLookupResponseMsg* response, NSError* error) { 
+    [self.bodyParams sendRfc3339DateTimeAsyncWithDatetime: datetime  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_item_search54_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch54AsyncWithBody") createItemSearch54AsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_unix_date_time_array_async_with_datetimes"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendUnixDateTimeArrayAsyncWithDatetimes") sendUnixDateTimeArrayAsyncWithDatetimes
 
 > TODO: Add a method description
 
 
 ```objc
-function createItemSearch54AsyncWithBody:(ItemSearchRequestMsg*) body
-                completionBlock:(CompletedPostItemSearch54) onCompleted(body)
+function sendUnixDateTimeArrayAsyncWithDatetimes:(NSArray*) datetimes
+                completionBlock:(CompletedPostSendUnixDateTimeArray) onCompleted(datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -1601,31 +796,29 @@ function createItemSearch54AsyncWithBody:(ItemSearchRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    ItemSearchRequestMsg* body = [[ItemSearchRequestMsg alloc]init];
+    NSArray* datetimes = (NSArray*) [APIHelper jsonDeserializeArray: @"[1484719381,1484719381]"];
 
-    [self.aWSECommerceServiceBinding createItemSearch54AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemSearchResponseMsg* response, NSError* error) { 
+    [self.bodyParams sendUnixDateTimeArrayAsyncWithDatetimes: datetimes  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_cart_clear53_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear53AsyncWithBody") createCartClear53AsyncWithBody
+### <a name="send_rfc1123_date_time_array_async_with_datetimes"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendRfc1123DateTimeArrayAsyncWithDatetimes") sendRfc1123DateTimeArrayAsyncWithDatetimes
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createCartClear53AsyncWithBody:(CartClearRequestMsg*) body
-                completionBlock:(CompletedPostCartClear53) onCompleted(body)
+function sendRfc1123DateTimeArrayAsyncWithDatetimes:(NSArray*) datetimes
+                completionBlock:(CompletedPostSendRfc1123DateTimeArray) onCompleted(datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -1635,31 +828,29 @@ function createCartClear53AsyncWithBody:(CartClearRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    CartClearRequestMsg* body = [[CartClearRequestMsg alloc]init];
+    NSArray* datetimes = (NSArray*) [APIHelper jsonDeserializeArray: @"[\"Sun, 06 Nov 1994 08:49:37 GMT\",\"Sun, 06 Nov 1994 08:49:37 GMT\"]"];
 
-    [self.aWSECommerceServiceBinding createCartClear53AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartClearResponseMsg* response, NSError* error) { 
+    [self.bodyParams sendRfc1123DateTimeArrayAsyncWithDatetimes: datetimes  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_cart_modify52_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify52AsyncWithBody") createCartModify52AsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_rfc3339_date_time_array_async_with_datetimes"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendRfc3339DateTimeArrayAsyncWithDatetimes") sendRfc3339DateTimeArrayAsyncWithDatetimes
 
 > TODO: Add a method description
 
 
 ```objc
-function createCartModify52AsyncWithBody:(CartModifyRequestMsg*) body
-                completionBlock:(CompletedPostCartModify52) onCompleted(body)
+function sendRfc3339DateTimeArrayAsyncWithDatetimes:(NSArray*) datetimes
+                completionBlock:(CompletedPostSendRfc3339DateTimeArray) onCompleted(datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -1669,31 +860,29 @@ function createCartModify52AsyncWithBody:(CartModifyRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    CartModifyRequestMsg* body = [[CartModifyRequestMsg alloc]init];
+    NSArray* datetimes = (NSArray*) [APIHelper jsonDeserializeArray: @"[\"1994-02-13T14:01:54.9571247Z\",\"1994-02-13T14:01:54.9571247Z\"]"];
 
-    [self.aWSECommerceServiceBinding createCartModify52AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartModifyResponseMsg* response, NSError* error) { 
+    [self.bodyParams sendRfc3339DateTimeArrayAsyncWithDatetimes: datetimes  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_cart_create51_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate51AsyncWithBody") createCartCreate51AsyncWithBody
+### <a name="send_string_array_async_with_sarray"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendStringArrayAsyncWithSarray") sendStringArrayAsyncWithSarray
 
-> *Tags:*  ``` Skips Authentication ``` 
+> sends a string body param
 
-> TODO: Add a method description
-
 
 ```objc
-function createCartCreate51AsyncWithBody:(CartCreateRequestMsg*) body
-                completionBlock:(CompletedPostCartCreate51) onCompleted(body)
+function sendStringArrayAsyncWithSarray:(NSArray*) sarray
+                completionBlock:(CompletedPostSendStringArray) onCompleted(sarray)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| sarray |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -1703,31 +892,29 @@ function createCartCreate51AsyncWithBody:(CartCreateRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    CartCreateRequestMsg* body = [[CartCreateRequestMsg alloc]init];
+    NSArray* sarray = (NSArray*) [APIHelper jsonDeserializeArray: @"[\"abc\", \"def\"]"];
 
-    [self.aWSECommerceServiceBinding createCartCreate51AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartCreateResponseMsg* response, NSError* error) { 
+    [self.bodyParams sendStringArrayAsyncWithSarray: sarray  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_cart_add50_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd50AsyncWithBody") createCartAdd50AsyncWithBody
+### <a name="send_integer_array_async_with_integers"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendIntegerArrayAsyncWithIntegers") sendIntegerArrayAsyncWithIntegers
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createCartAdd50AsyncWithBody:(CartAddRequestMsg*) body
-                completionBlock:(CompletedPostCartAdd50) onCompleted(body)
+function sendIntegerArrayAsyncWithIntegers:(NSArray*) integers
+                completionBlock:(CompletedPostSendIntegerArray) onCompleted(integers)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| integers |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -1737,31 +924,29 @@ function createCartAdd50AsyncWithBody:(CartAddRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    CartAddRequestMsg* body = [[CartAddRequestMsg alloc]init];
+    NSArray* integers = (NSArray*) [APIHelper jsonDeserializeArray: @"[1,2,3,4,5]"];
 
-    [self.aWSECommerceServiceBinding createCartAdd50AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartAddResponseMsg* response, NSError* error) { 
+    [self.bodyParams sendIntegerArrayAsyncWithIntegers: integers  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_cart_get49_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet49AsyncWithBody") createCartGet49AsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_model_async_with_model"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendModelAsyncWithModel") sendModelAsyncWithModel
 
 > TODO: Add a method description
 
 
 ```objc
-function createCartGet49AsyncWithBody:(CartGetRequestMsg*) body
-                completionBlock:(CompletedPostCartGet49) onCompleted(body)
+function sendModelAsyncWithModel:(Employee*) model
+                completionBlock:(CompletedPostSendModel) onCompleted(model)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| model |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -1771,31 +956,30 @@ function createCartGet49AsyncWithBody:(CartGetRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    CartGetRequestMsg* body = [[CartGetRequestMsg alloc]init];
+    Employee* model = (Employee*) [APIHelper jsonDeserialize: @"{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"}"
+                toClass: Employee.class];
 
-    [self.aWSECommerceServiceBinding createCartGet49AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartGetResponseMsg* response, NSError* error) { 
+    [self.bodyParams sendModelAsyncWithModel: model  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_similarity_lookup48_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup48AsyncWithBody") createSimilarityLookup48AsyncWithBody
+### <a name="send_model_array_async_with_models"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendModelArrayAsyncWithModels") sendModelArrayAsyncWithModels
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createSimilarityLookup48AsyncWithBody:(SimilarityLookupRequestMsg*) body
-                completionBlock:(CompletedPostSimilarityLookup48) onCompleted(body)
+function sendModelArrayAsyncWithModels:(NSArray<Employee> *) models
+                completionBlock:(CompletedPostSendModelArray) onCompleted(models)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| models |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -1805,31 +989,30 @@ function createSimilarityLookup48AsyncWithBody:(SimilarityLookupRequestMsg*) bod
 
 ```objc
     // Parameters for the API call
-    SimilarityLookupRequestMsg* body = [[SimilarityLookupRequestMsg alloc]init];
+    NSArray<Employee> * models = (NSArray<Employee>*) [Employee arrayOfModelsFromDictionaries:
+                [APIHelper jsonDeserializeArray: @"[{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"},{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"}]"] error: nil];
 
-    [self.aWSECommerceServiceBinding createSimilarityLookup48AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, SimilarityLookupResponseMsg* response, NSError* error) { 
+    [self.bodyParams sendModelArrayAsyncWithModels: models  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_browse_node_lookup47_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup47AsyncWithBody") createBrowseNodeLookup47AsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_dynamic_async_with_dynamic"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendDynamicAsyncWithDynamic") sendDynamicAsyncWithDynamic
 
 > TODO: Add a method description
 
 
 ```objc
-function createBrowseNodeLookup47AsyncWithBody:(BrowseNodeLookupRequestMsg*) body
-                completionBlock:(CompletedPostBrowseNodeLookup47) onCompleted(body)
+function sendDynamicAsyncWithDynamic:(NSObject*) mdynamic
+                completionBlock:(CompletedPostSendDynamic) onCompleted(mdynamic)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| mdynamic |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -1839,31 +1022,32 @@ function createBrowseNodeLookup47AsyncWithBody:(BrowseNodeLookupRequestMsg*) bod
 
 ```objc
     // Parameters for the API call
-    BrowseNodeLookupRequestMsg* body = [[BrowseNodeLookupRequestMsg alloc]init];
+    NSObject* mdynamic = [NSJSONSerialization
+                        JSONObjectWithData: [@"{\"uid\": \"1123213\", \"name\": \"Shahid\"}" dataUsingEncoding: NSUTF8StringEncoding]
+                                   options: NSJSONReadingAllowFragments
+                                     error: nil];
 
-    [self.aWSECommerceServiceBinding createBrowseNodeLookup47AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, BrowseNodeLookupResponseMsg* response, NSError* error) { 
+    [self.bodyParams sendDynamicAsyncWithDynamic: mdynamic  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_item_lookup46_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup46AsyncWithBody") createItemLookup46AsyncWithBody
+### <a name="send_string_async_with_value"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendStringAsyncWithValue") sendStringAsyncWithValue
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createItemLookup46AsyncWithBody:(ItemLookupRequestMsg*) body
-                completionBlock:(CompletedPostItemLookup46) onCompleted(body)
+function sendStringAsyncWithValue:(NSString*) value
+                completionBlock:(CompletedPostSendString) onCompleted(value)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| value |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -1873,31 +1057,29 @@ function createItemLookup46AsyncWithBody:(ItemLookupRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    ItemLookupRequestMsg* body = [[ItemLookupRequestMsg alloc]init];
+    NSString* value = @"TestString";
 
-    [self.aWSECommerceServiceBinding createItemLookup46AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemLookupResponseMsg* response, NSError* error) { 
+    [self.bodyParams sendStringAsyncWithValue: value  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_item_search45_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch45AsyncWithBody") createItemSearch45AsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_string_enum_array_async_with_days"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendStringEnumArrayAsyncWithDays") sendStringEnumArrayAsyncWithDays
 
 > TODO: Add a method description
 
 
 ```objc
-function createItemSearch45AsyncWithBody:(ItemSearchRequestMsg*) body
-                completionBlock:(CompletedPostItemSearch45) onCompleted(body)
+function sendStringEnumArrayAsyncWithDays:(NSArray<NSNumber*>*) days
+                completionBlock:(CompletedPostSendStringEnumArray) onCompleted(days)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| days |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -1907,31 +1089,30 @@ function createItemSearch45AsyncWithBody:(ItemSearchRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    ItemSearchRequestMsg* body = [[ItemSearchRequestMsg alloc]init];
+    NSArray<NSNumber*>* days = [DaysHelper daysArrayFromStringArray:
+                [APIHelper jsonDeserializeArray: @"[\"Tuesday\", \"Saturday\", \"Wednesday\", \"Monday\", \"Sunday\"]"]];
 
-    [self.aWSECommerceServiceBinding createItemSearch45AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemSearchResponseMsg* response, NSError* error) { 
+    [self.bodyParams sendStringEnumArrayAsyncWithDays: days  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_cart_clear44_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear44AsyncWithBody") createCartClear44AsyncWithBody
+### <a name="send_integer_enum_array_async_with_suites"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendIntegerEnumArrayAsyncWithSuites") sendIntegerEnumArrayAsyncWithSuites
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createCartClear44AsyncWithBody:(CartClearRequestMsg*) body
-                completionBlock:(CompletedPostCartClear44) onCompleted(body)
+function sendIntegerEnumArrayAsyncWithSuites:(NSArray<NSNumber*>*) suites
+                completionBlock:(CompletedPostSendIntegerEnumArray) onCompleted(suites)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| suites |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -1941,31 +1122,38 @@ function createCartClear44AsyncWithBody:(CartClearRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    CartClearRequestMsg* body = [[CartClearRequestMsg alloc]init];
+    NSArray<NSNumber*>* suites =  (NSArray<NSNumber*>*) [APIHelper jsonDeserializeArray: @"[1, 3, 4, 2, 3]"];
 
-    [self.aWSECommerceServiceBinding createCartClear44AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartClearResponseMsg* response, NSError* error) { 
+    [self.bodyParams sendIntegerEnumArrayAsyncWithSuites: suites  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
+
 
+[Back to List of Controllers](#list_of_controllers)
 
-### <a name="create_cart_modify43_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify43AsyncWithBody") createCartModify43AsyncWithBody
+## <a name="form_params_controller"></a>![Class: ](https://apidocs.io/img/class.png ".FormParamsController") FormParamsController
+
+### Get singleton instance
+```objc
+FormParams* formParams = [[FormParams alloc]init] ;
+```
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_date_array_async_with_dates"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendDateArrayAsyncWithDates") sendDateArrayAsyncWithDates
 
 > TODO: Add a method description
 
 
 ```objc
-function createCartModify43AsyncWithBody:(CartModifyRequestMsg*) body
-                completionBlock:(CompletedPostCartModify43) onCompleted(body)
+function sendDateArrayAsyncWithDates:(NSArray*) dates
+                completionBlock:(CompletedPostSendDateArray) onCompleted(dates)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| dates |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -1975,31 +1163,29 @@ function createCartModify43AsyncWithBody:(CartModifyRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    CartModifyRequestMsg* body = [[CartModifyRequestMsg alloc]init];
+    NSArray* dates = (NSArray*) [APIHelper jsonDeserializeArray: @"[\"1994-02-13\",\"1994-02-13\"]"];
 
-    [self.aWSECommerceServiceBinding createCartModify43AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartModifyResponseMsg* response, NSError* error) { 
+    [self.formParams sendDateArrayAsyncWithDates: dates  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_cart_create42_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate42AsyncWithBody") createCartCreate42AsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_date_async_with_date"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendDateAsyncWithDate") sendDateAsyncWithDate
 
 > TODO: Add a method description
 
 
 ```objc
-function createCartCreate42AsyncWithBody:(CartCreateRequestMsg*) body
-                completionBlock:(CompletedPostCartCreate42) onCompleted(body)
+function sendDateAsyncWithDate:(NSDate*) date
+                completionBlock:(CompletedPostSendDate) onCompleted(date)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| date |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -2009,31 +1195,29 @@ function createCartCreate42AsyncWithBody:(CartCreateRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    CartCreateRequestMsg* body = [[CartCreateRequestMsg alloc]init];
+    NSDate* date = [NSDate NSDateFromNSString: @"1994-02-13"];
 
-    [self.aWSECommerceServiceBinding createCartCreate42AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartCreateResponseMsg* response, NSError* error) { 
+    [self.formParams sendDateAsyncWithDate: date  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_cart_add41_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd41AsyncWithBody") createCartAdd41AsyncWithBody
+### <a name="send_unix_date_time_async_with_datetime"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendUnixDateTimeAsyncWithDatetime") sendUnixDateTimeAsyncWithDatetime
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createCartAdd41AsyncWithBody:(CartAddRequestMsg*) body
-                completionBlock:(CompletedPostCartAdd41) onCompleted(body)
+function sendUnixDateTimeAsyncWithDatetime:(NSDate*) datetime
+                completionBlock:(CompletedPostSendUnixDateTime) onCompleted(datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -2043,31 +1227,29 @@ function createCartAdd41AsyncWithBody:(CartAddRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    CartAddRequestMsg* body = [[CartAddRequestMsg alloc]init];
+    NSDate* datetime = [NSDate NSDateFromNSString: @"1484719381"];
 
-    [self.aWSECommerceServiceBinding createCartAdd41AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartAddResponseMsg* response, NSError* error) { 
+    [self.formParams sendUnixDateTimeAsyncWithDatetime: datetime  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_cart_get40_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet40AsyncWithBody") createCartGet40AsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_rfc1123_date_time_async_with_datetime"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendRfc1123DateTimeAsyncWithDatetime") sendRfc1123DateTimeAsyncWithDatetime
 
 > TODO: Add a method description
 
 
 ```objc
-function createCartGet40AsyncWithBody:(CartGetRequestMsg*) body
-                completionBlock:(CompletedPostCartGet40) onCompleted(body)
+function sendRfc1123DateTimeAsyncWithDatetime:(NSDate*) datetime
+                completionBlock:(CompletedPostSendRfc1123DateTime) onCompleted(datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -2077,31 +1259,29 @@ function createCartGet40AsyncWithBody:(CartGetRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    CartGetRequestMsg* body = [[CartGetRequestMsg alloc]init];
+    NSDate* datetime = [NSDate NSDateFromNSString: @"Sun, 06 Nov 1994 08:49:37 GMT"];
 
-    [self.aWSECommerceServiceBinding createCartGet40AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartGetResponseMsg* response, NSError* error) { 
+    [self.formParams sendRfc1123DateTimeAsyncWithDatetime: datetime  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_similarity_lookup39_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup39AsyncWithBody") createSimilarityLookup39AsyncWithBody
+### <a name="send_rfc3339_date_time_async_with_datetime"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendRfc3339DateTimeAsyncWithDatetime") sendRfc3339DateTimeAsyncWithDatetime
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createSimilarityLookup39AsyncWithBody:(SimilarityLookupRequestMsg*) body
-                completionBlock:(CompletedPostSimilarityLookup39) onCompleted(body)
+function sendRfc3339DateTimeAsyncWithDatetime:(NSDate*) datetime
+                completionBlock:(CompletedPostSendRfc3339DateTime) onCompleted(datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -2111,31 +1291,29 @@ function createSimilarityLookup39AsyncWithBody:(SimilarityLookupRequestMsg*) bod
 
 ```objc
     // Parameters for the API call
-    SimilarityLookupRequestMsg* body = [[SimilarityLookupRequestMsg alloc]init];
+    NSDate* datetime = [NSDate NSDateFromNSString: @"1994-02-13T14:01:54.9571247Z"];
 
-    [self.aWSECommerceServiceBinding createSimilarityLookup39AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, SimilarityLookupResponseMsg* response, NSError* error) { 
+    [self.formParams sendRfc3339DateTimeAsyncWithDatetime: datetime  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_browse_node_lookup38_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup38AsyncWithBody") createBrowseNodeLookup38AsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_unix_date_time_array_async_with_datetimes"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendUnixDateTimeArrayAsyncWithDatetimes") sendUnixDateTimeArrayAsyncWithDatetimes
 
 > TODO: Add a method description
 
 
 ```objc
-function createBrowseNodeLookup38AsyncWithBody:(BrowseNodeLookupRequestMsg*) body
-                completionBlock:(CompletedPostBrowseNodeLookup38) onCompleted(body)
+function sendUnixDateTimeArrayAsyncWithDatetimes:(NSArray*) datetimes
+                completionBlock:(CompletedPostSendUnixDateTimeArray) onCompleted(datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -2145,31 +1323,29 @@ function createBrowseNodeLookup38AsyncWithBody:(BrowseNodeLookupRequestMsg*) bod
 
 ```objc
     // Parameters for the API call
-    BrowseNodeLookupRequestMsg* body = [[BrowseNodeLookupRequestMsg alloc]init];
+    NSArray* datetimes = (NSArray*) [APIHelper jsonDeserializeArray: @"[1484719381,1484719381]"];
 
-    [self.aWSECommerceServiceBinding createBrowseNodeLookup38AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, BrowseNodeLookupResponseMsg* response, NSError* error) { 
+    [self.formParams sendUnixDateTimeArrayAsyncWithDatetimes: datetimes  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_item_lookup37_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup37AsyncWithBody") createItemLookup37AsyncWithBody
+### <a name="send_rfc1123_date_time_array_async_with_datetimes"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendRfc1123DateTimeArrayAsyncWithDatetimes") sendRfc1123DateTimeArrayAsyncWithDatetimes
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createItemLookup37AsyncWithBody:(ItemLookupRequestMsg*) body
-                completionBlock:(CompletedPostItemLookup37) onCompleted(body)
+function sendRfc1123DateTimeArrayAsyncWithDatetimes:(NSArray*) datetimes
+                completionBlock:(CompletedPostSendRfc1123DateTimeArray) onCompleted(datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -2179,31 +1355,29 @@ function createItemLookup37AsyncWithBody:(ItemLookupRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    ItemLookupRequestMsg* body = [[ItemLookupRequestMsg alloc]init];
+    NSArray* datetimes = (NSArray*) [APIHelper jsonDeserializeArray: @"[\"Sun, 06 Nov 1994 08:49:37 GMT\",\"Sun, 06 Nov 1994 08:49:37 GMT\"]"];
 
-    [self.aWSECommerceServiceBinding createItemLookup37AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemLookupResponseMsg* response, NSError* error) { 
+    [self.formParams sendRfc1123DateTimeArrayAsyncWithDatetimes: datetimes  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_item_search36_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch36AsyncWithBody") createItemSearch36AsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_long_async_with_value"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendLongAsyncWithValue") sendLongAsyncWithValue
 
 > TODO: Add a method description
 
 
 ```objc
-function createItemSearch36AsyncWithBody:(ItemSearchRequestMsg*) body
-                completionBlock:(CompletedPostItemSearch36) onCompleted(body)
+function sendLongAsyncWithValue:(long) value
+                completionBlock:(CompletedPostSendLong) onCompleted(value)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| value |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -2213,31 +1387,29 @@ function createItemSearch36AsyncWithBody:(ItemSearchRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    ItemSearchRequestMsg* body = [[ItemSearchRequestMsg alloc]init];
+    long value = [@"5147483647" longLongValue];
 
-    [self.aWSECommerceServiceBinding createItemSearch36AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemSearchResponseMsg* response, NSError* error) { 
+    [self.formParams sendLongAsyncWithValue: value  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_cart_clear35_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear35AsyncWithBody") createCartClear35AsyncWithBody
+### <a name="send_integer_array_async_with_integers"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendIntegerArrayAsyncWithIntegers") sendIntegerArrayAsyncWithIntegers
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createCartClear35AsyncWithBody:(CartClearRequestMsg*) body
-                completionBlock:(CompletedPostCartClear35) onCompleted(body)
+function sendIntegerArrayAsyncWithIntegers:(NSArray*) integers
+                completionBlock:(CompletedPostSendIntegerArray) onCompleted(integers)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| integers |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -2247,31 +1419,29 @@ function createCartClear35AsyncWithBody:(CartClearRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    CartClearRequestMsg* body = [[CartClearRequestMsg alloc]init];
+    NSArray* integers = (NSArray*) [APIHelper jsonDeserializeArray: @"[1,2,3,4,5]"];
 
-    [self.aWSECommerceServiceBinding createCartClear35AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartClearResponseMsg* response, NSError* error) { 
+    [self.formParams sendIntegerArrayAsyncWithIntegers: integers  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_cart_modify34_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify34AsyncWithBody") createCartModify34AsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_string_array_async_with_strings"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendStringArrayAsyncWithStrings") sendStringArrayAsyncWithStrings
 
 > TODO: Add a method description
 
 
 ```objc
-function createCartModify34AsyncWithBody:(CartModifyRequestMsg*) body
-                completionBlock:(CompletedPostCartModify34) onCompleted(body)
+function sendStringArrayAsyncWithStrings:(NSArray*) strings
+                completionBlock:(CompletedPostSendStringArray) onCompleted(strings)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| strings |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -2281,31 +1451,29 @@ function createCartModify34AsyncWithBody:(CartModifyRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    CartModifyRequestMsg* body = [[CartModifyRequestMsg alloc]init];
+    NSArray* strings = (NSArray*) [APIHelper jsonDeserializeArray: @"[\"abc\", \"def\"]"];
 
-    [self.aWSECommerceServiceBinding createCartModify34AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartModifyResponseMsg* response, NSError* error) { 
+    [self.formParams sendStringArrayAsyncWithStrings: strings  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_cart_create33_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate33AsyncWithBody") createCartCreate33AsyncWithBody
+### <a name="send_model_async_with_model"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendModelAsyncWithModel") sendModelAsyncWithModel
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createCartCreate33AsyncWithBody:(CartCreateRequestMsg*) body
-                completionBlock:(CompletedPostCartCreate33) onCompleted(body)
+function sendModelAsyncWithModel:(Employee*) model
+                completionBlock:(CompletedPostSendModel) onCompleted(model)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| model |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -2315,31 +1483,30 @@ function createCartCreate33AsyncWithBody:(CartCreateRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    CartCreateRequestMsg* body = [[CartCreateRequestMsg alloc]init];
+    Employee* model = (Employee*) [APIHelper jsonDeserialize: @"{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"}"
+                toClass: Employee.class];
 
-    [self.aWSECommerceServiceBinding createCartCreate33AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartCreateResponseMsg* response, NSError* error) { 
+    [self.formParams sendModelAsyncWithModel: model  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_cart_add32_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd32AsyncWithBody") createCartAdd32AsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_model_array_async_with_models"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendModelArrayAsyncWithModels") sendModelArrayAsyncWithModels
 
 > TODO: Add a method description
 
 
 ```objc
-function createCartAdd32AsyncWithBody:(CartAddRequestMsg*) body
-                completionBlock:(CompletedPostCartAdd32) onCompleted(body)
+function sendModelArrayAsyncWithModels:(NSArray<Employee> *) models
+                completionBlock:(CompletedPostSendModelArray) onCompleted(models)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| models |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -2349,31 +1516,30 @@ function createCartAdd32AsyncWithBody:(CartAddRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    CartAddRequestMsg* body = [[CartAddRequestMsg alloc]init];
+    NSArray<Employee> * models = (NSArray<Employee>*) [Employee arrayOfModelsFromDictionaries:
+                [APIHelper jsonDeserializeArray: @"[{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"},{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"}]"] error: nil];
 
-    [self.aWSECommerceServiceBinding createCartAdd32AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartAddResponseMsg* response, NSError* error) { 
+    [self.formParams sendModelArrayAsyncWithModels: models  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_cart_get31_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet31AsyncWithBody") createCartGet31AsyncWithBody
+### <a name="send_file_async_with_file"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendFileAsyncWithFile") sendFileAsyncWithFile
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createCartGet31AsyncWithBody:(CartGetRequestMsg*) body
-                completionBlock:(CompletedPostCartGet31) onCompleted(body)
+function sendFileAsyncWithFile:(NSURL*) file
+                completionBlock:(CompletedPostSendFile) onCompleted(file)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| file |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -2383,31 +1549,29 @@ function createCartGet31AsyncWithBody:(CartGetRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    CartGetRequestMsg* body = [[CartGetRequestMsg alloc]init];
+    NSURL* file = [NSURL URLWithString: @"http://localhost:3000/response/image"];
 
-    [self.aWSECommerceServiceBinding createCartGet31AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartGetResponseMsg* response, NSError* error) { 
+    [self.formParams sendFileAsyncWithFile: file  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_similarity_lookup30_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup30AsyncWithBody") createSimilarityLookup30AsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_string_async_with_value"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendStringAsyncWithValue") sendStringAsyncWithValue
 
 > TODO: Add a method description
 
 
 ```objc
-function createSimilarityLookup30AsyncWithBody:(SimilarityLookupRequestMsg*) body
-                completionBlock:(CompletedPostSimilarityLookup30) onCompleted(body)
+function sendStringAsyncWithValue:(NSString*) value
+                completionBlock:(CompletedPostSendString) onCompleted(value)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| value |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -2417,31 +1581,29 @@ function createSimilarityLookup30AsyncWithBody:(SimilarityLookupRequestMsg*) bod
 
 ```objc
     // Parameters for the API call
-    SimilarityLookupRequestMsg* body = [[SimilarityLookupRequestMsg alloc]init];
+    NSString* value = @"TestString";
 
-    [self.aWSECommerceServiceBinding createSimilarityLookup30AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, SimilarityLookupResponseMsg* response, NSError* error) { 
+    [self.formParams sendStringAsyncWithValue: value  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_browse_node_lookup29_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup29AsyncWithBody") createBrowseNodeLookup29AsyncWithBody
+### <a name="send_rfc3339_date_time_array_async_with_datetimes"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendRfc3339DateTimeArrayAsyncWithDatetimes") sendRfc3339DateTimeArrayAsyncWithDatetimes
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createBrowseNodeLookup29AsyncWithBody:(BrowseNodeLookupRequestMsg*) body
-                completionBlock:(CompletedPostBrowseNodeLookup29) onCompleted(body)
+function sendRfc3339DateTimeArrayAsyncWithDatetimes:(NSArray*) datetimes
+                completionBlock:(CompletedPostSendRfc3339DateTimeArray) onCompleted(datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -2451,31 +1613,32 @@ function createBrowseNodeLookup29AsyncWithBody:(BrowseNodeLookupRequestMsg*) bod
 
 ```objc
     // Parameters for the API call
-    BrowseNodeLookupRequestMsg* body = [[BrowseNodeLookupRequestMsg alloc]init];
+    NSArray* datetimes = (NSArray*) [APIHelper jsonDeserializeArray: @"[\"1994-02-13T14:01:54.9571247Z\",\"1994-02-13T14:01:54.9571247Z\"]"];
 
-    [self.aWSECommerceServiceBinding createBrowseNodeLookup29AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, BrowseNodeLookupResponseMsg* response, NSError* error) { 
+    [self.formParams sendRfc3339DateTimeArrayAsyncWithDatetimes: datetimes  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_item_lookup28_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup28AsyncWithBody") createItemLookup28AsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_mixed_array_async_with_send_mixed_array_input"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendMixedArrayAsyncWithSendMixedArrayInput") sendMixedArrayAsyncWithSendMixedArrayInput
 
-> TODO: Add a method description
+> Send a variety for form params. Returns file count and body params
 
 
 ```objc
-function createItemLookup28AsyncWithBody:(ItemLookupRequestMsg*) body
-                completionBlock:(CompletedPostItemLookup28) onCompleted(body)
+function sendMixedArrayAsyncWithSendMixedArrayInput:(SendMixedArrayInput*) input
+                completionBlock:(CompletedPostSendMixedArray) onCompleted(input)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| file |  ``` Required ```  | TODO: Add a parameter description |
+| integers |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
+| models |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
+| strings |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -2485,31 +1648,34 @@ function createItemLookup28AsyncWithBody:(ItemLookupRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    ItemLookupRequestMsg* body = [[ItemLookupRequestMsg alloc]init];
+    SendMixedArrayInput *input = [[SendMixedArrayInput alloc]init];
+    input.file = [NSURL URLWithString: @"http://localhost:3000/response/image"];
+    input.integers = (NSArray*) [APIHelper jsonDeserializeArray: @"[1,2,3,4,5]"];
+    input.models = (NSArray<Employee>*) [Employee arrayOfModelsFromDictionaries:
+                [APIHelper jsonDeserializeArray: @"[{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"},{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"}]"] error: nil];
+    input.strings = (NSArray*) [APIHelper jsonDeserializeArray: @"[\"abc\", \"def\"]"];
 
-    [self.aWSECommerceServiceBinding createItemLookup28AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemLookupResponseMsg* response, NSError* error) { 
+    [self.formParams sendMixedArrayAsyncWithSendMixedArrayInput: input completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_item_search27_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch27AsyncWithBody") createItemSearch27AsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_integer_enum_array_async_with_suites"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendIntegerEnumArrayAsyncWithSuites") sendIntegerEnumArrayAsyncWithSuites
 
 > TODO: Add a method description
 
 
 ```objc
-function createItemSearch27AsyncWithBody:(ItemSearchRequestMsg*) body
-                completionBlock:(CompletedPostItemSearch27) onCompleted(body)
+function sendIntegerEnumArrayAsyncWithSuites:(NSArray<NSNumber*>*) suites
+                completionBlock:(CompletedPostSendIntegerEnumArray) onCompleted(suites)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| suites |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -2519,31 +1685,29 @@ function createItemSearch27AsyncWithBody:(ItemSearchRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    ItemSearchRequestMsg* body = [[ItemSearchRequestMsg alloc]init];
+    NSArray<NSNumber*>* suites =  (NSArray<NSNumber*>*) [APIHelper jsonDeserializeArray: @"[1, 3, 4, 2, 3]"];
 
-    [self.aWSECommerceServiceBinding createItemSearch27AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemSearchResponseMsg* response, NSError* error) { 
+    [self.formParams sendIntegerEnumArrayAsyncWithSuites: suites  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_cart_clear26_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear26AsyncWithBody") createCartClear26AsyncWithBody
+### <a name="send_string_enum_array_async_with_days"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendStringEnumArrayAsyncWithDays") sendStringEnumArrayAsyncWithDays
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createCartClear26AsyncWithBody:(CartClearRequestMsg*) body
-                completionBlock:(CompletedPostCartClear26) onCompleted(body)
+function sendStringEnumArrayAsyncWithDays:(NSArray<NSNumber*>*) days
+                completionBlock:(CompletedPostSendStringEnumArray) onCompleted(days)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| days |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -2553,31 +1717,39 @@ function createCartClear26AsyncWithBody:(CartClearRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    CartClearRequestMsg* body = [[CartClearRequestMsg alloc]init];
+    NSArray<NSNumber*>* days = [DaysHelper daysArrayFromStringArray:
+                [APIHelper jsonDeserializeArray: @"[\"Tuesday\", \"Saturday\", \"Wednesday\", \"Monday\", \"Sunday\"]"]];
 
-    [self.aWSECommerceServiceBinding createCartClear26AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartClearResponseMsg* response, NSError* error) { 
+    [self.formParams sendStringEnumArrayAsyncWithDays: days  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
+
 
+[Back to List of Controllers](#list_of_controllers)
 
-### <a name="create_cart_modify25_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify25AsyncWithBody") createCartModify25AsyncWithBody
+## <a name="query_param_controller"></a>![Class: ](https://apidocs.io/img/class.png ".QueryParamController") QueryParamController
 
-> *Tags:*  ``` Skips Authentication ``` 
+### Get singleton instance
+```objc
+QueryParam* queryParam = [[QueryParam alloc]init] ;
+```
 
+### <a name="date_array_async_with_dates"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.dateArrayAsyncWithDates") dateArrayAsyncWithDates
+
 > TODO: Add a method description
 
 
 ```objc
-function createCartModify25AsyncWithBody:(CartModifyRequestMsg*) body
-                completionBlock:(CompletedPostCartModify25) onCompleted(body)
+function dateArrayAsyncWithDates:(NSArray*) dates
+                completionBlock:(CompletedGetDateArray) onCompleted(dates)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| dates |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -2587,31 +1759,29 @@ function createCartModify25AsyncWithBody:(CartModifyRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    CartModifyRequestMsg* body = [[CartModifyRequestMsg alloc]init];
+    NSArray* dates = (NSArray*) [APIHelper jsonDeserializeArray: @"[\"1994-02-13\",\"1994-02-13\"]"];
 
-    [self.aWSECommerceServiceBinding createCartModify25AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartModifyResponseMsg* response, NSError* error) { 
+    [self.queryParam dateArrayAsyncWithDates: dates  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_cart_create24_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate24AsyncWithBody") createCartCreate24AsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="date_async_with_date"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.dateAsyncWithDate") dateAsyncWithDate
 
 > TODO: Add a method description
 
 
 ```objc
-function createCartCreate24AsyncWithBody:(CartCreateRequestMsg*) body
-                completionBlock:(CompletedPostCartCreate24) onCompleted(body)
+function dateAsyncWithDate:(NSDate*) date
+                completionBlock:(CompletedGetDate) onCompleted(date)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| date |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -2621,31 +1791,29 @@ function createCartCreate24AsyncWithBody:(CartCreateRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    CartCreateRequestMsg* body = [[CartCreateRequestMsg alloc]init];
+    NSDate* date = [NSDate NSDateFromNSString: @"1994-02-13"];
 
-    [self.aWSECommerceServiceBinding createCartCreate24AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartCreateResponseMsg* response, NSError* error) { 
+    [self.queryParam dateAsyncWithDate: date  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_cart_add23_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd23AsyncWithBody") createCartAdd23AsyncWithBody
+### <a name="unix_date_time_array_async_with_datetimes"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.unixDateTimeArrayAsyncWithDatetimes") unixDateTimeArrayAsyncWithDatetimes
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createCartAdd23AsyncWithBody:(CartAddRequestMsg*) body
-                completionBlock:(CompletedPostCartAdd23) onCompleted(body)
+function unixDateTimeArrayAsyncWithDatetimes:(NSArray*) datetimes
+                completionBlock:(CompletedGetUnixDateTimeArray) onCompleted(datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -2655,31 +1823,29 @@ function createCartAdd23AsyncWithBody:(CartAddRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    CartAddRequestMsg* body = [[CartAddRequestMsg alloc]init];
+    NSArray* datetimes = (NSArray*) [APIHelper jsonDeserializeArray: @"[1484719381,1484719381]"];
 
-    [self.aWSECommerceServiceBinding createCartAdd23AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartAddResponseMsg* response, NSError* error) { 
+    [self.queryParam unixDateTimeArrayAsyncWithDatetimes: datetimes  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_cart_get22_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet22AsyncWithBody") createCartGet22AsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="unix_date_time_async_with_datetime"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.unixDateTimeAsyncWithDatetime") unixDateTimeAsyncWithDatetime
 
 > TODO: Add a method description
 
 
 ```objc
-function createCartGet22AsyncWithBody:(CartGetRequestMsg*) body
-                completionBlock:(CompletedPostCartGet22) onCompleted(body)
+function unixDateTimeAsyncWithDatetime:(NSDate*) datetime
+                completionBlock:(CompletedGetUnixDateTime) onCompleted(datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -2689,31 +1855,29 @@ function createCartGet22AsyncWithBody:(CartGetRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    CartGetRequestMsg* body = [[CartGetRequestMsg alloc]init];
+    NSDate* datetime = [NSDate NSDateFromNSString: @"1484719381"];
 
-    [self.aWSECommerceServiceBinding createCartGet22AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartGetResponseMsg* response, NSError* error) { 
+    [self.queryParam unixDateTimeAsyncWithDatetime: datetime  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_similarity_lookup21_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup21AsyncWithBody") createSimilarityLookup21AsyncWithBody
+### <a name="rfc1123_date_time_async_with_datetime"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.rfc1123DateTimeAsyncWithDatetime") rfc1123DateTimeAsyncWithDatetime
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createSimilarityLookup21AsyncWithBody:(SimilarityLookupRequestMsg*) body
-                completionBlock:(CompletedPostSimilarityLookup21) onCompleted(body)
+function rfc1123DateTimeAsyncWithDatetime:(NSDate*) datetime
+                completionBlock:(CompletedGetRfc1123DateTime) onCompleted(datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -2723,31 +1887,29 @@ function createSimilarityLookup21AsyncWithBody:(SimilarityLookupRequestMsg*) bod
 
 ```objc
     // Parameters for the API call
-    SimilarityLookupRequestMsg* body = [[SimilarityLookupRequestMsg alloc]init];
+    NSDate* datetime = [NSDate NSDateFromNSString: @"Sun, 06 Nov 1994 08:49:37 GMT"];
 
-    [self.aWSECommerceServiceBinding createSimilarityLookup21AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, SimilarityLookupResponseMsg* response, NSError* error) { 
+    [self.queryParam rfc1123DateTimeAsyncWithDatetime: datetime  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_browse_node_lookup20_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup20AsyncWithBody") createBrowseNodeLookup20AsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="rfc1123_date_time_array_async_with_datetimes"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.rfc1123DateTimeArrayAsyncWithDatetimes") rfc1123DateTimeArrayAsyncWithDatetimes
 
 > TODO: Add a method description
 
 
 ```objc
-function createBrowseNodeLookup20AsyncWithBody:(BrowseNodeLookupRequestMsg*) body
-                completionBlock:(CompletedPostBrowseNodeLookup20) onCompleted(body)
+function rfc1123DateTimeArrayAsyncWithDatetimes:(NSArray*) datetimes
+                completionBlock:(CompletedGetRfc1123DateTimeArray) onCompleted(datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -2757,31 +1919,29 @@ function createBrowseNodeLookup20AsyncWithBody:(BrowseNodeLookupRequestMsg*) bod
 
 ```objc
     // Parameters for the API call
-    BrowseNodeLookupRequestMsg* body = [[BrowseNodeLookupRequestMsg alloc]init];
+    NSArray* datetimes = (NSArray*) [APIHelper jsonDeserializeArray: @"[\"Sun, 06 Nov 1994 08:49:37 GMT\",\"Sun, 06 Nov 1994 08:49:37 GMT\"]"];
 
-    [self.aWSECommerceServiceBinding createBrowseNodeLookup20AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, BrowseNodeLookupResponseMsg* response, NSError* error) { 
+    [self.queryParam rfc1123DateTimeArrayAsyncWithDatetimes: datetimes  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_item_lookup19_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup19AsyncWithBody") createItemLookup19AsyncWithBody
+### <a name="rfc3339_date_time_array_async_with_datetimes"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.rfc3339DateTimeArrayAsyncWithDatetimes") rfc3339DateTimeArrayAsyncWithDatetimes
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createItemLookup19AsyncWithBody:(ItemLookupRequestMsg*) body
-                completionBlock:(CompletedPostItemLookup19) onCompleted(body)
+function rfc3339DateTimeArrayAsyncWithDatetimes:(NSArray*) datetimes
+                completionBlock:(CompletedGetRfc3339DateTimeArray) onCompleted(datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -2791,31 +1951,29 @@ function createItemLookup19AsyncWithBody:(ItemLookupRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    ItemLookupRequestMsg* body = [[ItemLookupRequestMsg alloc]init];
+    NSArray* datetimes = (NSArray*) [APIHelper jsonDeserializeArray: @"[\"1994-02-13T14:01:54.9571247Z\",\"1994-02-13T14:01:54.9571247Z\"]"];
 
-    [self.aWSECommerceServiceBinding createItemLookup19AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemLookupResponseMsg* response, NSError* error) { 
+    [self.queryParam rfc3339DateTimeArrayAsyncWithDatetimes: datetimes  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_item_search18_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch18AsyncWithBody") createItemSearch18AsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="rfc3339_date_time_async_with_datetime"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.rfc3339DateTimeAsyncWithDatetime") rfc3339DateTimeAsyncWithDatetime
 
 > TODO: Add a method description
 
 
 ```objc
-function createItemSearch18AsyncWithBody:(ItemSearchRequestMsg*) body
-                completionBlock:(CompletedPostItemSearch18) onCompleted(body)
+function rfc3339DateTimeAsyncWithDatetime:(NSDate*) datetime
+                completionBlock:(CompletedGetRfc3339DateTime) onCompleted(datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -2825,65 +1983,50 @@ function createItemSearch18AsyncWithBody:(ItemSearchRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    ItemSearchRequestMsg* body = [[ItemSearchRequestMsg alloc]init];
+    NSDate* datetime = [NSDate NSDateFromNSString: @"1994-02-13T14:01:54.9571247Z"];
 
-    [self.aWSECommerceServiceBinding createItemSearch18AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemSearchResponseMsg* response, NSError* error) { 
+    [self.queryParam rfc3339DateTimeAsyncWithDatetime: datetime  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_cart_clear17_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear17AsyncWithBody") createCartClear17AsyncWithBody
+### <a name="no_params_with_completion_block"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.noParamsWithCompletionBlock") noParamsWithCompletionBlock
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createCartClear17AsyncWithBody:(CartClearRequestMsg*) body
-                completionBlock:(CompletedPostCartClear17) onCompleted(body)
+function noParamsWithCompletionBlock:(CompletedGetNoParams) onCompleted()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
-
-
 #### Example Usage
 
 ```objc
-    // Parameters for the API call
-    CartClearRequestMsg* body = [[CartClearRequestMsg alloc]init];
 
-    [self.aWSECommerceServiceBinding createCartClear17AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartClearResponseMsg* response, NSError* error) { 
+    [self.queryParam noParamsWithCompletionBlock:  ^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_cart_modify16_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify16AsyncWithBody") createCartModify16AsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="string_param_async_with_string"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.stringParamAsyncWithString") stringParamAsyncWithString
 
 > TODO: Add a method description
 
 
 ```objc
-function createCartModify16AsyncWithBody:(CartModifyRequestMsg*) body
-                completionBlock:(CompletedPostCartModify16) onCompleted(body)
+function stringParamAsyncWithString:(NSString*) string
+                completionBlock:(CompletedGetStringParam) onCompleted(string)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| string |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -2893,31 +2036,29 @@ function createCartModify16AsyncWithBody:(CartModifyRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    CartModifyRequestMsg* body = [[CartModifyRequestMsg alloc]init];
+    NSString* string = @"l;asd;asdwe[2304&&;'.d??\\a\\\\\\;sd//";
 
-    [self.aWSECommerceServiceBinding createCartModify16AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartModifyResponseMsg* response, NSError* error) { 
+    [self.queryParam stringParamAsyncWithString: string  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_cart_create15_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate15AsyncWithBody") createCartCreate15AsyncWithBody
+### <a name="url_param_async_with_url"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.urlParamAsyncWithUrl") urlParamAsyncWithUrl
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createCartCreate15AsyncWithBody:(CartCreateRequestMsg*) body
-                completionBlock:(CompletedPostCartCreate15) onCompleted(body)
+function urlParamAsyncWithUrl:(NSString*) url
+                completionBlock:(CompletedGetUrlParam) onCompleted(url)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| url |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -2927,31 +2068,29 @@ function createCartCreate15AsyncWithBody:(CartCreateRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    CartCreateRequestMsg* body = [[CartCreateRequestMsg alloc]init];
+    NSString* url = @"https://www.shahidisawesome.com/and/also/a/narcissist?thisis=aparameter&another=one";
 
-    [self.aWSECommerceServiceBinding createCartCreate15AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartCreateResponseMsg* response, NSError* error) { 
+    [self.queryParam urlParamAsyncWithUrl: url  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_cart_add14_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd14AsyncWithBody") createCartAdd14AsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="number_array_async_with_integers"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.numberArrayAsyncWithIntegers") numberArrayAsyncWithIntegers
 
 > TODO: Add a method description
 
 
 ```objc
-function createCartAdd14AsyncWithBody:(CartAddRequestMsg*) body
-                completionBlock:(CompletedPostCartAdd14) onCompleted(body)
+function numberArrayAsyncWithIntegers:(NSArray*) integers
+                completionBlock:(CompletedGetNumberArray) onCompleted(integers)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| integers |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -2961,31 +2100,29 @@ function createCartAdd14AsyncWithBody:(CartAddRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    CartAddRequestMsg* body = [[CartAddRequestMsg alloc]init];
+    NSArray* integers = (NSArray*) [APIHelper jsonDeserializeArray: @"[1,2,3,4,5]"];
 
-    [self.aWSECommerceServiceBinding createCartAdd14AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartAddResponseMsg* response, NSError* error) { 
+    [self.queryParam numberArrayAsyncWithIntegers: integers  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_cart_get13_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet13AsyncWithBody") createCartGet13AsyncWithBody
+### <a name="string_array_async_with_strings"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.stringArrayAsyncWithStrings") stringArrayAsyncWithStrings
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createCartGet13AsyncWithBody:(CartGetRequestMsg*) body
-                completionBlock:(CompletedPostCartGet13) onCompleted(body)
+function stringArrayAsyncWithStrings:(NSArray*) strings
+                completionBlock:(CompletedGetStringArray) onCompleted(strings)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| strings |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -2995,31 +2132,35 @@ function createCartGet13AsyncWithBody:(CartGetRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    CartGetRequestMsg* body = [[CartGetRequestMsg alloc]init];
+    NSArray* strings = (NSArray*) [APIHelper jsonDeserializeArray: @"[\"abc\", \"def\"]"];
 
-    [self.aWSECommerceServiceBinding createCartGet13AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartGetResponseMsg* response, NSError* error) { 
+    [self.queryParam stringArrayAsyncWithStrings: strings  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_similarity_lookup12_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup12AsyncWithBody") createSimilarityLookup12AsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="simple_query_async_with_boolean"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.simpleQueryAsyncWithBoolean") simpleQueryAsyncWithBoolean
 
 > TODO: Add a method description
 
 
 ```objc
-function createSimilarityLookup12AsyncWithBody:(SimilarityLookupRequestMsg*) body
-                completionBlock:(CompletedPostSimilarityLookup12) onCompleted(body)
+function simpleQueryAsyncWithBoolean:(BOOL) boolean
+                number:(int) number
+                string:(NSString*) string
+                queryParameters:(NSDictionary*) queryParameters
+                completionBlock:(CompletedGetSimpleQuery) onCompleted(boolean number : number string : string  queryParameters : queryParams)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| boolean |  ``` Required ```  | TODO: Add a parameter description |
+| number |  ``` Required ```  | TODO: Add a parameter description |
+| string |  ``` Required ```  | TODO: Add a parameter description |
+| queryParameters | ``` Optional ``` | Additional optional query parameters are supported by this method |
 
 
 
@@ -3029,31 +2170,34 @@ function createSimilarityLookup12AsyncWithBody:(SimilarityLookupRequestMsg*) bod
 
 ```objc
     // Parameters for the API call
-    SimilarityLookupRequestMsg* body = [[SimilarityLookupRequestMsg alloc]init];
+    BOOL boolean = [@"true" boolValue];
+    int number = [@"4" intValue];
+    NSString* string = @"TestString";
+    // Dictionary for optional query parameters
+    NSMutableDictionary* queryParamsMutable = [[NSMutableDictionary alloc] init];
+    NSDictionary *queryParams= [queryParamsMutable copy];
 
-    [self.aWSECommerceServiceBinding createSimilarityLookup12AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, SimilarityLookupResponseMsg* response, NSError* error) { 
+    [self.queryParam simpleQueryAsyncWithBoolean: boolean number : number string : string  queryParameters : queryParams  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_browse_node_lookup11_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup11AsyncWithBody") createBrowseNodeLookup11AsyncWithBody
+### <a name="string_enum_array_async_with_days"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.stringEnumArrayAsyncWithDays") stringEnumArrayAsyncWithDays
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createBrowseNodeLookup11AsyncWithBody:(BrowseNodeLookupRequestMsg*) body
-                completionBlock:(CompletedPostBrowseNodeLookup11) onCompleted(body)
+function stringEnumArrayAsyncWithDays:(NSArray<NSNumber*>*) days
+                completionBlock:(CompletedGetStringEnumArray) onCompleted(days)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| days |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -3063,31 +2207,36 @@ function createBrowseNodeLookup11AsyncWithBody:(BrowseNodeLookupRequestMsg*) bod
 
 ```objc
     // Parameters for the API call
-    BrowseNodeLookupRequestMsg* body = [[BrowseNodeLookupRequestMsg alloc]init];
+    NSArray<NSNumber*>* days = [DaysHelper daysArrayFromStringArray:
+                [APIHelper jsonDeserializeArray: @"[\"Tuesday\", \"Saturday\", \"Wednesday\", \"Monday\", \"Sunday\"]"]];
 
-    [self.aWSECommerceServiceBinding createBrowseNodeLookup11AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, BrowseNodeLookupResponseMsg* response, NSError* error) { 
+    [self.queryParam stringEnumArrayAsyncWithDays: days  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_item_lookup10_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup10AsyncWithBody") createItemLookup10AsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="multiple_params_async_with_number"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.multipleParamsAsyncWithNumber") multipleParamsAsyncWithNumber
 
 > TODO: Add a method description
 
 
 ```objc
-function createItemLookup10AsyncWithBody:(ItemLookupRequestMsg*) body
-                completionBlock:(CompletedPostItemLookup10) onCompleted(body)
+function multipleParamsAsyncWithNumber:(int) number
+                precision:(double) precision
+                string:(NSString*) string
+                url:(NSString*) url
+                completionBlock:(CompletedGetMultipleParams) onCompleted(number precision : precision string : string url : url)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| number |  ``` Required ```  | TODO: Add a parameter description |
+| precision |  ``` Required ```  | TODO: Add a parameter description |
+| string |  ``` Required ```  | TODO: Add a parameter description |
+| url |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -3097,31 +2246,32 @@ function createItemLookup10AsyncWithBody:(ItemLookupRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    ItemLookupRequestMsg* body = [[ItemLookupRequestMsg alloc]init];
+    int number = [@"123412312" intValue];
+    double precision = [@"1112.34" doubleValue];
+    NSString* string = @"\"\"test./;\";12&&3asl\"\";\"qw1&34\"///..//.";
+    NSString* url = @"http://www.abc.com/test?a=b&c=\"http://lolol.com?param=no&another=lol\"";
 
-    [self.aWSECommerceServiceBinding createItemLookup10AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemLookupResponseMsg* response, NSError* error) { 
+    [self.queryParam multipleParamsAsyncWithNumber: number precision : precision string : string url : url  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_item_search9_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch9AsyncWithBody") createItemSearch9AsyncWithBody
+### <a name="integer_enum_array_async_with_suites"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.integerEnumArrayAsyncWithSuites") integerEnumArrayAsyncWithSuites
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createItemSearch9AsyncWithBody:(ItemSearchRequestMsg*) body
-                completionBlock:(CompletedPostItemSearch9) onCompleted(body)
+function integerEnumArrayAsyncWithSuites:(NSArray<NSNumber*>*) suites
+                completionBlock:(CompletedGetIntegerEnumArray) onCompleted(suites)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| suites |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -3131,133 +2281,122 @@ function createItemSearch9AsyncWithBody:(ItemSearchRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    ItemSearchRequestMsg* body = [[ItemSearchRequestMsg alloc]init];
+    NSArray<NSNumber*>* suites =  (NSArray<NSNumber*>*) [APIHelper jsonDeserializeArray: @"[1, 3, 4, 2, 3]"];
 
-    [self.aWSECommerceServiceBinding createItemSearch9AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemSearchResponseMsg* response, NSError* error) { 
+    [self.queryParam integerEnumArrayAsyncWithSuites: suites  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_cart_clear_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClearAsyncWithBody") createCartClearAsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+[Back to List of Controllers](#list_of_controllers)
 
-> TODO: Add a method description
-
+## <a name="error_codes_controller"></a>![Class: ](https://apidocs.io/img/class.png ".ErrorCodesController") ErrorCodesController
 
+### Get singleton instance
 ```objc
-function createCartClearAsyncWithBody:(CartClearRequestMsg*) body
-                completionBlock:(CompletedPostCartClear) onCompleted(body)
+ErrorCodes* errorCodes = [[ErrorCodes alloc]init] ;
 ```
 
-#### Parameters
+### <a name="get400_with_completion_block"></a>![Method: ](https://apidocs.io/img/method.png ".ErrorCodesController.get400WithCompletionBlock") get400WithCompletionBlock
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+> TODO: Add a method description
 
 
+```objc
+function get400WithCompletionBlock:(CompletedGet400) onCompleted()
+```
 
 
 
 #### Example Usage
 
 ```objc
-    // Parameters for the API call
-    CartClearRequestMsg* body = [[CartClearRequestMsg alloc]init];
 
-    [self.aWSECommerceServiceBinding createCartClearAsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartClearResponseMsg* response, NSError* error) { 
+    [self.errorCodes get400WithCompletionBlock:  ^(BOOL success, HttpContext* context, id response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_cart_modify_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModifyAsyncWithBody") createCartModifyAsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get500_with_completion_block"></a>![Method: ](https://apidocs.io/img/method.png ".ErrorCodesController.get500WithCompletionBlock") get500WithCompletionBlock
 
 > TODO: Add a method description
 
 
 ```objc
-function createCartModifyAsyncWithBody:(CartModifyRequestMsg*) body
-                completionBlock:(CompletedPostCartModify) onCompleted(body)
+function get500WithCompletionBlock:(CompletedGet500) onCompleted()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
 
 
-
 #### Example Usage
 
 ```objc
-    // Parameters for the API call
-    CartModifyRequestMsg* body = [[CartModifyRequestMsg alloc]init];
 
-    [self.aWSECommerceServiceBinding createCartModifyAsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartModifyResponseMsg* response, NSError* error) { 
+    [self.errorCodes get500WithCompletionBlock:  ^(BOOL success, HttpContext* context, id response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_cart_create_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreateAsyncWithBody") createCartCreateAsyncWithBody
+### <a name="get401_with_completion_block"></a>![Method: ](https://apidocs.io/img/method.png ".ErrorCodesController.get401WithCompletionBlock") get401WithCompletionBlock
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```objc
-function createCartCreateAsyncWithBody:(CartCreateRequestMsg*) body
-                completionBlock:(CompletedPostCartCreate) onCompleted(body)
+function get401WithCompletionBlock:(CompletedGet401) onCompleted()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
-
-
 #### Example Usage
 
 ```objc
-    // Parameters for the API call
-    CartCreateRequestMsg* body = [[CartCreateRequestMsg alloc]init];
 
-    [self.aWSECommerceServiceBinding createCartCreateAsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartCreateResponseMsg* response, NSError* error) { 
+    [self.errorCodes get401WithCompletionBlock:  ^(BOOL success, HttpContext* context, id response, NSError* error) { 
        //Add code here
     }];
 ```
 
+#### Errors
 
-### <a name="create_cart_add_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAddAsyncWithBody") createCartAddAsyncWithBody
+| Error Code | Error Description |
+|------------|-------------------|
+| 401 | 401 Local |
+| 421 | Default |
+| 431 | Default |
+| 432 | Default |
+| 441 | Default |
+| 0 | Invalid response. |
 
-> *Tags:*  ``` Skips Authentication ``` 
 
-> TODO: Add a method description
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="echo_controller"></a>![Class: ](https://apidocs.io/img/class.png ".EchoController") EchoController
+
+### Get singleton instance
+```objc
+Echo* echo = [[Echo alloc]init] ;
+```
+
+### <a name="json_echo_async_with_input"></a>![Method: ](https://apidocs.io/img/method.png ".EchoController.jsonEchoAsyncWithInput") jsonEchoAsyncWithInput
 
+> Echo's back the request
 
+
 ```objc
-function createCartAddAsyncWithBody:(CartAddRequestMsg*) body
-                completionBlock:(CompletedPostCartAdd) onCompleted(body)
+function jsonEchoAsyncWithInput:(NSObject*) input
+                completionBlock:(CompletedPostJsonEcho) onCompleted(input)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| input |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -3267,31 +2406,32 @@ function createCartAddAsyncWithBody:(CartAddRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    CartAddRequestMsg* body = [[CartAddRequestMsg alloc]init];
+    NSObject* input = [NSJSONSerialization
+                        JSONObjectWithData: [@"{\"uid\": \"1123213\", \"name\": \"Shahid\"}" dataUsingEncoding: NSUTF8StringEncoding]
+                                   options: NSJSONReadingAllowFragments
+                                     error: nil];
 
-    [self.aWSECommerceServiceBinding createCartAddAsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartAddResponseMsg* response, NSError* error) { 
+    [self.echo jsonEchoAsyncWithInput: input  completionBlock:^(BOOL success, HttpContext* context, id response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_cart_get_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGetAsyncWithBody") createCartGetAsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="form_echo_async_with_input"></a>![Method: ](https://apidocs.io/img/method.png ".EchoController.formEchoAsyncWithInput") formEchoAsyncWithInput
 
-> TODO: Add a method description
+> Sends the request including any form params as JSON
 
 
 ```objc
-function createCartGetAsyncWithBody:(CartGetRequestMsg*) body
-                completionBlock:(CompletedPostCartGet) onCompleted(body)
+function formEchoAsyncWithInput:(NSObject*) input
+                completionBlock:(CompletedPostFormEcho) onCompleted(input)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| input |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -3301,31 +2441,32 @@ function createCartGetAsyncWithBody:(CartGetRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    CartGetRequestMsg* body = [[CartGetRequestMsg alloc]init];
+    NSObject* input = [NSJSONSerialization
+                        JSONObjectWithData: [@"{\"uid\": \"1123213\", \"name\": \"Shahid\"}" dataUsingEncoding: NSUTF8StringEncoding]
+                                   options: NSJSONReadingAllowFragments
+                                     error: nil];
 
-    [self.aWSECommerceServiceBinding createCartGetAsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartGetResponseMsg* response, NSError* error) { 
+    [self.echo formEchoAsyncWithInput: input  completionBlock:^(BOOL success, HttpContext* context, id response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_similarity_lookup_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookupAsyncWithBody") createSimilarityLookupAsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="query_echo_with_query_parameters"></a>![Method: ](https://apidocs.io/img/method.png ".EchoController.queryEchoWithQueryParameters") queryEchoWithQueryParameters
 
 > TODO: Add a method description
 
 
 ```objc
-function createSimilarityLookupAsyncWithBody:(SimilarityLookupRequestMsg*) body
-                completionBlock:(CompletedPostSimilarityLookup) onCompleted(body)
+function queryEchoWithQueryParameters:(NSDictionary*) queryParameters
+                completionBlock:(CompletedGetQueryEcho) onCompleted(queryParams)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| queryParameters | ``` Optional ``` | Additional optional query parameters are supported by this method |
 
 
 
@@ -3334,32 +2475,43 @@ function createSimilarityLookupAsyncWithBody:(SimilarityLookupRequestMsg*) body
 #### Example Usage
 
 ```objc
-    // Parameters for the API call
-    SimilarityLookupRequestMsg* body = [[SimilarityLookupRequestMsg alloc]init];
+    // Dictionary for optional query parameters
+    NSMutableDictionary* queryParamsMutable = [[NSMutableDictionary alloc] init];
+    [queryParamsMutable setObject:@"world" forKey:@"hello"];
+    NSDictionary *queryParams= [queryParamsMutable copy];
 
-    [self.aWSECommerceServiceBinding createSimilarityLookupAsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, SimilarityLookupResponseMsg* response, NSError* error) { 
+    [self.echo queryEchoWithQueryParameters: queryParams completionBlock:^(BOOL success, HttpContext* context, EchoResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_browse_node_lookup_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookupAsyncWithBody") createBrowseNodeLookupAsyncWithBody
+[Back to List of Controllers](#list_of_controllers)
 
-> *Tags:*  ``` Skips Authentication ``` 
+## <a name="header_controller"></a>![Class: ](https://apidocs.io/img/class.png ".HeaderController") HeaderController
 
-> TODO: Add a method description
+### Get singleton instance
+```objc
+Header* header = [[Header alloc]init] ;
+```
+
+### <a name="send_headers_async_with_custom_header"></a>![Method: ](https://apidocs.io/img/method.png ".HeaderController.sendHeadersAsyncWithCustomHeader") sendHeadersAsyncWithCustomHeader
+
+> Sends a single header params
 
 
 ```objc
-function createBrowseNodeLookupAsyncWithBody:(BrowseNodeLookupRequestMsg*) body
-                completionBlock:(CompletedPostBrowseNodeLookup) onCompleted(body)
+function sendHeadersAsyncWithCustomHeader:(NSString*) customHeader
+                value:(NSString*) value
+                completionBlock:(CompletedPostSendHeaders) onCompleted(customHeader value : value)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| customHeader |  ``` Required ```  | TODO: Add a parameter description |
+| value |  ``` Required ```  | Represents the value of the custom header |
 
 
 
@@ -3369,31 +2521,39 @@ function createBrowseNodeLookupAsyncWithBody:(BrowseNodeLookupRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    BrowseNodeLookupRequestMsg* body = [[BrowseNodeLookupRequestMsg alloc]init];
+    NSString* customHeader = @"TestString";
+    NSString* value = @"TestString";
 
-    [self.aWSECommerceServiceBinding createBrowseNodeLookupAsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, BrowseNodeLookupResponseMsg* response, NSError* error) { 
+    [self.header sendHeadersAsyncWithCustomHeader: customHeader value : value  completionBlock:^(BOOL success, HttpContext* context, ServerResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
 
 
-### <a name="create_item_lookup_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookupAsyncWithBody") createItemLookupAsyncWithBody
+[Back to List of Controllers](#list_of_controllers)
 
-> *Tags:*  ``` Skips Authentication ``` 
+## <a name="template_params_controller"></a>![Class: ](https://apidocs.io/img/class.png ".TemplateParamsController") TemplateParamsController
 
+### Get singleton instance
+```objc
+TemplateParams* templateParams = [[TemplateParams alloc]init] ;
+```
+
+### <a name="send_string_array_async_with_strings"></a>![Method: ](https://apidocs.io/img/method.png ".TemplateParamsController.sendStringArrayAsyncWithStrings") sendStringArrayAsyncWithStrings
+
 > TODO: Add a method description
 
 
 ```objc
-function createItemLookupAsyncWithBody:(ItemLookupRequestMsg*) body
-                completionBlock:(CompletedPostItemLookup) onCompleted(body)
+function sendStringArrayAsyncWithStrings:(NSArray*) strings
+                completionBlock:(CompletedGetSendStringArray) onCompleted(strings)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| strings |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -3403,31 +2563,29 @@ function createItemLookupAsyncWithBody:(ItemLookupRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    ItemLookupRequestMsg* body = [[ItemLookupRequestMsg alloc]init];
+    NSArray* strings = (NSArray*) [APIHelper jsonDeserializeArray: @"[\"abc\", \"def\"]"];
 
-    [self.aWSECommerceServiceBinding createItemLookupAsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemLookupResponseMsg* response, NSError* error) { 
+    [self.templateParams sendStringArrayAsyncWithStrings: strings  completionBlock:^(BOOL success, HttpContext* context, EchoResponse* response, NSError* error) { 
        //Add code here
     }];
 ```
-
 
-### <a name="create_item_search_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearchAsyncWithBody") createItemSearchAsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_integer_array_async_with_integers"></a>![Method: ](https://apidocs.io/img/method.png ".TemplateParamsController.sendIntegerArrayAsyncWithIntegers") sendIntegerArrayAsyncWithIntegers
 
 > TODO: Add a method description
 
 
 ```objc
-function createItemSearchAsyncWithBody:(ItemSearchRequestMsg*) body
-                completionBlock:(CompletedPostItemSearch) onCompleted(body)
+function sendIntegerArrayAsyncWithIntegers:(NSArray*) integers
+                completionBlock:(CompletedGetSendIntegerArray) onCompleted(integers)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| integers |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
@@ -3437,9 +2595,9 @@ function createItemSearchAsyncWithBody:(ItemSearchRequestMsg*) body
 
 ```objc
     // Parameters for the API call
-    ItemSearchRequestMsg* body = [[ItemSearchRequestMsg alloc]init];
+    NSArray* integers = (NSArray*) [APIHelper jsonDeserializeArray: @"[1,2,3,4,5]"];
 
-    [self.aWSECommerceServiceBinding createItemSearchAsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemSearchResponseMsg* response, NSError* error) { 
+    [self.templateParams sendIntegerArrayAsyncWithIntegers: integers  completionBlock:^(BOOL success, HttpContext* context, EchoResponse* response, NSError* error) { 
        //Add code here
     }];
 ```

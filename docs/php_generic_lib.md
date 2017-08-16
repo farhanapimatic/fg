@@ -1,5 +1,9 @@
 # Getting started
 
+Testing various
+ api 
+features
+
 ## How to Build
 
 The generated code has dependencies over external libraries like UniRest. These dependencies are defined in the ```composer.json``` file that comes with the SDK. 
@@ -10,7 +14,7 @@ Open command prompt and type ```composer --version```. This should display the c
 * Using command line, navigate to the directory containing the generated files (including ```composer.json```) for the SDK. 
 * Run the command ```composer install```. This should install all the required dependencies and create the ```vendor``` directory in your project directory.
 
-![Building SDK - Step 1](https://apidocs.io/illustration/php?step=installDependencies&workspaceFolder=AWSECommerceService-PHP)
+![Building SDK - Step 1](https://apidocs.io/illustration/php?step=installDependencies&workspaceFolder=Tester-PHP)
 
 ### [For Windows Users Only] Configuring CURL Certificate Path in php.ini
 
@@ -28,35 +32,35 @@ CURL used to include a list of accepted CAs, but no longer bundles ANY CA certs.
 
 ## How to Use
 
-The following section explains how to use the AWSECommerceService library in a new project.
+The following section explains how to use the Tester library in a new project.
 
 ### 1. Open Project in an IDE
 
 Open an IDE for PHP like PhpStorm. The basic workflow presented here is also applicable if you prefer using a different editor or IDE.
 
-![Open project in PHPStorm - Step 1](https://apidocs.io/illustration/php?step=openIDE&workspaceFolder=AWSECommerceService-PHP)
+![Open project in PHPStorm - Step 1](https://apidocs.io/illustration/php?step=openIDE&workspaceFolder=Tester-PHP)
 
 Click on ```Open``` in PhpStorm to browse to your generated SDK directory and then click ```OK```.
 
-![Open project in PHPStorm - Step 2](https://apidocs.io/illustration/php?step=openProject0&workspaceFolder=AWSECommerceService-PHP)     
+![Open project in PHPStorm - Step 2](https://apidocs.io/illustration/php?step=openProject0&workspaceFolder=Tester-PHP)     
 
 ### 2. Add a new Test Project
 
 Create a new directory by right clicking on the solution name as shown below:
 
-![Add a new project in PHPStorm - Step 1](https://apidocs.io/illustration/php?step=createDirectory&workspaceFolder=AWSECommerceService-PHP)
+![Add a new project in PHPStorm - Step 1](https://apidocs.io/illustration/php?step=createDirectory&workspaceFolder=Tester-PHP)
 
 Name the directory as "test"
 
-![Add a new project in PHPStorm - Step 2](https://apidocs.io/illustration/php?step=nameDirectory&workspaceFolder=AWSECommerceService-PHP)
+![Add a new project in PHPStorm - Step 2](https://apidocs.io/illustration/php?step=nameDirectory&workspaceFolder=Tester-PHP)
    
 Add a PHP file to this project
 
-![Add a new project in PHPStorm - Step 3](https://apidocs.io/illustration/php?step=createFile&workspaceFolder=AWSECommerceService-PHP)
+![Add a new project in PHPStorm - Step 3](https://apidocs.io/illustration/php?step=createFile&workspaceFolder=Tester-PHP)
 
 Name it "testSDK"
 
-![Add a new project in PHPStorm - Step 4](https://apidocs.io/illustration/php?step=nameFile&workspaceFolder=AWSECommerceService-PHP)
+![Add a new project in PHPStorm - Step 4](https://apidocs.io/illustration/php?step=nameFile&workspaceFolder=Tester-PHP)
 
 Depending on your project setup, you might need to include composer's autoloader in your PHP code to enable auto loading of classes.
 
@@ -66,7 +70,7 @@ require_once "../vendor/autoload.php";
 
 It is important that the path inside require_once correctly points to the file ```autoload.php``` inside the vendor directory created during dependency installations.
 
-![Add a new project in PHPStorm - Step 4](https://apidocs.io/illustration/php?step=projectFiles&workspaceFolder=AWSECommerceService-PHP)
+![Add a new project in PHPStorm - Step 4](https://apidocs.io/illustration/php?step=projectFiles&workspaceFolder=Tester-PHP)
 
 After this you can add code to initialize the client library and acquire the instance of a Controller class. Sample code to initialize the client library and using controller methods is given in the subsequent sections.
 
@@ -76,23 +80,23 @@ To run your project you must set the Interpreter for your project. Interpreter i
 
 Open ```Settings``` from ```File``` menu.
 
-![Run Test Project - Step 1](https://apidocs.io/illustration/php?step=openSettings&workspaceFolder=AWSECommerceService-PHP)
+![Run Test Project - Step 1](https://apidocs.io/illustration/php?step=openSettings&workspaceFolder=Tester-PHP)
 
 Select ```PHP``` from within ```Languages & Frameworks```
 
-![Run Test Project - Step 2](https://apidocs.io/illustration/php?step=setInterpreter0&workspaceFolder=AWSECommerceService-PHP)
+![Run Test Project - Step 2](https://apidocs.io/illustration/php?step=setInterpreter0&workspaceFolder=Tester-PHP)
 
 Browse for Interpreters near the ```Interpreter``` option and choose your interpreter.
 
-![Run Test Project - Step 3](https://apidocs.io/illustration/php?step=setInterpreter1&workspaceFolder=AWSECommerceService-PHP)
+![Run Test Project - Step 3](https://apidocs.io/illustration/php?step=setInterpreter1&workspaceFolder=Tester-PHP)
 
 Once the interpreter is selected, click ```OK```
 
-![Run Test Project - Step 4](https://apidocs.io/illustration/php?step=setInterpreter2&workspaceFolder=AWSECommerceService-PHP)
+![Run Test Project - Step 4](https://apidocs.io/illustration/php?step=setInterpreter2&workspaceFolder=Tester-PHP)
 
 To run your project, right click on your PHP file inside your Test project and click on ```Run```
 
-![Run Test Project - Step 5](https://apidocs.io/illustration/php?step=runProject&workspaceFolder=AWSECommerceService-PHP)
+![Run Test Project - Step 5](https://apidocs.io/illustration/php?step=runProject&workspaceFolder=Tester-PHP)
 
 ## How to Test
 
@@ -112,7 +116,7 @@ API client can be initialized as following.
 
 ```php
 
-$client = new AWSECommerceServiceLib\AWSECommerceServiceClient();
+$client = new TesterLib\TesterClient();
 ```
 
 
@@ -120,2885 +124,2202 @@ $client = new AWSECommerceServiceLib\AWSECommerceServiceClient();
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [AWSECommerceServiceBindingController](#awse_commerce_service_binding_controller)
+* [ResponseTypesController](#response_types_controller)
+* [BodyParamsController](#body_params_controller)
+* [FormParamsController](#form_params_controller)
+* [QueryParamController](#query_param_controller)
+* [ErrorCodesController](#error_codes_controller)
+* [MEchoController](#m_echo_controller)
+* [HeaderController](#header_controller)
+* [TemplateParamsController](#template_params_controller)
 
-## <a name="awse_commerce_service_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png ".AWSECommerceServiceBindingController") AWSECommerceServiceBindingController
+## <a name="response_types_controller"></a>![Class: ](https://apidocs.io/img/class.png ".ResponseTypesController") ResponseTypesController
 
 ### Get singleton instance
 
-The singleton instance of the ``` AWSECommerceServiceBindingController ``` class can be accessed from the API Client.
+The singleton instance of the ``` ResponseTypesController ``` class can be accessed from the API Client.
 
 ```php
-$aWSECommerceServiceBinding = $client->getAWSECommerceServiceBinding();
+$responseTypes = $client->getResponseTypes();
 ```
 
-### <a name="create_cart_modify97"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify97") createCartModify97
+### <a name="get_date_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getDateArray") getDateArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartModify97($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartModifyRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartModify97($body);
-
-```
-
-
-### <a name="create_cart_clear98"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear98") createCartClear98
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartClear98($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartClearRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartClear98($body);
-
-```
-
-
-### <a name="create_cart_create96"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate96") createCartCreate96
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartCreate96($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartCreateRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartCreate96($body);
-
-```
-
-
-### <a name="create_cart_add95"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd95") createCartAdd95
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartAdd95($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartAddRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartAdd95($body);
-
-```
-
-
-### <a name="create_cart_get94"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet94") createCartGet94
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartGet94($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartGetRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartGet94($body);
-
-```
-
-
-### <a name="create_similarity_lookup93"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup93") createSimilarityLookup93
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createSimilarityLookup93($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new SimilarityLookupRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createSimilarityLookup93($body);
-
-```
-
-
-### <a name="create_browse_node_lookup92"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup92") createBrowseNodeLookup92
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createBrowseNodeLookup92($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new BrowseNodeLookupRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createBrowseNodeLookup92($body);
-
-```
-
-
-### <a name="create_item_lookup91"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup91") createItemLookup91
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createItemLookup91($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new ItemLookupRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createItemLookup91($body);
-
-```
-
-
-### <a name="create_item_search90"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch90") createItemSearch90
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createItemSearch90($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new ItemSearchRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createItemSearch90($body);
-
-```
-
-
-### <a name="create_cart_clear89"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear89") createCartClear89
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartClear89($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartClearRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartClear89($body);
-
-```
-
-
-### <a name="create_cart_modify88"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify88") createCartModify88
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartModify88($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartModifyRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartModify88($body);
-
-```
-
-
-### <a name="create_cart_create87"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate87") createCartCreate87
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartCreate87($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartCreateRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartCreate87($body);
-
-```
-
-
-### <a name="create_cart_add86"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd86") createCartAdd86
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartAdd86($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartAddRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartAdd86($body);
-
-```
-
-
-### <a name="create_cart_get85"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet85") createCartGet85
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartGet85($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartGetRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartGet85($body);
-
-```
-
-
-### <a name="create_similarity_lookup84"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup84") createSimilarityLookup84
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createSimilarityLookup84($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new SimilarityLookupRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createSimilarityLookup84($body);
-
-```
-
-
-### <a name="create_browse_node_lookup83"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup83") createBrowseNodeLookup83
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createBrowseNodeLookup83($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new BrowseNodeLookupRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createBrowseNodeLookup83($body);
-
-```
-
-
-### <a name="create_item_lookup82"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup82") createItemLookup82
-
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createItemLookup82($body)
+function getDateArray()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
-
 #### Example Usage
 
 ```php
-$body = new ItemLookupRequestMsg();
 
-$result = $aWSECommerceServiceBinding->createItemLookup82($body);
+$result = $responseTypes->getDateArray();
 
 ```
-
 
-### <a name="create_item_search81"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch81") createItemSearch81
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_date"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getDate") getDate
 
 > TODO: Add a method description
 
 
 ```php
-function createItemSearch81($body)
+function getDate()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 
 #### Example Usage
 
 ```php
-$body = new ItemSearchRequestMsg();
 
-$result = $aWSECommerceServiceBinding->createItemSearch81($body);
+$result = $responseTypes->getDate();
 
 ```
 
 
-### <a name="create_cart_clear80"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear80") createCartClear80
+### <a name="get_long"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getLong") getLong
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createCartClear80($body)
+function getLong()
 ```
-
-#### Parameters
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
 #### Example Usage
 
 ```php
-$body = new CartClearRequestMsg();
 
-$result = $aWSECommerceServiceBinding->createCartClear80($body);
+$result = $responseTypes->getLong();
 
 ```
 
 
-### <a name="create_cart_modify79"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify79") createCartModify79
+### <a name="get_model"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getModel") getModel
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createCartModify79($body)
+function getModel()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
-
 #### Example Usage
 
 ```php
-$body = new CartModifyRequestMsg();
 
-$result = $aWSECommerceServiceBinding->createCartModify79($body);
+$result = $responseTypes->getModel();
 
 ```
-
 
-### <a name="create_cart_create78"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate78") createCartCreate78
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_string_enum_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getStringEnumArray") getStringEnumArray
 
 > TODO: Add a method description
 
 
 ```php
-function createCartCreate78($body)
+function getStringEnumArray()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 
 #### Example Usage
 
 ```php
-$body = new CartCreateRequestMsg();
 
-$result = $aWSECommerceServiceBinding->createCartCreate78($body);
+$result = $responseTypes->getStringEnumArray();
 
 ```
 
 
-### <a name="create_cart_add77"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd77") createCartAdd77
+### <a name="get_string_enum"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getStringEnum") getStringEnum
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createCartAdd77($body)
+function getStringEnum()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
 
-
 #### Example Usage
 
 ```php
-$body = new CartAddRequestMsg();
 
-$result = $aWSECommerceServiceBinding->createCartAdd77($body);
+$result = $responseTypes->getStringEnum();
 
 ```
 
 
-### <a name="create_cart_get76"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet76") createCartGet76
+### <a name="get_model_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getModelArray") getModelArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createCartGet76($body)
+function getModelArray()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
-
 #### Example Usage
 
 ```php
-$body = new CartGetRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartGet76($body);
-
-```
-
-
-### <a name="create_similarity_lookup75"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup75") createSimilarityLookup75
 
-> *Tags:*  ``` Skips Authentication ``` 
+$result = $responseTypes->getModelArray();
 
-> TODO: Add a method description
-
-
-```php
-function createSimilarityLookup75($body)
 ```
 
-#### Parameters
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+### <a name="get_int_enum"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getIntEnum") getIntEnum
 
+> TODO: Add a method description
+
 
+```php
+function getIntEnum()
+```
 
 #### Example Usage
 
 ```php
-$body = new SimilarityLookupRequestMsg();
 
-$result = $aWSECommerceServiceBinding->createSimilarityLookup75($body);
+$result = $responseTypes->getIntEnum();
 
 ```
 
 
-### <a name="create_browse_node_lookup74"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup74") createBrowseNodeLookup74
+### <a name="get_int_enum_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getIntEnumArray") getIntEnumArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createBrowseNodeLookup74($body)
+function getIntEnumArray()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 
 #### Example Usage
 
 ```php
-$body = new BrowseNodeLookupRequestMsg();
 
-$result = $aWSECommerceServiceBinding->createBrowseNodeLookup74($body);
+$result = $responseTypes->getIntEnumArray();
 
 ```
 
 
-### <a name="create_item_lookup73"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup73") createItemLookup73
+### <a name="get_precision"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getPrecision") getPrecision
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createItemLookup73($body)
+function getPrecision()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 
 #### Example Usage
 
 ```php
-$body = new ItemLookupRequestMsg();
 
-$result = $aWSECommerceServiceBinding->createItemLookup73($body);
+$result = $responseTypes->getPrecision();
 
 ```
 
 
-### <a name="create_item_search72"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch72") createItemSearch72
+### <a name="get_binary"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getBinary") getBinary
 
-> *Tags:*  ``` Skips Authentication ``` 
+> gets a binary object
 
-> TODO: Add a method description
-
 
 ```php
-function createItemSearch72($body)
+function getBinary()
 ```
-
-#### Parameters
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
 #### Example Usage
 
 ```php
-$body = new ItemSearchRequestMsg();
 
-$result = $aWSECommerceServiceBinding->createItemSearch72($body);
+$result = $responseTypes->getBinary();
 
 ```
 
 
-### <a name="create_cart_clear71"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear71") createCartClear71
+### <a name="get_integer"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getInteger") getInteger
 
-> *Tags:*  ``` Skips Authentication ``` 
+> Gets a integer response
 
-> TODO: Add a method description
+
+```php
+function getInteger()
+```
 
+#### Example Usage
 
 ```php
-function createCartClear71($body)
+
+$result = $responseTypes->getInteger();
+
 ```
 
-#### Parameters
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+### <a name="get_integer_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getIntegerArray") getIntegerArray
+
+> Get an array of integers.
 
 
+```php
+function getIntegerArray()
+```
 
 #### Example Usage
 
 ```php
-$body = new CartClearRequestMsg();
 
-$result = $aWSECommerceServiceBinding->createCartClear71($body);
+$result = $responseTypes->getIntegerArray();
 
 ```
 
 
-### <a name="create_cart_modify70"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify70") createCartModify70
+### <a name="get_dynamic"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getDynamic") getDynamic
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createCartModify70($body)
+function getDynamic()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
-
 #### Example Usage
 
 ```php
-$body = new CartModifyRequestMsg();
 
-$result = $aWSECommerceServiceBinding->createCartModify70($body);
+$result = $responseTypes->getDynamic();
 
 ```
 
 
-### <a name="create_cart_create69"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate69") createCartCreate69
+### <a name="get_dynamic_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getDynamicArray") getDynamicArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createCartCreate69($body)
+function getDynamicArray()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
-
 #### Example Usage
 
 ```php
-$body = new CartCreateRequestMsg();
 
-$result = $aWSECommerceServiceBinding->createCartCreate69($body);
+$result = $responseTypes->getDynamicArray();
 
 ```
 
 
-### <a name="create_cart_add68"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd68") createCartAdd68
+### <a name="get3339_datetime"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get3339Datetime") get3339Datetime
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createCartAdd68($body)
+function get3339Datetime()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
-
 #### Example Usage
 
 ```php
-$body = new CartAddRequestMsg();
 
-$result = $aWSECommerceServiceBinding->createCartAdd68($body);
+$result = $responseTypes->get3339Datetime();
 
 ```
 
 
-### <a name="create_cart_get67"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet67") createCartGet67
+### <a name="get3339_datetime_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get3339DatetimeArray") get3339DatetimeArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createCartGet67($body)
+function get3339DatetimeArray()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
-
 #### Example Usage
 
 ```php
-$body = new CartGetRequestMsg();
 
-$result = $aWSECommerceServiceBinding->createCartGet67($body);
+$result = $responseTypes->get3339DatetimeArray();
 
 ```
 
 
-### <a name="create_similarity_lookup66"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup66") createSimilarityLookup66
+### <a name="get_boolean"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getBoolean") getBoolean
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createSimilarityLookup66($body)
+function getBoolean()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
-
 #### Example Usage
 
 ```php
-$body = new SimilarityLookupRequestMsg();
 
-$result = $aWSECommerceServiceBinding->createSimilarityLookup66($body);
+$result = $responseTypes->getBoolean();
 
 ```
 
 
-### <a name="create_browse_node_lookup65"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup65") createBrowseNodeLookup65
+### <a name="get_boolean_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getBooleanArray") getBooleanArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createBrowseNodeLookup65($body)
+function getBooleanArray()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
-
 #### Example Usage
 
 ```php
-$body = new BrowseNodeLookupRequestMsg();
 
-$result = $aWSECommerceServiceBinding->createBrowseNodeLookup65($body);
+$result = $responseTypes->getBooleanArray();
 
 ```
 
 
-### <a name="create_item_lookup64"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup64") createItemLookup64
+### <a name="get_headers"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getHeaders") getHeaders
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createItemLookup64($body)
+function getHeaders()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
-
 #### Example Usage
 
 ```php
-$body = new ItemLookupRequestMsg();
 
-$result = $aWSECommerceServiceBinding->createItemLookup64($body);
+$responseTypes->getHeaders();
 
 ```
 
 
-### <a name="create_item_search63"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch63") createItemSearch63
+### <a name="get1123_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get1123DateTime") get1123DateTime
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createItemSearch63($body)
+function get1123DateTime()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
-
 #### Example Usage
 
 ```php
-$body = new ItemSearchRequestMsg();
 
-$result = $aWSECommerceServiceBinding->createItemSearch63($body);
+$result = $responseTypes->get1123DateTime();
 
 ```
 
 
-### <a name="create_cart_clear62"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear62") createCartClear62
+### <a name="get_unix_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getUnixDateTime") getUnixDateTime
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createCartClear62($body)
+function getUnixDateTime()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
-
 #### Example Usage
 
 ```php
-$body = new CartClearRequestMsg();
 
-$result = $aWSECommerceServiceBinding->createCartClear62($body);
+$result = $responseTypes->getUnixDateTime();
 
 ```
 
 
-### <a name="create_cart_modify61"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify61") createCartModify61
+### <a name="get1123_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.get1123DateTimeArray") get1123DateTimeArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createCartModify61($body)
+function get1123DateTimeArray()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
 
-
-
 #### Example Usage
 
 ```php
-$body = new CartModifyRequestMsg();
 
-$result = $aWSECommerceServiceBinding->createCartModify61($body);
+$result = $responseTypes->get1123DateTimeArray();
 
 ```
 
 
-### <a name="create_cart_create60"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate60") createCartCreate60
+### <a name="get_unix_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".ResponseTypesController.getUnixDateTimeArray") getUnixDateTimeArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createCartCreate60($body)
+function getUnixDateTimeArray()
 ```
 
-#### Parameters
+#### Example Usage
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+```php
 
+$result = $responseTypes->getUnixDateTimeArray();
 
+```
 
-#### Example Usage
 
-```php
-$body = new CartCreateRequestMsg();
+[Back to List of Controllers](#list_of_controllers)
 
-$result = $aWSECommerceServiceBinding->createCartCreate60($body);
+## <a name="body_params_controller"></a>![Class: ](https://apidocs.io/img/class.png ".BodyParamsController") BodyParamsController
 
-```
+### Get singleton instance
 
+The singleton instance of the ``` BodyParamsController ``` class can be accessed from the API Client.
 
-### <a name="create_cart_add59"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd59") createCartAdd59
+```php
+$bodyParams = $client->getBodyParams();
+```
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_date_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendDateArray") sendDateArray
 
 > TODO: Add a method description
 
 
 ```php
-function createCartAdd59($body)
+function sendDateArray($dates)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| dates |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new CartAddRequestMsg();
+$datesValue = "["1994-02-13", "1994-02-13"]";
+$dates = APIHelper::deserialize($datesValue);
 
-$result = $aWSECommerceServiceBinding->createCartAdd59($body);
+$result = $bodyParams->sendDateArray($dates);
 
 ```
 
 
-### <a name="create_cart_get58"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet58") createCartGet58
+### <a name="send_date"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendDate") sendDate
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createCartGet58($body)
+function sendDate($date)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| date |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new CartGetRequestMsg();
+$date = 1994-02-13;
 
-$result = $aWSECommerceServiceBinding->createCartGet58($body);
+$result = $bodyParams->sendDate($date);
 
 ```
-
 
-### <a name="create_similarity_lookup57"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup57") createSimilarityLookup57
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_unix_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendUnixDateTime") sendUnixDateTime
 
 > TODO: Add a method description
 
 
 ```php
-function createSimilarityLookup57($body)
+function sendUnixDateTime($datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new SimilarityLookupRequestMsg();
+$datetime = 1484719381;
 
-$result = $aWSECommerceServiceBinding->createSimilarityLookup57($body);
+$result = $bodyParams->sendUnixDateTime($datetime);
 
 ```
 
 
-### <a name="create_browse_node_lookup56"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup56") createBrowseNodeLookup56
+### <a name="send_rfc1123_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendRfc1123DateTime") sendRfc1123DateTime
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createBrowseNodeLookup56($body)
+function sendRfc1123DateTime($datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new BrowseNodeLookupRequestMsg();
+$datetime = Sun, 06 Nov 1994 08:49:37 GMT;
 
-$result = $aWSECommerceServiceBinding->createBrowseNodeLookup56($body);
+$result = $bodyParams->sendRfc1123DateTime($datetime);
 
 ```
-
 
-### <a name="create_item_lookup55"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup55") createItemLookup55
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_rfc3339_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendRfc3339DateTime") sendRfc3339DateTime
 
 > TODO: Add a method description
 
 
 ```php
-function createItemLookup55($body)
+function sendRfc3339DateTime($datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new ItemLookupRequestMsg();
+$datetime = 1994-02-13T14:01:54.9571247Z;
 
-$result = $aWSECommerceServiceBinding->createItemLookup55($body);
+$result = $bodyParams->sendRfc3339DateTime($datetime);
 
 ```
 
 
-### <a name="create_item_search54"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch54") createItemSearch54
+### <a name="send_unix_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendUnixDateTimeArray") sendUnixDateTimeArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createItemSearch54($body)
+function sendUnixDateTimeArray($datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new ItemSearchRequestMsg();
+$datetimesValue = "[1484719381,1484719381]";
+$datetimes = APIHelper::deserialize($datetimesValue);
 
-$result = $aWSECommerceServiceBinding->createItemSearch54($body);
+$result = $bodyParams->sendUnixDateTimeArray($datetimes);
 
 ```
-
 
-### <a name="create_cart_clear53"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear53") createCartClear53
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_rfc1123_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendRfc1123DateTimeArray") sendRfc1123DateTimeArray
 
 > TODO: Add a method description
 
 
 ```php
-function createCartClear53($body)
+function sendRfc1123DateTimeArray($datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new CartClearRequestMsg();
+$datetimesValue = "["Sun, 06 Nov 1994 08:49:37 GMT","Sun, 06 Nov 1994 08:49:37 GMT"]";
+$datetimes = APIHelper::deserialize($datetimesValue);
 
-$result = $aWSECommerceServiceBinding->createCartClear53($body);
+$result = $bodyParams->sendRfc1123DateTimeArray($datetimes);
 
 ```
 
 
-### <a name="create_cart_modify52"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify52") createCartModify52
+### <a name="send_rfc3339_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendRfc3339DateTimeArray") sendRfc3339DateTimeArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createCartModify52($body)
+function sendRfc3339DateTimeArray($datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new CartModifyRequestMsg();
+$datetimesValue = "["1994-02-13T14:01:54.9571247Z","1994-02-13T14:01:54.9571247Z"]";
+$datetimes = APIHelper::deserialize($datetimesValue);
 
-$result = $aWSECommerceServiceBinding->createCartModify52($body);
+$result = $bodyParams->sendRfc3339DateTimeArray($datetimes);
 
 ```
-
 
-### <a name="create_cart_create51"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate51") createCartCreate51
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_string_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendStringArray") sendStringArray
 
-> TODO: Add a method description
+> sends a string body param
 
 
 ```php
-function createCartCreate51($body)
+function sendStringArray($sarray)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| sarray |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new CartCreateRequestMsg();
+$sarrayValue = "["abc", "def"]";
+$sarray = APIHelper::deserialize($sarrayValue);
 
-$result = $aWSECommerceServiceBinding->createCartCreate51($body);
+$result = $bodyParams->sendStringArray($sarray);
 
 ```
-
 
-### <a name="create_cart_add50"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd50") createCartAdd50
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_integer_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendIntegerArray") sendIntegerArray
 
 > TODO: Add a method description
 
 
 ```php
-function createCartAdd50($body)
+function sendIntegerArray($integers)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| integers |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new CartAddRequestMsg();
+$integersValue = "[1,2,3,4,5]";
+$integers = APIHelper::deserialize($integersValue);
 
-$result = $aWSECommerceServiceBinding->createCartAdd50($body);
+$result = $bodyParams->sendIntegerArray($integers);
 
 ```
 
 
-### <a name="create_cart_get49"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet49") createCartGet49
+### <a name="send_model"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendModel") sendModel
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createCartGet49($body)
+function sendModel($model)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| model |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new CartGetRequestMsg();
+$modelValue = "{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"}";
+$model = APIHelper::deserialize($modelValue);
 
-$result = $aWSECommerceServiceBinding->createCartGet49($body);
+$result = $bodyParams->sendModel($model);
 
 ```
-
 
-### <a name="create_similarity_lookup48"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup48") createSimilarityLookup48
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_model_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendModelArray") sendModelArray
 
 > TODO: Add a method description
 
 
 ```php
-function createSimilarityLookup48($body)
+function sendModelArray($models)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| models |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new SimilarityLookupRequestMsg();
+$modelsValue = "[{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"},{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"}]";
+$models = APIHelper::deserialize($modelsValue);
 
-$result = $aWSECommerceServiceBinding->createSimilarityLookup48($body);
+$result = $bodyParams->sendModelArray($models);
 
 ```
 
 
-### <a name="create_browse_node_lookup47"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup47") createBrowseNodeLookup47
+### <a name="send_dynamic"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendDynamic") sendDynamic
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createBrowseNodeLookup47($body)
+function sendDynamic($dynamic)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| dynamic |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new BrowseNodeLookupRequestMsg();
+$dynamic = APIHelper::deserialize("{\"uid\": \"1123213\", \"name\": \"Shahid\"}");
 
-$result = $aWSECommerceServiceBinding->createBrowseNodeLookup47($body);
+$result = $bodyParams->sendDynamic($dynamic);
 
 ```
-
 
-### <a name="create_item_lookup46"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup46") createItemLookup46
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_string"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendString") sendString
 
 > TODO: Add a method description
 
 
 ```php
-function createItemLookup46($body)
+function sendString($value)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| value |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new ItemLookupRequestMsg();
+$value = 'TestString';
 
-$result = $aWSECommerceServiceBinding->createItemLookup46($body);
+$result = $bodyParams->sendString($value);
 
 ```
 
 
-### <a name="create_item_search45"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch45") createItemSearch45
+### <a name="send_string_enum_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendStringEnumArray") sendStringEnumArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createItemSearch45($body)
+function sendStringEnumArray($days)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| days |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new ItemSearchRequestMsg();
+$days = array(Days::TUESDAY,Days::SATURDAY,Days::MONDAY,Days::SUNDAY);
 
-$result = $aWSECommerceServiceBinding->createItemSearch45($body);
+$result = $bodyParams->sendStringEnumArray($days);
 
 ```
-
 
-### <a name="create_cart_clear44"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear44") createCartClear44
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_integer_enum_array"></a>![Method: ](https://apidocs.io/img/method.png ".BodyParamsController.sendIntegerEnumArray") sendIntegerEnumArray
 
 > TODO: Add a method description
 
 
 ```php
-function createCartClear44($body)
+function sendIntegerEnumArray($suites)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| suites |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new CartClearRequestMsg();
+$suites = array(SuiteCode::HEARTS,SuiteCode::CLUBS,SuiteCode::DIAMONDS,SuiteCode::SPADES,SuiteCode::CLUBS);
 
-$result = $aWSECommerceServiceBinding->createCartClear44($body);
+$result = $bodyParams->sendIntegerEnumArray($suites);
 
 ```
+
+
+[Back to List of Controllers](#list_of_controllers)
 
+## <a name="form_params_controller"></a>![Class: ](https://apidocs.io/img/class.png ".FormParamsController") FormParamsController
 
-### <a name="create_cart_modify43"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify43") createCartModify43
+### Get singleton instance
 
-> *Tags:*  ``` Skips Authentication ``` 
+The singleton instance of the ``` FormParamsController ``` class can be accessed from the API Client.
 
+```php
+$formParams = $client->getFormParams();
+```
+
+### <a name="send_date_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendDateArray") sendDateArray
+
 > TODO: Add a method description
 
 
 ```php
-function createCartModify43($body)
+function sendDateArray($dates)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| dates |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new CartModifyRequestMsg();
+$datesValue = "["1994-02-13","1994-02-13"]";
+$dates = APIHelper::deserialize($datesValue);
 
-$result = $aWSECommerceServiceBinding->createCartModify43($body);
+$result = $formParams->sendDateArray($dates);
 
 ```
 
 
-### <a name="create_cart_create42"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate42") createCartCreate42
+### <a name="send_date"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendDate") sendDate
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createCartCreate42($body)
+function sendDate($date)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| date |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new CartCreateRequestMsg();
+$date = 1994-02-13;
 
-$result = $aWSECommerceServiceBinding->createCartCreate42($body);
+$result = $formParams->sendDate($date);
 
 ```
-
 
-### <a name="create_cart_add41"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd41") createCartAdd41
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_unix_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendUnixDateTime") sendUnixDateTime
 
 > TODO: Add a method description
 
 
 ```php
-function createCartAdd41($body)
+function sendUnixDateTime($datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new CartAddRequestMsg();
+$datetime = 1484719381;
 
-$result = $aWSECommerceServiceBinding->createCartAdd41($body);
+$result = $formParams->sendUnixDateTime($datetime);
 
 ```
 
 
-### <a name="create_cart_get40"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet40") createCartGet40
+### <a name="send_rfc1123_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendRfc1123DateTime") sendRfc1123DateTime
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createCartGet40($body)
+function sendRfc1123DateTime($datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new CartGetRequestMsg();
+$datetime = Sun, 06 Nov 1994 08:49:37 GMT;
 
-$result = $aWSECommerceServiceBinding->createCartGet40($body);
+$result = $formParams->sendRfc1123DateTime($datetime);
 
 ```
-
 
-### <a name="create_similarity_lookup39"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup39") createSimilarityLookup39
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_rfc3339_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendRfc3339DateTime") sendRfc3339DateTime
 
 > TODO: Add a method description
 
 
 ```php
-function createSimilarityLookup39($body)
+function sendRfc3339DateTime($datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new SimilarityLookupRequestMsg();
+$datetime = 1994-02-13T14:01:54.9571247Z;
 
-$result = $aWSECommerceServiceBinding->createSimilarityLookup39($body);
+$result = $formParams->sendRfc3339DateTime($datetime);
 
 ```
 
 
-### <a name="create_browse_node_lookup38"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup38") createBrowseNodeLookup38
+### <a name="send_unix_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendUnixDateTimeArray") sendUnixDateTimeArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createBrowseNodeLookup38($body)
+function sendUnixDateTimeArray($datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new BrowseNodeLookupRequestMsg();
+$datetimesValue = "[1484719381,1484719381]";
+$datetimes = APIHelper::deserialize($datetimesValue);
 
-$result = $aWSECommerceServiceBinding->createBrowseNodeLookup38($body);
+$result = $formParams->sendUnixDateTimeArray($datetimes);
 
 ```
-
 
-### <a name="create_item_lookup37"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup37") createItemLookup37
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_rfc1123_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendRfc1123DateTimeArray") sendRfc1123DateTimeArray
 
 > TODO: Add a method description
 
 
 ```php
-function createItemLookup37($body)
+function sendRfc1123DateTimeArray($datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new ItemLookupRequestMsg();
+$datetimesValue = "["Sun, 06 Nov 1994 08:49:37 GMT","Sun, 06 Nov 1994 08:49:37 GMT"]";
+$datetimes = APIHelper::deserialize($datetimesValue);
 
-$result = $aWSECommerceServiceBinding->createItemLookup37($body);
+$result = $formParams->sendRfc1123DateTimeArray($datetimes);
 
 ```
 
 
-### <a name="create_item_search36"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch36") createItemSearch36
+### <a name="send_long"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendLong") sendLong
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createItemSearch36($body)
+function sendLong($value)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| value |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new ItemSearchRequestMsg();
+$value = 5147483647;
 
-$result = $aWSECommerceServiceBinding->createItemSearch36($body);
+$result = $formParams->sendLong($value);
 
 ```
-
 
-### <a name="create_cart_clear35"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear35") createCartClear35
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_integer_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendIntegerArray") sendIntegerArray
 
 > TODO: Add a method description
 
 
 ```php
-function createCartClear35($body)
+function sendIntegerArray($integers)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| integers |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new CartClearRequestMsg();
+$integersValue = "[1,2,3,4,5]";
+$integers = APIHelper::deserialize($integersValue);
 
-$result = $aWSECommerceServiceBinding->createCartClear35($body);
+$result = $formParams->sendIntegerArray($integers);
 
 ```
 
 
-### <a name="create_cart_modify34"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify34") createCartModify34
+### <a name="send_string_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendStringArray") sendStringArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createCartModify34($body)
+function sendStringArray($strings)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| strings |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new CartModifyRequestMsg();
+$stringsValue = "["abc", "def"]";
+$strings = APIHelper::deserialize($stringsValue);
 
-$result = $aWSECommerceServiceBinding->createCartModify34($body);
+$result = $formParams->sendStringArray($strings);
 
 ```
-
 
-### <a name="create_cart_create33"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate33") createCartCreate33
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_model"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendModel") sendModel
 
 > TODO: Add a method description
 
 
 ```php
-function createCartCreate33($body)
+function sendModel($model)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| model |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new CartCreateRequestMsg();
+$modelValue = "{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"}";
+$model = APIHelper::deserialize($modelValue);
 
-$result = $aWSECommerceServiceBinding->createCartCreate33($body);
+$result = $formParams->sendModel($model);
 
 ```
 
 
-### <a name="create_cart_add32"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd32") createCartAdd32
+### <a name="send_model_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendModelArray") sendModelArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createCartAdd32($body)
+function sendModelArray($models)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| models |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new CartAddRequestMsg();
+$modelsValue = "[{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"},{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"}]";
+$models = APIHelper::deserialize($modelsValue);
 
-$result = $aWSECommerceServiceBinding->createCartAdd32($body);
+$result = $formParams->sendModelArray($models);
 
 ```
-
 
-### <a name="create_cart_get31"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet31") createCartGet31
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_file"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendFile") sendFile
 
 > TODO: Add a method description
 
 
 ```php
-function createCartGet31($body)
+function sendFile($file)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| file |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new CartGetRequestMsg();
+$file = "PathToFile";
 
-$result = $aWSECommerceServiceBinding->createCartGet31($body);
+$result = $formParams->sendFile($file);
 
 ```
 
 
-### <a name="create_similarity_lookup30"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup30") createSimilarityLookup30
+### <a name="send_string"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendString") sendString
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createSimilarityLookup30($body)
+function sendString($value)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| value |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new SimilarityLookupRequestMsg();
+$value = 'TestString';
 
-$result = $aWSECommerceServiceBinding->createSimilarityLookup30($body);
+$result = $formParams->sendString($value);
 
 ```
-
 
-### <a name="create_browse_node_lookup29"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup29") createBrowseNodeLookup29
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_rfc3339_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendRfc3339DateTimeArray") sendRfc3339DateTimeArray
 
 > TODO: Add a method description
 
 
 ```php
-function createBrowseNodeLookup29($body)
+function sendRfc3339DateTimeArray($datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new BrowseNodeLookupRequestMsg();
+$datetimesValue = "["1994-02-13T14:01:54.9571247Z","1994-02-13T14:01:54.9571247Z"]";
+$datetimes = APIHelper::deserialize($datetimesValue);
 
-$result = $aWSECommerceServiceBinding->createBrowseNodeLookup29($body);
+$result = $formParams->sendRfc3339DateTimeArray($datetimes);
 
 ```
 
 
-### <a name="create_item_lookup28"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup28") createItemLookup28
+### <a name="send_mixed_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendMixedArray") sendMixedArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
+> Send a variety for form params. Returns file count and body params
 
 
 ```php
-function createItemLookup28($body)
+function sendMixedArray($options)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| file |  ``` Required ```  | TODO: Add a parameter description |
+| integers |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
+| models |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
+| strings |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new ItemLookupRequestMsg();
+$file = "PathToFile";
+$collect['file'] = $file;
 
-$result = $aWSECommerceServiceBinding->createItemLookup28($body);
+$integersValue = "[1,2,3,4,5]";
+$integers = APIHelper::deserialize($integersValue);
+$collect['integers'] = $integers;
 
-```
+$modelsValue = "[{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"},{\"name\":\"Shahid Khaliq\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"boss\":{\"personType\":\"Boss\",\"name\":\"Zeeshan Ejaz\",\"age\":5147483645,\"address\":\"H # 531, S # 20\",\"uid\":\"123321\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\",\"salary\":20000,\"department\":\"Software Development\",\"joiningDay\":\"Saturday\",\"workingDays\":[\"Monday\",\"Tuesday\",\"Friday\"],\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\",\"promotedAt\":1484719381},\"dependents\":[{\"name\":\"Future Wife\",\"age\":5147483649,\"address\":\"H # 531, S # 20\",\"uid\":\"123412\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"},{\"name\":\"Future Kid\",\"age\":5147483648,\"address\":\"H # 531, S # 20\",\"uid\":\"312341\",\"birthday\":\"1994-02-13\",\"birthtime\":\"1994-02-13T14:01:54.9571247Z\"}],\"hiredAt\":\"Sun, 06 Nov 1994 08:49:37 GMT\"}]";
+$models = APIHelper::deserialize($modelsValue);
+$collect['models'] = $models;
+
+$stringsValue = "["abc", "def"]";
+$strings = APIHelper::deserialize($stringsValue);
+$collect['strings'] = $strings;
+
+
+$result = $formParams->sendMixedArray($collect);
 
+```
 
-### <a name="create_item_search27"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch27") createItemSearch27
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_integer_enum_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendIntegerEnumArray") sendIntegerEnumArray
 
 > TODO: Add a method description
 
 
 ```php
-function createItemSearch27($body)
+function sendIntegerEnumArray($suites)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| suites |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new ItemSearchRequestMsg();
+$suites = array(SuiteCode::HEARTS,SuiteCode::CLUBS,SuiteCode::DIAMONDS,SuiteCode::SPADES,SuiteCode::CLUBS);
 
-$result = $aWSECommerceServiceBinding->createItemSearch27($body);
+$result = $formParams->sendIntegerEnumArray($suites);
 
 ```
-
 
-### <a name="create_cart_clear26"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear26") createCartClear26
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_string_enum_array"></a>![Method: ](https://apidocs.io/img/method.png ".FormParamsController.sendStringEnumArray") sendStringEnumArray
 
 > TODO: Add a method description
 
 
 ```php
-function createCartClear26($body)
+function sendStringEnumArray($days)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| days |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new CartClearRequestMsg();
+$days = array(Days::TUESDAY,Days::SATURDAY,Days::MONDAY,Days::SUNDAY);
 
-$result = $aWSECommerceServiceBinding->createCartClear26($body);
+$result = $formParams->sendStringEnumArray($days);
 
 ```
+
+
+[Back to List of Controllers](#list_of_controllers)
 
+## <a name="query_param_controller"></a>![Class: ](https://apidocs.io/img/class.png ".QueryParamController") QueryParamController
 
-### <a name="create_cart_modify25"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify25") createCartModify25
+### Get singleton instance
+
+The singleton instance of the ``` QueryParamController ``` class can be accessed from the API Client.
+
+```php
+$queryParam = $client->getQueryParam();
+```
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="date_array"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.dateArray") dateArray
 
 > TODO: Add a method description
 
 
 ```php
-function createCartModify25($body)
+function dateArray($dates)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| dates |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new CartModifyRequestMsg();
+$datesValue = "["1994-02-13","1994-02-13"]";
+$dates = APIHelper::deserialize($datesValue);
 
-$result = $aWSECommerceServiceBinding->createCartModify25($body);
+$result = $queryParam->dateArray($dates);
 
 ```
 
 
-### <a name="create_cart_create24"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate24") createCartCreate24
+### <a name="date"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.date") date
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createCartCreate24($body)
+function date($date)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| date |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new CartCreateRequestMsg();
+$date = 1994-02-13;
 
-$result = $aWSECommerceServiceBinding->createCartCreate24($body);
+$result = $queryParam->date($date);
 
 ```
-
 
-### <a name="create_cart_add23"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd23") createCartAdd23
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="unix_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.unixDateTimeArray") unixDateTimeArray
 
 > TODO: Add a method description
 
 
 ```php
-function createCartAdd23($body)
+function unixDateTimeArray($datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new CartAddRequestMsg();
+$datetimesValue = "[1484719381,1484719381]";
+$datetimes = APIHelper::deserialize($datetimesValue);
 
-$result = $aWSECommerceServiceBinding->createCartAdd23($body);
+$result = $queryParam->unixDateTimeArray($datetimes);
 
 ```
 
 
-### <a name="create_cart_get22"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet22") createCartGet22
+### <a name="unix_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.unixDateTime") unixDateTime
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createCartGet22($body)
+function unixDateTime($datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new CartGetRequestMsg();
+$datetime = 1484719381;
 
-$result = $aWSECommerceServiceBinding->createCartGet22($body);
+$result = $queryParam->unixDateTime($datetime);
 
 ```
-
 
-### <a name="create_similarity_lookup21"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup21") createSimilarityLookup21
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="rfc1123_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.rfc1123DateTime") rfc1123DateTime
 
 > TODO: Add a method description
 
 
 ```php
-function createSimilarityLookup21($body)
+function rfc1123DateTime($datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new SimilarityLookupRequestMsg();
+$datetime = Sun, 06 Nov 1994 08:49:37 GMT;
 
-$result = $aWSECommerceServiceBinding->createSimilarityLookup21($body);
+$result = $queryParam->rfc1123DateTime($datetime);
 
 ```
 
 
-### <a name="create_browse_node_lookup20"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup20") createBrowseNodeLookup20
+### <a name="rfc1123_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.rfc1123DateTimeArray") rfc1123DateTimeArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createBrowseNodeLookup20($body)
+function rfc1123DateTimeArray($datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new BrowseNodeLookupRequestMsg();
+$datetimesValue = "["Sun, 06 Nov 1994 08:49:37 GMT","Sun, 06 Nov 1994 08:49:37 GMT"]";
+$datetimes = APIHelper::deserialize($datetimesValue);
 
-$result = $aWSECommerceServiceBinding->createBrowseNodeLookup20($body);
+$result = $queryParam->rfc1123DateTimeArray($datetimes);
 
 ```
-
 
-### <a name="create_item_lookup19"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup19") createItemLookup19
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="rfc3339_date_time_array"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.rfc3339DateTimeArray") rfc3339DateTimeArray
 
 > TODO: Add a method description
 
 
 ```php
-function createItemLookup19($body)
+function rfc3339DateTimeArray($datetimes)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetimes |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new ItemLookupRequestMsg();
+$datetimesValue = "["1994-02-13T14:01:54.9571247Z","1994-02-13T14:01:54.9571247Z"]";
+$datetimes = APIHelper::deserialize($datetimesValue);
 
-$result = $aWSECommerceServiceBinding->createItemLookup19($body);
+$result = $queryParam->rfc3339DateTimeArray($datetimes);
 
 ```
 
 
-### <a name="create_item_search18"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch18") createItemSearch18
+### <a name="rfc3339_date_time"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.rfc3339DateTime") rfc3339DateTime
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createItemSearch18($body)
+function rfc3339DateTime($datetime)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| datetime |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new ItemSearchRequestMsg();
+$datetime = 1994-02-13T14:01:54.9571247Z;
 
-$result = $aWSECommerceServiceBinding->createItemSearch18($body);
+$result = $queryParam->rfc3339DateTime($datetime);
 
 ```
-
 
-### <a name="create_cart_clear17"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear17") createCartClear17
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="no_params"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.noParams") noParams
 
 > TODO: Add a method description
 
 
 ```php
-function createCartClear17($body)
+function noParams()
 ```
 
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
 #### Example Usage
 
 ```php
-$body = new CartClearRequestMsg();
 
-$result = $aWSECommerceServiceBinding->createCartClear17($body);
+$result = $queryParam->noParams();
 
 ```
-
 
-### <a name="create_cart_modify16"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify16") createCartModify16
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="string_param"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.stringParam") stringParam
 
 > TODO: Add a method description
 
 
 ```php
-function createCartModify16($body)
+function stringParam($string)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| string |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new CartModifyRequestMsg();
+$string = 'l;asd;asdwe[2304&&;\'.d??\\a\\\\\\;sd//';
 
-$result = $aWSECommerceServiceBinding->createCartModify16($body);
+$result = $queryParam->stringParam($string);
 
 ```
 
 
-### <a name="create_cart_create15"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate15") createCartCreate15
+### <a name="url_param"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.urlParam") urlParam
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createCartCreate15($body)
+function urlParam($url)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| url |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new CartCreateRequestMsg();
+$url = 'https://www.shahidisawesome.com/and/also/a/narcissist?thisis=aparameter&another=one';
 
-$result = $aWSECommerceServiceBinding->createCartCreate15($body);
+$result = $queryParam->urlParam($url);
 
 ```
-
 
-### <a name="create_cart_add14"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd14") createCartAdd14
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="number_array"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.numberArray") numberArray
 
 > TODO: Add a method description
 
 
 ```php
-function createCartAdd14($body)
+function numberArray($integers)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| integers |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new CartAddRequestMsg();
+$integersValue = "[1,2,3,4,5]";
+$integers = APIHelper::deserialize($integersValue);
 
-$result = $aWSECommerceServiceBinding->createCartAdd14($body);
+$result = $queryParam->numberArray($integers);
 
 ```
 
 
-### <a name="create_cart_get13"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet13") createCartGet13
+### <a name="string_array"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.stringArray") stringArray
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createCartGet13($body)
+function stringArray($strings)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| strings |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new CartGetRequestMsg();
+$stringsValue = "["abc", "def"]";
+$strings = APIHelper::deserialize($stringsValue);
 
-$result = $aWSECommerceServiceBinding->createCartGet13($body);
+$result = $queryParam->stringArray($strings);
 
 ```
-
 
-### <a name="create_similarity_lookup12"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup12") createSimilarityLookup12
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="simple_query"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.simpleQuery") simpleQuery
 
 > TODO: Add a method description
 
 
 ```php
-function createSimilarityLookup12($body)
+function simpleQuery(
+        $boolean,
+        $number,
+        $string,
+        $queryParameters = null)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| boolean |  ``` Required ```  | TODO: Add a parameter description |
+| number |  ``` Required ```  | TODO: Add a parameter description |
+| string |  ``` Required ```  | TODO: Add a parameter description |
+| queryParameters | ``` Optional ``` | Additional optional query parameters are supported by this method |
 
 
 
 #### Example Usage
 
 ```php
-$body = new SimilarityLookupRequestMsg();
+$boolean = true;
+$number = 4;
+$string = 'TestString';
+// key-value map for optional query parameters
+$queryParams = array('key' => 'value');
 
-$result = $aWSECommerceServiceBinding->createSimilarityLookup12($body);
 
-```
+$result = $queryParam->simpleQuery($boolean, $number, $string, $queryParams);
 
+```
 
-### <a name="create_browse_node_lookup11"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup11") createBrowseNodeLookup11
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="string_enum_array"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.stringEnumArray") stringEnumArray
 
 > TODO: Add a method description
 
 
 ```php
-function createBrowseNodeLookup11($body)
+function stringEnumArray($days)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| days |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new BrowseNodeLookupRequestMsg();
+$days = array(Days::TUESDAY,Days::SATURDAY,Days::MONDAY,Days::SUNDAY);
 
-$result = $aWSECommerceServiceBinding->createBrowseNodeLookup11($body);
+$result = $queryParam->stringEnumArray($days);
 
 ```
 
 
-### <a name="create_item_lookup10"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup10") createItemLookup10
+### <a name="multiple_params"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.multipleParams") multipleParams
 
-> *Tags:*  ``` Skips Authentication ``` 
-
 > TODO: Add a method description
 
 
 ```php
-function createItemLookup10($body)
+function multipleParams(
+        $number,
+        $precision,
+        $string,
+        $url)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| number |  ``` Required ```  | TODO: Add a parameter description |
+| precision |  ``` Required ```  | TODO: Add a parameter description |
+| string |  ``` Required ```  | TODO: Add a parameter description |
+| url |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new ItemLookupRequestMsg();
+$number = 123412312;
+$precision = 1112.34;
+$string = '""test./;";12&&3asl"";"qw1&34"///..//.';
+$url = 'http://www.abc.com/test?a=b&c="http://lolol.com?param=no&another=lol"';
 
-$result = $aWSECommerceServiceBinding->createItemLookup10($body);
+$result = $queryParam->multipleParams($number, $precision, $string, $url);
 
 ```
-
 
-### <a name="create_item_search9"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch9") createItemSearch9
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="integer_enum_array"></a>![Method: ](https://apidocs.io/img/method.png ".QueryParamController.integerEnumArray") integerEnumArray
 
 > TODO: Add a method description
 
 
 ```php
-function createItemSearch9($body)
+function integerEnumArray($suites)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| suites |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new ItemSearchRequestMsg();
+$suites = array(SuiteCode::HEARTS,SuiteCode::CLUBS,SuiteCode::DIAMONDS,SuiteCode::SPADES,SuiteCode::CLUBS);
 
-$result = $aWSECommerceServiceBinding->createItemSearch9($body);
+$result = $queryParam->integerEnumArray($suites);
 
 ```
 
 
-### <a name="create_cart_clear"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear") createCartClear
+[Back to List of Controllers](#list_of_controllers)
 
-> *Tags:*  ``` Skips Authentication ``` 
+## <a name="error_codes_controller"></a>![Class: ](https://apidocs.io/img/class.png ".ErrorCodesController") ErrorCodesController
 
-> TODO: Add a method description
+### Get singleton instance
 
+The singleton instance of the ``` ErrorCodesController ``` class can be accessed from the API Client.
 
 ```php
-function createCartClear($body)
+$errorCodes = $client->getErrorCodes();
 ```
 
-#### Parameters
+### <a name="get400"></a>![Method: ](https://apidocs.io/img/method.png ".ErrorCodesController.get400") get400
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+> TODO: Add a method description
 
 
+```php
+function get400()
+```
 
 #### Example Usage
 
 ```php
-$body = new CartClearRequestMsg();
 
-$result = $aWSECommerceServiceBinding->createCartClear($body);
+$result = $errorCodes->get400();
 
 ```
-
 
-### <a name="create_cart_modify"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify") createCartModify
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get500"></a>![Method: ](https://apidocs.io/img/method.png ".ErrorCodesController.get500") get500
 
 > TODO: Add a method description
 
 
 ```php
-function createCartModify($body)
+function get500()
 ```
 
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
 #### Example Usage
 
 ```php
-$body = new CartModifyRequestMsg();
 
-$result = $aWSECommerceServiceBinding->createCartModify($body);
+$result = $errorCodes->get500();
 
 ```
-
 
-### <a name="create_cart_create"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate") createCartCreate
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get401"></a>![Method: ](https://apidocs.io/img/method.png ".ErrorCodesController.get401") get401
 
 > TODO: Add a method description
 
 
 ```php
-function createCartCreate($body)
+function get401()
 ```
 
-#### Parameters
+#### Example Usage
 
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+```php
 
+$result = $errorCodes->get401();
 
+```
 
-#### Example Usage
+#### Errors
 
-```php
-$body = new CartCreateRequestMsg();
+| Error Code | Error Description |
+|------------|-------------------|
+| 401 | 401 Local |
+| 421 | Default |
+| 431 | Default |
+| 432 | Default |
+| 441 | Default |
+| 0 | Invalid response. |
 
-$result = $aWSECommerceServiceBinding->createCartCreate($body);
 
-```
 
+[Back to List of Controllers](#list_of_controllers)
 
-### <a name="create_cart_add"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd") createCartAdd
+## <a name="m_echo_controller"></a>![Class: ](https://apidocs.io/img/class.png ".MEchoController") MEchoController
 
-> *Tags:*  ``` Skips Authentication ``` 
+### Get singleton instance
 
-> TODO: Add a method description
+The singleton instance of the ``` MEchoController ``` class can be accessed from the API Client.
+
+```php
+$mEcho = $client->getMEcho();
+```
+
+### <a name="json_echo"></a>![Method: ](https://apidocs.io/img/method.png ".MEchoController.jsonEcho") jsonEcho
 
+> Echo's back the request
 
+
 ```php
-function createCartAdd($body)
+function jsonEcho($input)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| input |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new CartAddRequestMsg();
+$input = APIHelper::deserialize("{\"uid\": \"1123213\", \"name\": \"Shahid\"}");
 
-$result = $aWSECommerceServiceBinding->createCartAdd($body);
+$result = $mEcho->jsonEcho($input);
 
 ```
-
 
-### <a name="create_cart_get"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet") createCartGet
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="form_echo"></a>![Method: ](https://apidocs.io/img/method.png ".MEchoController.formEcho") formEcho
 
-> TODO: Add a method description
+> Sends the request including any form params as JSON
 
 
 ```php
-function createCartGet($body)
+function formEcho($input)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| input |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new CartGetRequestMsg();
+$input = APIHelper::deserialize("{\"uid\": \"1123213\", \"name\": \"Shahid\"}");
 
-$result = $aWSECommerceServiceBinding->createCartGet($body);
+$result = $mEcho->formEcho($input);
 
 ```
-
 
-### <a name="create_similarity_lookup"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup") createSimilarityLookup
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="query_echo"></a>![Method: ](https://apidocs.io/img/method.png ".MEchoController.queryEcho") queryEcho
 
 > TODO: Add a method description
 
 
 ```php
-function createSimilarityLookup($body)
+function queryEcho($queryParameters = null)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| queryParameters | ``` Optional ``` | Additional optional query parameters are supported by this method |
 
 
 
 #### Example Usage
 
 ```php
-$body = new SimilarityLookupRequestMsg();
+// key-value map for optional query parameters
+$queryParams = array('key' => 'value');
 
-$result = $aWSECommerceServiceBinding->createSimilarityLookup($body);
 
+$result = $mEcho->queryEcho($queryParams);
+
 ```
 
 
-### <a name="create_browse_node_lookup"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup") createBrowseNodeLookup
+[Back to List of Controllers](#list_of_controllers)
 
-> *Tags:*  ``` Skips Authentication ``` 
+## <a name="header_controller"></a>![Class: ](https://apidocs.io/img/class.png ".HeaderController") HeaderController
 
-> TODO: Add a method description
+### Get singleton instance
+
+The singleton instance of the ``` HeaderController ``` class can be accessed from the API Client.
+
+```php
+$header = $client->getHeader();
+```
 
+### <a name="send_headers"></a>![Method: ](https://apidocs.io/img/method.png ".HeaderController.sendHeaders") sendHeaders
 
+> Sends a single header params
+
+
 ```php
-function createBrowseNodeLookup($body)
+function sendHeaders(
+        $customHeader,
+        $value)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| customHeader |  ``` Required ```  | TODO: Add a parameter description |
+| value |  ``` Required ```  | Represents the value of the custom header |
 
 
 
 #### Example Usage
 
 ```php
-$body = new BrowseNodeLookupRequestMsg();
+$customHeader = 'TestString';
+$value = 'TestString';
 
-$result = $aWSECommerceServiceBinding->createBrowseNodeLookup($body);
+$result = $header->sendHeaders($customHeader, $value);
 
 ```
+
+
+[Back to List of Controllers](#list_of_controllers)
 
+## <a name="template_params_controller"></a>![Class: ](https://apidocs.io/img/class.png ".TemplateParamsController") TemplateParamsController
 
-### <a name="create_item_lookup"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup") createItemLookup
+### Get singleton instance
 
-> *Tags:*  ``` Skips Authentication ``` 
+The singleton instance of the ``` TemplateParamsController ``` class can be accessed from the API Client.
 
+```php
+$templateParams = $client->getTemplateParams();
+```
+
+### <a name="send_string_array"></a>![Method: ](https://apidocs.io/img/method.png ".TemplateParamsController.sendStringArray") sendStringArray
+
 > TODO: Add a method description
 
 
 ```php
-function createItemLookup($body)
+function sendStringArray($strings)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| strings |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new ItemLookupRequestMsg();
+$stringsValue = "["abc", "def"]";
+$strings = APIHelper::deserialize($stringsValue);
 
-$result = $aWSECommerceServiceBinding->createItemLookup($body);
+$result = $templateParams->sendStringArray($strings);
 
 ```
-
 
-### <a name="create_item_search"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch") createItemSearch
 
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="send_integer_array"></a>![Method: ](https://apidocs.io/img/method.png ".TemplateParamsController.sendIntegerArray") sendIntegerArray
 
 > TODO: Add a method description
 
 
 ```php
-function createItemSearch($body)
+function sendIntegerArray($integers)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| integers |  ``` Required ```  ``` Collection ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new ItemSearchRequestMsg();
+$integersValue = "[1,2,3,4,5]";
+$integers = APIHelper::deserialize($integersValue);
 
-$result = $aWSECommerceServiceBinding->createItemSearch($body);
+$result = $templateParams->sendIntegerArray($integers);
 
 ```
 
