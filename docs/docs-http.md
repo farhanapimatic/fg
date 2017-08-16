@@ -66,7 +66,7 @@ Body ([GlobalTestException](#global_test_exception))
 ```
 {
   "ServerMessage": "ServerMessage",
-  "ServerCode": 24
+  "ServerCode": 0
 }
 ```
 **Default** 
@@ -76,7 +76,7 @@ Body ([GlobalTestException](#global_test_exception))
 ```
 {
   "ServerMessage": "ServerMessage",
-  "ServerCode": 24
+  "ServerCode": 0
 }
 ```
 
@@ -3304,7 +3304,7 @@ Body ([LocalTestException](#local_test_exception))
 {
   "SecretMessageForEndpoint": "SecretMessageForEndpoint",
   "ServerMessage": "ServerMessage",
-  "ServerCode": 207
+  "ServerCode": 91
 }
 ```
 **431** 
@@ -3316,7 +3316,7 @@ Body ([LocalTestException](#local_test_exception))
 {
   "SecretMessageForEndpoint": "SecretMessageForEndpoint",
   "ServerMessage": "ServerMessage",
-  "ServerCode": 207
+  "ServerCode": 91
 }
 ```
 **432** 
@@ -3328,7 +3328,7 @@ Body ([LocalTestException](#local_test_exception))
 {
   "SecretMessageForEndpoint": "SecretMessageForEndpoint",
   "ServerMessage": "ServerMessage",
-  "ServerCode": 207
+  "ServerCode": 91
 }
 ```
 **441** 
@@ -3340,7 +3340,7 @@ Body ([LocalTestException](#local_test_exception))
 {
   "SecretMessageForEndpoint": "SecretMessageForEndpoint",
   "ServerMessage": "ServerMessage",
-  "ServerCode": 207
+  "ServerCode": 91
 }
 ```
 **Default** 
@@ -3352,7 +3352,7 @@ Body ([LocalTestException](#local_test_exception))
 {
   "SecretMessageForEndpoint": "SecretMessageForEndpoint",
   "ServerMessage": "ServerMessage",
-  "ServerCode": 207
+  "ServerCode": 91
 }
 ```
 
