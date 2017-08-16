@@ -1,7 +1,5 @@
 # Getting started
 
-This is a sample server Petstore server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).  For this sample, you can use the api key `special-key` to test the authorization filters.
-
 ## How to Build
 
 
@@ -13,69 +11,58 @@ Open command prompt and type ```pod --version```. This should display the curren
 Using command line, navigate to the directory containing the generated files (including ```PodFile```) for the SDK. 
 Run the command ```pod install```. This should install all the required dependencies and create the ```pods``` directory in your project directory.
 
-![Installing dependencies using Cocoapods](https://apidocs.io/illustration/objc?step=AddDependencies&workspaceFolder=Swagger%20Petstore-ObjC&workspaceName=SwaggerPetstore&projectName=SwaggerPetstore&rootNamespace=SwaggerPetstore)
+![Installing dependencies using Cocoapods](https://apidocs.io/illustration/objc?step=AddDependencies&workspaceFolder=AWSECommerceService-ObjC&workspaceName=AWSECommerceService&projectName=AWSECommerceService&rootNamespace=AWSECommerceService)
 
-Open the project workspace using the (SwaggerPetstore.xcworkspace) file. Invoke the build process using `Command(⌘)+B` shortcut key or using the `Build` menu as shown below.
+Open the project workspace using the (AWSECommerceService.xcworkspace) file. Invoke the build process using `Command(⌘)+B` shortcut key or using the `Build` menu as shown below.
 
-![Building SDK using Xcode](https://apidocs.io/illustration/objc?step=BuildSDK&workspaceFolder=Swagger%20Petstore-ObjC&workspaceName=SwaggerPetstore&projectName=SwaggerPetstore&rootNamespace=SwaggerPetstore)
+![Building SDK using Xcode](https://apidocs.io/illustration/objc?step=BuildSDK&workspaceFolder=AWSECommerceService-ObjC&workspaceName=AWSECommerceService&projectName=AWSECommerceService&rootNamespace=AWSECommerceService)
 
 
 ## How to Use
 
 The generated code is a Cocoa Touch Static Library which can be used in any iOS project. The support for these generated libraries go all the way back to iOS 6.
 
-The following section explains how to use the SwaggerPetstore library in a new iOS project.     
+The following section explains how to use the AWSECommerceService library in a new iOS project.     
 ### 1. Starting a new project
 To start a new project, left-click on the ```Create a new Xcode project```.
-![Create Test Project - Step 1](https://apidocs.io/illustration/objc?step=Test1&workspaceFolder=Swagger%20Petstore-ObjC&workspaceName=SwaggerPetstore&projectName=SwaggerPetstore&rootNamespace=SwaggerPetstore)
+![Create Test Project - Step 1](https://apidocs.io/illustration/objc?step=Test1&workspaceFolder=AWSECommerceService-ObjC&workspaceName=AWSECommerceService&projectName=AWSECommerceService&rootNamespace=AWSECommerceService)
 
 Next, choose **Single View Application** and click ```Next```.
-![Create Test Project - Step 2](https://apidocs.io/illustration/objc?step=Test2&workspaceFolder=Swagger%20Petstore-ObjC&workspaceName=SwaggerPetstore&projectName=SwaggerPetstore&rootNamespace=SwaggerPetstore)
+![Create Test Project - Step 2](https://apidocs.io/illustration/objc?step=Test2&workspaceFolder=AWSECommerceService-ObjC&workspaceName=AWSECommerceService&projectName=AWSECommerceService&rootNamespace=AWSECommerceService)
 
 Provide **Test-Project** as the product name click ```Next```.
-![Create Test Project - Step 3](https://apidocs.io/illustration/objc?step=Test3&workspaceFolder=Swagger%20Petstore-ObjC&workspaceName=SwaggerPetstore&projectName=SwaggerPetstore&rootNamespace=SwaggerPetstore)
+![Create Test Project - Step 3](https://apidocs.io/illustration/objc?step=Test3&workspaceFolder=AWSECommerceService-ObjC&workspaceName=AWSECommerceService&projectName=AWSECommerceService&rootNamespace=AWSECommerceService)
 
 Choose the desired location of your project folder and click ```Create```.
-![Create Test Project - Step 4](https://apidocs.io/illustration/objc?step=Test4&workspaceFolder=Swagger%20Petstore-ObjC&workspaceName=SwaggerPetstore&projectName=SwaggerPetstore&rootNamespace=SwaggerPetstore)
+![Create Test Project - Step 4](https://apidocs.io/illustration/objc?step=Test4&workspaceFolder=AWSECommerceService-ObjC&workspaceName=AWSECommerceService&projectName=AWSECommerceService&rootNamespace=AWSECommerceService)
 
 ### 2. Adding the static library dependency
 To add this dependency open a terminal and navigate to your project folder. Next, input ```pod init``` and press enter.
-![Add dependency - Step 1](https://apidocs.io/illustration/objc?step=Add0&workspaceFolder=Swagger%20Petstore-ObjC&workspaceName=SwaggerPetstore&projectName=SwaggerPetstore&rootNamespace=SwaggerPetstore)
+![Add dependency - Step 1](https://apidocs.io/illustration/objc?step=Add0&workspaceFolder=AWSECommerceService-ObjC&workspaceName=AWSECommerceService&projectName=AWSECommerceService&rootNamespace=AWSECommerceService)
 
-Next, open the newly created ```PodFile``` in your favourite text editor. Add the following line : pod 'SwaggerPetstore', :path => 'Vendor/SwaggerPetstore'
-![Add dependency - Step 2](https://apidocs.io/illustration/objc?step=Add1&workspaceFolder=Swagger%20Petstore-ObjC&workspaceName=SwaggerPetstore&projectName=SwaggerPetstore&rootNamespace=SwaggerPetstore)
+Next, open the newly created ```PodFile``` in your favourite text editor. Add the following line : pod 'AWSECommerceService', :path => 'Vendor/AWSECommerceService'
+![Add dependency - Step 2](https://apidocs.io/illustration/objc?step=Add1&workspaceFolder=AWSECommerceService-ObjC&workspaceName=AWSECommerceService&projectName=AWSECommerceService&rootNamespace=AWSECommerceService)
 
 Execute `pod install` from terminal to install the dependecy in your project. This would add the dependency to the newly created test project.
-![Add dependency - Step 3](https://apidocs.io/illustration/objc?step=Add2&workspaceFolder=Swagger%20Petstore-ObjC&workspaceName=SwaggerPetstore&projectName=SwaggerPetstore&rootNamespace=SwaggerPetstore)
+![Add dependency - Step 3](https://apidocs.io/illustration/objc?step=Add2&workspaceFolder=AWSECommerceService-ObjC&workspaceName=AWSECommerceService&projectName=AWSECommerceService&rootNamespace=AWSECommerceService)
 
 
 ## How to Test
 
 Unit tests in this SDK can be run using Xcode. 
 
-First build the SDK as shown in the steps above and naivgate to the project directory and open the SwaggerPetstore.xcworkspace file.
+First build the SDK as shown in the steps above and naivgate to the project directory and open the AWSECommerceService.xcworkspace file.
 
 Go to the test explorer in Xcode as shown in the picture below and click on `run tests` from the menu. 
-![Run tests](https://apidocs.io/illustration/objc?step=RunTests&workspaceFolder=Swagger%20Petstore-ObjC&workspaceName=SwaggerPetstore&projectName=SwaggerPetstore&rootNamespace=SwaggerPetstore)
+![Run tests](https://apidocs.io/illustration/objc?step=RunTests&workspaceFolder=AWSECommerceService-ObjC&workspaceName=AWSECommerceService&projectName=AWSECommerceService&rootNamespace=AWSECommerceService)
 
 
 ## Initialization
 
-### Authentication
-In order to setup authentication and initialization of the API client, you need the following information.
-
-| Parameter | Description |
-|-----------|-------------|
-| oAuthClientId | OAuth 2 Client ID |
-| oAuthRedirectUri | OAuth 2 Redirection endpoint or Callback Uri |
-
-
+### 
 
 Configuration variables can be set as following.
 ```Objc
-// Configuration parameters and credentials
-Configuration_OAuthClientId = "Configuration_OAuthClientId"; // OAuth 2 Client ID
-Configuration_OAuthRedirectUri = "Configuration_OAuthRedirectUri"; // OAuth 2 Redirection endpoint or Callback Uri
 
 ```
 
@@ -83,388 +70,32 @@ Configuration_OAuthRedirectUri = "Configuration_OAuthRedirectUri"; // OAuth 2 Re
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [PetController](#pet_controller)
-* [StoreController](#store_controller)
-* [UserController](#user_controller)
+* [AWSECommerceServiceBindingController](#awse_commerce_service_binding_controller)
 
-## <a name="pet_controller"></a>![Class: ](https://apidocs.io/img/class.png ".PetController") PetController
+## <a name="awse_commerce_service_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png ".AWSECommerceServiceBindingController") AWSECommerceServiceBindingController
 
 ### Get singleton instance
 ```objc
-Pet* pet = [[Pet alloc]init] ;
+AWSECommerceServiceBinding* aWSECommerceServiceBinding = [[AWSECommerceServiceBinding alloc]init] ;
 ```
 
-### <a name="update_pet_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.updatePetAsyncWithBody") updatePetAsyncWithBody
-
-> Update an existing pet
-
-
-```objc
-function updatePetAsyncWithBody:(Pet*) body
-                completionBlock:(CompletedPutUpdatePet) onCompleted(body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | Pet object that needs to be added to the store |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    Pet* body = [[Pet alloc]init];
-
-    [self.pet updatePetAsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, NSError* error) { 
-       //Add code here
-    }];
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Pet not found |
-| 405 | Validation exception |
-
-
-
-### <a name="add_pet_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.addPetAsyncWithBody") addPetAsyncWithBody
-
-> Add a new pet to the store
-
-
-```objc
-function addPetAsyncWithBody:(Pet*) body
-                completionBlock:(CompletedPostAddPet) onCompleted(body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | Pet object that needs to be added to the store |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    Pet* body = [[Pet alloc]init];
-
-    [self.pet addPetAsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, NSError* error) { 
-       //Add code here
-    }];
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 405 | Invalid input |
-
-
-
-### <a name="find_pets_by_status_async_with_status"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.findPetsByStatusAsyncWithStatus") findPetsByStatusAsyncWithStatus
-
-> Finds Pets by status
-
-
-```objc
-function findPetsByStatusAsyncWithStatus:(NSArray<NSNumber*>*) status
-                completionBlock:(CompletedGetFindPetsByStatus) onCompleted(status)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| status |  ``` Required ```  ``` Collection ```  | Status values that need to be considered for filter |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    NSArray<NSNumber*>* status = @[available,available,available];
-
-    [self.pet findPetsByStatusAsyncWithStatus: status  completionBlock:^(BOOL success, HttpContext* context, NSArray<Pet> * response, NSError* error) { 
-       //Add code here
-    }];
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid status value |
-
-
-
-### <a name="find_pets_by_tags_async_with_tags"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.findPetsByTagsAsyncWithTags") findPetsByTagsAsyncWithTags
-
-> Finds Pets by tags
-
-
-```objc
-function findPetsByTagsAsyncWithTags:(NSArray*) tags
-                completionBlock:(CompletedGetFindPetsByTags) onCompleted(tags)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| tags |  ``` Required ```  ``` Collection ```  | Tags to filter by |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    NSArray* tags = @[@"tags",@"tags",@"tags"];
-
-    [self.pet findPetsByTagsAsyncWithTags: tags  completionBlock:^(BOOL success, HttpContext* context, NSArray<Pet> * response, NSError* error) { 
-       //Add code here
-    }];
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid tag value |
-
-
-
-### <a name="get_pet_by_id_async_with_pet_id"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.getPetByIdAsyncWithPetId") getPetByIdAsyncWithPetId
-
-> Find pet by ID
-
-
-```objc
-function getPetByIdAsyncWithPetId:(long) petId
-                completionBlock:(CompletedGetPetById) onCompleted(petId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| petId |  ``` Required ```  | ID of pet to return |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    long petId = 191;
-
-    [self.pet getPetByIdAsyncWithPetId: petId  completionBlock:^(BOOL success, HttpContext* context, Pet* response, NSError* error) { 
-       //Add code here
-    }];
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Pet not found |
-
-
-
-### <a name="update_pet_with_form_async_with_pet_id"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.updatePetWithFormAsyncWithPetId") updatePetWithFormAsyncWithPetId
-
-> Updates a pet in the store with form data
-
-
-```objc
-function updatePetWithFormAsyncWithPetId:(long) petId
-                name:(NSString*) name
-                status:(NSString*) status
-                completionBlock:(CompletedPostUpdatePetWithForm) onCompleted(petId name : name status : status)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| petId |  ``` Required ```  | ID of pet that needs to be updated |
-| name |  ``` Optional ```  | Updated name of the pet |
-| status |  ``` Optional ```  | Updated status of the pet |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    long petId = 191;
-    NSString* name = @"name";
-    NSString* status = @"status";
-
-    [self.pet updatePetWithFormAsyncWithPetId: petId name : name status : status  completionBlock:^(BOOL success, HttpContext* context, NSError* error) { 
-       //Add code here
-    }];
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 405 | Invalid input |
-
-
-
-### <a name="delete_pet_async_with_pet_id"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.deletePetAsyncWithPetId") deletePetAsyncWithPetId
-
-> Deletes a pet
-
-
-```objc
-function deletePetAsyncWithPetId:(long) petId
-                apiKey:(NSString*) apiKey
-                completionBlock:(CompletedDeletePet) onCompleted(petId apiKey : apiKey)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| petId |  ``` Required ```  | Pet id to delete |
-| apiKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    long petId = 191;
-    NSString* apiKey = @"api_key";
-
-    [self.pet deletePetAsyncWithPetId: petId apiKey : apiKey  completionBlock:^(BOOL success, HttpContext* context, NSError* error) { 
-       //Add code here
-    }];
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Pet not found |
-
-
-
-### <a name="upload_file_async_with_pet_id"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.uploadFileAsyncWithPetId") uploadFileAsyncWithPetId
-
-> uploads an image
-
-
-```objc
-function uploadFileAsyncWithPetId:(long) petId
-                additionalMetadata:(NSString*) additionalMetadata
-                file:(NSURL*) file
-                completionBlock:(CompletedPostUploadFile) onCompleted(petId additionalMetadata : additionalMetadata file : file)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| petId |  ``` Required ```  | ID of pet to update |
-| additionalMetadata |  ``` Optional ```  | Additional data to pass to server |
-| file |  ``` Optional ```  | file to upload |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    long petId = 191;
-    NSString* additionalMetadata = @"additionalMetadata";
-    NSURL* file = [NSURL URLWithString: @"pathtofile"];
-
-    [self.pet uploadFileAsyncWithPetId: petId additionalMetadata : additionalMetadata file : file  completionBlock:^(BOOL success, HttpContext* context, ApiResponse* response, NSError* error) { 
-       //Add code here
-    }];
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="store_controller"></a>![Class: ](https://apidocs.io/img/class.png ".StoreController") StoreController
-
-### Get singleton instance
-```objc
-Store* store = [[Store alloc]init] ;
-```
-
-### <a name="get_inventory_with_completion_block"></a>![Method: ](https://apidocs.io/img/method.png ".StoreController.getInventoryWithCompletionBlock") getInventoryWithCompletionBlock
-
-> Returns pet inventories by status
-
-
-```objc
-function getInventoryWithCompletionBlock:(CompletedGetInventory) onCompleted()
-```
-
-
-
-#### Example Usage
-
-```objc
-
-    [self.store getInventoryWithCompletionBlock:  ^(BOOL success, HttpContext* context, NSNumber* response, NSError* error) { 
-       //Add code here
-    }];
-```
-
-
-### <a name="create_place_order_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".StoreController.createPlaceOrderAsyncWithBody") createPlaceOrderAsyncWithBody
+### <a name="create_cart_modify97_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify97AsyncWithBody") createCartModify97AsyncWithBody
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Place an order for a pet
+> TODO: Add a method description
 
 
 ```objc
-function createPlaceOrderAsyncWithBody:(Order*) body
-                completionBlock:(CompletedPostPlaceOrder) onCompleted(body)
+function createCartModify97AsyncWithBody:(CartModifyRequestMsg*) body
+                completionBlock:(CompletedPostCartModify97) onCompleted(body)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | order placed for purchasing the pet |
+| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -474,38 +105,31 @@ function createPlaceOrderAsyncWithBody:(Order*) body
 
 ```objc
     // Parameters for the API call
-    Order* body = [[Order alloc]init];
+    CartModifyRequestMsg* body = [[CartModifyRequestMsg alloc]init];
 
-    [self.store createPlaceOrderAsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, Order* response, NSError* error) { 
+    [self.aWSECommerceServiceBinding createCartModify97AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartModifyResponseMsg* response, NSError* error) { 
        //Add code here
     }];
 ```
 
-#### Errors
 
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid Order |
-
-
-
-### <a name="get_order_by_id_async_with_order_id"></a>![Method: ](https://apidocs.io/img/method.png ".StoreController.getOrderByIdAsyncWithOrderId") getOrderByIdAsyncWithOrderId
+### <a name="create_cart_clear98_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear98AsyncWithBody") createCartClear98AsyncWithBody
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Find purchase order by ID
+> TODO: Add a method description
 
 
 ```objc
-function getOrderByIdAsyncWithOrderId:(long) orderId
-                completionBlock:(CompletedGetOrderById) onCompleted(orderId)
+function createCartClear98AsyncWithBody:(CartClearRequestMsg*) body
+                completionBlock:(CompletedPostCartClear98) onCompleted(body)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| orderId |  ``` Required ```  | ID of pet that needs to be fetched |
+| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -515,39 +139,31 @@ function getOrderByIdAsyncWithOrderId:(long) orderId
 
 ```objc
     // Parameters for the API call
-    long orderId = 191;
+    CartClearRequestMsg* body = [[CartClearRequestMsg alloc]init];
 
-    [self.store getOrderByIdAsyncWithOrderId: orderId  completionBlock:^(BOOL success, HttpContext* context, Order* response, NSError* error) { 
+    [self.aWSECommerceServiceBinding createCartClear98AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartClearResponseMsg* response, NSError* error) { 
        //Add code here
     }];
 ```
 
-#### Errors
 
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Order not found |
-
-
-
-### <a name="delete_order_async_with_order_id"></a>![Method: ](https://apidocs.io/img/method.png ".StoreController.deleteOrderAsyncWithOrderId") deleteOrderAsyncWithOrderId
+### <a name="create_cart_create96_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate96AsyncWithBody") createCartCreate96AsyncWithBody
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Delete purchase order by ID
+> TODO: Add a method description
 
 
 ```objc
-function deleteOrderAsyncWithOrderId:(long) orderId
-                completionBlock:(CompletedDeleteOrder) onCompleted(orderId)
+function createCartCreate96AsyncWithBody:(CartCreateRequestMsg*) body
+                completionBlock:(CompletedPostCartCreate96) onCompleted(body)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| orderId |  ``` Required ```  | ID of the order that needs to be deleted |
+| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -557,48 +173,31 @@ function deleteOrderAsyncWithOrderId:(long) orderId
 
 ```objc
     // Parameters for the API call
-    long orderId = 191;
+    CartCreateRequestMsg* body = [[CartCreateRequestMsg alloc]init];
 
-    [self.store deleteOrderAsyncWithOrderId: orderId  completionBlock:^(BOOL success, HttpContext* context, NSError* error) { 
+    [self.aWSECommerceServiceBinding createCartCreate96AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartCreateResponseMsg* response, NSError* error) { 
        //Add code here
     }];
 ```
 
-#### Errors
 
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Order not found |
-
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="user_controller"></a>![Class: ](https://apidocs.io/img/class.png ".UserController") UserController
-
-### Get singleton instance
-```objc
-User* user = [[User alloc]init] ;
-```
-
-### <a name="create_user_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.createUserAsyncWithBody") createUserAsyncWithBody
+### <a name="create_cart_add95_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd95AsyncWithBody") createCartAdd95AsyncWithBody
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Create user
+> TODO: Add a method description
 
 
 ```objc
-function createUserAsyncWithBody:(User*) body
-                completionBlock:(CompletedPostCreateUser) onCompleted(body)
+function createCartAdd95AsyncWithBody:(CartAddRequestMsg*) body
+                completionBlock:(CompletedPostCartAdd95) onCompleted(body)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | Created user object |
+| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -608,38 +207,31 @@ function createUserAsyncWithBody:(User*) body
 
 ```objc
     // Parameters for the API call
-    User* body = [[User alloc]init];
+    CartAddRequestMsg* body = [[CartAddRequestMsg alloc]init];
 
-    [self.user createUserAsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, NSError* error) { 
+    [self.aWSECommerceServiceBinding createCartAdd95AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartAddResponseMsg* response, NSError* error) { 
        //Add code here
     }];
 ```
 
-#### Errors
 
-| Error Code | Error Description |
-|------------|-------------------|
-| 0 | successful operation |
-
-
-
-### <a name="create_users_with_array_input_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.createUsersWithArrayInputAsyncWithBody") createUsersWithArrayInputAsyncWithBody
+### <a name="create_cart_get94_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet94AsyncWithBody") createCartGet94AsyncWithBody
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Creates list of users with given input array
+> TODO: Add a method description
 
 
 ```objc
-function createUsersWithArrayInputAsyncWithBody:(NSArray<User> *) body
-                completionBlock:(CompletedPostCreateUsersWithArrayInput) onCompleted(body)
+function createCartGet94AsyncWithBody:(CartGetRequestMsg*) body
+                completionBlock:(CompletedPostCartGet94) onCompleted(body)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  ``` Collection ```  | List of user object |
+| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -649,39 +241,31 @@ function createUsersWithArrayInputAsyncWithBody:(NSArray<User> *) body
 
 ```objc
     // Parameters for the API call
-    NSArray<User> * body = (NSArray<User>*) [User arrayOfModelsFromDictionaries:
-                [APIHelper jsonDeserializeArray: @"nil"] error: nil];
+    CartGetRequestMsg* body = [[CartGetRequestMsg alloc]init];
 
-    [self.user createUsersWithArrayInputAsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, NSError* error) { 
+    [self.aWSECommerceServiceBinding createCartGet94AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartGetResponseMsg* response, NSError* error) { 
        //Add code here
     }];
 ```
 
-#### Errors
 
-| Error Code | Error Description |
-|------------|-------------------|
-| 0 | successful operation |
-
-
-
-### <a name="create_users_with_list_input_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.createUsersWithListInputAsyncWithBody") createUsersWithListInputAsyncWithBody
+### <a name="create_similarity_lookup93_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup93AsyncWithBody") createSimilarityLookup93AsyncWithBody
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Creates list of users with given input array
+> TODO: Add a method description
 
 
 ```objc
-function createUsersWithListInputAsyncWithBody:(NSArray<User> *) body
-                completionBlock:(CompletedPostCreateUsersWithListInput) onCompleted(body)
+function createSimilarityLookup93AsyncWithBody:(SimilarityLookupRequestMsg*) body
+                completionBlock:(CompletedPostSimilarityLookup93) onCompleted(body)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  ``` Collection ```  | List of user object |
+| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -691,41 +275,31 @@ function createUsersWithListInputAsyncWithBody:(NSArray<User> *) body
 
 ```objc
     // Parameters for the API call
-    NSArray<User> * body = (NSArray<User>*) [User arrayOfModelsFromDictionaries:
-                [APIHelper jsonDeserializeArray: @"nil"] error: nil];
+    SimilarityLookupRequestMsg* body = [[SimilarityLookupRequestMsg alloc]init];
 
-    [self.user createUsersWithListInputAsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, NSError* error) { 
+    [self.aWSECommerceServiceBinding createSimilarityLookup93AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, SimilarityLookupResponseMsg* response, NSError* error) { 
        //Add code here
     }];
 ```
 
-#### Errors
 
-| Error Code | Error Description |
-|------------|-------------------|
-| 0 | successful operation |
-
-
-
-### <a name="get_login_user_async_with_username"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.getLoginUserAsyncWithUsername") getLoginUserAsyncWithUsername
+### <a name="create_browse_node_lookup92_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup92AsyncWithBody") createBrowseNodeLookup92AsyncWithBody
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Logs user into the system
+> TODO: Add a method description
 
 
 ```objc
-function getLoginUserAsyncWithUsername:(NSString*) username
-                password:(NSString*) password
-                completionBlock:(CompletedGetLoginUser) onCompleted(username password : password)
+function createBrowseNodeLookup92AsyncWithBody:(BrowseNodeLookupRequestMsg*) body
+                completionBlock:(CompletedPostBrowseNodeLookup92) onCompleted(body)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| username |  ``` Required ```  | The user name for login |
-| password |  ``` Required ```  | The password for login in clear text |
+| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -735,69 +309,31 @@ function getLoginUserAsyncWithUsername:(NSString*) username
 
 ```objc
     // Parameters for the API call
-    NSString* username = @"username";
-    NSString* password = @"password";
+    BrowseNodeLookupRequestMsg* body = [[BrowseNodeLookupRequestMsg alloc]init];
 
-    [self.user getLoginUserAsyncWithUsername: username password : password  completionBlock:^(BOOL success, HttpContext* context, NSString* response, NSError* error) { 
+    [self.aWSECommerceServiceBinding createBrowseNodeLookup92AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, BrowseNodeLookupResponseMsg* response, NSError* error) { 
        //Add code here
     }];
 ```
 
-#### Errors
 
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid username/password supplied |
-
-
-
-### <a name="get_logout_user_with_completion_block"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.getLogoutUserWithCompletionBlock") getLogoutUserWithCompletionBlock
+### <a name="create_item_lookup91_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup91AsyncWithBody") createItemLookup91AsyncWithBody
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Logs out current logged in user session
+> TODO: Add a method description
 
 
 ```objc
-function getLogoutUserWithCompletionBlock:(CompletedGetLogoutUser) onCompleted()
-```
-
-
-
-#### Example Usage
-
-```objc
-
-    [self.user getLogoutUserWithCompletionBlock:  ^(BOOL success, HttpContext* context, NSError* error) { 
-       //Add code here
-    }];
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 0 | successful operation |
-
-
-
-### <a name="get_user_by_name_async_with_username"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.getUserByNameAsyncWithUsername") getUserByNameAsyncWithUsername
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get user by user name
-
-
-```objc
-function getUserByNameAsyncWithUsername:(NSString*) username
-                completionBlock:(CompletedGetUserByName) onCompleted(username)
+function createItemLookup91AsyncWithBody:(ItemLookupRequestMsg*) body
+                completionBlock:(CompletedPostItemLookup91) onCompleted(body)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| username |  ``` Required ```  | The name that needs to be fetched. Use user1 for testing. |
+| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -807,41 +343,31 @@ function getUserByNameAsyncWithUsername:(NSString*) username
 
 ```objc
     // Parameters for the API call
-    NSString* username = @"username";
+    ItemLookupRequestMsg* body = [[ItemLookupRequestMsg alloc]init];
 
-    [self.user getUserByNameAsyncWithUsername: username  completionBlock:^(BOOL success, HttpContext* context, User* response, NSError* error) { 
+    [self.aWSECommerceServiceBinding createItemLookup91AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemLookupResponseMsg* response, NSError* error) { 
        //Add code here
     }];
 ```
 
-#### Errors
 
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid username supplied |
-| 404 | User not found |
-
-
-
-### <a name="update_user_async_with_username"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.updateUserAsyncWithUsername") updateUserAsyncWithUsername
+### <a name="create_item_search90_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch90AsyncWithBody") createItemSearch90AsyncWithBody
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Updated user
+> TODO: Add a method description
 
 
 ```objc
-function updateUserAsyncWithUsername:(NSString*) username
-                body:(User*) body
-                completionBlock:(CompletedPutUpdateUser) onCompleted(username body : body)
+function createItemSearch90AsyncWithBody:(ItemSearchRequestMsg*) body
+                completionBlock:(CompletedPostItemSearch90) onCompleted(body)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| username |  ``` Required ```  | name that need to be updated |
-| body |  ``` Required ```  | Updated user object |
+| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -851,40 +377,31 @@ function updateUserAsyncWithUsername:(NSString*) username
 
 ```objc
     // Parameters for the API call
-    NSString* username = @"username";
-    User* body = [[User alloc]init];
+    ItemSearchRequestMsg* body = [[ItemSearchRequestMsg alloc]init];
 
-    [self.user updateUserAsyncWithUsername: username body : body  completionBlock:^(BOOL success, HttpContext* context, NSError* error) { 
+    [self.aWSECommerceServiceBinding createItemSearch90AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemSearchResponseMsg* response, NSError* error) { 
        //Add code here
     }];
 ```
 
-#### Errors
 
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid user supplied |
-| 404 | User not found |
-
-
-
-### <a name="delete_user_async_with_username"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.deleteUserAsyncWithUsername") deleteUserAsyncWithUsername
+### <a name="create_cart_clear89_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear89AsyncWithBody") createCartClear89AsyncWithBody
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Delete user
+> TODO: Add a method description
 
 
 ```objc
-function deleteUserAsyncWithUsername:(NSString*) username
-                completionBlock:(CompletedDeleteUser) onCompleted(username)
+function createCartClear89AsyncWithBody:(CartClearRequestMsg*) body
+                completionBlock:(CompletedPostCartClear89) onCompleted(body)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| username |  ``` Required ```  | The name that needs to be deleted |
+| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -894,20 +411,3038 @@ function deleteUserAsyncWithUsername:(NSString*) username
 
 ```objc
     // Parameters for the API call
-    NSString* username = @"username";
+    CartClearRequestMsg* body = [[CartClearRequestMsg alloc]init];
 
-    [self.user deleteUserAsyncWithUsername: username  completionBlock:^(BOOL success, HttpContext* context, NSError* error) { 
+    [self.aWSECommerceServiceBinding createCartClear89AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartClearResponseMsg* response, NSError* error) { 
        //Add code here
     }];
 ```
 
-#### Errors
 
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid username supplied |
-| 404 | User not found |
+### <a name="create_cart_modify88_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify88AsyncWithBody") createCartModify88AsyncWithBody
 
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartModify88AsyncWithBody:(CartModifyRequestMsg*) body
+                completionBlock:(CompletedPostCartModify88) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartModifyRequestMsg* body = [[CartModifyRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartModify88AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartModifyResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_create87_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate87AsyncWithBody") createCartCreate87AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartCreate87AsyncWithBody:(CartCreateRequestMsg*) body
+                completionBlock:(CompletedPostCartCreate87) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartCreateRequestMsg* body = [[CartCreateRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartCreate87AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartCreateResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_add86_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd86AsyncWithBody") createCartAdd86AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartAdd86AsyncWithBody:(CartAddRequestMsg*) body
+                completionBlock:(CompletedPostCartAdd86) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartAddRequestMsg* body = [[CartAddRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartAdd86AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartAddResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_get85_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet85AsyncWithBody") createCartGet85AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartGet85AsyncWithBody:(CartGetRequestMsg*) body
+                completionBlock:(CompletedPostCartGet85) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartGetRequestMsg* body = [[CartGetRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartGet85AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartGetResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_similarity_lookup84_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup84AsyncWithBody") createSimilarityLookup84AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createSimilarityLookup84AsyncWithBody:(SimilarityLookupRequestMsg*) body
+                completionBlock:(CompletedPostSimilarityLookup84) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    SimilarityLookupRequestMsg* body = [[SimilarityLookupRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createSimilarityLookup84AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, SimilarityLookupResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_browse_node_lookup83_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup83AsyncWithBody") createBrowseNodeLookup83AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createBrowseNodeLookup83AsyncWithBody:(BrowseNodeLookupRequestMsg*) body
+                completionBlock:(CompletedPostBrowseNodeLookup83) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    BrowseNodeLookupRequestMsg* body = [[BrowseNodeLookupRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createBrowseNodeLookup83AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, BrowseNodeLookupResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_item_lookup82_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup82AsyncWithBody") createItemLookup82AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createItemLookup82AsyncWithBody:(ItemLookupRequestMsg*) body
+                completionBlock:(CompletedPostItemLookup82) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    ItemLookupRequestMsg* body = [[ItemLookupRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createItemLookup82AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemLookupResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_item_search81_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch81AsyncWithBody") createItemSearch81AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createItemSearch81AsyncWithBody:(ItemSearchRequestMsg*) body
+                completionBlock:(CompletedPostItemSearch81) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    ItemSearchRequestMsg* body = [[ItemSearchRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createItemSearch81AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemSearchResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_clear80_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear80AsyncWithBody") createCartClear80AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartClear80AsyncWithBody:(CartClearRequestMsg*) body
+                completionBlock:(CompletedPostCartClear80) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartClearRequestMsg* body = [[CartClearRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartClear80AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartClearResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_modify79_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify79AsyncWithBody") createCartModify79AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartModify79AsyncWithBody:(CartModifyRequestMsg*) body
+                completionBlock:(CompletedPostCartModify79) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartModifyRequestMsg* body = [[CartModifyRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartModify79AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartModifyResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_create78_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate78AsyncWithBody") createCartCreate78AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartCreate78AsyncWithBody:(CartCreateRequestMsg*) body
+                completionBlock:(CompletedPostCartCreate78) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartCreateRequestMsg* body = [[CartCreateRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartCreate78AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartCreateResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_add77_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd77AsyncWithBody") createCartAdd77AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartAdd77AsyncWithBody:(CartAddRequestMsg*) body
+                completionBlock:(CompletedPostCartAdd77) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartAddRequestMsg* body = [[CartAddRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartAdd77AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartAddResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_get76_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet76AsyncWithBody") createCartGet76AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartGet76AsyncWithBody:(CartGetRequestMsg*) body
+                completionBlock:(CompletedPostCartGet76) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartGetRequestMsg* body = [[CartGetRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartGet76AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartGetResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_similarity_lookup75_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup75AsyncWithBody") createSimilarityLookup75AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createSimilarityLookup75AsyncWithBody:(SimilarityLookupRequestMsg*) body
+                completionBlock:(CompletedPostSimilarityLookup75) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    SimilarityLookupRequestMsg* body = [[SimilarityLookupRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createSimilarityLookup75AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, SimilarityLookupResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_browse_node_lookup74_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup74AsyncWithBody") createBrowseNodeLookup74AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createBrowseNodeLookup74AsyncWithBody:(BrowseNodeLookupRequestMsg*) body
+                completionBlock:(CompletedPostBrowseNodeLookup74) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    BrowseNodeLookupRequestMsg* body = [[BrowseNodeLookupRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createBrowseNodeLookup74AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, BrowseNodeLookupResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_item_lookup73_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup73AsyncWithBody") createItemLookup73AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createItemLookup73AsyncWithBody:(ItemLookupRequestMsg*) body
+                completionBlock:(CompletedPostItemLookup73) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    ItemLookupRequestMsg* body = [[ItemLookupRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createItemLookup73AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemLookupResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_item_search72_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch72AsyncWithBody") createItemSearch72AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createItemSearch72AsyncWithBody:(ItemSearchRequestMsg*) body
+                completionBlock:(CompletedPostItemSearch72) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    ItemSearchRequestMsg* body = [[ItemSearchRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createItemSearch72AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemSearchResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_clear71_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear71AsyncWithBody") createCartClear71AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartClear71AsyncWithBody:(CartClearRequestMsg*) body
+                completionBlock:(CompletedPostCartClear71) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartClearRequestMsg* body = [[CartClearRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartClear71AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartClearResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_modify70_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify70AsyncWithBody") createCartModify70AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartModify70AsyncWithBody:(CartModifyRequestMsg*) body
+                completionBlock:(CompletedPostCartModify70) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartModifyRequestMsg* body = [[CartModifyRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartModify70AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartModifyResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_create69_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate69AsyncWithBody") createCartCreate69AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartCreate69AsyncWithBody:(CartCreateRequestMsg*) body
+                completionBlock:(CompletedPostCartCreate69) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartCreateRequestMsg* body = [[CartCreateRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartCreate69AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartCreateResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_add68_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd68AsyncWithBody") createCartAdd68AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartAdd68AsyncWithBody:(CartAddRequestMsg*) body
+                completionBlock:(CompletedPostCartAdd68) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartAddRequestMsg* body = [[CartAddRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartAdd68AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartAddResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_get67_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet67AsyncWithBody") createCartGet67AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartGet67AsyncWithBody:(CartGetRequestMsg*) body
+                completionBlock:(CompletedPostCartGet67) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartGetRequestMsg* body = [[CartGetRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartGet67AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartGetResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_similarity_lookup66_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup66AsyncWithBody") createSimilarityLookup66AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createSimilarityLookup66AsyncWithBody:(SimilarityLookupRequestMsg*) body
+                completionBlock:(CompletedPostSimilarityLookup66) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    SimilarityLookupRequestMsg* body = [[SimilarityLookupRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createSimilarityLookup66AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, SimilarityLookupResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_browse_node_lookup65_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup65AsyncWithBody") createBrowseNodeLookup65AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createBrowseNodeLookup65AsyncWithBody:(BrowseNodeLookupRequestMsg*) body
+                completionBlock:(CompletedPostBrowseNodeLookup65) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    BrowseNodeLookupRequestMsg* body = [[BrowseNodeLookupRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createBrowseNodeLookup65AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, BrowseNodeLookupResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_item_lookup64_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup64AsyncWithBody") createItemLookup64AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createItemLookup64AsyncWithBody:(ItemLookupRequestMsg*) body
+                completionBlock:(CompletedPostItemLookup64) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    ItemLookupRequestMsg* body = [[ItemLookupRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createItemLookup64AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemLookupResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_item_search63_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch63AsyncWithBody") createItemSearch63AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createItemSearch63AsyncWithBody:(ItemSearchRequestMsg*) body
+                completionBlock:(CompletedPostItemSearch63) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    ItemSearchRequestMsg* body = [[ItemSearchRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createItemSearch63AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemSearchResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_clear62_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear62AsyncWithBody") createCartClear62AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartClear62AsyncWithBody:(CartClearRequestMsg*) body
+                completionBlock:(CompletedPostCartClear62) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartClearRequestMsg* body = [[CartClearRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartClear62AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartClearResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_modify61_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify61AsyncWithBody") createCartModify61AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartModify61AsyncWithBody:(CartModifyRequestMsg*) body
+                completionBlock:(CompletedPostCartModify61) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartModifyRequestMsg* body = [[CartModifyRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartModify61AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartModifyResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_create60_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate60AsyncWithBody") createCartCreate60AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartCreate60AsyncWithBody:(CartCreateRequestMsg*) body
+                completionBlock:(CompletedPostCartCreate60) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartCreateRequestMsg* body = [[CartCreateRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartCreate60AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartCreateResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_add59_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd59AsyncWithBody") createCartAdd59AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartAdd59AsyncWithBody:(CartAddRequestMsg*) body
+                completionBlock:(CompletedPostCartAdd59) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartAddRequestMsg* body = [[CartAddRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartAdd59AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartAddResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_get58_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet58AsyncWithBody") createCartGet58AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartGet58AsyncWithBody:(CartGetRequestMsg*) body
+                completionBlock:(CompletedPostCartGet58) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartGetRequestMsg* body = [[CartGetRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartGet58AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartGetResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_similarity_lookup57_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup57AsyncWithBody") createSimilarityLookup57AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createSimilarityLookup57AsyncWithBody:(SimilarityLookupRequestMsg*) body
+                completionBlock:(CompletedPostSimilarityLookup57) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    SimilarityLookupRequestMsg* body = [[SimilarityLookupRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createSimilarityLookup57AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, SimilarityLookupResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_browse_node_lookup56_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup56AsyncWithBody") createBrowseNodeLookup56AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createBrowseNodeLookup56AsyncWithBody:(BrowseNodeLookupRequestMsg*) body
+                completionBlock:(CompletedPostBrowseNodeLookup56) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    BrowseNodeLookupRequestMsg* body = [[BrowseNodeLookupRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createBrowseNodeLookup56AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, BrowseNodeLookupResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_item_lookup55_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup55AsyncWithBody") createItemLookup55AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createItemLookup55AsyncWithBody:(ItemLookupRequestMsg*) body
+                completionBlock:(CompletedPostItemLookup55) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    ItemLookupRequestMsg* body = [[ItemLookupRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createItemLookup55AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemLookupResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_item_search54_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch54AsyncWithBody") createItemSearch54AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createItemSearch54AsyncWithBody:(ItemSearchRequestMsg*) body
+                completionBlock:(CompletedPostItemSearch54) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    ItemSearchRequestMsg* body = [[ItemSearchRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createItemSearch54AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemSearchResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_clear53_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear53AsyncWithBody") createCartClear53AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartClear53AsyncWithBody:(CartClearRequestMsg*) body
+                completionBlock:(CompletedPostCartClear53) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartClearRequestMsg* body = [[CartClearRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartClear53AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartClearResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_modify52_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify52AsyncWithBody") createCartModify52AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartModify52AsyncWithBody:(CartModifyRequestMsg*) body
+                completionBlock:(CompletedPostCartModify52) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartModifyRequestMsg* body = [[CartModifyRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartModify52AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartModifyResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_create51_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate51AsyncWithBody") createCartCreate51AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartCreate51AsyncWithBody:(CartCreateRequestMsg*) body
+                completionBlock:(CompletedPostCartCreate51) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartCreateRequestMsg* body = [[CartCreateRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartCreate51AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartCreateResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_add50_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd50AsyncWithBody") createCartAdd50AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartAdd50AsyncWithBody:(CartAddRequestMsg*) body
+                completionBlock:(CompletedPostCartAdd50) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartAddRequestMsg* body = [[CartAddRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartAdd50AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartAddResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_get49_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet49AsyncWithBody") createCartGet49AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartGet49AsyncWithBody:(CartGetRequestMsg*) body
+                completionBlock:(CompletedPostCartGet49) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartGetRequestMsg* body = [[CartGetRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartGet49AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartGetResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_similarity_lookup48_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup48AsyncWithBody") createSimilarityLookup48AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createSimilarityLookup48AsyncWithBody:(SimilarityLookupRequestMsg*) body
+                completionBlock:(CompletedPostSimilarityLookup48) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    SimilarityLookupRequestMsg* body = [[SimilarityLookupRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createSimilarityLookup48AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, SimilarityLookupResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_browse_node_lookup47_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup47AsyncWithBody") createBrowseNodeLookup47AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createBrowseNodeLookup47AsyncWithBody:(BrowseNodeLookupRequestMsg*) body
+                completionBlock:(CompletedPostBrowseNodeLookup47) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    BrowseNodeLookupRequestMsg* body = [[BrowseNodeLookupRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createBrowseNodeLookup47AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, BrowseNodeLookupResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_item_lookup46_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup46AsyncWithBody") createItemLookup46AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createItemLookup46AsyncWithBody:(ItemLookupRequestMsg*) body
+                completionBlock:(CompletedPostItemLookup46) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    ItemLookupRequestMsg* body = [[ItemLookupRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createItemLookup46AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemLookupResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_item_search45_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch45AsyncWithBody") createItemSearch45AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createItemSearch45AsyncWithBody:(ItemSearchRequestMsg*) body
+                completionBlock:(CompletedPostItemSearch45) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    ItemSearchRequestMsg* body = [[ItemSearchRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createItemSearch45AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemSearchResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_clear44_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear44AsyncWithBody") createCartClear44AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartClear44AsyncWithBody:(CartClearRequestMsg*) body
+                completionBlock:(CompletedPostCartClear44) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartClearRequestMsg* body = [[CartClearRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartClear44AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartClearResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_modify43_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify43AsyncWithBody") createCartModify43AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartModify43AsyncWithBody:(CartModifyRequestMsg*) body
+                completionBlock:(CompletedPostCartModify43) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartModifyRequestMsg* body = [[CartModifyRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartModify43AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartModifyResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_create42_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate42AsyncWithBody") createCartCreate42AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartCreate42AsyncWithBody:(CartCreateRequestMsg*) body
+                completionBlock:(CompletedPostCartCreate42) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartCreateRequestMsg* body = [[CartCreateRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartCreate42AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartCreateResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_add41_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd41AsyncWithBody") createCartAdd41AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartAdd41AsyncWithBody:(CartAddRequestMsg*) body
+                completionBlock:(CompletedPostCartAdd41) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartAddRequestMsg* body = [[CartAddRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartAdd41AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartAddResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_get40_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet40AsyncWithBody") createCartGet40AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartGet40AsyncWithBody:(CartGetRequestMsg*) body
+                completionBlock:(CompletedPostCartGet40) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartGetRequestMsg* body = [[CartGetRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartGet40AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartGetResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_similarity_lookup39_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup39AsyncWithBody") createSimilarityLookup39AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createSimilarityLookup39AsyncWithBody:(SimilarityLookupRequestMsg*) body
+                completionBlock:(CompletedPostSimilarityLookup39) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    SimilarityLookupRequestMsg* body = [[SimilarityLookupRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createSimilarityLookup39AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, SimilarityLookupResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_browse_node_lookup38_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup38AsyncWithBody") createBrowseNodeLookup38AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createBrowseNodeLookup38AsyncWithBody:(BrowseNodeLookupRequestMsg*) body
+                completionBlock:(CompletedPostBrowseNodeLookup38) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    BrowseNodeLookupRequestMsg* body = [[BrowseNodeLookupRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createBrowseNodeLookup38AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, BrowseNodeLookupResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_item_lookup37_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup37AsyncWithBody") createItemLookup37AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createItemLookup37AsyncWithBody:(ItemLookupRequestMsg*) body
+                completionBlock:(CompletedPostItemLookup37) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    ItemLookupRequestMsg* body = [[ItemLookupRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createItemLookup37AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemLookupResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_item_search36_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch36AsyncWithBody") createItemSearch36AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createItemSearch36AsyncWithBody:(ItemSearchRequestMsg*) body
+                completionBlock:(CompletedPostItemSearch36) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    ItemSearchRequestMsg* body = [[ItemSearchRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createItemSearch36AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemSearchResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_clear35_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear35AsyncWithBody") createCartClear35AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartClear35AsyncWithBody:(CartClearRequestMsg*) body
+                completionBlock:(CompletedPostCartClear35) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartClearRequestMsg* body = [[CartClearRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartClear35AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartClearResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_modify34_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify34AsyncWithBody") createCartModify34AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartModify34AsyncWithBody:(CartModifyRequestMsg*) body
+                completionBlock:(CompletedPostCartModify34) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartModifyRequestMsg* body = [[CartModifyRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartModify34AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartModifyResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_create33_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate33AsyncWithBody") createCartCreate33AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartCreate33AsyncWithBody:(CartCreateRequestMsg*) body
+                completionBlock:(CompletedPostCartCreate33) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartCreateRequestMsg* body = [[CartCreateRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartCreate33AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartCreateResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_add32_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd32AsyncWithBody") createCartAdd32AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartAdd32AsyncWithBody:(CartAddRequestMsg*) body
+                completionBlock:(CompletedPostCartAdd32) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartAddRequestMsg* body = [[CartAddRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartAdd32AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartAddResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_get31_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet31AsyncWithBody") createCartGet31AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartGet31AsyncWithBody:(CartGetRequestMsg*) body
+                completionBlock:(CompletedPostCartGet31) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartGetRequestMsg* body = [[CartGetRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartGet31AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartGetResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_similarity_lookup30_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup30AsyncWithBody") createSimilarityLookup30AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createSimilarityLookup30AsyncWithBody:(SimilarityLookupRequestMsg*) body
+                completionBlock:(CompletedPostSimilarityLookup30) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    SimilarityLookupRequestMsg* body = [[SimilarityLookupRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createSimilarityLookup30AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, SimilarityLookupResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_browse_node_lookup29_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup29AsyncWithBody") createBrowseNodeLookup29AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createBrowseNodeLookup29AsyncWithBody:(BrowseNodeLookupRequestMsg*) body
+                completionBlock:(CompletedPostBrowseNodeLookup29) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    BrowseNodeLookupRequestMsg* body = [[BrowseNodeLookupRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createBrowseNodeLookup29AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, BrowseNodeLookupResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_item_lookup28_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup28AsyncWithBody") createItemLookup28AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createItemLookup28AsyncWithBody:(ItemLookupRequestMsg*) body
+                completionBlock:(CompletedPostItemLookup28) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    ItemLookupRequestMsg* body = [[ItemLookupRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createItemLookup28AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemLookupResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_item_search27_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch27AsyncWithBody") createItemSearch27AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createItemSearch27AsyncWithBody:(ItemSearchRequestMsg*) body
+                completionBlock:(CompletedPostItemSearch27) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    ItemSearchRequestMsg* body = [[ItemSearchRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createItemSearch27AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemSearchResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_clear26_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear26AsyncWithBody") createCartClear26AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartClear26AsyncWithBody:(CartClearRequestMsg*) body
+                completionBlock:(CompletedPostCartClear26) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartClearRequestMsg* body = [[CartClearRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartClear26AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartClearResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_modify25_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify25AsyncWithBody") createCartModify25AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartModify25AsyncWithBody:(CartModifyRequestMsg*) body
+                completionBlock:(CompletedPostCartModify25) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartModifyRequestMsg* body = [[CartModifyRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartModify25AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartModifyResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_create24_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate24AsyncWithBody") createCartCreate24AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartCreate24AsyncWithBody:(CartCreateRequestMsg*) body
+                completionBlock:(CompletedPostCartCreate24) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartCreateRequestMsg* body = [[CartCreateRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartCreate24AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartCreateResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_add23_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd23AsyncWithBody") createCartAdd23AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartAdd23AsyncWithBody:(CartAddRequestMsg*) body
+                completionBlock:(CompletedPostCartAdd23) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartAddRequestMsg* body = [[CartAddRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartAdd23AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartAddResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_get22_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet22AsyncWithBody") createCartGet22AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartGet22AsyncWithBody:(CartGetRequestMsg*) body
+                completionBlock:(CompletedPostCartGet22) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartGetRequestMsg* body = [[CartGetRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartGet22AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartGetResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_similarity_lookup21_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup21AsyncWithBody") createSimilarityLookup21AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createSimilarityLookup21AsyncWithBody:(SimilarityLookupRequestMsg*) body
+                completionBlock:(CompletedPostSimilarityLookup21) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    SimilarityLookupRequestMsg* body = [[SimilarityLookupRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createSimilarityLookup21AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, SimilarityLookupResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_browse_node_lookup20_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup20AsyncWithBody") createBrowseNodeLookup20AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createBrowseNodeLookup20AsyncWithBody:(BrowseNodeLookupRequestMsg*) body
+                completionBlock:(CompletedPostBrowseNodeLookup20) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    BrowseNodeLookupRequestMsg* body = [[BrowseNodeLookupRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createBrowseNodeLookup20AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, BrowseNodeLookupResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_item_lookup19_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup19AsyncWithBody") createItemLookup19AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createItemLookup19AsyncWithBody:(ItemLookupRequestMsg*) body
+                completionBlock:(CompletedPostItemLookup19) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    ItemLookupRequestMsg* body = [[ItemLookupRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createItemLookup19AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemLookupResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_item_search18_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch18AsyncWithBody") createItemSearch18AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createItemSearch18AsyncWithBody:(ItemSearchRequestMsg*) body
+                completionBlock:(CompletedPostItemSearch18) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    ItemSearchRequestMsg* body = [[ItemSearchRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createItemSearch18AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemSearchResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_clear17_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear17AsyncWithBody") createCartClear17AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartClear17AsyncWithBody:(CartClearRequestMsg*) body
+                completionBlock:(CompletedPostCartClear17) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartClearRequestMsg* body = [[CartClearRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartClear17AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartClearResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_modify16_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify16AsyncWithBody") createCartModify16AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartModify16AsyncWithBody:(CartModifyRequestMsg*) body
+                completionBlock:(CompletedPostCartModify16) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartModifyRequestMsg* body = [[CartModifyRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartModify16AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartModifyResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_create15_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate15AsyncWithBody") createCartCreate15AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartCreate15AsyncWithBody:(CartCreateRequestMsg*) body
+                completionBlock:(CompletedPostCartCreate15) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartCreateRequestMsg* body = [[CartCreateRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartCreate15AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartCreateResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_add14_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd14AsyncWithBody") createCartAdd14AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartAdd14AsyncWithBody:(CartAddRequestMsg*) body
+                completionBlock:(CompletedPostCartAdd14) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartAddRequestMsg* body = [[CartAddRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartAdd14AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartAddResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_get13_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet13AsyncWithBody") createCartGet13AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartGet13AsyncWithBody:(CartGetRequestMsg*) body
+                completionBlock:(CompletedPostCartGet13) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartGetRequestMsg* body = [[CartGetRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartGet13AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartGetResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_similarity_lookup12_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup12AsyncWithBody") createSimilarityLookup12AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createSimilarityLookup12AsyncWithBody:(SimilarityLookupRequestMsg*) body
+                completionBlock:(CompletedPostSimilarityLookup12) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    SimilarityLookupRequestMsg* body = [[SimilarityLookupRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createSimilarityLookup12AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, SimilarityLookupResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_browse_node_lookup11_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup11AsyncWithBody") createBrowseNodeLookup11AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createBrowseNodeLookup11AsyncWithBody:(BrowseNodeLookupRequestMsg*) body
+                completionBlock:(CompletedPostBrowseNodeLookup11) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    BrowseNodeLookupRequestMsg* body = [[BrowseNodeLookupRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createBrowseNodeLookup11AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, BrowseNodeLookupResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_item_lookup10_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup10AsyncWithBody") createItemLookup10AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createItemLookup10AsyncWithBody:(ItemLookupRequestMsg*) body
+                completionBlock:(CompletedPostItemLookup10) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    ItemLookupRequestMsg* body = [[ItemLookupRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createItemLookup10AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemLookupResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_item_search9_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch9AsyncWithBody") createItemSearch9AsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createItemSearch9AsyncWithBody:(ItemSearchRequestMsg*) body
+                completionBlock:(CompletedPostItemSearch9) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    ItemSearchRequestMsg* body = [[ItemSearchRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createItemSearch9AsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemSearchResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_clear_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClearAsyncWithBody") createCartClearAsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartClearAsyncWithBody:(CartClearRequestMsg*) body
+                completionBlock:(CompletedPostCartClear) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartClearRequestMsg* body = [[CartClearRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartClearAsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartClearResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_modify_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModifyAsyncWithBody") createCartModifyAsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartModifyAsyncWithBody:(CartModifyRequestMsg*) body
+                completionBlock:(CompletedPostCartModify) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartModifyRequestMsg* body = [[CartModifyRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartModifyAsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartModifyResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_create_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreateAsyncWithBody") createCartCreateAsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartCreateAsyncWithBody:(CartCreateRequestMsg*) body
+                completionBlock:(CompletedPostCartCreate) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartCreateRequestMsg* body = [[CartCreateRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartCreateAsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartCreateResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_add_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAddAsyncWithBody") createCartAddAsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartAddAsyncWithBody:(CartAddRequestMsg*) body
+                completionBlock:(CompletedPostCartAdd) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartAddRequestMsg* body = [[CartAddRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartAddAsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartAddResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_cart_get_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGetAsyncWithBody") createCartGetAsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createCartGetAsyncWithBody:(CartGetRequestMsg*) body
+                completionBlock:(CompletedPostCartGet) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    CartGetRequestMsg* body = [[CartGetRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createCartGetAsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, CartGetResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_similarity_lookup_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookupAsyncWithBody") createSimilarityLookupAsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createSimilarityLookupAsyncWithBody:(SimilarityLookupRequestMsg*) body
+                completionBlock:(CompletedPostSimilarityLookup) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    SimilarityLookupRequestMsg* body = [[SimilarityLookupRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createSimilarityLookupAsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, SimilarityLookupResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_browse_node_lookup_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookupAsyncWithBody") createBrowseNodeLookupAsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createBrowseNodeLookupAsyncWithBody:(BrowseNodeLookupRequestMsg*) body
+                completionBlock:(CompletedPostBrowseNodeLookup) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    BrowseNodeLookupRequestMsg* body = [[BrowseNodeLookupRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createBrowseNodeLookupAsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, BrowseNodeLookupResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_item_lookup_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookupAsyncWithBody") createItemLookupAsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createItemLookupAsyncWithBody:(ItemLookupRequestMsg*) body
+                completionBlock:(CompletedPostItemLookup) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    ItemLookupRequestMsg* body = [[ItemLookupRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createItemLookupAsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemLookupResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+### <a name="create_item_search_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearchAsyncWithBody") createItemSearchAsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createItemSearchAsyncWithBody:(ItemSearchRequestMsg*) body
+                completionBlock:(CompletedPostItemSearch) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    ItemSearchRequestMsg* body = [[ItemSearchRequestMsg alloc]init];
+
+    [self.aWSECommerceServiceBinding createItemSearchAsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, ItemSearchResponseMsg* response, NSError* error) { 
+       //Add code here
+    }];
+```
 
 
 [Back to List of Controllers](#list_of_controllers)

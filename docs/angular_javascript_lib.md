@@ -1,7 +1,5 @@
 # Getting started
 
-This is a sample server Petstore server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).  For this sample, you can use the api key `special-key` to test the authorization filters.
-
 ## How to Build
 
 The generated SDK requires AngularJS framework to work. If you do not already have angular downloaded, please go ahead and do it from [here](https://angularjs.org/).
@@ -15,10 +13,10 @@ The following section describes how to use the generated SDK in an existing/new 
 Perform the following steps to configure angular and the SDK:
 + Make a `scripts` folder inside the root folder of the project. If you already have a `scripts` folder, skip to the next step.
 + Move the `angular.min.js` file inside the scripts folder. 
-+ Move the `SwaggerPetstoreLib` folder inside the scripts folder.
++ Move the `AWSECommerceServiceLib` folder inside the scripts folder.
 + If any of the Custom Types in your API have `Date`/`Datetime` type fields or any endpoint has `Date`/`Datetime` response, you will need to download angular-moment and moment.js. Move these 2 files into the `scripts` folder as well.
 
-![folder-structure-image](https://apidocs.io/illustration/angularjs?step=folderStructure&workspaceFolder=Swagger%20Petstore-Angular&projectName=SwaggerPetstoreLib)
+![folder-structure-image](https://apidocs.io/illustration/angularjs?step=folderStructure&workspaceFolder=AWSECommerceService-Angular&projectName=AWSECommerceServiceLib)
 
 ### 2. Open Project Folder
 Open an IDE/Text Editor for JavaScript like Sublime Text. The basic workflow presented here is also applicable if you prefer using a different editor or IDE.  
@@ -26,7 +24,7 @@ Click on `File` and select `Open Folder`
 
 Select the folder of your SDK and click on `Select Folder` to open it up in Sublime Text. The folder will become visible in the bar on the left.
 
-![open-folder-image](https://apidocs.io/illustration/angularjs?step=openFolder&workspaceFolder=Swagger%20Petstore-Angular)
+![open-folder-image](https://apidocs.io/illustration/angularjs?step=openFolder&workspaceFolder=AWSECommerceService-Angular)
 
 ### 3. Create an Angular Application
 Since Angular JS is used for client-side web development, in order to use the generated library, you will have to develop an application first.
@@ -63,7 +61,7 @@ Skip to the next step if you are working with an existing project and already ha
 </html>
 ```
 
-![initial-html-code-image](https://apidocs.io/illustration/angularjs?step=initialCode&workspaceFolder=Swagger%20Petstore-Angular)
+![initial-html-code-image](https://apidocs.io/illustration/angularjs?step=initialCode&workspaceFolder=AWSECommerceService-Angular)
 
 ### 5. Including links to Angular in HTML file
 Your HTML file needs to have a link to `angular.min.js` file to use Angular-JS. Add the link using `script` tags inside the `head` section of `index.html` like:
@@ -83,37 +81,165 @@ Import the reference to the generated SDK files inside your html file like:
 <head>
     ...
     <!-- Helper files -->
-    <script src="scripts/SwaggerPetstoreLib/Module.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Configuration.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/ModelFactory.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/ObjectMapper.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/APIHelper.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Http/Client/HttpContext.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Http/Client/RequestClient.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Http/Request/HttpRequest.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Http/Response/HttpResponse.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Module.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Configuration.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/ModelFactory.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/ObjectMapper.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/APIHelper.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Http/Client/HttpContext.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Http/Client/RequestClient.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Http/Request/HttpRequest.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Http/Response/HttpResponse.js"></script>
 
     <!-- API Controllers -->
-    <script src="scripts/SwaggerPetstoreLib/Controllers/BaseController.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Controllers/PetController.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Controllers/StoreController.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Controllers/UserController.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Controllers/BaseController.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Controllers/AWSECommerceServiceBindingController.js"></script>
 
 
     <!-- Models -->
-    <script src="scripts/SwaggerPetstoreLib/Models/BaseModel.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Models/Order.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Models/StatusEnum.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Models/Category.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Models/User.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Models/Tag.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Models/ApiResponse.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Models/Pet.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Models/Status7Enum.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Models/OAuthScopeEnum.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Models/OAuthScopeEnum.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Models/OAuthToken.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Models/OAuthProviderErrorEnum.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/BaseModel.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/ItemDimensions.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/ImageSet.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/Image.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/CollectionSummary.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/OfferListing.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/Language.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/Accessory.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/Disc.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/CartCreateRequestMsg.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/CartAddRequestMsg.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/Variations.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/VariationSummary.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/Offers.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/CartGetRequestMsg.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/CustomerReviews.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/SimilarityLookupRequestMsg.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/BrowseNode.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/Collection.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/Offer.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/CollectionItem.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/ItemSearchRequest.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/BrowseNodeLookupRequestMsg.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/Cart.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/CollectionParent.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/EditorialReview.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/VariationAttribute.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/ItemLookupRequestMsg.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/LoyaltyPoints.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/RelationshipEnum.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/CartItem.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/ItemLink.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/RentalOffer.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/Summary.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/CorrectedQuery.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/ItemSearchRequestMsg.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/BrowseNodeLookupResponse.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/CartClearResponseMsg.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/AvailabilityAttributes.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/BrowseNodes.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/TopItemSet.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/CartModifyResponseMsg.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/Property.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/CartCreateResponseMsg.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/CartClearResponse.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/CartAddResponseMsg.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/CartModifyResponse.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/CartGetResponseMsg.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/Request.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/CartCreateResponse.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/CartAddResponse.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/CartGetResponse.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/OtherCategoriesSimilarProduct.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/SimilarViewedProduct.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/NewRelease.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/OfferSummary.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/RelatedItems.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/RentalListing.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/TopSeller.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/SimilarProduct.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/SearchIndex.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/TopItem.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/OperationRequest.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/BrowseNodeLookup.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/SimilarityLookupResponseMsg.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/BrowseNodeLookupResponseMsg.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/ItemLookupResponseMsg.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/CartClear.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/SavedForLaterItems.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/ItemLookupRequest.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/CartItems.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/KeyValuePair.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/Price.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/CartClearRequest.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/ItemSearchResponseMsg.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/StringWithUnits.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/UPCList.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/CartModify.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/SimilarityLookupResponse.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/Languages.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/ItemLookupResponse.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/EANList.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/ItemSearchResponse.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/Creator.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/CartModifyRequest.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/CartCreate.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/CatalogNumberList.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/CartAdd.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/AudienceRatingEnum.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/MError.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/CartAddRequest.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/DecimalWithUnits.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/Accessories.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/Item.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/CartGet.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/Argument.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/SimilarityLookup.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/Tracks.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/SimilarityLookupRequest.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/Header.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/Track.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/ItemLookup.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/BrowseNodeLookupRequest.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/CartCreateRequest.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/CartGetRequest.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/Collections.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/SimilarityTypeEnum.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/EditorialReviews.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/SearchBinSet.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/VariationDimensions.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/Bin.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/Promotions.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/Promotion.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/IdTypeEnum.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/ItemSearch.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/OfferAttributes.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/RelatedItem.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/ItemLinks.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/ConditionEnum.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/BinParameter.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/RentalOffers.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/NonNegativeIntegerWithUnits.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/PackageDimensions.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/Merchant.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/SearchResultsMap.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/Ancestors.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/Children.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/Properties.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/OtherCategoriesSimilarProducts.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/SimilarViewedProducts.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/NewReleases.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/TopSellers.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/SimilarProducts.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/MetaData.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/Errors.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/Arguments.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/HTTPHeaders.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/Items.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/AvailabilityEnum.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/SearchBinSets.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/CartClearRequestMsg.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/CartModifyRequestMsg.js"></script>
+    <script src="scripts/AWSECommerceServiceLib/Models/ItemAttributes.js"></script>
 
     ...
 </head>
@@ -154,7 +280,7 @@ In order to use the generated SDK's modules, controllers and factories, the proj
 Add the dependency like this:
 
 ```js
-var app = angular.module('myApp', ['SwaggerPetstoreLib']);
+var app = angular.module('myApp', ['AWSECommerceServiceLib']);
 ```
 At this point, the SDK has been successfully included in your project. Further steps include using a service/factory from the generated SDK. To see working example of this, please head on [over here](#list-of-controllers) and choose any class to see its functions and example usage.  
 
@@ -168,187 +294,12 @@ To run the app, simply open up the `index.html` file in a browser.
 
 The Angular Application can be initialized as following:
 ```JavaScript
-var app = angular.module('myApp', [SwaggerPetstoreLib]);
+var app = angular.module('myApp', [AWSECommerceServiceLib]);
 // now controllers/services can be created which import
 // the factories provided by the sdk
 ```
-### Authentication
-In order to setup authentication and initialization of the Angular App, you need the following information.
+### 
 
-| Parameter | Description |
-|-----------|-------------|
-| oAuthClientId | OAuth 2 Client ID |
-| oAuthRedirectUri | OAuth 2 Redirection endpoint or Callback Uri |
-
-
-
-```JavaScript
-var app = angular.module('myApp', [SwaggerPetstoreLib]);
-app.factory('config', function($scope, Configuration) 
-{
-    return {
-        setConfigVars: function() {
-            // Configuration parameters and credentials
-            Configuration.oAuthClientId = 'oAuthClientId'; // OAuth 2 Client ID
-            Configuration.oAuthRedirectUri = 'oAuthRedirectUri'; // OAuth 2 Redirection endpoint or Callback Uri
-            
-        }
-    };
-});
-```
-
-
-You must now authorize the client.
-
-### Authorizing your client
-
-Your application must obtain user authorization before it can execute an endpoint call. The SDK uses OAuth 2.0 Implicit Grant to obtain a user's consent to perform an API request on user's behalf.
-The entire flow of building the authorization URL, obtaining consent from the user and storing the access token is handled by the SDK itself.
-
-
-`retrieveAndSetAccessToken()` method will be called in order to obtain and set the access token in the `Configuration`.  You must pass the **[scopes](#scopes)** (for which you need permission to access) in this function.  
-
-Calling this method will open up the consent screen.
-
-### Consent screen and access token retrieval
-Once the user responds to the consent request, the OAuth 2.0 server responds to your application's access request by redirecting the user to the redirect URI specified in Configuration.
-
-The redirect URI will receive the access token as the token argument in the URL fragment. This is how it will look
-
-```
-https://example.com/oauth/callback#token=XXXXXXXXXXXXXXXXXXXXXXXXX
-```
-
-The access token must be extracted by client-side JavaScript code.
-
-`OAuthCallbackScript.js` is the script which retrieves the access token and passes it as an event data to the window which actually opened up the consent screen. You can simply link this with a html file to handle access token retrieval.
-
-```html
-<script src="OAuthCallbackScript.js"></script>
-```
-
-
-
-
-### Scopes
-
-Scopes enable your application to only request access to the resources it needs while enabling users to control the amount of access they grant to your application. Available scopes are defined in the `SwaggerPetstoreLib/Models/OAuthScopeEnum` enumeration.
-
-| Scope Name | Description |
-| --- | --- |
-| `WRITEPETS` | modify pets in your account |
-| `READPETS` | read your pets |
-
-
-### Complete Example
-
-In order to set up the client side script which extracts the access token from the uri, perform the following steps:
-+ Link the `OAuthCallbackScript.js` to the html file which is served at the registered redirect_uri for the application.
-
-For example, if the redirect_uri is `http://localhost/callback.html`, create `callback.html` in the root of the project folder. And add the following content:
-
-#### `callback.html`
-
-```html
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>OAuthTest</title>
-
-</head>
-
-
-<body>
-    <script src="scripts/OAuthCallbackScript.js"></script>
-</body>
-
-</html>
-```
-
-This will ensure that the access token which will be received at `http://localhost/callback.html` will be retrieved by the `OAuthCallbackScript.js`.
-
-After setting up as above, here's how the Implicit Grant flow can be executed.
-
-#### `app.js`
-
-```JavaScript
-var app = angular.module('OAuthTest', ['SwaggerPetstoreLib']);
-
-app.controller('oauthClientController', function($scope, OAuthManager, OAuthScopeEnum) {
-    if (OAuthManager.isTokenRetrievedAndSet()) {
-        // token already set, make API calls
-    } else {
-        var scopes = [OAuthScopeEnum.WRITEPETS, OAuthScopeEnum.READPETS];
-        var promise = OAuthManager.retrieveAndSetAccessToken(scopes, '', true);
-        promise.then(function(success) {
-            // client successfully authorized
-            // make API calls as required
-        });
-    }
-});
-```
-
-#### `index.html`
-```html
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>OAuthTest</title>
-    <meta charset="UTF8">
-
-    <script src="scripts/angular.min.js"></script>
-
-    <script src="scripts/SwaggerPetstoreLib/Module.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Configuration.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/ModelFactory.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/ObjectMapper.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/APIHelper.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Servers.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Environments.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Http/Client/HttpContext.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Http/Request/HttpRequest.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Http/Response/HttpResponse.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Http/Client/RequestClient.js"></script>
-
-    <!-- API Controllers -->
-    <script src="scripts/SwaggerPetstoreLib/Controllers/BaseController.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Controllers/PetController.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Controllers/StoreController.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Controllers/UserController.js"></script>
-
-
-    <!-- Models -->
-    <script src="scripts/SwaggerPetstoreLib/Models/BaseModel.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Models/Order.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Models/StatusEnum.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Models/Category.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Models/User.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Models/Tag.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Models/ApiResponse.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Models/Pet.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Models/Status7Enum.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Models/OAuthScopeEnum.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Models/OAuthScopeEnum.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Models/OAuthToken.js"></script>
-    <script src="scripts/SwaggerPetstoreLib/Models/OAuthProviderErrorEnum.js"></script>
-
-
-    <script src="scripts/SwaggerPetstoreLib/OAuthManager.js"></script>
-    <script src="scripts/app.js"></script>
-
-</head>
-
-
-<body ng-app="OAuthTest">
-    <div ng-controller="oauthClientController">
-
-    </div>
-</body>
-
-</html>
-```
 
 
 
@@ -356,469 +307,34 @@ app.controller('oauthClientController', function($scope, OAuthManager, OAuthScop
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [PetController](#pet_controller)
-* [StoreController](#store_controller)
-* [UserController](#user_controller)
+* [AWSECommerceServiceBindingController](#awse_commerce_service_binding_controller)
 
-## <a name="pet_controller"></a>![Class: ](https://apidocs.io/img/class.png ".PetController") PetController
+## <a name="awse_commerce_service_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png ".AWSECommerceServiceBindingController") AWSECommerceServiceBindingController
 
 ### Get singleton instance
 
-The singleton instance of the ``` PetController ``` class can be accessed via Dependency Injection.
+The singleton instance of the ``` AWSECommerceServiceBindingController ``` class can be accessed via Dependency Injection.
 
 ```js
-	app.controller("testController", function($scope, PetController, Pet, ApiResponse){
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartModifyResponseMsg, CartClearResponseMsg, CartCreateResponseMsg, CartAddResponseMsg, CartGetResponseMsg, SimilarityLookupResponseMsg, BrowseNodeLookupResponseMsg, ItemLookupResponseMsg, ItemSearchResponseMsg){
 	});
 ```
 
-### <a name="update_pet"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.updatePet") updatePet
-
-> Update an existing pet
-
-
-```javascript
-function updatePet(body)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | Pet object that needs to be added to the store |
-
-
-
-#### Example Usage
-
-```javascript
-
-
-	app.controller("testController", function($scope, PetController){
-        var body = new Pet({"key":"value"});
-
-
-		var result = PetController.updatePet(body);
-        //Function call returns a promise
-        result.then(function(success){
-			//success case
-			//getting context of response
-			console.log(success.getContext());
-		},function(err){
-			//failure case
-		});
-
-	});
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Pet not found |
-| 405 | Validation exception |
-
-
-
-
-### <a name="add_pet"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.addPet") addPet
-
-> Add a new pet to the store
-
-
-```javascript
-function addPet(body)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | Pet object that needs to be added to the store |
-
-
-
-#### Example Usage
-
-```javascript
-
-
-	app.controller("testController", function($scope, PetController){
-        var body = new Pet({"key":"value"});
-
-
-		var result = PetController.addPet(body);
-        //Function call returns a promise
-        result.then(function(success){
-			//success case
-			//getting context of response
-			console.log(success.getContext());
-		},function(err){
-			//failure case
-		});
-
-	});
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 405 | Invalid input |
-
-
-
-
-### <a name="find_pets_by_status"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.findPetsByStatus") findPetsByStatus
-
-> Finds Pets by status
-
-
-```javascript
-function findPetsByStatus(status)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| status |  ``` Required ```  ``` Collection ```  | Status values that need to be considered for filter |
-
-
-
-#### Example Usage
-
-```javascript
-
-
-	app.controller("testController", function($scope, PetController, Pet){
-        var status = [ Object.keys(Status7Enum)[0] ];
-
-
-		var result = PetController.findPetsByStatus(status);
-        //Function call returns a promise
-        result.then(function(success){
-			//success case
-			//getting context of response
-			console.log(success.getContext());
-		},function(err){
-			//failure case
-		});
-
-	});
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid status value |
-
-
-
-
-### <a name="find_pets_by_tags"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.findPetsByTags") findPetsByTags
-
-> Finds Pets by tags
-
-
-```javascript
-function findPetsByTags(tags)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| tags |  ``` Required ```  ``` Collection ```  | Tags to filter by |
-
-
-
-#### Example Usage
-
-```javascript
-
-
-	app.controller("testController", function($scope, PetController, Pet){
-        var tags = ['tags'];
-
-
-		var result = PetController.findPetsByTags(tags);
-        //Function call returns a promise
-        result.then(function(success){
-			//success case
-			//getting context of response
-			console.log(success.getContext());
-		},function(err){
-			//failure case
-		});
-
-	});
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid tag value |
-
-
-
-
-### <a name="get_pet_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.getPetById") getPetById
-
-> Find pet by ID
-
-
-```javascript
-function getPetById(petId)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| petId |  ``` Required ```  | ID of pet to return |
-
-
-
-#### Example Usage
-
-```javascript
-
-
-	app.controller("testController", function($scope, PetController, Pet){
-        var petId = 149;
-
-
-		var result = PetController.getPetById(petId);
-        //Function call returns a promise
-        result.then(function(success){
-			//success case
-			//getting context of response
-			console.log(success.getContext());
-		},function(err){
-			//failure case
-		});
-
-	});
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Pet not found |
-
-
-
-
-### <a name="update_pet_with_form"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.updatePetWithForm") updatePetWithForm
-
-> Updates a pet in the store with form data
-
-
-```javascript
-function updatePetWithForm(petId, name, status)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| petId |  ``` Required ```  | ID of pet that needs to be updated |
-| name |  ``` Optional ```  | Updated name of the pet |
-| status |  ``` Optional ```  | Updated status of the pet |
-
-
-
-#### Example Usage
-
-```javascript
-
-
-	app.controller("testController", function($scope, PetController){
-        var petId = 149;
-        var name = 'name';
-        var status = 'status';
-
-
-		var result = PetController.updatePetWithForm(petId, name, status);
-        //Function call returns a promise
-        result.then(function(success){
-			//success case
-			//getting context of response
-			console.log(success.getContext());
-		},function(err){
-			//failure case
-		});
-
-	});
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 405 | Invalid input |
-
-
-
-
-### <a name="delete_pet"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.deletePet") deletePet
-
-> Deletes a pet
-
-
-```javascript
-function deletePet(petId, apiKey)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| petId |  ``` Required ```  | Pet id to delete |
-| apiKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-
-	app.controller("testController", function($scope, PetController){
-        var petId = 149;
-        var apiKey = api_key;
-
-
-		var result = PetController.deletePet(petId, apiKey);
-        //Function call returns a promise
-        result.then(function(success){
-			//success case
-			//getting context of response
-			console.log(success.getContext());
-		},function(err){
-			//failure case
-		});
-
-	});
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Pet not found |
-
-
-
-
-### <a name="upload_file"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.uploadFile") uploadFile
-
-> uploads an image
-
-
-```javascript
-function uploadFile(petId, additionalMetadata, file)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| petId |  ``` Required ```  | ID of pet to update |
-| additionalMetadata |  ``` Optional ```  | Additional data to pass to server |
-| file |  ``` Optional ```  | file to upload |
-
-
-
-#### Example Usage
-
-```javascript
-
-
-	app.controller("testController", function($scope, PetController, $http, ApiResponse){
-        var petId = 149;
-        var additionalMetadata = 'additionalMetadata';
-        var file = "";
-
-
-		$http.get(url).then(function(successData){
-            file = successData;
-            var result = PetController.uploadFile(petId, additionalMetadata, file);
-        //Function call returns a promise
-            result.then(function(success){
-    			//success case
-    			//getting context of response
-    			console.log(success.getContext());
-    		},function(err){
-    			//failure case
-    		});
-    
-    	}, function(errorData){
-    
-    	});
-	});
-```
-
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="store_controller"></a>![Class: ](https://apidocs.io/img/class.png ".StoreController") StoreController
-
-### Get singleton instance
-
-The singleton instance of the ``` StoreController ``` class can be accessed via Dependency Injection.
-
-```js
-	app.controller("testController", function($scope, StoreController, Order){
-	});
-```
-
-### <a name="get_inventory"></a>![Method: ](https://apidocs.io/img/method.png ".StoreController.getInventory") getInventory
-
-> Returns pet inventories by status
-
-
-```javascript
-function getInventory()
-```
-
-#### Example Usage
-
-```javascript
-
-
-	app.controller("testController", function($scope, StoreController){
-
-
-		var result = StoreController.getInventory();
-        //Function call returns a promise
-        result.then(function(success){
-			//success case
-			//getting context of response
-			console.log(success.getContext());
-		},function(err){
-			//failure case
-		});
-
-	});
-```
-
-
-
-### <a name="create_place_order"></a>![Method: ](https://apidocs.io/img/method.png ".StoreController.createPlaceOrder") createPlaceOrder
+### <a name="create_cart_modify97"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify97") createCartModify97
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Place an order for a pet
+> TODO: Add a method description
 
 
 ```javascript
-function createPlaceOrder(body)
+function createCartModify97(body)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | order placed for purchasing the pet |
+| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -827,11 +343,11 @@ function createPlaceOrder(body)
 ```javascript
 
 
-	app.controller("testController", function($scope, StoreController, Order){
-        var body = new Order({"key":"value"});
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartModifyResponseMsg){
+        var body = new CartModifyRequestMsg({"key":"value"});
 
 
-		var result = StoreController.createPlaceOrder(body);
+		var result = AWSECommerceServiceBindingController.createCartModify97(body);
         //Function call returns a promise
         result.then(function(success){
 			//success case
@@ -844,30 +360,23 @@ function createPlaceOrder(body)
 	});
 ```
 
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid Order |
 
 
-
-
-### <a name="get_order_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".StoreController.getOrderById") getOrderById
+### <a name="create_cart_clear98"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear98") createCartClear98
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Find purchase order by ID
+> TODO: Add a method description
 
 
 ```javascript
-function getOrderById(orderId)
+function createCartClear98(body)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| orderId |  ``` Required ```  | ID of pet that needs to be fetched |
+| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -876,11 +385,11 @@ function getOrderById(orderId)
 ```javascript
 
 
-	app.controller("testController", function($scope, StoreController, Order){
-        var orderId = 149;
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartClearResponseMsg){
+        var body = new CartClearRequestMsg({"key":"value"});
 
 
-		var result = StoreController.getOrderById(orderId);
+		var result = AWSECommerceServiceBindingController.createCartClear98(body);
         //Function call returns a promise
         result.then(function(success){
 			//success case
@@ -893,31 +402,23 @@ function getOrderById(orderId)
 	});
 ```
 
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Order not found |
 
 
-
-
-### <a name="delete_order"></a>![Method: ](https://apidocs.io/img/method.png ".StoreController.deleteOrder") deleteOrder
+### <a name="create_cart_create96"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate96") createCartCreate96
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Delete purchase order by ID
+> TODO: Add a method description
 
 
 ```javascript
-function deleteOrder(orderId)
+function createCartCreate96(body)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| orderId |  ``` Required ```  | ID of the order that needs to be deleted |
+| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -926,11 +427,11 @@ function deleteOrder(orderId)
 ```javascript
 
 
-	app.controller("testController", function($scope, StoreController){
-        var orderId = 149;
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartCreateResponseMsg){
+        var body = new CartCreateRequestMsg({"key":"value"});
 
 
-		var result = StoreController.deleteOrder(orderId);
+		var result = AWSECommerceServiceBindingController.createCartCreate96(body);
         //Function call returns a promise
         result.then(function(success){
 			//success case
@@ -943,44 +444,23 @@ function deleteOrder(orderId)
 	});
 ```
 
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Order not found |
 
 
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="user_controller"></a>![Class: ](https://apidocs.io/img/class.png ".UserController") UserController
-
-### Get singleton instance
-
-The singleton instance of the ``` UserController ``` class can be accessed via Dependency Injection.
-
-```js
-	app.controller("testController", function($scope, UserController, User){
-	});
-```
-
-### <a name="create_user"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.createUser") createUser
+### <a name="create_cart_add95"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd95") createCartAdd95
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Create user
+> TODO: Add a method description
 
 
 ```javascript
-function createUser(body)
+function createCartAdd95(body)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | Created user object |
+| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -989,11 +469,11 @@ function createUser(body)
 ```javascript
 
 
-	app.controller("testController", function($scope, UserController){
-        var body = new User({"key":"value"});
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartAddResponseMsg){
+        var body = new CartAddRequestMsg({"key":"value"});
 
 
-		var result = UserController.createUser(body);
+		var result = AWSECommerceServiceBindingController.createCartAdd95(body);
         //Function call returns a promise
         result.then(function(success){
 			//success case
@@ -1006,30 +486,23 @@ function createUser(body)
 	});
 ```
 
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 0 | successful operation |
 
 
-
-
-### <a name="create_users_with_array_input"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.createUsersWithArrayInput") createUsersWithArrayInput
+### <a name="create_cart_get94"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet94") createCartGet94
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Creates list of users with given input array
+> TODO: Add a method description
 
 
 ```javascript
-function createUsersWithArrayInput(body)
+function createCartGet94(body)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  ``` Collection ```  | List of user object |
+| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -1038,13 +511,11 @@ function createUsersWithArrayInput(body)
 ```javascript
 
 
-	app.controller("testController", function($scope, UserController){
-        var body = [{"key":"value"}].map(function(elem) {
-        return new User(elem);
-    });
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartGetResponseMsg){
+        var body = new CartGetRequestMsg({"key":"value"});
 
 
-		var result = UserController.createUsersWithArrayInput(body);
+		var result = AWSECommerceServiceBindingController.createCartGet94(body);
         //Function call returns a promise
         result.then(function(success){
 			//success case
@@ -1057,30 +528,23 @@ function createUsersWithArrayInput(body)
 	});
 ```
 
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 0 | successful operation |
 
 
-
-
-### <a name="create_users_with_list_input"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.createUsersWithListInput") createUsersWithListInput
+### <a name="create_similarity_lookup93"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup93") createSimilarityLookup93
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Creates list of users with given input array
+> TODO: Add a method description
 
 
 ```javascript
-function createUsersWithListInput(body)
+function createSimilarityLookup93(body)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  ``` Collection ```  | List of user object |
+| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -1089,13 +553,11 @@ function createUsersWithListInput(body)
 ```javascript
 
 
-	app.controller("testController", function($scope, UserController){
-        var body = [{"key":"value"}].map(function(elem) {
-        return new User(elem);
-    });
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, SimilarityLookupResponseMsg){
+        var body = new SimilarityLookupRequestMsg({"key":"value"});
 
 
-		var result = UserController.createUsersWithListInput(body);
+		var result = AWSECommerceServiceBindingController.createSimilarityLookup93(body);
         //Function call returns a promise
         result.then(function(success){
 			//success case
@@ -1108,31 +570,23 @@ function createUsersWithListInput(body)
 	});
 ```
 
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 0 | successful operation |
 
 
-
-
-### <a name="get_login_user"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.getLoginUser") getLoginUser
+### <a name="create_browse_node_lookup92"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup92") createBrowseNodeLookup92
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Logs user into the system
+> TODO: Add a method description
 
 
 ```javascript
-function getLoginUser(username, password)
+function createBrowseNodeLookup92(body)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| username |  ``` Required ```  | The user name for login |
-| password |  ``` Required ```  | The password for login in clear text |
+| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -1141,12 +595,11 @@ function getLoginUser(username, password)
 ```javascript
 
 
-	app.controller("testController", function($scope, UserController){
-        var username = 'username';
-        var password = 'password';
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, BrowseNodeLookupResponseMsg){
+        var body = new BrowseNodeLookupRequestMsg({"key":"value"});
 
 
-		var result = UserController.getLoginUser(username, password);
+		var result = AWSECommerceServiceBindingController.createBrowseNodeLookup92(body);
         //Function call returns a promise
         result.then(function(success){
 			//success case
@@ -1159,71 +612,23 @@ function getLoginUser(username, password)
 	});
 ```
 
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid username/password supplied |
 
 
-
-
-### <a name="get_logout_user"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.getLogoutUser") getLogoutUser
+### <a name="create_item_lookup91"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup91") createItemLookup91
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Logs out current logged in user session
+> TODO: Add a method description
 
 
 ```javascript
-function getLogoutUser()
-```
-
-#### Example Usage
-
-```javascript
-
-
-	app.controller("testController", function($scope, UserController){
-
-
-		var result = UserController.getLogoutUser();
-        //Function call returns a promise
-        result.then(function(success){
-			//success case
-			//getting context of response
-			console.log(success.getContext());
-		},function(err){
-			//failure case
-		});
-
-	});
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 0 | successful operation |
-
-
-
-
-### <a name="get_user_by_name"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.getUserByName") getUserByName
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get user by user name
-
-
-```javascript
-function getUserByName(username)
+function createItemLookup91(body)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| username |  ``` Required ```  | The name that needs to be fetched. Use user1 for testing. |
+| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -1232,11 +637,11 @@ function getUserByName(username)
 ```javascript
 
 
-	app.controller("testController", function($scope, UserController, User){
-        var username = 'username';
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, ItemLookupResponseMsg){
+        var body = new ItemLookupRequestMsg({"key":"value"});
 
 
-		var result = UserController.getUserByName(username);
+		var result = AWSECommerceServiceBindingController.createItemLookup91(body);
         //Function call returns a promise
         result.then(function(success){
 			//success case
@@ -1249,32 +654,23 @@ function getUserByName(username)
 	});
 ```
 
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid username supplied |
-| 404 | User not found |
 
 
-
-
-### <a name="update_user"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.updateUser") updateUser
+### <a name="create_item_search90"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch90") createItemSearch90
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Updated user
+> TODO: Add a method description
 
 
 ```javascript
-function updateUser(username, body)
+function createItemSearch90(body)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| username |  ``` Required ```  | name that need to be updated |
-| body |  ``` Required ```  | Updated user object |
+| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -1283,12 +679,11 @@ function updateUser(username, body)
 ```javascript
 
 
-	app.controller("testController", function($scope, UserController){
-        var username = 'username';
-        var body = new User({"key":"value"});
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, ItemSearchResponseMsg){
+        var body = new ItemSearchRequestMsg({"key":"value"});
 
 
-		var result = UserController.updateUser(username, body);
+		var result = AWSECommerceServiceBindingController.createItemSearch90(body);
         //Function call returns a promise
         result.then(function(success){
 			//success case
@@ -1301,31 +696,23 @@ function updateUser(username, body)
 	});
 ```
 
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid user supplied |
-| 404 | User not found |
 
 
-
-
-### <a name="delete_user"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.deleteUser") deleteUser
+### <a name="create_cart_clear89"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear89") createCartClear89
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Delete user
+> TODO: Add a method description
 
 
 ```javascript
-function deleteUser(username)
+function createCartClear89(body)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| username |  ``` Required ```  | The name that needs to be deleted |
+| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -1334,11 +721,11 @@ function deleteUser(username)
 ```javascript
 
 
-	app.controller("testController", function($scope, UserController){
-        var username = 'username';
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartClearResponseMsg){
+        var body = new CartClearRequestMsg({"key":"value"});
 
 
-		var result = UserController.deleteUser(username);
+		var result = AWSECommerceServiceBindingController.createCartClear89(body);
         //Function call returns a promise
         result.then(function(success){
 			//success case
@@ -1351,13 +738,3743 @@ function deleteUser(username)
 	});
 ```
 
-#### Errors
 
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid username supplied |
-| 404 | User not found |
 
+### <a name="create_cart_modify88"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify88") createCartModify88
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartModify88(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartModifyResponseMsg){
+        var body = new CartModifyRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartModify88(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_create87"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate87") createCartCreate87
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartCreate87(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartCreateResponseMsg){
+        var body = new CartCreateRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartCreate87(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_add86"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd86") createCartAdd86
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartAdd86(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartAddResponseMsg){
+        var body = new CartAddRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartAdd86(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_get85"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet85") createCartGet85
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartGet85(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartGetResponseMsg){
+        var body = new CartGetRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartGet85(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_similarity_lookup84"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup84") createSimilarityLookup84
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createSimilarityLookup84(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, SimilarityLookupResponseMsg){
+        var body = new SimilarityLookupRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createSimilarityLookup84(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_browse_node_lookup83"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup83") createBrowseNodeLookup83
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createBrowseNodeLookup83(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, BrowseNodeLookupResponseMsg){
+        var body = new BrowseNodeLookupRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createBrowseNodeLookup83(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_item_lookup82"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup82") createItemLookup82
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createItemLookup82(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, ItemLookupResponseMsg){
+        var body = new ItemLookupRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createItemLookup82(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_item_search81"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch81") createItemSearch81
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createItemSearch81(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, ItemSearchResponseMsg){
+        var body = new ItemSearchRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createItemSearch81(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_clear80"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear80") createCartClear80
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartClear80(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartClearResponseMsg){
+        var body = new CartClearRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartClear80(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_modify79"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify79") createCartModify79
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartModify79(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartModifyResponseMsg){
+        var body = new CartModifyRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartModify79(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_create78"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate78") createCartCreate78
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartCreate78(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartCreateResponseMsg){
+        var body = new CartCreateRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartCreate78(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_add77"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd77") createCartAdd77
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartAdd77(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartAddResponseMsg){
+        var body = new CartAddRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartAdd77(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_get76"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet76") createCartGet76
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartGet76(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartGetResponseMsg){
+        var body = new CartGetRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartGet76(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_similarity_lookup75"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup75") createSimilarityLookup75
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createSimilarityLookup75(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, SimilarityLookupResponseMsg){
+        var body = new SimilarityLookupRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createSimilarityLookup75(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_browse_node_lookup74"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup74") createBrowseNodeLookup74
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createBrowseNodeLookup74(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, BrowseNodeLookupResponseMsg){
+        var body = new BrowseNodeLookupRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createBrowseNodeLookup74(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_item_lookup73"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup73") createItemLookup73
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createItemLookup73(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, ItemLookupResponseMsg){
+        var body = new ItemLookupRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createItemLookup73(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_item_search72"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch72") createItemSearch72
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createItemSearch72(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, ItemSearchResponseMsg){
+        var body = new ItemSearchRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createItemSearch72(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_clear71"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear71") createCartClear71
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartClear71(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartClearResponseMsg){
+        var body = new CartClearRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartClear71(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_modify70"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify70") createCartModify70
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartModify70(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartModifyResponseMsg){
+        var body = new CartModifyRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartModify70(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_create69"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate69") createCartCreate69
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartCreate69(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartCreateResponseMsg){
+        var body = new CartCreateRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartCreate69(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_add68"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd68") createCartAdd68
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartAdd68(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartAddResponseMsg){
+        var body = new CartAddRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartAdd68(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_get67"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet67") createCartGet67
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartGet67(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartGetResponseMsg){
+        var body = new CartGetRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartGet67(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_similarity_lookup66"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup66") createSimilarityLookup66
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createSimilarityLookup66(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, SimilarityLookupResponseMsg){
+        var body = new SimilarityLookupRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createSimilarityLookup66(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_browse_node_lookup65"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup65") createBrowseNodeLookup65
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createBrowseNodeLookup65(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, BrowseNodeLookupResponseMsg){
+        var body = new BrowseNodeLookupRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createBrowseNodeLookup65(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_item_lookup64"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup64") createItemLookup64
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createItemLookup64(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, ItemLookupResponseMsg){
+        var body = new ItemLookupRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createItemLookup64(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_item_search63"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch63") createItemSearch63
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createItemSearch63(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, ItemSearchResponseMsg){
+        var body = new ItemSearchRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createItemSearch63(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_clear62"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear62") createCartClear62
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartClear62(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartClearResponseMsg){
+        var body = new CartClearRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartClear62(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_modify61"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify61") createCartModify61
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartModify61(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartModifyResponseMsg){
+        var body = new CartModifyRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartModify61(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_create60"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate60") createCartCreate60
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartCreate60(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartCreateResponseMsg){
+        var body = new CartCreateRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartCreate60(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_add59"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd59") createCartAdd59
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartAdd59(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartAddResponseMsg){
+        var body = new CartAddRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartAdd59(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_get58"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet58") createCartGet58
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartGet58(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartGetResponseMsg){
+        var body = new CartGetRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartGet58(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_similarity_lookup57"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup57") createSimilarityLookup57
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createSimilarityLookup57(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, SimilarityLookupResponseMsg){
+        var body = new SimilarityLookupRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createSimilarityLookup57(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_browse_node_lookup56"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup56") createBrowseNodeLookup56
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createBrowseNodeLookup56(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, BrowseNodeLookupResponseMsg){
+        var body = new BrowseNodeLookupRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createBrowseNodeLookup56(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_item_lookup55"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup55") createItemLookup55
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createItemLookup55(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, ItemLookupResponseMsg){
+        var body = new ItemLookupRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createItemLookup55(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_item_search54"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch54") createItemSearch54
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createItemSearch54(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, ItemSearchResponseMsg){
+        var body = new ItemSearchRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createItemSearch54(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_clear53"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear53") createCartClear53
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartClear53(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartClearResponseMsg){
+        var body = new CartClearRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartClear53(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_modify52"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify52") createCartModify52
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartModify52(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartModifyResponseMsg){
+        var body = new CartModifyRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartModify52(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_create51"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate51") createCartCreate51
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartCreate51(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartCreateResponseMsg){
+        var body = new CartCreateRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartCreate51(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_add50"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd50") createCartAdd50
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartAdd50(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartAddResponseMsg){
+        var body = new CartAddRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartAdd50(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_get49"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet49") createCartGet49
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartGet49(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartGetResponseMsg){
+        var body = new CartGetRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartGet49(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_similarity_lookup48"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup48") createSimilarityLookup48
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createSimilarityLookup48(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, SimilarityLookupResponseMsg){
+        var body = new SimilarityLookupRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createSimilarityLookup48(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_browse_node_lookup47"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup47") createBrowseNodeLookup47
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createBrowseNodeLookup47(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, BrowseNodeLookupResponseMsg){
+        var body = new BrowseNodeLookupRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createBrowseNodeLookup47(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_item_lookup46"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup46") createItemLookup46
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createItemLookup46(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, ItemLookupResponseMsg){
+        var body = new ItemLookupRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createItemLookup46(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_item_search45"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch45") createItemSearch45
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createItemSearch45(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, ItemSearchResponseMsg){
+        var body = new ItemSearchRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createItemSearch45(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_clear44"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear44") createCartClear44
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartClear44(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartClearResponseMsg){
+        var body = new CartClearRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartClear44(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_modify43"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify43") createCartModify43
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartModify43(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartModifyResponseMsg){
+        var body = new CartModifyRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartModify43(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_create42"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate42") createCartCreate42
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartCreate42(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartCreateResponseMsg){
+        var body = new CartCreateRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartCreate42(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_add41"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd41") createCartAdd41
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartAdd41(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartAddResponseMsg){
+        var body = new CartAddRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartAdd41(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_get40"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet40") createCartGet40
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartGet40(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartGetResponseMsg){
+        var body = new CartGetRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartGet40(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_similarity_lookup39"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup39") createSimilarityLookup39
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createSimilarityLookup39(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, SimilarityLookupResponseMsg){
+        var body = new SimilarityLookupRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createSimilarityLookup39(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_browse_node_lookup38"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup38") createBrowseNodeLookup38
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createBrowseNodeLookup38(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, BrowseNodeLookupResponseMsg){
+        var body = new BrowseNodeLookupRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createBrowseNodeLookup38(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_item_lookup37"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup37") createItemLookup37
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createItemLookup37(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, ItemLookupResponseMsg){
+        var body = new ItemLookupRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createItemLookup37(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_item_search36"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch36") createItemSearch36
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createItemSearch36(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, ItemSearchResponseMsg){
+        var body = new ItemSearchRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createItemSearch36(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_clear35"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear35") createCartClear35
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartClear35(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartClearResponseMsg){
+        var body = new CartClearRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartClear35(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_modify34"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify34") createCartModify34
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartModify34(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartModifyResponseMsg){
+        var body = new CartModifyRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartModify34(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_create33"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate33") createCartCreate33
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartCreate33(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartCreateResponseMsg){
+        var body = new CartCreateRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartCreate33(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_add32"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd32") createCartAdd32
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartAdd32(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartAddResponseMsg){
+        var body = new CartAddRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartAdd32(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_get31"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet31") createCartGet31
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartGet31(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartGetResponseMsg){
+        var body = new CartGetRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartGet31(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_similarity_lookup30"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup30") createSimilarityLookup30
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createSimilarityLookup30(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, SimilarityLookupResponseMsg){
+        var body = new SimilarityLookupRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createSimilarityLookup30(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_browse_node_lookup29"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup29") createBrowseNodeLookup29
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createBrowseNodeLookup29(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, BrowseNodeLookupResponseMsg){
+        var body = new BrowseNodeLookupRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createBrowseNodeLookup29(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_item_lookup28"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup28") createItemLookup28
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createItemLookup28(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, ItemLookupResponseMsg){
+        var body = new ItemLookupRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createItemLookup28(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_item_search27"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch27") createItemSearch27
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createItemSearch27(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, ItemSearchResponseMsg){
+        var body = new ItemSearchRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createItemSearch27(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_clear26"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear26") createCartClear26
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartClear26(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartClearResponseMsg){
+        var body = new CartClearRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartClear26(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_modify25"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify25") createCartModify25
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartModify25(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartModifyResponseMsg){
+        var body = new CartModifyRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartModify25(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_create24"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate24") createCartCreate24
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartCreate24(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartCreateResponseMsg){
+        var body = new CartCreateRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartCreate24(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_add23"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd23") createCartAdd23
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartAdd23(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartAddResponseMsg){
+        var body = new CartAddRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartAdd23(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_get22"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet22") createCartGet22
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartGet22(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartGetResponseMsg){
+        var body = new CartGetRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartGet22(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_similarity_lookup21"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup21") createSimilarityLookup21
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createSimilarityLookup21(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, SimilarityLookupResponseMsg){
+        var body = new SimilarityLookupRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createSimilarityLookup21(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_browse_node_lookup20"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup20") createBrowseNodeLookup20
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createBrowseNodeLookup20(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, BrowseNodeLookupResponseMsg){
+        var body = new BrowseNodeLookupRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createBrowseNodeLookup20(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_item_lookup19"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup19") createItemLookup19
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createItemLookup19(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, ItemLookupResponseMsg){
+        var body = new ItemLookupRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createItemLookup19(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_item_search18"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch18") createItemSearch18
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createItemSearch18(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, ItemSearchResponseMsg){
+        var body = new ItemSearchRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createItemSearch18(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_clear17"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear17") createCartClear17
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartClear17(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartClearResponseMsg){
+        var body = new CartClearRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartClear17(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_modify16"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify16") createCartModify16
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartModify16(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartModifyResponseMsg){
+        var body = new CartModifyRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartModify16(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_create15"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate15") createCartCreate15
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartCreate15(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartCreateResponseMsg){
+        var body = new CartCreateRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartCreate15(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_add14"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd14") createCartAdd14
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartAdd14(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartAddResponseMsg){
+        var body = new CartAddRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartAdd14(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_get13"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet13") createCartGet13
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartGet13(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartGetResponseMsg){
+        var body = new CartGetRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartGet13(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_similarity_lookup12"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup12") createSimilarityLookup12
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createSimilarityLookup12(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, SimilarityLookupResponseMsg){
+        var body = new SimilarityLookupRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createSimilarityLookup12(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_browse_node_lookup11"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup11") createBrowseNodeLookup11
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createBrowseNodeLookup11(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, BrowseNodeLookupResponseMsg){
+        var body = new BrowseNodeLookupRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createBrowseNodeLookup11(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_item_lookup10"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup10") createItemLookup10
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createItemLookup10(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, ItemLookupResponseMsg){
+        var body = new ItemLookupRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createItemLookup10(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_item_search9"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch9") createItemSearch9
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createItemSearch9(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, ItemSearchResponseMsg){
+        var body = new ItemSearchRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createItemSearch9(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_clear"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear") createCartClear
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartClear(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartClearResponseMsg){
+        var body = new CartClearRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartClear(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_modify"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify") createCartModify
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartModify(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartModifyResponseMsg){
+        var body = new CartModifyRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartModify(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_create"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate") createCartCreate
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartCreate(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartCreateResponseMsg){
+        var body = new CartCreateRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartCreate(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_add"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd") createCartAdd
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartAdd(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartAddResponseMsg){
+        var body = new CartAddRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartAdd(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_cart_get"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet") createCartGet
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createCartGet(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, CartGetResponseMsg){
+        var body = new CartGetRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createCartGet(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_similarity_lookup"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup") createSimilarityLookup
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createSimilarityLookup(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, SimilarityLookupResponseMsg){
+        var body = new SimilarityLookupRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createSimilarityLookup(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_browse_node_lookup"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup") createBrowseNodeLookup
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createBrowseNodeLookup(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, BrowseNodeLookupResponseMsg){
+        var body = new BrowseNodeLookupRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createBrowseNodeLookup(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_item_lookup"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup") createItemLookup
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createItemLookup(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, ItemLookupResponseMsg){
+        var body = new ItemLookupRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createItemLookup(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_item_search"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch") createItemSearch
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createItemSearch(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, AWSECommerceServiceBindingController, ItemSearchResponseMsg){
+        var body = new ItemSearchRequestMsg({"key":"value"});
+
+
+		var result = AWSECommerceServiceBindingController.createItemSearch(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
 
 
 
