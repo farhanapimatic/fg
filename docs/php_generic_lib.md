@@ -1,5 +1,7 @@
 # Getting started
 
+this is one of the test description
+
 ## How to Build
 
 The generated code has dependencies over external libraries like UniRest. These dependencies are defined in the ```composer.json``` file that comes with the SDK. 
@@ -106,14 +108,197 @@ You can change the PHPUnit test configuration in the `phpunit.xml` file.
 
 ## Initialization
 
-### 
+### Authentication
+In order to setup authentication and initialization of the API client, you need the following information.
+
+| Parameter | Description |
+|-----------|-------------|
+| oAuthClientId | OAuth 2 Client ID |
+| oAuthClientSecret | OAuth 2 Client Secret |
+| oAuthRedirectUri | OAuth 2 Redirection endpoint or Callback Uri |
+
+
 
 API client can be initialized as following.
 
 ```php
+$oAuthClientId = 'oAuthClientId'; // OAuth 2 Client ID
+$oAuthClientSecret = 'oAuthClientSecret'; // OAuth 2 Client Secret
+$oAuthRedirectUri = 'https://example.com/oauth/callback'; // OAuth 2 Redirection endpoint or Callback Uri
 
+$client = new AWSECommerceServiceLib\AWSECommerceServiceClient($oAuthClientId, $oAuthClientSecret, $oAuthRedirectUri);
+```
+
+You must authorize now authorize the client.
+
+### Authorizing your client
+
+Your application must obtain user authorization before it can execute an endpoint call.
+The SDK uses *OAuth 2.0 authorization* to obtain a user's consent to perform an API request on user's behalf.
+
+#### 1. Obtain user consent
+
+To obtain user's consent, you must redirect the user to the authorization page. The `buildAuthorizationUrl()` method creates the URL to the authorization page.
+```php
+$authUrl = $client->auth()->buildAuthorizationUrl();
+header('Location: ' . filter_var($authUrl, FILTER_SANITIZE_URL));
+```
+
+#### 2. Handle the OAuth server response
+
+Once the user responds to the consent request, the OAuth 2.0 server responds to your application's access request by redirecting the user to the redirect URI specified set in `Configuration`.
+
+If the user approves the request, the authorization code will be sent as the `code` query string:
+
+```
+https://example.com/oauth/callback?code=XXXXXXXXXXXXXXXXXXXXXXXXX
+```
+
+If the user does not approve the request, the response contains an `error` query string:
+
+```
+https://example.com/oauth/callback?error=access_denied
+```
+
+#### 3. Authorize the client using the code
+
+After the server receives the code, it can exchange this for an *access token*. The access token is an object containing information for authorizing client requests and refreshing the token itself.
+
+```php
+try {
+    $client->auth()->authorize($_GET['code']);
+} catch (AWSECommerceServiceLib\Exceptions\OAuthProviderException $ex) {
+    // handle exception
+}
+```
+
+### Refreshing token
+
+An access token may expire after sometime. To extend its lifetime, you must refresh the token.
+
+```php
+if ($client->auth()->isTokenExpired()) {
+    try {
+        $client->auth()->refreshToken();
+    } catch (AWSECommerceServiceLib\Exceptions\OAuthProviderException $ex) {
+        // handle exception
+    }
+}
+```
+
+If a token expires, the SDK will attempt to automatically refresh the token before the next endpoint call requiring authentication.
+
+### Storing an access token for reuse
+
+It is recommended that you store the access token for reuse.
+
+You can store the access token in the `$_SESSION` global:
+
+```php
+// store token
+$_SESSION['access_token'] = AWSECommerceServiceLib\Configuration::$oAuthToken;
+```
+
+However, since the the SDK will attempt to automatically refresh the token when it expires, it is recommended that you register a *token update callback* to detect any change to the access token.
+
+```php
+AWSECommerceServiceLib\Configuration::$oAuthTokenUpdateCallback = function($token) {
+    // use session or some other way to persist the $token
+    $_SESSION['access_token'] = $token;
+};
+```
+
+The token update callback will be fired upon authorization as well as token refresh.
+
+### Creating a client from a stored token
+
+To authorize a client from a stored access token, just set the access token in `Configuration` along with the other configuration parameters before creating the client:
+
+```php
+// load token later...
+AWSECommerceServiceLib\Configuration::$oAuthToken = $_SESSION['access_token'];
+
+// Set other configuration, then instantiate client
 $client = new AWSECommerceServiceLib\AWSECommerceServiceClient();
 ```
+
+### Complete example
+
+In this example, the `index.php` will first check if an access token is available for the user. If one is not set,
+it redirects the user to `authcallback.php` which will obtain an access token and redirect the user back to the `index.php` page.
+Now that an access token is set, `index.php` can use the client to make authorized calls to the server.
+
+#### `index.php`
+
+```php
+<?php
+require_once __DIR__.'/vendor/autoload.php';
+
+session_start();
+
+// Client configuration
+$oAuthClientId = 'oAuthClientId';
+$oAuthClientSecret = 'oAuthClientSecret';
+$oAuthRedirectUri = 'http://' . $_SERVER['HTTP_HOST'] . '/authcallback.php';
+
+$client = new AWSECommerceServiceLib\AWSECommerceServiceClient($oAuthClientId, $oAuthClientSecret, $oAuthRedirectUri);
+
+// callback stores token for reuse when token is updated
+AWSECommerceServiceLib\Configuration::$oAuthTokenUpdateCallback = function($token) {
+    $_SESSION['access_token'] = $token;
+};
+
+// check if a token is available
+if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
+    // set access token in configuration
+    AWSECommerceServiceLib\Configuration::$oAuthToken = $_SESSION['access_token'];
+
+    // now you can use $client to make endpoint calls
+    // client will automatically refresh the token when it expires and call the token update callback
+} else {
+    // redirect user to a page that handles authorization
+    header('Location: ' . filter_var($oAuthRedirectUri, FILTER_SANITIZE_URL));
+}
+```
+
+#### `authcallback.php`
+
+```php
+<?php
+require_once __DIR__.'/vendor/autoload.php';
+
+session_start();
+
+// Client configuration
+$oAuthClientId = 'oAuthClientId';
+$oAuthClientSecret = 'oAuthClientSecret';
+$oAuthRedirectUri = 'http://' . $_SERVER['HTTP_HOST'] . '/authcallback.php';
+
+$client = new AWSECommerceServiceLib\AWSECommerceServiceClient($oAuthClientId, $oAuthClientSecret, $oAuthRedirectUri);
+
+// callback stores token for reuse when token is updated
+AWSECommerceServiceLib\Configuration::$oAuthTokenUpdateCallback = function($token) {
+    $_SESSION['access_token'] = $token;
+};
+
+if (! isset($_GET['code'])) {
+    // if authorization code is absent, redirect to authorization page
+    $authUrl = $client->auth()->buildAuthorizationUrl();
+    header('Location: ' . filter_var($authUrl, FILTER_SANITIZE_URL));
+} else {
+    try {
+        // authorize client (calls token update callback as well)
+        $token = $client->auth()->authorize($_GET['code']);
+
+        // resume user activity
+        $redirect_uri = 'http://' . $_SERVER['HTTP_HOST'] . '/';
+        header('Location: ' . filter_var($redirect_uri, FILTER_SANITIZE_URL));
+    } catch (AWSECommerceServiceLib\Exceptions\OAuthProviderException $ex) {
+        // handle exception
+    }
+}
+```
+
 
 
 # Class Reference
@@ -121,6 +306,7 @@ $client = new AWSECommerceServiceLib\AWSECommerceServiceClient();
 ## <a name="list_of_controllers"></a>List of Controllers
 
 * [AWSECommerceServiceBindingController](#awse_commerce_service_binding_controller)
+* [OAuthAuthorizationController](#o_auth_authorization_controller)
 
 ## <a name="awse_commerce_service_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png ".AWSECommerceServiceBindingController") AWSECommerceServiceBindingController
 
@@ -132,7 +318,7 @@ The singleton instance of the ``` AWSECommerceServiceBindingController ``` class
 $aWSECommerceServiceBinding = $client->getAWSECommerceServiceBinding();
 ```
 
-### <a name="create_cart_modify70"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify70") createCartModify70
+### <a name="create_item_search"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch") createItemSearch
 
 > *Tags:*  ``` Skips Authentication ``` 
 
@@ -140,210 +326,7 @@ $aWSECommerceServiceBinding = $client->getAWSECommerceServiceBinding();
 
 
 ```php
-function createCartModify70($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartModifyRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartModify70($body);
-
-```
-
-
-### <a name="create_cart_create69"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate69") createCartCreate69
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartCreate69($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartCreateRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartCreate69($body);
-
-```
-
-
-### <a name="create_cart_add68"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd68") createCartAdd68
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartAdd68($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartAddRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartAdd68($body);
-
-```
-
-
-### <a name="create_cart_get67"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet67") createCartGet67
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartGet67($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartGetRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartGet67($body);
-
-```
-
-
-### <a name="create_similarity_lookup66"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup66") createSimilarityLookup66
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createSimilarityLookup66($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new SimilarityLookupRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createSimilarityLookup66($body);
-
-```
-
-
-### <a name="create_browse_node_lookup65"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup65") createBrowseNodeLookup65
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createBrowseNodeLookup65($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new BrowseNodeLookupRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createBrowseNodeLookup65($body);
-
-```
-
-
-### <a name="create_item_lookup64"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup64") createItemLookup64
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createItemLookup64($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new ItemLookupRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createItemLookup64($body);
-
-```
-
-
-### <a name="create_item_search63"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch63") createItemSearch63
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createItemSearch63($body)
+function createItemSearch($body)
 ```
 
 #### Parameters
@@ -359,1776 +342,7 @@ function createItemSearch63($body)
 ```php
 $body = new ItemSearchRequestMsg();
 
-$result = $aWSECommerceServiceBinding->createItemSearch63($body);
-
-```
-
-
-### <a name="create_cart_clear62"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear62") createCartClear62
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartClear62($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartClearRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartClear62($body);
-
-```
-
-
-### <a name="create_cart_modify61"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify61") createCartModify61
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartModify61($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartModifyRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartModify61($body);
-
-```
-
-
-### <a name="create_cart_create60"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate60") createCartCreate60
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartCreate60($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartCreateRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartCreate60($body);
-
-```
-
-
-### <a name="create_cart_add59"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd59") createCartAdd59
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartAdd59($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartAddRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartAdd59($body);
-
-```
-
-
-### <a name="create_cart_get58"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet58") createCartGet58
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartGet58($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartGetRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartGet58($body);
-
-```
-
-
-### <a name="create_similarity_lookup57"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup57") createSimilarityLookup57
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createSimilarityLookup57($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new SimilarityLookupRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createSimilarityLookup57($body);
-
-```
-
-
-### <a name="create_browse_node_lookup56"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup56") createBrowseNodeLookup56
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createBrowseNodeLookup56($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new BrowseNodeLookupRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createBrowseNodeLookup56($body);
-
-```
-
-
-### <a name="create_item_lookup55"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup55") createItemLookup55
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createItemLookup55($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new ItemLookupRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createItemLookup55($body);
-
-```
-
-
-### <a name="create_item_search54"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch54") createItemSearch54
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createItemSearch54($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new ItemSearchRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createItemSearch54($body);
-
-```
-
-
-### <a name="create_cart_clear53"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear53") createCartClear53
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartClear53($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartClearRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartClear53($body);
-
-```
-
-
-### <a name="create_cart_modify52"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify52") createCartModify52
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartModify52($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartModifyRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartModify52($body);
-
-```
-
-
-### <a name="create_cart_create51"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate51") createCartCreate51
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartCreate51($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartCreateRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartCreate51($body);
-
-```
-
-
-### <a name="create_cart_add50"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd50") createCartAdd50
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartAdd50($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartAddRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartAdd50($body);
-
-```
-
-
-### <a name="create_cart_get49"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet49") createCartGet49
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartGet49($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartGetRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartGet49($body);
-
-```
-
-
-### <a name="create_similarity_lookup48"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup48") createSimilarityLookup48
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createSimilarityLookup48($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new SimilarityLookupRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createSimilarityLookup48($body);
-
-```
-
-
-### <a name="create_browse_node_lookup47"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup47") createBrowseNodeLookup47
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createBrowseNodeLookup47($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new BrowseNodeLookupRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createBrowseNodeLookup47($body);
-
-```
-
-
-### <a name="create_item_lookup46"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup46") createItemLookup46
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createItemLookup46($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new ItemLookupRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createItemLookup46($body);
-
-```
-
-
-### <a name="create_item_search45"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch45") createItemSearch45
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createItemSearch45($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new ItemSearchRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createItemSearch45($body);
-
-```
-
-
-### <a name="create_cart_clear44"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear44") createCartClear44
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartClear44($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartClearRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartClear44($body);
-
-```
-
-
-### <a name="create_cart_modify43"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify43") createCartModify43
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartModify43($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartModifyRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartModify43($body);
-
-```
-
-
-### <a name="create_cart_create42"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate42") createCartCreate42
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartCreate42($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartCreateRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartCreate42($body);
-
-```
-
-
-### <a name="create_cart_add41"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd41") createCartAdd41
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartAdd41($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartAddRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartAdd41($body);
-
-```
-
-
-### <a name="create_cart_get40"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet40") createCartGet40
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartGet40($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartGetRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartGet40($body);
-
-```
-
-
-### <a name="create_similarity_lookup39"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup39") createSimilarityLookup39
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createSimilarityLookup39($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new SimilarityLookupRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createSimilarityLookup39($body);
-
-```
-
-
-### <a name="create_browse_node_lookup38"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup38") createBrowseNodeLookup38
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createBrowseNodeLookup38($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new BrowseNodeLookupRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createBrowseNodeLookup38($body);
-
-```
-
-
-### <a name="create_item_lookup37"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup37") createItemLookup37
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createItemLookup37($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new ItemLookupRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createItemLookup37($body);
-
-```
-
-
-### <a name="create_item_search36"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch36") createItemSearch36
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createItemSearch36($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new ItemSearchRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createItemSearch36($body);
-
-```
-
-
-### <a name="create_cart_clear35"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear35") createCartClear35
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartClear35($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartClearRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartClear35($body);
-
-```
-
-
-### <a name="create_cart_modify34"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify34") createCartModify34
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartModify34($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartModifyRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartModify34($body);
-
-```
-
-
-### <a name="create_cart_create33"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate33") createCartCreate33
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartCreate33($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartCreateRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartCreate33($body);
-
-```
-
-
-### <a name="create_cart_add32"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd32") createCartAdd32
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartAdd32($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartAddRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartAdd32($body);
-
-```
-
-
-### <a name="create_cart_get31"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet31") createCartGet31
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartGet31($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartGetRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartGet31($body);
-
-```
-
-
-### <a name="create_similarity_lookup30"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup30") createSimilarityLookup30
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createSimilarityLookup30($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new SimilarityLookupRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createSimilarityLookup30($body);
-
-```
-
-
-### <a name="create_browse_node_lookup29"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup29") createBrowseNodeLookup29
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createBrowseNodeLookup29($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new BrowseNodeLookupRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createBrowseNodeLookup29($body);
-
-```
-
-
-### <a name="create_item_lookup28"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup28") createItemLookup28
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createItemLookup28($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new ItemLookupRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createItemLookup28($body);
-
-```
-
-
-### <a name="create_item_search27"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch27") createItemSearch27
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createItemSearch27($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new ItemSearchRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createItemSearch27($body);
-
-```
-
-
-### <a name="create_cart_clear26"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear26") createCartClear26
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartClear26($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartClearRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartClear26($body);
-
-```
-
-
-### <a name="create_cart_modify25"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify25") createCartModify25
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartModify25($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartModifyRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartModify25($body);
-
-```
-
-
-### <a name="create_cart_create24"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate24") createCartCreate24
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartCreate24($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartCreateRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartCreate24($body);
-
-```
-
-
-### <a name="create_cart_add23"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd23") createCartAdd23
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartAdd23($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartAddRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartAdd23($body);
-
-```
-
-
-### <a name="create_cart_get22"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet22") createCartGet22
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartGet22($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartGetRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartGet22($body);
-
-```
-
-
-### <a name="create_similarity_lookup21"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup21") createSimilarityLookup21
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createSimilarityLookup21($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new SimilarityLookupRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createSimilarityLookup21($body);
-
-```
-
-
-### <a name="create_browse_node_lookup20"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup20") createBrowseNodeLookup20
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createBrowseNodeLookup20($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new BrowseNodeLookupRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createBrowseNodeLookup20($body);
-
-```
-
-
-### <a name="create_item_lookup19"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup19") createItemLookup19
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createItemLookup19($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new ItemLookupRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createItemLookup19($body);
-
-```
-
-
-### <a name="create_item_search18"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch18") createItemSearch18
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createItemSearch18($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new ItemSearchRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createItemSearch18($body);
-
-```
-
-
-### <a name="create_cart_clear17"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear17") createCartClear17
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartClear17($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartClearRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartClear17($body);
-
-```
-
-
-### <a name="create_cart_modify16"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify16") createCartModify16
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartModify16($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartModifyRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartModify16($body);
-
-```
-
-
-### <a name="create_cart_create15"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate15") createCartCreate15
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartCreate15($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartCreateRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartCreate15($body);
-
-```
-
-
-### <a name="create_cart_add14"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd14") createCartAdd14
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartAdd14($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartAddRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartAdd14($body);
-
-```
-
-
-### <a name="create_cart_get13"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet13") createCartGet13
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartGet13($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartGetRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartGet13($body);
-
-```
-
-
-### <a name="create_similarity_lookup12"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup12") createSimilarityLookup12
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createSimilarityLookup12($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new SimilarityLookupRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createSimilarityLookup12($body);
-
-```
-
-
-### <a name="create_browse_node_lookup11"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup11") createBrowseNodeLookup11
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createBrowseNodeLookup11($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new BrowseNodeLookupRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createBrowseNodeLookup11($body);
-
-```
-
-
-### <a name="create_item_lookup10"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup10") createItemLookup10
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createItemLookup10($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new ItemLookupRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createItemLookup10($body);
-
-```
-
-
-### <a name="create_item_search9"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch9") createItemSearch9
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createItemSearch9($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new ItemSearchRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createItemSearch9($body);
-
-```
-
-
-### <a name="create_cart_clear"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear") createCartClear
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartClear($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartClearRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartClear($body);
-
-```
-
-
-### <a name="create_cart_modify"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify") createCartModify
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartModify($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartModifyRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartModify($body);
-
-```
-
-
-### <a name="create_cart_create"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate") createCartCreate
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartCreate($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartCreateRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartCreate($body);
-
-```
-
-
-### <a name="create_cart_add"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd") createCartAdd
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartAdd($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartAddRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartAdd($body);
-
-```
-
-
-### <a name="create_cart_get"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet") createCartGet
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createCartGet($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new CartGetRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createCartGet($body);
-
-```
-
-
-### <a name="create_similarity_lookup"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup") createSimilarityLookup
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createSimilarityLookup($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new SimilarityLookupRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createSimilarityLookup($body);
-
-```
-
-
-### <a name="create_browse_node_lookup"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup") createBrowseNodeLookup
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createBrowseNodeLookup($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new BrowseNodeLookupRequestMsg();
-
-$result = $aWSECommerceServiceBinding->createBrowseNodeLookup($body);
+$result = $aWSECommerceServiceBinding->createItemSearch($body);
 
 ```
 
@@ -2162,7 +376,7 @@ $result = $aWSECommerceServiceBinding->createItemLookup($body);
 ```
 
 
-### <a name="create_item_search"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch") createItemSearch
+### <a name="create_browse_node_lookup"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup") createBrowseNodeLookup
 
 > *Tags:*  ``` Skips Authentication ``` 
 
@@ -2170,7 +384,210 @@ $result = $aWSECommerceServiceBinding->createItemLookup($body);
 
 
 ```php
-function createItemSearch($body)
+function createBrowseNodeLookup($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new BrowseNodeLookupRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createBrowseNodeLookup($body);
+
+```
+
+
+### <a name="create_similarity_lookup"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup") createSimilarityLookup
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createSimilarityLookup($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new SimilarityLookupRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createSimilarityLookup($body);
+
+```
+
+
+### <a name="create_cart_get"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet") createCartGet
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartGet($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartGetRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartGet($body);
+
+```
+
+
+### <a name="create_cart_add"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd") createCartAdd
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartAdd($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartAddRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartAdd($body);
+
+```
+
+
+### <a name="create_cart_create"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate") createCartCreate
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartCreate($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartCreateRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartCreate($body);
+
+```
+
+
+### <a name="create_cart_modify"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify") createCartModify
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartModify($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartModifyRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartModify($body);
+
+```
+
+
+### <a name="create_cart_clear"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear") createCartClear
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartClear($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartClearRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartClear($body);
+
+```
+
+
+### <a name="create_item_search9"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch9") createItemSearch9
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createItemSearch9($body)
 ```
 
 #### Parameters
@@ -2186,7 +603,1776 @@ function createItemSearch($body)
 ```php
 $body = new ItemSearchRequestMsg();
 
-$result = $aWSECommerceServiceBinding->createItemSearch($body);
+$result = $aWSECommerceServiceBinding->createItemSearch9($body);
+
+```
+
+
+### <a name="create_item_lookup10"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup10") createItemLookup10
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createItemLookup10($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new ItemLookupRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createItemLookup10($body);
+
+```
+
+
+### <a name="create_browse_node_lookup11"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup11") createBrowseNodeLookup11
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createBrowseNodeLookup11($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new BrowseNodeLookupRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createBrowseNodeLookup11($body);
+
+```
+
+
+### <a name="create_similarity_lookup12"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup12") createSimilarityLookup12
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createSimilarityLookup12($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new SimilarityLookupRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createSimilarityLookup12($body);
+
+```
+
+
+### <a name="create_cart_get13"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet13") createCartGet13
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartGet13($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartGetRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartGet13($body);
+
+```
+
+
+### <a name="create_cart_add14"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd14") createCartAdd14
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartAdd14($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartAddRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartAdd14($body);
+
+```
+
+
+### <a name="create_cart_create15"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate15") createCartCreate15
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartCreate15($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartCreateRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartCreate15($body);
+
+```
+
+
+### <a name="create_cart_modify16"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify16") createCartModify16
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartModify16($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartModifyRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartModify16($body);
+
+```
+
+
+### <a name="create_cart_clear17"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear17") createCartClear17
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartClear17($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartClearRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartClear17($body);
+
+```
+
+
+### <a name="create_item_search18"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch18") createItemSearch18
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createItemSearch18($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new ItemSearchRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createItemSearch18($body);
+
+```
+
+
+### <a name="create_item_lookup19"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup19") createItemLookup19
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createItemLookup19($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new ItemLookupRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createItemLookup19($body);
+
+```
+
+
+### <a name="create_browse_node_lookup20"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup20") createBrowseNodeLookup20
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createBrowseNodeLookup20($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new BrowseNodeLookupRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createBrowseNodeLookup20($body);
+
+```
+
+
+### <a name="create_similarity_lookup21"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup21") createSimilarityLookup21
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createSimilarityLookup21($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new SimilarityLookupRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createSimilarityLookup21($body);
+
+```
+
+
+### <a name="create_cart_get22"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet22") createCartGet22
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartGet22($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartGetRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartGet22($body);
+
+```
+
+
+### <a name="create_cart_add23"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd23") createCartAdd23
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartAdd23($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartAddRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartAdd23($body);
+
+```
+
+
+### <a name="create_cart_create24"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate24") createCartCreate24
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartCreate24($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartCreateRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartCreate24($body);
+
+```
+
+
+### <a name="create_cart_modify25"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify25") createCartModify25
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartModify25($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartModifyRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartModify25($body);
+
+```
+
+
+### <a name="create_cart_clear26"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear26") createCartClear26
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartClear26($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartClearRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartClear26($body);
+
+```
+
+
+### <a name="create_item_search27"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch27") createItemSearch27
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createItemSearch27($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new ItemSearchRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createItemSearch27($body);
+
+```
+
+
+### <a name="create_item_lookup28"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup28") createItemLookup28
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createItemLookup28($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new ItemLookupRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createItemLookup28($body);
+
+```
+
+
+### <a name="create_browse_node_lookup29"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup29") createBrowseNodeLookup29
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createBrowseNodeLookup29($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new BrowseNodeLookupRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createBrowseNodeLookup29($body);
+
+```
+
+
+### <a name="create_similarity_lookup30"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup30") createSimilarityLookup30
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createSimilarityLookup30($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new SimilarityLookupRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createSimilarityLookup30($body);
+
+```
+
+
+### <a name="create_cart_get31"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet31") createCartGet31
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartGet31($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartGetRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartGet31($body);
+
+```
+
+
+### <a name="create_cart_add32"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd32") createCartAdd32
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartAdd32($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartAddRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartAdd32($body);
+
+```
+
+
+### <a name="create_cart_create33"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate33") createCartCreate33
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartCreate33($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartCreateRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartCreate33($body);
+
+```
+
+
+### <a name="create_cart_modify34"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify34") createCartModify34
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartModify34($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartModifyRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartModify34($body);
+
+```
+
+
+### <a name="create_cart_clear35"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear35") createCartClear35
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartClear35($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartClearRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartClear35($body);
+
+```
+
+
+### <a name="create_item_search36"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch36") createItemSearch36
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createItemSearch36($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new ItemSearchRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createItemSearch36($body);
+
+```
+
+
+### <a name="create_item_lookup37"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup37") createItemLookup37
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createItemLookup37($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new ItemLookupRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createItemLookup37($body);
+
+```
+
+
+### <a name="create_browse_node_lookup38"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup38") createBrowseNodeLookup38
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createBrowseNodeLookup38($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new BrowseNodeLookupRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createBrowseNodeLookup38($body);
+
+```
+
+
+### <a name="create_similarity_lookup39"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup39") createSimilarityLookup39
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createSimilarityLookup39($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new SimilarityLookupRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createSimilarityLookup39($body);
+
+```
+
+
+### <a name="create_cart_get40"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet40") createCartGet40
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartGet40($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartGetRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartGet40($body);
+
+```
+
+
+### <a name="create_cart_add41"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd41") createCartAdd41
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartAdd41($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartAddRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartAdd41($body);
+
+```
+
+
+### <a name="create_cart_create42"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate42") createCartCreate42
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartCreate42($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartCreateRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartCreate42($body);
+
+```
+
+
+### <a name="create_cart_modify43"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify43") createCartModify43
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartModify43($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartModifyRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartModify43($body);
+
+```
+
+
+### <a name="create_cart_clear44"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear44") createCartClear44
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartClear44($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartClearRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartClear44($body);
+
+```
+
+
+### <a name="create_item_search45"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch45") createItemSearch45
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createItemSearch45($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new ItemSearchRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createItemSearch45($body);
+
+```
+
+
+### <a name="create_item_lookup46"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup46") createItemLookup46
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createItemLookup46($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new ItemLookupRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createItemLookup46($body);
+
+```
+
+
+### <a name="create_browse_node_lookup47"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup47") createBrowseNodeLookup47
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createBrowseNodeLookup47($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new BrowseNodeLookupRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createBrowseNodeLookup47($body);
+
+```
+
+
+### <a name="create_similarity_lookup48"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup48") createSimilarityLookup48
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createSimilarityLookup48($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new SimilarityLookupRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createSimilarityLookup48($body);
+
+```
+
+
+### <a name="create_cart_get49"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet49") createCartGet49
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartGet49($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartGetRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartGet49($body);
+
+```
+
+
+### <a name="create_cart_add50"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd50") createCartAdd50
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartAdd50($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartAddRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartAdd50($body);
+
+```
+
+
+### <a name="create_cart_create51"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate51") createCartCreate51
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartCreate51($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartCreateRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartCreate51($body);
+
+```
+
+
+### <a name="create_cart_modify52"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify52") createCartModify52
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartModify52($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartModifyRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartModify52($body);
+
+```
+
+
+### <a name="create_cart_clear53"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear53") createCartClear53
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartClear53($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartClearRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartClear53($body);
+
+```
+
+
+### <a name="create_item_search54"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch54") createItemSearch54
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createItemSearch54($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new ItemSearchRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createItemSearch54($body);
+
+```
+
+
+### <a name="create_item_lookup55"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup55") createItemLookup55
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createItemLookup55($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new ItemLookupRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createItemLookup55($body);
+
+```
+
+
+### <a name="create_browse_node_lookup56"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup56") createBrowseNodeLookup56
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createBrowseNodeLookup56($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new BrowseNodeLookupRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createBrowseNodeLookup56($body);
+
+```
+
+
+### <a name="create_similarity_lookup57"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup57") createSimilarityLookup57
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createSimilarityLookup57($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new SimilarityLookupRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createSimilarityLookup57($body);
+
+```
+
+
+### <a name="create_cart_get58"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet58") createCartGet58
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartGet58($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartGetRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartGet58($body);
+
+```
+
+
+### <a name="create_cart_add59"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd59") createCartAdd59
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartAdd59($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartAddRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartAdd59($body);
+
+```
+
+
+### <a name="create_cart_create60"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate60") createCartCreate60
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartCreate60($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartCreateRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartCreate60($body);
+
+```
+
+
+### <a name="create_cart_modify61"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify61") createCartModify61
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartModify61($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartModifyRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartModify61($body);
+
+```
+
+
+### <a name="create_cart_clear62"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartClear62") createCartClear62
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartClear62($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartClearRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartClear62($body);
+
+```
+
+
+### <a name="create_item_search63"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemSearch63") createItemSearch63
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createItemSearch63($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new ItemSearchRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createItemSearch63($body);
+
+```
+
+
+### <a name="create_item_lookup64"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createItemLookup64") createItemLookup64
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createItemLookup64($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new ItemLookupRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createItemLookup64($body);
+
+```
+
+
+### <a name="create_browse_node_lookup65"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createBrowseNodeLookup65") createBrowseNodeLookup65
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createBrowseNodeLookup65($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new BrowseNodeLookupRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createBrowseNodeLookup65($body);
+
+```
+
+
+### <a name="create_similarity_lookup66"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createSimilarityLookup66") createSimilarityLookup66
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createSimilarityLookup66($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new SimilarityLookupRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createSimilarityLookup66($body);
+
+```
+
+
+### <a name="create_cart_get67"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartGet67") createCartGet67
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartGet67($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartGetRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartGet67($body);
+
+```
+
+
+### <a name="create_cart_add68"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartAdd68") createCartAdd68
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartAdd68($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartAddRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartAdd68($body);
+
+```
+
+
+### <a name="create_cart_create69"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartCreate69") createCartCreate69
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartCreate69($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartCreateRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartCreate69($body);
+
+```
+
+
+### <a name="create_cart_modify70"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.createCartModify70") createCartModify70
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createCartModify70($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new CartModifyRequestMsg();
+
+$result = $aWSECommerceServiceBinding->createCartModify70($body);
 
 ```
 
@@ -3001,6 +3187,900 @@ $body = new CartClearRequestMsg();
 $result = $aWSECommerceServiceBinding->createCartClear98($body);
 
 ```
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="o_auth_authorization_controller"></a>![Class: ](https://apidocs.io/img/class.png ".OAuthAuthorizationController") OAuthAuthorizationController
+
+### Get singleton instance
+
+The singleton instance of the ``` OAuthAuthorizationController ``` class can be accessed from the API Client.
+
+```php
+$oAuthAuthorization = $client->getOAuthAuthorization();
+```
+
+### <a name="create_request_token"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken") createRequestToken
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```php
+function createRequestToken(
+        $authorization,
+        $code,
+        $redirectUri,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| code |  ``` Required ```  | Authorization Code |
+| redirectUri |  ``` Required ```  | Redirect Uri |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$code = 'code';
+$redirectUri = 'redirect_uri';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRequestToken($authorization, $code, $redirectUri, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRefreshToken") createRefreshToken
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```php
+function createRefreshToken(
+        $authorization,
+        $refreshToken,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$refreshToken = 'refresh_token';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRefreshToken($authorization, $refreshToken, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token1"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken1") createRequestToken1
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```php
+function createRequestToken1(
+        $authorization,
+        $code,
+        $redirectUri,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| code |  ``` Required ```  | Authorization Code |
+| redirectUri |  ``` Required ```  | Redirect Uri |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$code = 'code';
+$redirectUri = 'redirect_uri';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRequestToken1($authorization, $code, $redirectUri, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token1"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRefreshToken1") createRefreshToken1
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```php
+function createRefreshToken1(
+        $authorization,
+        $refreshToken,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$refreshToken = 'refresh_token';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRefreshToken1($authorization, $refreshToken, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token2"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken2") createRequestToken2
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```php
+function createRequestToken2(
+        $authorization,
+        $code,
+        $redirectUri,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| code |  ``` Required ```  | Authorization Code |
+| redirectUri |  ``` Required ```  | Redirect Uri |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$code = 'code';
+$redirectUri = 'redirect_uri';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRequestToken2($authorization, $code, $redirectUri, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token2"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRefreshToken2") createRefreshToken2
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```php
+function createRefreshToken2(
+        $authorization,
+        $refreshToken,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$refreshToken = 'refresh_token';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRefreshToken2($authorization, $refreshToken, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token11"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken11") createRequestToken11
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```php
+function createRequestToken11(
+        $authorization,
+        $code,
+        $redirectUri,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| code |  ``` Required ```  | Authorization Code |
+| redirectUri |  ``` Required ```  | Redirect Uri |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$code = 'code';
+$redirectUri = 'redirect_uri';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRequestToken11($authorization, $code, $redirectUri, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token11"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRefreshToken11") createRefreshToken11
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```php
+function createRefreshToken11(
+        $authorization,
+        $refreshToken,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$refreshToken = 'refresh_token';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRefreshToken11($authorization, $refreshToken, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token21"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken21") createRequestToken21
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```php
+function createRequestToken21(
+        $authorization,
+        $code,
+        $redirectUri,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| code |  ``` Required ```  | Authorization Code |
+| redirectUri |  ``` Required ```  | Redirect Uri |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$code = 'code';
+$redirectUri = 'redirect_uri';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRequestToken21($authorization, $code, $redirectUri, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token21"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRefreshToken21") createRefreshToken21
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```php
+function createRefreshToken21(
+        $authorization,
+        $refreshToken,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$refreshToken = 'refresh_token';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRefreshToken21($authorization, $refreshToken, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token11"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken11") createRequestToken11
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```php
+function createRequestToken11(
+        $authorization,
+        $code,
+        $redirectUri,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| code |  ``` Required ```  | Authorization Code |
+| redirectUri |  ``` Required ```  | Redirect Uri |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$code = 'code';
+$redirectUri = 'redirect_uri';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRequestToken11($authorization, $code, $redirectUri, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token11"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRefreshToken11") createRefreshToken11
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```php
+function createRefreshToken11(
+        $authorization,
+        $refreshToken,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$refreshToken = 'refresh_token';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRefreshToken11($authorization, $refreshToken, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token1"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken1") createRequestToken1
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```php
+function createRequestToken1(
+        $authorization,
+        $code,
+        $redirectUri,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| code |  ``` Required ```  | Authorization Code |
+| redirectUri |  ``` Required ```  | Redirect Uri |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$code = 'code';
+$redirectUri = 'redirect_uri';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRequestToken1($authorization, $code, $redirectUri, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token1"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRefreshToken1") createRefreshToken1
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```php
+function createRefreshToken1(
+        $authorization,
+        $refreshToken,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$refreshToken = 'refresh_token';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRefreshToken1($authorization, $refreshToken, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token2"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken2") createRequestToken2
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```php
+function createRequestToken2(
+        $authorization,
+        $code,
+        $redirectUri,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| code |  ``` Required ```  | Authorization Code |
+| redirectUri |  ``` Required ```  | Redirect Uri |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$code = 'code';
+$redirectUri = 'redirect_uri';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRequestToken2($authorization, $code, $redirectUri, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token2"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRefreshToken2") createRefreshToken2
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```php
+function createRefreshToken2(
+        $authorization,
+        $refreshToken,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$refreshToken = 'refresh_token';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRefreshToken2($authorization, $refreshToken, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token3"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken3") createRequestToken3
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```php
+function createRequestToken3(
+        $authorization,
+        $code,
+        $redirectUri,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| code |  ``` Required ```  | Authorization Code |
+| redirectUri |  ``` Required ```  | Redirect Uri |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$code = 'code';
+$redirectUri = 'redirect_uri';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRequestToken3($authorization, $code, $redirectUri, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token3"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRefreshToken3") createRefreshToken3
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```php
+function createRefreshToken3(
+        $authorization,
+        $refreshToken,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$refreshToken = 'refresh_token';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRefreshToken3($authorization, $refreshToken, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
 
 
 [Back to List of Controllers](#list_of_controllers)

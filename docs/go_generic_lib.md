@@ -1,5 +1,7 @@
 # Getting started
 
+this is one of the test description
+
 ## How to Build
 
 
@@ -97,11 +99,27 @@ If the build is successful, right click on your Go file and click on ```Run As``
 
 ![Run Project](https://apidocs.io/illustration/go?step=runProject&projectName=awsecommerceservice_lib)
 
+## Initialization
+
+### Authentication
+In order to setup authentication of the API client, you need the following information.
+
+| Parameter | Description |
+|-----------|-------------|
+| oAuthClientId | OAuth 2 Client ID |
+| oAuthClientSecret | OAuth 2 Client Secret |
+| oAuthRedirectUri | OAuth 2 Redirection endpoint or Callback Uri |
+
+
+To configure these for your generated code, open the file "Configuration.go" and edit it's contents.
+
+
 # Class Reference
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
 * [awsecommerceservicebinding_pkg](#awsecommerceservicebinding_pkg)
+* [oauthauthorization_pkg](#oauthauthorization_pkg)
 
 ## <a name="awsecommerceservicebinding_pkg"></a>![Class: ](https://apidocs.io/img/class.png ".awsecommerceservicebinding_pkg") awsecommerceservicebinding_pkg
 
@@ -113,7 +131,7 @@ Factory for the ``` AWSECOMMERCESERVICEBINDING ``` interface can be accessed fro
 aWSECommerceServiceBinding := awsecommerceservicebinding_pkg.NewAWSECOMMERCESERVICEBINDING()
 ```
 
-### <a name="create_cart_modify70"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartModify70") CreateCartModify70
+### <a name="create_item_search"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateItemSearch") CreateItemSearch
 
 > *Tags:*  ``` Skips Authentication ``` 
 
@@ -121,210 +139,7 @@ aWSECommerceServiceBinding := awsecommerceservicebinding_pkg.NewAWSECOMMERCESERV
 
 
 ```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartModify70(body *models_pkg.CartModifyRequestMsg)(*models_pkg.CartModifyResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartModifyRequestMsg
-
-var result *models_pkg.CartModifyResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartModify70(body)
-
-```
-
-
-### <a name="create_cart_create69"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartCreate69") CreateCartCreate69
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartCreate69(body *models_pkg.CartCreateRequestMsg)(*models_pkg.CartCreateResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartCreateRequestMsg
-
-var result *models_pkg.CartCreateResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartCreate69(body)
-
-```
-
-
-### <a name="create_cart_add68"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartAdd68") CreateCartAdd68
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartAdd68(body *models_pkg.CartAddRequestMsg)(*models_pkg.CartAddResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartAddRequestMsg
-
-var result *models_pkg.CartAddResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartAdd68(body)
-
-```
-
-
-### <a name="create_cart_get67"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartGet67") CreateCartGet67
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartGet67(body *models_pkg.CartGetRequestMsg)(*models_pkg.CartGetResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartGetRequestMsg
-
-var result *models_pkg.CartGetResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartGet67(body)
-
-```
-
-
-### <a name="create_similarity_lookup66"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateSimilarityLookup66") CreateSimilarityLookup66
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateSimilarityLookup66(body *models_pkg.SimilarityLookupRequestMsg)(*models_pkg.SimilarityLookupResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.SimilarityLookupRequestMsg
-
-var result *models_pkg.SimilarityLookupResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateSimilarityLookup66(body)
-
-```
-
-
-### <a name="create_browse_node_lookup65"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateBrowseNodeLookup65") CreateBrowseNodeLookup65
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateBrowseNodeLookup65(body *models_pkg.BrowseNodeLookupRequestMsg)(*models_pkg.BrowseNodeLookupResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.BrowseNodeLookupRequestMsg
-
-var result *models_pkg.BrowseNodeLookupResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateBrowseNodeLookup65(body)
-
-```
-
-
-### <a name="create_item_lookup64"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateItemLookup64") CreateItemLookup64
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateItemLookup64(body *models_pkg.ItemLookupRequestMsg)(*models_pkg.ItemLookupResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.ItemLookupRequestMsg
-
-var result *models_pkg.ItemLookupResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateItemLookup64(body)
-
-```
-
-
-### <a name="create_item_search63"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateItemSearch63") CreateItemSearch63
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateItemSearch63(body *models_pkg.ItemSearchRequestMsg)(*models_pkg.ItemSearchResponseMsg,error)
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateItemSearch(body *models_pkg.ItemSearchRequestMsg)(*models_pkg.ItemSearchResponseMsg,error)
 ```
 
 #### Parameters
@@ -340,1776 +155,7 @@ func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateItemSearch63(body *models_pkg.I
 var body *models_pkg.ItemSearchRequestMsg
 
 var result *models_pkg.ItemSearchResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateItemSearch63(body)
-
-```
-
-
-### <a name="create_cart_clear62"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartClear62") CreateCartClear62
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartClear62(body *models_pkg.CartClearRequestMsg)(*models_pkg.CartClearResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartClearRequestMsg
-
-var result *models_pkg.CartClearResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartClear62(body)
-
-```
-
-
-### <a name="create_cart_modify61"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartModify61") CreateCartModify61
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartModify61(body *models_pkg.CartModifyRequestMsg)(*models_pkg.CartModifyResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartModifyRequestMsg
-
-var result *models_pkg.CartModifyResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartModify61(body)
-
-```
-
-
-### <a name="create_cart_create60"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartCreate60") CreateCartCreate60
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartCreate60(body *models_pkg.CartCreateRequestMsg)(*models_pkg.CartCreateResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartCreateRequestMsg
-
-var result *models_pkg.CartCreateResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartCreate60(body)
-
-```
-
-
-### <a name="create_cart_add59"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartAdd59") CreateCartAdd59
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartAdd59(body *models_pkg.CartAddRequestMsg)(*models_pkg.CartAddResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartAddRequestMsg
-
-var result *models_pkg.CartAddResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartAdd59(body)
-
-```
-
-
-### <a name="create_cart_get58"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartGet58") CreateCartGet58
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartGet58(body *models_pkg.CartGetRequestMsg)(*models_pkg.CartGetResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartGetRequestMsg
-
-var result *models_pkg.CartGetResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartGet58(body)
-
-```
-
-
-### <a name="create_similarity_lookup57"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateSimilarityLookup57") CreateSimilarityLookup57
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateSimilarityLookup57(body *models_pkg.SimilarityLookupRequestMsg)(*models_pkg.SimilarityLookupResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.SimilarityLookupRequestMsg
-
-var result *models_pkg.SimilarityLookupResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateSimilarityLookup57(body)
-
-```
-
-
-### <a name="create_browse_node_lookup56"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateBrowseNodeLookup56") CreateBrowseNodeLookup56
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateBrowseNodeLookup56(body *models_pkg.BrowseNodeLookupRequestMsg)(*models_pkg.BrowseNodeLookupResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.BrowseNodeLookupRequestMsg
-
-var result *models_pkg.BrowseNodeLookupResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateBrowseNodeLookup56(body)
-
-```
-
-
-### <a name="create_item_lookup55"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateItemLookup55") CreateItemLookup55
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateItemLookup55(body *models_pkg.ItemLookupRequestMsg)(*models_pkg.ItemLookupResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.ItemLookupRequestMsg
-
-var result *models_pkg.ItemLookupResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateItemLookup55(body)
-
-```
-
-
-### <a name="create_item_search54"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateItemSearch54") CreateItemSearch54
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateItemSearch54(body *models_pkg.ItemSearchRequestMsg)(*models_pkg.ItemSearchResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.ItemSearchRequestMsg
-
-var result *models_pkg.ItemSearchResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateItemSearch54(body)
-
-```
-
-
-### <a name="create_cart_clear53"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartClear53") CreateCartClear53
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartClear53(body *models_pkg.CartClearRequestMsg)(*models_pkg.CartClearResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartClearRequestMsg
-
-var result *models_pkg.CartClearResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartClear53(body)
-
-```
-
-
-### <a name="create_cart_modify52"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartModify52") CreateCartModify52
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartModify52(body *models_pkg.CartModifyRequestMsg)(*models_pkg.CartModifyResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartModifyRequestMsg
-
-var result *models_pkg.CartModifyResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartModify52(body)
-
-```
-
-
-### <a name="create_cart_create51"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartCreate51") CreateCartCreate51
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartCreate51(body *models_pkg.CartCreateRequestMsg)(*models_pkg.CartCreateResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartCreateRequestMsg
-
-var result *models_pkg.CartCreateResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartCreate51(body)
-
-```
-
-
-### <a name="create_cart_add50"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartAdd50") CreateCartAdd50
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartAdd50(body *models_pkg.CartAddRequestMsg)(*models_pkg.CartAddResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartAddRequestMsg
-
-var result *models_pkg.CartAddResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartAdd50(body)
-
-```
-
-
-### <a name="create_cart_get49"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartGet49") CreateCartGet49
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartGet49(body *models_pkg.CartGetRequestMsg)(*models_pkg.CartGetResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartGetRequestMsg
-
-var result *models_pkg.CartGetResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartGet49(body)
-
-```
-
-
-### <a name="create_similarity_lookup48"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateSimilarityLookup48") CreateSimilarityLookup48
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateSimilarityLookup48(body *models_pkg.SimilarityLookupRequestMsg)(*models_pkg.SimilarityLookupResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.SimilarityLookupRequestMsg
-
-var result *models_pkg.SimilarityLookupResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateSimilarityLookup48(body)
-
-```
-
-
-### <a name="create_browse_node_lookup47"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateBrowseNodeLookup47") CreateBrowseNodeLookup47
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateBrowseNodeLookup47(body *models_pkg.BrowseNodeLookupRequestMsg)(*models_pkg.BrowseNodeLookupResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.BrowseNodeLookupRequestMsg
-
-var result *models_pkg.BrowseNodeLookupResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateBrowseNodeLookup47(body)
-
-```
-
-
-### <a name="create_item_lookup46"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateItemLookup46") CreateItemLookup46
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateItemLookup46(body *models_pkg.ItemLookupRequestMsg)(*models_pkg.ItemLookupResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.ItemLookupRequestMsg
-
-var result *models_pkg.ItemLookupResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateItemLookup46(body)
-
-```
-
-
-### <a name="create_item_search45"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateItemSearch45") CreateItemSearch45
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateItemSearch45(body *models_pkg.ItemSearchRequestMsg)(*models_pkg.ItemSearchResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.ItemSearchRequestMsg
-
-var result *models_pkg.ItemSearchResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateItemSearch45(body)
-
-```
-
-
-### <a name="create_cart_clear44"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartClear44") CreateCartClear44
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartClear44(body *models_pkg.CartClearRequestMsg)(*models_pkg.CartClearResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartClearRequestMsg
-
-var result *models_pkg.CartClearResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartClear44(body)
-
-```
-
-
-### <a name="create_cart_modify43"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartModify43") CreateCartModify43
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartModify43(body *models_pkg.CartModifyRequestMsg)(*models_pkg.CartModifyResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartModifyRequestMsg
-
-var result *models_pkg.CartModifyResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartModify43(body)
-
-```
-
-
-### <a name="create_cart_create42"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartCreate42") CreateCartCreate42
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartCreate42(body *models_pkg.CartCreateRequestMsg)(*models_pkg.CartCreateResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartCreateRequestMsg
-
-var result *models_pkg.CartCreateResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartCreate42(body)
-
-```
-
-
-### <a name="create_cart_add41"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartAdd41") CreateCartAdd41
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartAdd41(body *models_pkg.CartAddRequestMsg)(*models_pkg.CartAddResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartAddRequestMsg
-
-var result *models_pkg.CartAddResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartAdd41(body)
-
-```
-
-
-### <a name="create_cart_get40"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartGet40") CreateCartGet40
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartGet40(body *models_pkg.CartGetRequestMsg)(*models_pkg.CartGetResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartGetRequestMsg
-
-var result *models_pkg.CartGetResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartGet40(body)
-
-```
-
-
-### <a name="create_similarity_lookup39"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateSimilarityLookup39") CreateSimilarityLookup39
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateSimilarityLookup39(body *models_pkg.SimilarityLookupRequestMsg)(*models_pkg.SimilarityLookupResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.SimilarityLookupRequestMsg
-
-var result *models_pkg.SimilarityLookupResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateSimilarityLookup39(body)
-
-```
-
-
-### <a name="create_browse_node_lookup38"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateBrowseNodeLookup38") CreateBrowseNodeLookup38
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateBrowseNodeLookup38(body *models_pkg.BrowseNodeLookupRequestMsg)(*models_pkg.BrowseNodeLookupResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.BrowseNodeLookupRequestMsg
-
-var result *models_pkg.BrowseNodeLookupResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateBrowseNodeLookup38(body)
-
-```
-
-
-### <a name="create_item_lookup37"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateItemLookup37") CreateItemLookup37
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateItemLookup37(body *models_pkg.ItemLookupRequestMsg)(*models_pkg.ItemLookupResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.ItemLookupRequestMsg
-
-var result *models_pkg.ItemLookupResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateItemLookup37(body)
-
-```
-
-
-### <a name="create_item_search36"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateItemSearch36") CreateItemSearch36
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateItemSearch36(body *models_pkg.ItemSearchRequestMsg)(*models_pkg.ItemSearchResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.ItemSearchRequestMsg
-
-var result *models_pkg.ItemSearchResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateItemSearch36(body)
-
-```
-
-
-### <a name="create_cart_clear35"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartClear35") CreateCartClear35
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartClear35(body *models_pkg.CartClearRequestMsg)(*models_pkg.CartClearResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartClearRequestMsg
-
-var result *models_pkg.CartClearResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartClear35(body)
-
-```
-
-
-### <a name="create_cart_modify34"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartModify34") CreateCartModify34
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartModify34(body *models_pkg.CartModifyRequestMsg)(*models_pkg.CartModifyResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartModifyRequestMsg
-
-var result *models_pkg.CartModifyResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartModify34(body)
-
-```
-
-
-### <a name="create_cart_create33"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartCreate33") CreateCartCreate33
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartCreate33(body *models_pkg.CartCreateRequestMsg)(*models_pkg.CartCreateResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartCreateRequestMsg
-
-var result *models_pkg.CartCreateResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartCreate33(body)
-
-```
-
-
-### <a name="create_cart_add32"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartAdd32") CreateCartAdd32
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartAdd32(body *models_pkg.CartAddRequestMsg)(*models_pkg.CartAddResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartAddRequestMsg
-
-var result *models_pkg.CartAddResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartAdd32(body)
-
-```
-
-
-### <a name="create_cart_get31"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartGet31") CreateCartGet31
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartGet31(body *models_pkg.CartGetRequestMsg)(*models_pkg.CartGetResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartGetRequestMsg
-
-var result *models_pkg.CartGetResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartGet31(body)
-
-```
-
-
-### <a name="create_similarity_lookup30"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateSimilarityLookup30") CreateSimilarityLookup30
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateSimilarityLookup30(body *models_pkg.SimilarityLookupRequestMsg)(*models_pkg.SimilarityLookupResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.SimilarityLookupRequestMsg
-
-var result *models_pkg.SimilarityLookupResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateSimilarityLookup30(body)
-
-```
-
-
-### <a name="create_browse_node_lookup29"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateBrowseNodeLookup29") CreateBrowseNodeLookup29
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateBrowseNodeLookup29(body *models_pkg.BrowseNodeLookupRequestMsg)(*models_pkg.BrowseNodeLookupResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.BrowseNodeLookupRequestMsg
-
-var result *models_pkg.BrowseNodeLookupResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateBrowseNodeLookup29(body)
-
-```
-
-
-### <a name="create_item_lookup28"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateItemLookup28") CreateItemLookup28
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateItemLookup28(body *models_pkg.ItemLookupRequestMsg)(*models_pkg.ItemLookupResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.ItemLookupRequestMsg
-
-var result *models_pkg.ItemLookupResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateItemLookup28(body)
-
-```
-
-
-### <a name="create_item_search27"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateItemSearch27") CreateItemSearch27
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateItemSearch27(body *models_pkg.ItemSearchRequestMsg)(*models_pkg.ItemSearchResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.ItemSearchRequestMsg
-
-var result *models_pkg.ItemSearchResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateItemSearch27(body)
-
-```
-
-
-### <a name="create_cart_clear26"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartClear26") CreateCartClear26
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartClear26(body *models_pkg.CartClearRequestMsg)(*models_pkg.CartClearResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartClearRequestMsg
-
-var result *models_pkg.CartClearResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartClear26(body)
-
-```
-
-
-### <a name="create_cart_modify25"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartModify25") CreateCartModify25
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartModify25(body *models_pkg.CartModifyRequestMsg)(*models_pkg.CartModifyResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartModifyRequestMsg
-
-var result *models_pkg.CartModifyResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartModify25(body)
-
-```
-
-
-### <a name="create_cart_create24"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartCreate24") CreateCartCreate24
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartCreate24(body *models_pkg.CartCreateRequestMsg)(*models_pkg.CartCreateResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartCreateRequestMsg
-
-var result *models_pkg.CartCreateResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartCreate24(body)
-
-```
-
-
-### <a name="create_cart_add23"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartAdd23") CreateCartAdd23
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartAdd23(body *models_pkg.CartAddRequestMsg)(*models_pkg.CartAddResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartAddRequestMsg
-
-var result *models_pkg.CartAddResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartAdd23(body)
-
-```
-
-
-### <a name="create_cart_get22"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartGet22") CreateCartGet22
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartGet22(body *models_pkg.CartGetRequestMsg)(*models_pkg.CartGetResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartGetRequestMsg
-
-var result *models_pkg.CartGetResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartGet22(body)
-
-```
-
-
-### <a name="create_similarity_lookup21"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateSimilarityLookup21") CreateSimilarityLookup21
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateSimilarityLookup21(body *models_pkg.SimilarityLookupRequestMsg)(*models_pkg.SimilarityLookupResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.SimilarityLookupRequestMsg
-
-var result *models_pkg.SimilarityLookupResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateSimilarityLookup21(body)
-
-```
-
-
-### <a name="create_browse_node_lookup20"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateBrowseNodeLookup20") CreateBrowseNodeLookup20
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateBrowseNodeLookup20(body *models_pkg.BrowseNodeLookupRequestMsg)(*models_pkg.BrowseNodeLookupResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.BrowseNodeLookupRequestMsg
-
-var result *models_pkg.BrowseNodeLookupResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateBrowseNodeLookup20(body)
-
-```
-
-
-### <a name="create_item_lookup19"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateItemLookup19") CreateItemLookup19
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateItemLookup19(body *models_pkg.ItemLookupRequestMsg)(*models_pkg.ItemLookupResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.ItemLookupRequestMsg
-
-var result *models_pkg.ItemLookupResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateItemLookup19(body)
-
-```
-
-
-### <a name="create_item_search18"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateItemSearch18") CreateItemSearch18
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateItemSearch18(body *models_pkg.ItemSearchRequestMsg)(*models_pkg.ItemSearchResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.ItemSearchRequestMsg
-
-var result *models_pkg.ItemSearchResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateItemSearch18(body)
-
-```
-
-
-### <a name="create_cart_clear17"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartClear17") CreateCartClear17
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartClear17(body *models_pkg.CartClearRequestMsg)(*models_pkg.CartClearResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartClearRequestMsg
-
-var result *models_pkg.CartClearResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartClear17(body)
-
-```
-
-
-### <a name="create_cart_modify16"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartModify16") CreateCartModify16
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartModify16(body *models_pkg.CartModifyRequestMsg)(*models_pkg.CartModifyResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartModifyRequestMsg
-
-var result *models_pkg.CartModifyResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartModify16(body)
-
-```
-
-
-### <a name="create_cart_create15"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartCreate15") CreateCartCreate15
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartCreate15(body *models_pkg.CartCreateRequestMsg)(*models_pkg.CartCreateResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartCreateRequestMsg
-
-var result *models_pkg.CartCreateResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartCreate15(body)
-
-```
-
-
-### <a name="create_cart_add14"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartAdd14") CreateCartAdd14
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartAdd14(body *models_pkg.CartAddRequestMsg)(*models_pkg.CartAddResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartAddRequestMsg
-
-var result *models_pkg.CartAddResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartAdd14(body)
-
-```
-
-
-### <a name="create_cart_get13"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartGet13") CreateCartGet13
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartGet13(body *models_pkg.CartGetRequestMsg)(*models_pkg.CartGetResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartGetRequestMsg
-
-var result *models_pkg.CartGetResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartGet13(body)
-
-```
-
-
-### <a name="create_similarity_lookup12"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateSimilarityLookup12") CreateSimilarityLookup12
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateSimilarityLookup12(body *models_pkg.SimilarityLookupRequestMsg)(*models_pkg.SimilarityLookupResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.SimilarityLookupRequestMsg
-
-var result *models_pkg.SimilarityLookupResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateSimilarityLookup12(body)
-
-```
-
-
-### <a name="create_browse_node_lookup11"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateBrowseNodeLookup11") CreateBrowseNodeLookup11
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateBrowseNodeLookup11(body *models_pkg.BrowseNodeLookupRequestMsg)(*models_pkg.BrowseNodeLookupResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.BrowseNodeLookupRequestMsg
-
-var result *models_pkg.BrowseNodeLookupResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateBrowseNodeLookup11(body)
-
-```
-
-
-### <a name="create_item_lookup10"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateItemLookup10") CreateItemLookup10
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateItemLookup10(body *models_pkg.ItemLookupRequestMsg)(*models_pkg.ItemLookupResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.ItemLookupRequestMsg
-
-var result *models_pkg.ItemLookupResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateItemLookup10(body)
-
-```
-
-
-### <a name="create_item_search9"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateItemSearch9") CreateItemSearch9
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateItemSearch9(body *models_pkg.ItemSearchRequestMsg)(*models_pkg.ItemSearchResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.ItemSearchRequestMsg
-
-var result *models_pkg.ItemSearchResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateItemSearch9(body)
-
-```
-
-
-### <a name="create_cart_clear"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartClear") CreateCartClear
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartClear(body *models_pkg.CartClearRequestMsg)(*models_pkg.CartClearResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartClearRequestMsg
-
-var result *models_pkg.CartClearResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartClear(body)
-
-```
-
-
-### <a name="create_cart_modify"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartModify") CreateCartModify
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartModify(body *models_pkg.CartModifyRequestMsg)(*models_pkg.CartModifyResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartModifyRequestMsg
-
-var result *models_pkg.CartModifyResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartModify(body)
-
-```
-
-
-### <a name="create_cart_create"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartCreate") CreateCartCreate
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartCreate(body *models_pkg.CartCreateRequestMsg)(*models_pkg.CartCreateResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartCreateRequestMsg
-
-var result *models_pkg.CartCreateResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartCreate(body)
-
-```
-
-
-### <a name="create_cart_add"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartAdd") CreateCartAdd
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartAdd(body *models_pkg.CartAddRequestMsg)(*models_pkg.CartAddResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartAddRequestMsg
-
-var result *models_pkg.CartAddResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartAdd(body)
-
-```
-
-
-### <a name="create_cart_get"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartGet") CreateCartGet
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartGet(body *models_pkg.CartGetRequestMsg)(*models_pkg.CartGetResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.CartGetRequestMsg
-
-var result *models_pkg.CartGetResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateCartGet(body)
-
-```
-
-
-### <a name="create_similarity_lookup"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateSimilarityLookup") CreateSimilarityLookup
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateSimilarityLookup(body *models_pkg.SimilarityLookupRequestMsg)(*models_pkg.SimilarityLookupResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.SimilarityLookupRequestMsg
-
-var result *models_pkg.SimilarityLookupResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateSimilarityLookup(body)
-
-```
-
-
-### <a name="create_browse_node_lookup"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateBrowseNodeLookup") CreateBrowseNodeLookup
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateBrowseNodeLookup(body *models_pkg.BrowseNodeLookupRequestMsg)(*models_pkg.BrowseNodeLookupResponseMsg,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.BrowseNodeLookupRequestMsg
-
-var result *models_pkg.BrowseNodeLookupResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateBrowseNodeLookup(body)
+result,_ = aWSECommerceServiceBinding.CreateItemSearch(body)
 
 ```
 
@@ -2143,7 +189,7 @@ result,_ = aWSECommerceServiceBinding.CreateItemLookup(body)
 ```
 
 
-### <a name="create_item_search"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateItemSearch") CreateItemSearch
+### <a name="create_browse_node_lookup"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateBrowseNodeLookup") CreateBrowseNodeLookup
 
 > *Tags:*  ``` Skips Authentication ``` 
 
@@ -2151,7 +197,210 @@ result,_ = aWSECommerceServiceBinding.CreateItemLookup(body)
 
 
 ```go
-func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateItemSearch(body *models_pkg.ItemSearchRequestMsg)(*models_pkg.ItemSearchResponseMsg,error)
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateBrowseNodeLookup(body *models_pkg.BrowseNodeLookupRequestMsg)(*models_pkg.BrowseNodeLookupResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.BrowseNodeLookupRequestMsg
+
+var result *models_pkg.BrowseNodeLookupResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateBrowseNodeLookup(body)
+
+```
+
+
+### <a name="create_similarity_lookup"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateSimilarityLookup") CreateSimilarityLookup
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateSimilarityLookup(body *models_pkg.SimilarityLookupRequestMsg)(*models_pkg.SimilarityLookupResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.SimilarityLookupRequestMsg
+
+var result *models_pkg.SimilarityLookupResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateSimilarityLookup(body)
+
+```
+
+
+### <a name="create_cart_get"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartGet") CreateCartGet
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartGet(body *models_pkg.CartGetRequestMsg)(*models_pkg.CartGetResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartGetRequestMsg
+
+var result *models_pkg.CartGetResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartGet(body)
+
+```
+
+
+### <a name="create_cart_add"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartAdd") CreateCartAdd
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartAdd(body *models_pkg.CartAddRequestMsg)(*models_pkg.CartAddResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartAddRequestMsg
+
+var result *models_pkg.CartAddResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartAdd(body)
+
+```
+
+
+### <a name="create_cart_create"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartCreate") CreateCartCreate
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartCreate(body *models_pkg.CartCreateRequestMsg)(*models_pkg.CartCreateResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartCreateRequestMsg
+
+var result *models_pkg.CartCreateResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartCreate(body)
+
+```
+
+
+### <a name="create_cart_modify"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartModify") CreateCartModify
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartModify(body *models_pkg.CartModifyRequestMsg)(*models_pkg.CartModifyResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartModifyRequestMsg
+
+var result *models_pkg.CartModifyResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartModify(body)
+
+```
+
+
+### <a name="create_cart_clear"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartClear") CreateCartClear
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartClear(body *models_pkg.CartClearRequestMsg)(*models_pkg.CartClearResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartClearRequestMsg
+
+var result *models_pkg.CartClearResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartClear(body)
+
+```
+
+
+### <a name="create_item_search9"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateItemSearch9") CreateItemSearch9
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateItemSearch9(body *models_pkg.ItemSearchRequestMsg)(*models_pkg.ItemSearchResponseMsg,error)
 ```
 
 #### Parameters
@@ -2167,7 +416,1776 @@ func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateItemSearch(body *models_pkg.Ite
 var body *models_pkg.ItemSearchRequestMsg
 
 var result *models_pkg.ItemSearchResponseMsg
-result,_ = aWSECommerceServiceBinding.CreateItemSearch(body)
+result,_ = aWSECommerceServiceBinding.CreateItemSearch9(body)
+
+```
+
+
+### <a name="create_item_lookup10"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateItemLookup10") CreateItemLookup10
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateItemLookup10(body *models_pkg.ItemLookupRequestMsg)(*models_pkg.ItemLookupResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.ItemLookupRequestMsg
+
+var result *models_pkg.ItemLookupResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateItemLookup10(body)
+
+```
+
+
+### <a name="create_browse_node_lookup11"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateBrowseNodeLookup11") CreateBrowseNodeLookup11
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateBrowseNodeLookup11(body *models_pkg.BrowseNodeLookupRequestMsg)(*models_pkg.BrowseNodeLookupResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.BrowseNodeLookupRequestMsg
+
+var result *models_pkg.BrowseNodeLookupResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateBrowseNodeLookup11(body)
+
+```
+
+
+### <a name="create_similarity_lookup12"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateSimilarityLookup12") CreateSimilarityLookup12
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateSimilarityLookup12(body *models_pkg.SimilarityLookupRequestMsg)(*models_pkg.SimilarityLookupResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.SimilarityLookupRequestMsg
+
+var result *models_pkg.SimilarityLookupResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateSimilarityLookup12(body)
+
+```
+
+
+### <a name="create_cart_get13"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartGet13") CreateCartGet13
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartGet13(body *models_pkg.CartGetRequestMsg)(*models_pkg.CartGetResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartGetRequestMsg
+
+var result *models_pkg.CartGetResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartGet13(body)
+
+```
+
+
+### <a name="create_cart_add14"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartAdd14") CreateCartAdd14
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartAdd14(body *models_pkg.CartAddRequestMsg)(*models_pkg.CartAddResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartAddRequestMsg
+
+var result *models_pkg.CartAddResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartAdd14(body)
+
+```
+
+
+### <a name="create_cart_create15"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartCreate15") CreateCartCreate15
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartCreate15(body *models_pkg.CartCreateRequestMsg)(*models_pkg.CartCreateResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartCreateRequestMsg
+
+var result *models_pkg.CartCreateResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartCreate15(body)
+
+```
+
+
+### <a name="create_cart_modify16"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartModify16") CreateCartModify16
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartModify16(body *models_pkg.CartModifyRequestMsg)(*models_pkg.CartModifyResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartModifyRequestMsg
+
+var result *models_pkg.CartModifyResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartModify16(body)
+
+```
+
+
+### <a name="create_cart_clear17"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartClear17") CreateCartClear17
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartClear17(body *models_pkg.CartClearRequestMsg)(*models_pkg.CartClearResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartClearRequestMsg
+
+var result *models_pkg.CartClearResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartClear17(body)
+
+```
+
+
+### <a name="create_item_search18"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateItemSearch18") CreateItemSearch18
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateItemSearch18(body *models_pkg.ItemSearchRequestMsg)(*models_pkg.ItemSearchResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.ItemSearchRequestMsg
+
+var result *models_pkg.ItemSearchResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateItemSearch18(body)
+
+```
+
+
+### <a name="create_item_lookup19"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateItemLookup19") CreateItemLookup19
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateItemLookup19(body *models_pkg.ItemLookupRequestMsg)(*models_pkg.ItemLookupResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.ItemLookupRequestMsg
+
+var result *models_pkg.ItemLookupResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateItemLookup19(body)
+
+```
+
+
+### <a name="create_browse_node_lookup20"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateBrowseNodeLookup20") CreateBrowseNodeLookup20
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateBrowseNodeLookup20(body *models_pkg.BrowseNodeLookupRequestMsg)(*models_pkg.BrowseNodeLookupResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.BrowseNodeLookupRequestMsg
+
+var result *models_pkg.BrowseNodeLookupResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateBrowseNodeLookup20(body)
+
+```
+
+
+### <a name="create_similarity_lookup21"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateSimilarityLookup21") CreateSimilarityLookup21
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateSimilarityLookup21(body *models_pkg.SimilarityLookupRequestMsg)(*models_pkg.SimilarityLookupResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.SimilarityLookupRequestMsg
+
+var result *models_pkg.SimilarityLookupResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateSimilarityLookup21(body)
+
+```
+
+
+### <a name="create_cart_get22"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartGet22") CreateCartGet22
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartGet22(body *models_pkg.CartGetRequestMsg)(*models_pkg.CartGetResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartGetRequestMsg
+
+var result *models_pkg.CartGetResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartGet22(body)
+
+```
+
+
+### <a name="create_cart_add23"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartAdd23") CreateCartAdd23
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartAdd23(body *models_pkg.CartAddRequestMsg)(*models_pkg.CartAddResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartAddRequestMsg
+
+var result *models_pkg.CartAddResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartAdd23(body)
+
+```
+
+
+### <a name="create_cart_create24"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartCreate24") CreateCartCreate24
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartCreate24(body *models_pkg.CartCreateRequestMsg)(*models_pkg.CartCreateResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartCreateRequestMsg
+
+var result *models_pkg.CartCreateResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartCreate24(body)
+
+```
+
+
+### <a name="create_cart_modify25"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartModify25") CreateCartModify25
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartModify25(body *models_pkg.CartModifyRequestMsg)(*models_pkg.CartModifyResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartModifyRequestMsg
+
+var result *models_pkg.CartModifyResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartModify25(body)
+
+```
+
+
+### <a name="create_cart_clear26"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartClear26") CreateCartClear26
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartClear26(body *models_pkg.CartClearRequestMsg)(*models_pkg.CartClearResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartClearRequestMsg
+
+var result *models_pkg.CartClearResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartClear26(body)
+
+```
+
+
+### <a name="create_item_search27"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateItemSearch27") CreateItemSearch27
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateItemSearch27(body *models_pkg.ItemSearchRequestMsg)(*models_pkg.ItemSearchResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.ItemSearchRequestMsg
+
+var result *models_pkg.ItemSearchResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateItemSearch27(body)
+
+```
+
+
+### <a name="create_item_lookup28"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateItemLookup28") CreateItemLookup28
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateItemLookup28(body *models_pkg.ItemLookupRequestMsg)(*models_pkg.ItemLookupResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.ItemLookupRequestMsg
+
+var result *models_pkg.ItemLookupResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateItemLookup28(body)
+
+```
+
+
+### <a name="create_browse_node_lookup29"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateBrowseNodeLookup29") CreateBrowseNodeLookup29
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateBrowseNodeLookup29(body *models_pkg.BrowseNodeLookupRequestMsg)(*models_pkg.BrowseNodeLookupResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.BrowseNodeLookupRequestMsg
+
+var result *models_pkg.BrowseNodeLookupResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateBrowseNodeLookup29(body)
+
+```
+
+
+### <a name="create_similarity_lookup30"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateSimilarityLookup30") CreateSimilarityLookup30
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateSimilarityLookup30(body *models_pkg.SimilarityLookupRequestMsg)(*models_pkg.SimilarityLookupResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.SimilarityLookupRequestMsg
+
+var result *models_pkg.SimilarityLookupResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateSimilarityLookup30(body)
+
+```
+
+
+### <a name="create_cart_get31"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartGet31") CreateCartGet31
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartGet31(body *models_pkg.CartGetRequestMsg)(*models_pkg.CartGetResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartGetRequestMsg
+
+var result *models_pkg.CartGetResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartGet31(body)
+
+```
+
+
+### <a name="create_cart_add32"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartAdd32") CreateCartAdd32
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartAdd32(body *models_pkg.CartAddRequestMsg)(*models_pkg.CartAddResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartAddRequestMsg
+
+var result *models_pkg.CartAddResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartAdd32(body)
+
+```
+
+
+### <a name="create_cart_create33"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartCreate33") CreateCartCreate33
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartCreate33(body *models_pkg.CartCreateRequestMsg)(*models_pkg.CartCreateResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartCreateRequestMsg
+
+var result *models_pkg.CartCreateResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartCreate33(body)
+
+```
+
+
+### <a name="create_cart_modify34"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartModify34") CreateCartModify34
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartModify34(body *models_pkg.CartModifyRequestMsg)(*models_pkg.CartModifyResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartModifyRequestMsg
+
+var result *models_pkg.CartModifyResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartModify34(body)
+
+```
+
+
+### <a name="create_cart_clear35"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartClear35") CreateCartClear35
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartClear35(body *models_pkg.CartClearRequestMsg)(*models_pkg.CartClearResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartClearRequestMsg
+
+var result *models_pkg.CartClearResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartClear35(body)
+
+```
+
+
+### <a name="create_item_search36"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateItemSearch36") CreateItemSearch36
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateItemSearch36(body *models_pkg.ItemSearchRequestMsg)(*models_pkg.ItemSearchResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.ItemSearchRequestMsg
+
+var result *models_pkg.ItemSearchResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateItemSearch36(body)
+
+```
+
+
+### <a name="create_item_lookup37"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateItemLookup37") CreateItemLookup37
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateItemLookup37(body *models_pkg.ItemLookupRequestMsg)(*models_pkg.ItemLookupResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.ItemLookupRequestMsg
+
+var result *models_pkg.ItemLookupResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateItemLookup37(body)
+
+```
+
+
+### <a name="create_browse_node_lookup38"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateBrowseNodeLookup38") CreateBrowseNodeLookup38
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateBrowseNodeLookup38(body *models_pkg.BrowseNodeLookupRequestMsg)(*models_pkg.BrowseNodeLookupResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.BrowseNodeLookupRequestMsg
+
+var result *models_pkg.BrowseNodeLookupResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateBrowseNodeLookup38(body)
+
+```
+
+
+### <a name="create_similarity_lookup39"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateSimilarityLookup39") CreateSimilarityLookup39
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateSimilarityLookup39(body *models_pkg.SimilarityLookupRequestMsg)(*models_pkg.SimilarityLookupResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.SimilarityLookupRequestMsg
+
+var result *models_pkg.SimilarityLookupResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateSimilarityLookup39(body)
+
+```
+
+
+### <a name="create_cart_get40"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartGet40") CreateCartGet40
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartGet40(body *models_pkg.CartGetRequestMsg)(*models_pkg.CartGetResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartGetRequestMsg
+
+var result *models_pkg.CartGetResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartGet40(body)
+
+```
+
+
+### <a name="create_cart_add41"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartAdd41") CreateCartAdd41
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartAdd41(body *models_pkg.CartAddRequestMsg)(*models_pkg.CartAddResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartAddRequestMsg
+
+var result *models_pkg.CartAddResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartAdd41(body)
+
+```
+
+
+### <a name="create_cart_create42"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartCreate42") CreateCartCreate42
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartCreate42(body *models_pkg.CartCreateRequestMsg)(*models_pkg.CartCreateResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartCreateRequestMsg
+
+var result *models_pkg.CartCreateResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartCreate42(body)
+
+```
+
+
+### <a name="create_cart_modify43"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartModify43") CreateCartModify43
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartModify43(body *models_pkg.CartModifyRequestMsg)(*models_pkg.CartModifyResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartModifyRequestMsg
+
+var result *models_pkg.CartModifyResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartModify43(body)
+
+```
+
+
+### <a name="create_cart_clear44"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartClear44") CreateCartClear44
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartClear44(body *models_pkg.CartClearRequestMsg)(*models_pkg.CartClearResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartClearRequestMsg
+
+var result *models_pkg.CartClearResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartClear44(body)
+
+```
+
+
+### <a name="create_item_search45"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateItemSearch45") CreateItemSearch45
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateItemSearch45(body *models_pkg.ItemSearchRequestMsg)(*models_pkg.ItemSearchResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.ItemSearchRequestMsg
+
+var result *models_pkg.ItemSearchResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateItemSearch45(body)
+
+```
+
+
+### <a name="create_item_lookup46"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateItemLookup46") CreateItemLookup46
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateItemLookup46(body *models_pkg.ItemLookupRequestMsg)(*models_pkg.ItemLookupResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.ItemLookupRequestMsg
+
+var result *models_pkg.ItemLookupResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateItemLookup46(body)
+
+```
+
+
+### <a name="create_browse_node_lookup47"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateBrowseNodeLookup47") CreateBrowseNodeLookup47
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateBrowseNodeLookup47(body *models_pkg.BrowseNodeLookupRequestMsg)(*models_pkg.BrowseNodeLookupResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.BrowseNodeLookupRequestMsg
+
+var result *models_pkg.BrowseNodeLookupResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateBrowseNodeLookup47(body)
+
+```
+
+
+### <a name="create_similarity_lookup48"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateSimilarityLookup48") CreateSimilarityLookup48
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateSimilarityLookup48(body *models_pkg.SimilarityLookupRequestMsg)(*models_pkg.SimilarityLookupResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.SimilarityLookupRequestMsg
+
+var result *models_pkg.SimilarityLookupResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateSimilarityLookup48(body)
+
+```
+
+
+### <a name="create_cart_get49"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartGet49") CreateCartGet49
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartGet49(body *models_pkg.CartGetRequestMsg)(*models_pkg.CartGetResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartGetRequestMsg
+
+var result *models_pkg.CartGetResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartGet49(body)
+
+```
+
+
+### <a name="create_cart_add50"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartAdd50") CreateCartAdd50
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartAdd50(body *models_pkg.CartAddRequestMsg)(*models_pkg.CartAddResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartAddRequestMsg
+
+var result *models_pkg.CartAddResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartAdd50(body)
+
+```
+
+
+### <a name="create_cart_create51"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartCreate51") CreateCartCreate51
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartCreate51(body *models_pkg.CartCreateRequestMsg)(*models_pkg.CartCreateResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartCreateRequestMsg
+
+var result *models_pkg.CartCreateResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartCreate51(body)
+
+```
+
+
+### <a name="create_cart_modify52"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartModify52") CreateCartModify52
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartModify52(body *models_pkg.CartModifyRequestMsg)(*models_pkg.CartModifyResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartModifyRequestMsg
+
+var result *models_pkg.CartModifyResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartModify52(body)
+
+```
+
+
+### <a name="create_cart_clear53"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartClear53") CreateCartClear53
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartClear53(body *models_pkg.CartClearRequestMsg)(*models_pkg.CartClearResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartClearRequestMsg
+
+var result *models_pkg.CartClearResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartClear53(body)
+
+```
+
+
+### <a name="create_item_search54"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateItemSearch54") CreateItemSearch54
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateItemSearch54(body *models_pkg.ItemSearchRequestMsg)(*models_pkg.ItemSearchResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.ItemSearchRequestMsg
+
+var result *models_pkg.ItemSearchResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateItemSearch54(body)
+
+```
+
+
+### <a name="create_item_lookup55"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateItemLookup55") CreateItemLookup55
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateItemLookup55(body *models_pkg.ItemLookupRequestMsg)(*models_pkg.ItemLookupResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.ItemLookupRequestMsg
+
+var result *models_pkg.ItemLookupResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateItemLookup55(body)
+
+```
+
+
+### <a name="create_browse_node_lookup56"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateBrowseNodeLookup56") CreateBrowseNodeLookup56
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateBrowseNodeLookup56(body *models_pkg.BrowseNodeLookupRequestMsg)(*models_pkg.BrowseNodeLookupResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.BrowseNodeLookupRequestMsg
+
+var result *models_pkg.BrowseNodeLookupResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateBrowseNodeLookup56(body)
+
+```
+
+
+### <a name="create_similarity_lookup57"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateSimilarityLookup57") CreateSimilarityLookup57
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateSimilarityLookup57(body *models_pkg.SimilarityLookupRequestMsg)(*models_pkg.SimilarityLookupResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.SimilarityLookupRequestMsg
+
+var result *models_pkg.SimilarityLookupResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateSimilarityLookup57(body)
+
+```
+
+
+### <a name="create_cart_get58"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartGet58") CreateCartGet58
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartGet58(body *models_pkg.CartGetRequestMsg)(*models_pkg.CartGetResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartGetRequestMsg
+
+var result *models_pkg.CartGetResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartGet58(body)
+
+```
+
+
+### <a name="create_cart_add59"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartAdd59") CreateCartAdd59
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartAdd59(body *models_pkg.CartAddRequestMsg)(*models_pkg.CartAddResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartAddRequestMsg
+
+var result *models_pkg.CartAddResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartAdd59(body)
+
+```
+
+
+### <a name="create_cart_create60"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartCreate60") CreateCartCreate60
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartCreate60(body *models_pkg.CartCreateRequestMsg)(*models_pkg.CartCreateResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartCreateRequestMsg
+
+var result *models_pkg.CartCreateResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartCreate60(body)
+
+```
+
+
+### <a name="create_cart_modify61"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartModify61") CreateCartModify61
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartModify61(body *models_pkg.CartModifyRequestMsg)(*models_pkg.CartModifyResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartModifyRequestMsg
+
+var result *models_pkg.CartModifyResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartModify61(body)
+
+```
+
+
+### <a name="create_cart_clear62"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartClear62") CreateCartClear62
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartClear62(body *models_pkg.CartClearRequestMsg)(*models_pkg.CartClearResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartClearRequestMsg
+
+var result *models_pkg.CartClearResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartClear62(body)
+
+```
+
+
+### <a name="create_item_search63"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateItemSearch63") CreateItemSearch63
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateItemSearch63(body *models_pkg.ItemSearchRequestMsg)(*models_pkg.ItemSearchResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.ItemSearchRequestMsg
+
+var result *models_pkg.ItemSearchResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateItemSearch63(body)
+
+```
+
+
+### <a name="create_item_lookup64"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateItemLookup64") CreateItemLookup64
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateItemLookup64(body *models_pkg.ItemLookupRequestMsg)(*models_pkg.ItemLookupResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.ItemLookupRequestMsg
+
+var result *models_pkg.ItemLookupResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateItemLookup64(body)
+
+```
+
+
+### <a name="create_browse_node_lookup65"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateBrowseNodeLookup65") CreateBrowseNodeLookup65
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateBrowseNodeLookup65(body *models_pkg.BrowseNodeLookupRequestMsg)(*models_pkg.BrowseNodeLookupResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.BrowseNodeLookupRequestMsg
+
+var result *models_pkg.BrowseNodeLookupResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateBrowseNodeLookup65(body)
+
+```
+
+
+### <a name="create_similarity_lookup66"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateSimilarityLookup66") CreateSimilarityLookup66
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateSimilarityLookup66(body *models_pkg.SimilarityLookupRequestMsg)(*models_pkg.SimilarityLookupResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.SimilarityLookupRequestMsg
+
+var result *models_pkg.SimilarityLookupResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateSimilarityLookup66(body)
+
+```
+
+
+### <a name="create_cart_get67"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartGet67") CreateCartGet67
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartGet67(body *models_pkg.CartGetRequestMsg)(*models_pkg.CartGetResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartGetRequestMsg
+
+var result *models_pkg.CartGetResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartGet67(body)
+
+```
+
+
+### <a name="create_cart_add68"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartAdd68") CreateCartAdd68
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartAdd68(body *models_pkg.CartAddRequestMsg)(*models_pkg.CartAddResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartAddRequestMsg
+
+var result *models_pkg.CartAddResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartAdd68(body)
+
+```
+
+
+### <a name="create_cart_create69"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartCreate69") CreateCartCreate69
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartCreate69(body *models_pkg.CartCreateRequestMsg)(*models_pkg.CartCreateResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartCreateRequestMsg
+
+var result *models_pkg.CartCreateResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartCreate69(body)
+
+```
+
+
+### <a name="create_cart_modify70"></a>![Method: ](https://apidocs.io/img/method.png ".awsecommerceservicebinding_pkg.CreateCartModify70") CreateCartModify70
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *AWSECOMMERCESERVICEBINDING_IMPL) CreateCartModify70(body *models_pkg.CartModifyRequestMsg)(*models_pkg.CartModifyResponseMsg,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.CartModifyRequestMsg
+
+var result *models_pkg.CartModifyResponseMsg
+result,_ = aWSECommerceServiceBinding.CreateCartModify70(body)
 
 ```
 
@@ -2982,6 +3000,704 @@ var result *models_pkg.CartClearResponseMsg
 result,_ = aWSECommerceServiceBinding.CreateCartClear98(body)
 
 ```
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="oauthauthorization_pkg"></a>![Class: ](https://apidocs.io/img/class.png ".oauthauthorization_pkg") oauthauthorization_pkg
+
+### Get instance
+
+Factory for the ``` OAUTHAUTHORIZATION ``` interface can be accessed from the package oauthauthorization_pkg.
+
+```go
+oAuthAuthorization := oauthauthorization_pkg.NewOAUTHAUTHORIZATION()
+```
+
+### <a name="create_request_token"></a>![Method: ](https://apidocs.io/img/method.png ".oauthauthorization_pkg.CreateRequestToken") CreateRequestToken
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```go
+func (me *OAUTHAUTHORIZATION_IMPL) CreateRequestToken(
+            authorization string,
+            code string,
+            redirectUri string,
+                fieldParameters map[string]interface{})(*models_pkg.OAuthToken,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| code |  ``` Required ```  | Authorization Code |
+| redirectUri |  ``` Required ```  | Redirect Uri |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```go
+authorization := "Authorization"
+code := "code"
+redirectUri := "redirect_uri"
+// key-value map for optional form parameters
+	formParams := map[string]interface{}{"key" : "value"}
+
+
+var result *models_pkg.OAuthToken
+result,_ = oAuthAuthorization.CreateRequestToken(authorization, code, redirectUri, formParams)
+
+```
+
+#### Errors
+ 
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token"></a>![Method: ](https://apidocs.io/img/method.png ".oauthauthorization_pkg.CreateRefreshToken") CreateRefreshToken
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```go
+func (me *OAUTHAUTHORIZATION_IMPL) CreateRefreshToken(
+            authorization string,
+            refreshToken string,
+            scope *string,
+                fieldParameters map[string]interface{})(*models_pkg.OAuthToken,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```go
+authorization := "Authorization"
+refreshToken := "refresh_token"
+scope := "scope"
+// key-value map for optional form parameters
+	formParams := map[string]interface{}{"key" : "value"}
+
+
+var result *models_pkg.OAuthToken
+result,_ = oAuthAuthorization.CreateRefreshToken(authorization, refreshToken, scope, formParams)
+
+```
+
+#### Errors
+ 
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token1"></a>![Method: ](https://apidocs.io/img/method.png ".oauthauthorization_pkg.CreateRequestToken1") CreateRequestToken1
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```go
+func (me *OAUTHAUTHORIZATION_IMPL) CreateRequestToken1(
+            authorization string,
+            code string,
+            redirectUri string,
+                fieldParameters map[string]interface{})(*models_pkg.OAuthToken,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| code |  ``` Required ```  | Authorization Code |
+| redirectUri |  ``` Required ```  | Redirect Uri |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```go
+authorization := "Authorization"
+code := "code"
+redirectUri := "redirect_uri"
+// key-value map for optional form parameters
+	formParams := map[string]interface{}{"key" : "value"}
+
+
+var result *models_pkg.OAuthToken
+result,_ = oAuthAuthorization.CreateRequestToken1(authorization, code, redirectUri, formParams)
+
+```
+
+#### Errors
+ 
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token1"></a>![Method: ](https://apidocs.io/img/method.png ".oauthauthorization_pkg.CreateRefreshToken1") CreateRefreshToken1
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```go
+func (me *OAUTHAUTHORIZATION_IMPL) CreateRefreshToken1(
+            authorization string,
+            refreshToken string,
+            scope *string,
+                fieldParameters map[string]interface{})(*models_pkg.OAuthToken,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```go
+authorization := "Authorization"
+refreshToken := "refresh_token"
+scope := "scope"
+// key-value map for optional form parameters
+	formParams := map[string]interface{}{"key" : "value"}
+
+
+var result *models_pkg.OAuthToken
+result,_ = oAuthAuthorization.CreateRefreshToken1(authorization, refreshToken, scope, formParams)
+
+```
+
+#### Errors
+ 
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token2"></a>![Method: ](https://apidocs.io/img/method.png ".oauthauthorization_pkg.CreateRequestToken2") CreateRequestToken2
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```go
+func (me *OAUTHAUTHORIZATION_IMPL) CreateRequestToken2(
+            authorization string,
+            code string,
+            redirectUri string,
+                fieldParameters map[string]interface{})(*models_pkg.OAuthToken,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| code |  ``` Required ```  | Authorization Code |
+| redirectUri |  ``` Required ```  | Redirect Uri |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```go
+authorization := "Authorization"
+code := "code"
+redirectUri := "redirect_uri"
+// key-value map for optional form parameters
+	formParams := map[string]interface{}{"key" : "value"}
+
+
+var result *models_pkg.OAuthToken
+result,_ = oAuthAuthorization.CreateRequestToken2(authorization, code, redirectUri, formParams)
+
+```
+
+#### Errors
+ 
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token2"></a>![Method: ](https://apidocs.io/img/method.png ".oauthauthorization_pkg.CreateRefreshToken2") CreateRefreshToken2
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```go
+func (me *OAUTHAUTHORIZATION_IMPL) CreateRefreshToken2(
+            authorization string,
+            refreshToken string,
+            scope *string,
+                fieldParameters map[string]interface{})(*models_pkg.OAuthToken,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```go
+authorization := "Authorization"
+refreshToken := "refresh_token"
+scope := "scope"
+// key-value map for optional form parameters
+	formParams := map[string]interface{}{"key" : "value"}
+
+
+var result *models_pkg.OAuthToken
+result,_ = oAuthAuthorization.CreateRefreshToken2(authorization, refreshToken, scope, formParams)
+
+```
+
+#### Errors
+ 
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token11"></a>![Method: ](https://apidocs.io/img/method.png ".oauthauthorization_pkg.CreateRequestToken11") CreateRequestToken11
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```go
+func (me *OAUTHAUTHORIZATION_IMPL) CreateRequestToken11(
+            authorization string,
+            code string,
+            redirectUri string,
+                fieldParameters map[string]interface{})(*models_pkg.OAuthToken,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| code |  ``` Required ```  | Authorization Code |
+| redirectUri |  ``` Required ```  | Redirect Uri |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```go
+authorization := "Authorization"
+code := "code"
+redirectUri := "redirect_uri"
+// key-value map for optional form parameters
+	formParams := map[string]interface{}{"key" : "value"}
+
+
+var result *models_pkg.OAuthToken
+result,_ = oAuthAuthorization.CreateRequestToken11(authorization, code, redirectUri, formParams)
+
+```
+
+#### Errors
+ 
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token11"></a>![Method: ](https://apidocs.io/img/method.png ".oauthauthorization_pkg.CreateRefreshToken11") CreateRefreshToken11
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```go
+func (me *OAUTHAUTHORIZATION_IMPL) CreateRefreshToken11(
+            authorization string,
+            refreshToken string,
+            scope *string,
+                fieldParameters map[string]interface{})(*models_pkg.OAuthToken,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```go
+authorization := "Authorization"
+refreshToken := "refresh_token"
+scope := "scope"
+// key-value map for optional form parameters
+	formParams := map[string]interface{}{"key" : "value"}
+
+
+var result *models_pkg.OAuthToken
+result,_ = oAuthAuthorization.CreateRefreshToken11(authorization, refreshToken, scope, formParams)
+
+```
+
+#### Errors
+ 
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token21"></a>![Method: ](https://apidocs.io/img/method.png ".oauthauthorization_pkg.CreateRequestToken21") CreateRequestToken21
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```go
+func (me *OAUTHAUTHORIZATION_IMPL) CreateRequestToken21(
+            authorization string,
+            code string,
+            redirectUri string,
+                fieldParameters map[string]interface{})(*models_pkg.OAuthToken,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| code |  ``` Required ```  | Authorization Code |
+| redirectUri |  ``` Required ```  | Redirect Uri |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```go
+authorization := "Authorization"
+code := "code"
+redirectUri := "redirect_uri"
+// key-value map for optional form parameters
+	formParams := map[string]interface{}{"key" : "value"}
+
+
+var result *models_pkg.OAuthToken
+result,_ = oAuthAuthorization.CreateRequestToken21(authorization, code, redirectUri, formParams)
+
+```
+
+#### Errors
+ 
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token21"></a>![Method: ](https://apidocs.io/img/method.png ".oauthauthorization_pkg.CreateRefreshToken21") CreateRefreshToken21
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```go
+func (me *OAUTHAUTHORIZATION_IMPL) CreateRefreshToken21(
+            authorization string,
+            refreshToken string,
+            scope *string,
+                fieldParameters map[string]interface{})(*models_pkg.OAuthToken,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```go
+authorization := "Authorization"
+refreshToken := "refresh_token"
+scope := "scope"
+// key-value map for optional form parameters
+	formParams := map[string]interface{}{"key" : "value"}
+
+
+var result *models_pkg.OAuthToken
+result,_ = oAuthAuthorization.CreateRefreshToken21(authorization, refreshToken, scope, formParams)
+
+```
+
+#### Errors
+ 
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token1"></a>![Method: ](https://apidocs.io/img/method.png ".oauthauthorization_pkg.CreateRequestToken1") CreateRequestToken1
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```go
+func (me *OAUTHAUTHORIZATION_IMPL) CreateRequestToken1(
+            authorization string,
+            code string,
+            redirectUri string,
+                fieldParameters map[string]interface{})(*models_pkg.OAuthToken,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| code |  ``` Required ```  | Authorization Code |
+| redirectUri |  ``` Required ```  | Redirect Uri |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```go
+authorization := "Authorization"
+code := "code"
+redirectUri := "redirect_uri"
+// key-value map for optional form parameters
+	formParams := map[string]interface{}{"key" : "value"}
+
+
+var result *models_pkg.OAuthToken
+result,_ = oAuthAuthorization.CreateRequestToken1(authorization, code, redirectUri, formParams)
+
+```
+
+#### Errors
+ 
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token1"></a>![Method: ](https://apidocs.io/img/method.png ".oauthauthorization_pkg.CreateRefreshToken1") CreateRefreshToken1
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```go
+func (me *OAUTHAUTHORIZATION_IMPL) CreateRefreshToken1(
+            authorization string,
+            refreshToken string,
+            scope *string,
+                fieldParameters map[string]interface{})(*models_pkg.OAuthToken,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```go
+authorization := "Authorization"
+refreshToken := "refresh_token"
+scope := "scope"
+// key-value map for optional form parameters
+	formParams := map[string]interface{}{"key" : "value"}
+
+
+var result *models_pkg.OAuthToken
+result,_ = oAuthAuthorization.CreateRefreshToken1(authorization, refreshToken, scope, formParams)
+
+```
+
+#### Errors
+ 
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token"></a>![Method: ](https://apidocs.io/img/method.png ".oauthauthorization_pkg.CreateRequestToken") CreateRequestToken
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```go
+func (me *OAUTHAUTHORIZATION_IMPL) CreateRequestToken(
+            authorization string,
+            code string,
+            redirectUri string,
+                fieldParameters map[string]interface{})(*models_pkg.OAuthToken,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| code |  ``` Required ```  | Authorization Code |
+| redirectUri |  ``` Required ```  | Redirect Uri |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```go
+authorization := "Authorization"
+code := "code"
+redirectUri := "redirect_uri"
+// key-value map for optional form parameters
+	formParams := map[string]interface{}{"key" : "value"}
+
+
+var result *models_pkg.OAuthToken
+result,_ = oAuthAuthorization.CreateRequestToken(authorization, code, redirectUri, formParams)
+
+```
+
+#### Errors
+ 
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token"></a>![Method: ](https://apidocs.io/img/method.png ".oauthauthorization_pkg.CreateRefreshToken") CreateRefreshToken
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```go
+func (me *OAUTHAUTHORIZATION_IMPL) CreateRefreshToken(
+            authorization string,
+            refreshToken string,
+            scope *string,
+                fieldParameters map[string]interface{})(*models_pkg.OAuthToken,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```go
+authorization := "Authorization"
+refreshToken := "refresh_token"
+scope := "scope"
+// key-value map for optional form parameters
+	formParams := map[string]interface{}{"key" : "value"}
+
+
+var result *models_pkg.OAuthToken
+result,_ = oAuthAuthorization.CreateRefreshToken(authorization, refreshToken, scope, formParams)
+
+```
+
+#### Errors
+ 
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
 
 
 [Back to List of Controllers](#list_of_controllers)

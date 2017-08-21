@@ -1,5 +1,7 @@
 # Getting started
 
+this is one of the test description
+
 ## How to Build
 
 The generated code uses the Newtonsoft Json.NET NuGet Package. If the automatic NuGet package restore
@@ -60,15 +62,118 @@ Here, you can click *Run All* to execute these test cases.
 
 ## Initialization
 
-### 
+### Authentication
+In order to setup authentication and initialization of the API client, you need the following information.
+
+| Parameter | Description |
+|-----------|-------------|
+| oAuthClientId | OAuth 2 Client ID |
+| oAuthClientSecret | OAuth 2 Client Secret |
+| oAuthRedirectUri | OAuth 2 Redirection endpoint or Callback Uri |
+
+
 
 API client can be initialized as following.
 
 ```csharp
+// Configuration parameters and credentials
+string oAuthClientId = "oAuthClientId"; // OAuth 2 Client ID
+string oAuthClientSecret = "oAuthClientSecret"; // OAuth 2 Client Secret
+string oAuthRedirectUri = "oAuthRedirectUri"; // OAuth 2 Redirection endpoint or Callback Uri
 
-AWSECommerceServiceClient client = new AWSECommerceServiceClient();
+AWSECommerceServiceClient client = new AWSECommerceServiceClient(oAuthClientId, oAuthClientSecret, oAuthRedirectUri);
 ```
 
+
+You must now authorize the client.
+
+### Authorizing your client
+
+Your application must obtain user authorization before it can execute an endpoint call.
+The SDK uses *OAuth 2.0 authorization* to obtain a user's consent to perform an API request on the user's behalf.
+
+#### 1. Obtain user consent
+
+To obtain user's consent, you must redirect the user to the authorization page. The `BuildAuthorizationUrl()` method creates the URL to the authorization page.
+```csharp
+String authUrl = client.Auth.BuildAuthorizationUrl()()
+```
+
+#### 2. Handle the OAuth server response
+
+Once the user responds to the consent request, the OAuth 2.0 server responds to your application's access request by redirecting the user to your redirect URI.
+
+If the user approves the request, the authorization code will be sent as the `code` query string:
+ 
+```
+https://example.com/oauth/callback?code=XXXXXXXXXXXXXXXXXXXXXXXXX
+```
+
+If the user does not approve the request, the response contains an `error` query string:
+
+```
+https://example.com/oauth/callback?error=access_denied
+```
+
+#### 3. Authorize the client using the code
+
+After the server receives the code, it can exchange this for an *access token*. The access token is an object containing information for authorizing client requests and refreshing the token itself.
+
+```csharp
+try
+{
+    client.Auth.Authorize(/*code goes here*/)
+}
+catch (OAuthProviderException e)
+{
+    //handle exception here
+}
+```
+
+### Refreshing token
+
+An access token may expire after some time. To extend its lifetime, you must refresh the token.
+
+```csharp
+try
+{
+    client.Auth.RefreshToken()
+}
+catch (OAuthProviderException e)
+{
+    //handle exception here
+}
+```
+
+If a token expires, the SDK will attempt to automatically refresh the token before the next endpoint call requiring authentication.
+
+### Storing an access token for reuse
+
+It is recommended that you store the access token for reuse.
+
+You can store the access token in a file or a database.
+
+```csharp
+// store token
+SaveTokenToDatabase(Configuration.OAuthToken);
+```
+ 
+However, since the the SDK will attempt to automatically refresh the token when it expires, it is recommended that you register a *token update delegate* to detect any change to the access token.
+
+```csharp
+client.Configuration.OAuthTokenUpdateCallback = SaveTokenToDatabase;
+```
+
+The token update callback will be fired upon authorization as well as token refresh.
+
+### Creating a client from a stored token
+
+To authorize a client from a stored access token, just set the access token after creating the client:
+
+```csharp
+client = AWSECommerceServiceClient();
+Configuration.UpdateAccessToken(LoadTokenFromDatabase());
+```
 
 
 # Class Reference
@@ -76,6 +181,7 @@ AWSECommerceServiceClient client = new AWSECommerceServiceClient();
 ## <a name="list_of_controllers"></a>List of Controllers
 
 * [AWSECommerceServiceBindingController](#awse_commerce_service_binding_controller)
+* [OAuthAuthorizationController](#o_auth_authorization_controller)
 
 ## <a name="awse_commerce_service_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController") AWSECommerceServiceBindingController
 
@@ -87,7 +193,7 @@ The singleton instance of the ``` AWSECommerceServiceBindingController ``` class
 AWSECommerceServiceBindingController aWSECommerceServiceBinding = client.AWSECommerceServiceBinding;
 ```
 
-### <a name="create_cart_modify70"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartModify70") CreateCartModify70
+### <a name="create_item_search"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemSearch") CreateItemSearch
 
 > *Tags:*  ``` Skips Authentication ``` 
 
@@ -95,203 +201,7 @@ AWSECommerceServiceBindingController aWSECommerceServiceBinding = client.AWSECom
 
 
 ```csharp
-Task<Models.CartModifyResponseMsg> CreateCartModify70(Models.CartModifyRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartModifyRequestMsg();
-
-Models.CartModifyResponseMsg result = await aWSECommerceServiceBinding.CreateCartModify70(body);
-
-```
-
-
-### <a name="create_cart_create69"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartCreate69") CreateCartCreate69
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartCreateResponseMsg> CreateCartCreate69(Models.CartCreateRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartCreateRequestMsg();
-
-Models.CartCreateResponseMsg result = await aWSECommerceServiceBinding.CreateCartCreate69(body);
-
-```
-
-
-### <a name="create_cart_add68"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartAdd68") CreateCartAdd68
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartAddResponseMsg> CreateCartAdd68(Models.CartAddRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartAddRequestMsg();
-
-Models.CartAddResponseMsg result = await aWSECommerceServiceBinding.CreateCartAdd68(body);
-
-```
-
-
-### <a name="create_cart_get67"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartGet67") CreateCartGet67
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartGetResponseMsg> CreateCartGet67(Models.CartGetRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartGetRequestMsg();
-
-Models.CartGetResponseMsg result = await aWSECommerceServiceBinding.CreateCartGet67(body);
-
-```
-
-
-### <a name="create_similarity_lookup66"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateSimilarityLookup66") CreateSimilarityLookup66
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.SimilarityLookupResponseMsg> CreateSimilarityLookup66(Models.SimilarityLookupRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.SimilarityLookupRequestMsg();
-
-Models.SimilarityLookupResponseMsg result = await aWSECommerceServiceBinding.CreateSimilarityLookup66(body);
-
-```
-
-
-### <a name="create_browse_node_lookup65"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateBrowseNodeLookup65") CreateBrowseNodeLookup65
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.BrowseNodeLookupResponseMsg> CreateBrowseNodeLookup65(Models.BrowseNodeLookupRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.BrowseNodeLookupRequestMsg();
-
-Models.BrowseNodeLookupResponseMsg result = await aWSECommerceServiceBinding.CreateBrowseNodeLookup65(body);
-
-```
-
-
-### <a name="create_item_lookup64"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemLookup64") CreateItemLookup64
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.ItemLookupResponseMsg> CreateItemLookup64(Models.ItemLookupRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.ItemLookupRequestMsg();
-
-Models.ItemLookupResponseMsg result = await aWSECommerceServiceBinding.CreateItemLookup64(body);
-
-```
-
-
-### <a name="create_item_search63"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemSearch63") CreateItemSearch63
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.ItemSearchResponseMsg> CreateItemSearch63(Models.ItemSearchRequestMsg body)
+Task<Models.ItemSearchResponseMsg> CreateItemSearch(Models.ItemSearchRequestMsg body)
 ```
 
 #### Parameters
@@ -306,1715 +216,7 @@ Task<Models.ItemSearchResponseMsg> CreateItemSearch63(Models.ItemSearchRequestMs
 ```csharp
 var body = new Models.ItemSearchRequestMsg();
 
-Models.ItemSearchResponseMsg result = await aWSECommerceServiceBinding.CreateItemSearch63(body);
-
-```
-
-
-### <a name="create_cart_clear62"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartClear62") CreateCartClear62
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartClearResponseMsg> CreateCartClear62(Models.CartClearRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartClearRequestMsg();
-
-Models.CartClearResponseMsg result = await aWSECommerceServiceBinding.CreateCartClear62(body);
-
-```
-
-
-### <a name="create_cart_modify61"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartModify61") CreateCartModify61
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartModifyResponseMsg> CreateCartModify61(Models.CartModifyRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartModifyRequestMsg();
-
-Models.CartModifyResponseMsg result = await aWSECommerceServiceBinding.CreateCartModify61(body);
-
-```
-
-
-### <a name="create_cart_create60"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartCreate60") CreateCartCreate60
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartCreateResponseMsg> CreateCartCreate60(Models.CartCreateRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartCreateRequestMsg();
-
-Models.CartCreateResponseMsg result = await aWSECommerceServiceBinding.CreateCartCreate60(body);
-
-```
-
-
-### <a name="create_cart_add59"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartAdd59") CreateCartAdd59
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartAddResponseMsg> CreateCartAdd59(Models.CartAddRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartAddRequestMsg();
-
-Models.CartAddResponseMsg result = await aWSECommerceServiceBinding.CreateCartAdd59(body);
-
-```
-
-
-### <a name="create_cart_get58"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartGet58") CreateCartGet58
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartGetResponseMsg> CreateCartGet58(Models.CartGetRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartGetRequestMsg();
-
-Models.CartGetResponseMsg result = await aWSECommerceServiceBinding.CreateCartGet58(body);
-
-```
-
-
-### <a name="create_similarity_lookup57"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateSimilarityLookup57") CreateSimilarityLookup57
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.SimilarityLookupResponseMsg> CreateSimilarityLookup57(Models.SimilarityLookupRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.SimilarityLookupRequestMsg();
-
-Models.SimilarityLookupResponseMsg result = await aWSECommerceServiceBinding.CreateSimilarityLookup57(body);
-
-```
-
-
-### <a name="create_browse_node_lookup56"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateBrowseNodeLookup56") CreateBrowseNodeLookup56
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.BrowseNodeLookupResponseMsg> CreateBrowseNodeLookup56(Models.BrowseNodeLookupRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.BrowseNodeLookupRequestMsg();
-
-Models.BrowseNodeLookupResponseMsg result = await aWSECommerceServiceBinding.CreateBrowseNodeLookup56(body);
-
-```
-
-
-### <a name="create_item_lookup55"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemLookup55") CreateItemLookup55
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.ItemLookupResponseMsg> CreateItemLookup55(Models.ItemLookupRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.ItemLookupRequestMsg();
-
-Models.ItemLookupResponseMsg result = await aWSECommerceServiceBinding.CreateItemLookup55(body);
-
-```
-
-
-### <a name="create_item_search54"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemSearch54") CreateItemSearch54
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.ItemSearchResponseMsg> CreateItemSearch54(Models.ItemSearchRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.ItemSearchRequestMsg();
-
-Models.ItemSearchResponseMsg result = await aWSECommerceServiceBinding.CreateItemSearch54(body);
-
-```
-
-
-### <a name="create_cart_clear53"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartClear53") CreateCartClear53
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartClearResponseMsg> CreateCartClear53(Models.CartClearRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartClearRequestMsg();
-
-Models.CartClearResponseMsg result = await aWSECommerceServiceBinding.CreateCartClear53(body);
-
-```
-
-
-### <a name="create_cart_modify52"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartModify52") CreateCartModify52
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartModifyResponseMsg> CreateCartModify52(Models.CartModifyRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartModifyRequestMsg();
-
-Models.CartModifyResponseMsg result = await aWSECommerceServiceBinding.CreateCartModify52(body);
-
-```
-
-
-### <a name="create_cart_create51"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartCreate51") CreateCartCreate51
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartCreateResponseMsg> CreateCartCreate51(Models.CartCreateRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartCreateRequestMsg();
-
-Models.CartCreateResponseMsg result = await aWSECommerceServiceBinding.CreateCartCreate51(body);
-
-```
-
-
-### <a name="create_cart_add50"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartAdd50") CreateCartAdd50
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartAddResponseMsg> CreateCartAdd50(Models.CartAddRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartAddRequestMsg();
-
-Models.CartAddResponseMsg result = await aWSECommerceServiceBinding.CreateCartAdd50(body);
-
-```
-
-
-### <a name="create_cart_get49"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartGet49") CreateCartGet49
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartGetResponseMsg> CreateCartGet49(Models.CartGetRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartGetRequestMsg();
-
-Models.CartGetResponseMsg result = await aWSECommerceServiceBinding.CreateCartGet49(body);
-
-```
-
-
-### <a name="create_similarity_lookup48"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateSimilarityLookup48") CreateSimilarityLookup48
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.SimilarityLookupResponseMsg> CreateSimilarityLookup48(Models.SimilarityLookupRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.SimilarityLookupRequestMsg();
-
-Models.SimilarityLookupResponseMsg result = await aWSECommerceServiceBinding.CreateSimilarityLookup48(body);
-
-```
-
-
-### <a name="create_browse_node_lookup47"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateBrowseNodeLookup47") CreateBrowseNodeLookup47
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.BrowseNodeLookupResponseMsg> CreateBrowseNodeLookup47(Models.BrowseNodeLookupRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.BrowseNodeLookupRequestMsg();
-
-Models.BrowseNodeLookupResponseMsg result = await aWSECommerceServiceBinding.CreateBrowseNodeLookup47(body);
-
-```
-
-
-### <a name="create_item_lookup46"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemLookup46") CreateItemLookup46
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.ItemLookupResponseMsg> CreateItemLookup46(Models.ItemLookupRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.ItemLookupRequestMsg();
-
-Models.ItemLookupResponseMsg result = await aWSECommerceServiceBinding.CreateItemLookup46(body);
-
-```
-
-
-### <a name="create_item_search45"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemSearch45") CreateItemSearch45
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.ItemSearchResponseMsg> CreateItemSearch45(Models.ItemSearchRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.ItemSearchRequestMsg();
-
-Models.ItemSearchResponseMsg result = await aWSECommerceServiceBinding.CreateItemSearch45(body);
-
-```
-
-
-### <a name="create_cart_clear44"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartClear44") CreateCartClear44
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartClearResponseMsg> CreateCartClear44(Models.CartClearRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartClearRequestMsg();
-
-Models.CartClearResponseMsg result = await aWSECommerceServiceBinding.CreateCartClear44(body);
-
-```
-
-
-### <a name="create_cart_modify43"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartModify43") CreateCartModify43
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartModifyResponseMsg> CreateCartModify43(Models.CartModifyRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartModifyRequestMsg();
-
-Models.CartModifyResponseMsg result = await aWSECommerceServiceBinding.CreateCartModify43(body);
-
-```
-
-
-### <a name="create_cart_create42"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartCreate42") CreateCartCreate42
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartCreateResponseMsg> CreateCartCreate42(Models.CartCreateRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartCreateRequestMsg();
-
-Models.CartCreateResponseMsg result = await aWSECommerceServiceBinding.CreateCartCreate42(body);
-
-```
-
-
-### <a name="create_cart_add41"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartAdd41") CreateCartAdd41
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartAddResponseMsg> CreateCartAdd41(Models.CartAddRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartAddRequestMsg();
-
-Models.CartAddResponseMsg result = await aWSECommerceServiceBinding.CreateCartAdd41(body);
-
-```
-
-
-### <a name="create_cart_get40"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartGet40") CreateCartGet40
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartGetResponseMsg> CreateCartGet40(Models.CartGetRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartGetRequestMsg();
-
-Models.CartGetResponseMsg result = await aWSECommerceServiceBinding.CreateCartGet40(body);
-
-```
-
-
-### <a name="create_similarity_lookup39"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateSimilarityLookup39") CreateSimilarityLookup39
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.SimilarityLookupResponseMsg> CreateSimilarityLookup39(Models.SimilarityLookupRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.SimilarityLookupRequestMsg();
-
-Models.SimilarityLookupResponseMsg result = await aWSECommerceServiceBinding.CreateSimilarityLookup39(body);
-
-```
-
-
-### <a name="create_browse_node_lookup38"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateBrowseNodeLookup38") CreateBrowseNodeLookup38
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.BrowseNodeLookupResponseMsg> CreateBrowseNodeLookup38(Models.BrowseNodeLookupRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.BrowseNodeLookupRequestMsg();
-
-Models.BrowseNodeLookupResponseMsg result = await aWSECommerceServiceBinding.CreateBrowseNodeLookup38(body);
-
-```
-
-
-### <a name="create_item_lookup37"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemLookup37") CreateItemLookup37
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.ItemLookupResponseMsg> CreateItemLookup37(Models.ItemLookupRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.ItemLookupRequestMsg();
-
-Models.ItemLookupResponseMsg result = await aWSECommerceServiceBinding.CreateItemLookup37(body);
-
-```
-
-
-### <a name="create_item_search36"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemSearch36") CreateItemSearch36
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.ItemSearchResponseMsg> CreateItemSearch36(Models.ItemSearchRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.ItemSearchRequestMsg();
-
-Models.ItemSearchResponseMsg result = await aWSECommerceServiceBinding.CreateItemSearch36(body);
-
-```
-
-
-### <a name="create_cart_clear35"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartClear35") CreateCartClear35
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartClearResponseMsg> CreateCartClear35(Models.CartClearRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartClearRequestMsg();
-
-Models.CartClearResponseMsg result = await aWSECommerceServiceBinding.CreateCartClear35(body);
-
-```
-
-
-### <a name="create_cart_modify34"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartModify34") CreateCartModify34
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartModifyResponseMsg> CreateCartModify34(Models.CartModifyRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartModifyRequestMsg();
-
-Models.CartModifyResponseMsg result = await aWSECommerceServiceBinding.CreateCartModify34(body);
-
-```
-
-
-### <a name="create_cart_create33"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartCreate33") CreateCartCreate33
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartCreateResponseMsg> CreateCartCreate33(Models.CartCreateRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartCreateRequestMsg();
-
-Models.CartCreateResponseMsg result = await aWSECommerceServiceBinding.CreateCartCreate33(body);
-
-```
-
-
-### <a name="create_cart_add32"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartAdd32") CreateCartAdd32
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartAddResponseMsg> CreateCartAdd32(Models.CartAddRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartAddRequestMsg();
-
-Models.CartAddResponseMsg result = await aWSECommerceServiceBinding.CreateCartAdd32(body);
-
-```
-
-
-### <a name="create_cart_get31"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartGet31") CreateCartGet31
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartGetResponseMsg> CreateCartGet31(Models.CartGetRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartGetRequestMsg();
-
-Models.CartGetResponseMsg result = await aWSECommerceServiceBinding.CreateCartGet31(body);
-
-```
-
-
-### <a name="create_similarity_lookup30"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateSimilarityLookup30") CreateSimilarityLookup30
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.SimilarityLookupResponseMsg> CreateSimilarityLookup30(Models.SimilarityLookupRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.SimilarityLookupRequestMsg();
-
-Models.SimilarityLookupResponseMsg result = await aWSECommerceServiceBinding.CreateSimilarityLookup30(body);
-
-```
-
-
-### <a name="create_browse_node_lookup29"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateBrowseNodeLookup29") CreateBrowseNodeLookup29
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.BrowseNodeLookupResponseMsg> CreateBrowseNodeLookup29(Models.BrowseNodeLookupRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.BrowseNodeLookupRequestMsg();
-
-Models.BrowseNodeLookupResponseMsg result = await aWSECommerceServiceBinding.CreateBrowseNodeLookup29(body);
-
-```
-
-
-### <a name="create_item_lookup28"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemLookup28") CreateItemLookup28
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.ItemLookupResponseMsg> CreateItemLookup28(Models.ItemLookupRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.ItemLookupRequestMsg();
-
-Models.ItemLookupResponseMsg result = await aWSECommerceServiceBinding.CreateItemLookup28(body);
-
-```
-
-
-### <a name="create_item_search27"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemSearch27") CreateItemSearch27
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.ItemSearchResponseMsg> CreateItemSearch27(Models.ItemSearchRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.ItemSearchRequestMsg();
-
-Models.ItemSearchResponseMsg result = await aWSECommerceServiceBinding.CreateItemSearch27(body);
-
-```
-
-
-### <a name="create_cart_clear26"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartClear26") CreateCartClear26
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartClearResponseMsg> CreateCartClear26(Models.CartClearRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartClearRequestMsg();
-
-Models.CartClearResponseMsg result = await aWSECommerceServiceBinding.CreateCartClear26(body);
-
-```
-
-
-### <a name="create_cart_modify25"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartModify25") CreateCartModify25
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartModifyResponseMsg> CreateCartModify25(Models.CartModifyRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartModifyRequestMsg();
-
-Models.CartModifyResponseMsg result = await aWSECommerceServiceBinding.CreateCartModify25(body);
-
-```
-
-
-### <a name="create_cart_create24"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartCreate24") CreateCartCreate24
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartCreateResponseMsg> CreateCartCreate24(Models.CartCreateRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartCreateRequestMsg();
-
-Models.CartCreateResponseMsg result = await aWSECommerceServiceBinding.CreateCartCreate24(body);
-
-```
-
-
-### <a name="create_cart_add23"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartAdd23") CreateCartAdd23
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartAddResponseMsg> CreateCartAdd23(Models.CartAddRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartAddRequestMsg();
-
-Models.CartAddResponseMsg result = await aWSECommerceServiceBinding.CreateCartAdd23(body);
-
-```
-
-
-### <a name="create_cart_get22"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartGet22") CreateCartGet22
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartGetResponseMsg> CreateCartGet22(Models.CartGetRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartGetRequestMsg();
-
-Models.CartGetResponseMsg result = await aWSECommerceServiceBinding.CreateCartGet22(body);
-
-```
-
-
-### <a name="create_similarity_lookup21"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateSimilarityLookup21") CreateSimilarityLookup21
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.SimilarityLookupResponseMsg> CreateSimilarityLookup21(Models.SimilarityLookupRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.SimilarityLookupRequestMsg();
-
-Models.SimilarityLookupResponseMsg result = await aWSECommerceServiceBinding.CreateSimilarityLookup21(body);
-
-```
-
-
-### <a name="create_browse_node_lookup20"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateBrowseNodeLookup20") CreateBrowseNodeLookup20
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.BrowseNodeLookupResponseMsg> CreateBrowseNodeLookup20(Models.BrowseNodeLookupRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.BrowseNodeLookupRequestMsg();
-
-Models.BrowseNodeLookupResponseMsg result = await aWSECommerceServiceBinding.CreateBrowseNodeLookup20(body);
-
-```
-
-
-### <a name="create_item_lookup19"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemLookup19") CreateItemLookup19
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.ItemLookupResponseMsg> CreateItemLookup19(Models.ItemLookupRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.ItemLookupRequestMsg();
-
-Models.ItemLookupResponseMsg result = await aWSECommerceServiceBinding.CreateItemLookup19(body);
-
-```
-
-
-### <a name="create_item_search18"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemSearch18") CreateItemSearch18
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.ItemSearchResponseMsg> CreateItemSearch18(Models.ItemSearchRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.ItemSearchRequestMsg();
-
-Models.ItemSearchResponseMsg result = await aWSECommerceServiceBinding.CreateItemSearch18(body);
-
-```
-
-
-### <a name="create_cart_clear17"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartClear17") CreateCartClear17
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartClearResponseMsg> CreateCartClear17(Models.CartClearRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartClearRequestMsg();
-
-Models.CartClearResponseMsg result = await aWSECommerceServiceBinding.CreateCartClear17(body);
-
-```
-
-
-### <a name="create_cart_modify16"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartModify16") CreateCartModify16
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartModifyResponseMsg> CreateCartModify16(Models.CartModifyRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartModifyRequestMsg();
-
-Models.CartModifyResponseMsg result = await aWSECommerceServiceBinding.CreateCartModify16(body);
-
-```
-
-
-### <a name="create_cart_create15"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartCreate15") CreateCartCreate15
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartCreateResponseMsg> CreateCartCreate15(Models.CartCreateRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartCreateRequestMsg();
-
-Models.CartCreateResponseMsg result = await aWSECommerceServiceBinding.CreateCartCreate15(body);
-
-```
-
-
-### <a name="create_cart_add14"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartAdd14") CreateCartAdd14
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartAddResponseMsg> CreateCartAdd14(Models.CartAddRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartAddRequestMsg();
-
-Models.CartAddResponseMsg result = await aWSECommerceServiceBinding.CreateCartAdd14(body);
-
-```
-
-
-### <a name="create_cart_get13"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartGet13") CreateCartGet13
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartGetResponseMsg> CreateCartGet13(Models.CartGetRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartGetRequestMsg();
-
-Models.CartGetResponseMsg result = await aWSECommerceServiceBinding.CreateCartGet13(body);
-
-```
-
-
-### <a name="create_similarity_lookup12"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateSimilarityLookup12") CreateSimilarityLookup12
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.SimilarityLookupResponseMsg> CreateSimilarityLookup12(Models.SimilarityLookupRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.SimilarityLookupRequestMsg();
-
-Models.SimilarityLookupResponseMsg result = await aWSECommerceServiceBinding.CreateSimilarityLookup12(body);
-
-```
-
-
-### <a name="create_browse_node_lookup11"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateBrowseNodeLookup11") CreateBrowseNodeLookup11
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.BrowseNodeLookupResponseMsg> CreateBrowseNodeLookup11(Models.BrowseNodeLookupRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.BrowseNodeLookupRequestMsg();
-
-Models.BrowseNodeLookupResponseMsg result = await aWSECommerceServiceBinding.CreateBrowseNodeLookup11(body);
-
-```
-
-
-### <a name="create_item_lookup10"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemLookup10") CreateItemLookup10
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.ItemLookupResponseMsg> CreateItemLookup10(Models.ItemLookupRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.ItemLookupRequestMsg();
-
-Models.ItemLookupResponseMsg result = await aWSECommerceServiceBinding.CreateItemLookup10(body);
-
-```
-
-
-### <a name="create_item_search9"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemSearch9") CreateItemSearch9
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.ItemSearchResponseMsg> CreateItemSearch9(Models.ItemSearchRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.ItemSearchRequestMsg();
-
-Models.ItemSearchResponseMsg result = await aWSECommerceServiceBinding.CreateItemSearch9(body);
-
-```
-
-
-### <a name="create_cart_clear"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartClear") CreateCartClear
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartClearResponseMsg> CreateCartClear(Models.CartClearRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartClearRequestMsg();
-
-Models.CartClearResponseMsg result = await aWSECommerceServiceBinding.CreateCartClear(body);
-
-```
-
-
-### <a name="create_cart_modify"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartModify") CreateCartModify
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartModifyResponseMsg> CreateCartModify(Models.CartModifyRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartModifyRequestMsg();
-
-Models.CartModifyResponseMsg result = await aWSECommerceServiceBinding.CreateCartModify(body);
-
-```
-
-
-### <a name="create_cart_create"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartCreate") CreateCartCreate
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartCreateResponseMsg> CreateCartCreate(Models.CartCreateRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartCreateRequestMsg();
-
-Models.CartCreateResponseMsg result = await aWSECommerceServiceBinding.CreateCartCreate(body);
-
-```
-
-
-### <a name="create_cart_add"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartAdd") CreateCartAdd
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartAddResponseMsg> CreateCartAdd(Models.CartAddRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartAddRequestMsg();
-
-Models.CartAddResponseMsg result = await aWSECommerceServiceBinding.CreateCartAdd(body);
-
-```
-
-
-### <a name="create_cart_get"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartGet") CreateCartGet
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.CartGetResponseMsg> CreateCartGet(Models.CartGetRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CartGetRequestMsg();
-
-Models.CartGetResponseMsg result = await aWSECommerceServiceBinding.CreateCartGet(body);
-
-```
-
-
-### <a name="create_similarity_lookup"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateSimilarityLookup") CreateSimilarityLookup
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.SimilarityLookupResponseMsg> CreateSimilarityLookup(Models.SimilarityLookupRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.SimilarityLookupRequestMsg();
-
-Models.SimilarityLookupResponseMsg result = await aWSECommerceServiceBinding.CreateSimilarityLookup(body);
-
-```
-
-
-### <a name="create_browse_node_lookup"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateBrowseNodeLookup") CreateBrowseNodeLookup
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.BrowseNodeLookupResponseMsg> CreateBrowseNodeLookup(Models.BrowseNodeLookupRequestMsg body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.BrowseNodeLookupRequestMsg();
-
-Models.BrowseNodeLookupResponseMsg result = await aWSECommerceServiceBinding.CreateBrowseNodeLookup(body);
+Models.ItemSearchResponseMsg result = await aWSECommerceServiceBinding.CreateItemSearch(body);
 
 ```
 
@@ -2047,7 +249,7 @@ Models.ItemLookupResponseMsg result = await aWSECommerceServiceBinding.CreateIte
 ```
 
 
-### <a name="create_item_search"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemSearch") CreateItemSearch
+### <a name="create_browse_node_lookup"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateBrowseNodeLookup") CreateBrowseNodeLookup
 
 > *Tags:*  ``` Skips Authentication ``` 
 
@@ -2055,7 +257,203 @@ Models.ItemLookupResponseMsg result = await aWSECommerceServiceBinding.CreateIte
 
 
 ```csharp
-Task<Models.ItemSearchResponseMsg> CreateItemSearch(Models.ItemSearchRequestMsg body)
+Task<Models.BrowseNodeLookupResponseMsg> CreateBrowseNodeLookup(Models.BrowseNodeLookupRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.BrowseNodeLookupRequestMsg();
+
+Models.BrowseNodeLookupResponseMsg result = await aWSECommerceServiceBinding.CreateBrowseNodeLookup(body);
+
+```
+
+
+### <a name="create_similarity_lookup"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateSimilarityLookup") CreateSimilarityLookup
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.SimilarityLookupResponseMsg> CreateSimilarityLookup(Models.SimilarityLookupRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.SimilarityLookupRequestMsg();
+
+Models.SimilarityLookupResponseMsg result = await aWSECommerceServiceBinding.CreateSimilarityLookup(body);
+
+```
+
+
+### <a name="create_cart_get"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartGet") CreateCartGet
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartGetResponseMsg> CreateCartGet(Models.CartGetRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartGetRequestMsg();
+
+Models.CartGetResponseMsg result = await aWSECommerceServiceBinding.CreateCartGet(body);
+
+```
+
+
+### <a name="create_cart_add"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartAdd") CreateCartAdd
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartAddResponseMsg> CreateCartAdd(Models.CartAddRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartAddRequestMsg();
+
+Models.CartAddResponseMsg result = await aWSECommerceServiceBinding.CreateCartAdd(body);
+
+```
+
+
+### <a name="create_cart_create"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartCreate") CreateCartCreate
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartCreateResponseMsg> CreateCartCreate(Models.CartCreateRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartCreateRequestMsg();
+
+Models.CartCreateResponseMsg result = await aWSECommerceServiceBinding.CreateCartCreate(body);
+
+```
+
+
+### <a name="create_cart_modify"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartModify") CreateCartModify
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartModifyResponseMsg> CreateCartModify(Models.CartModifyRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartModifyRequestMsg();
+
+Models.CartModifyResponseMsg result = await aWSECommerceServiceBinding.CreateCartModify(body);
+
+```
+
+
+### <a name="create_cart_clear"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartClear") CreateCartClear
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartClearResponseMsg> CreateCartClear(Models.CartClearRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartClearRequestMsg();
+
+Models.CartClearResponseMsg result = await aWSECommerceServiceBinding.CreateCartClear(body);
+
+```
+
+
+### <a name="create_item_search9"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemSearch9") CreateItemSearch9
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.ItemSearchResponseMsg> CreateItemSearch9(Models.ItemSearchRequestMsg body)
 ```
 
 #### Parameters
@@ -2070,7 +468,1715 @@ Task<Models.ItemSearchResponseMsg> CreateItemSearch(Models.ItemSearchRequestMsg 
 ```csharp
 var body = new Models.ItemSearchRequestMsg();
 
-Models.ItemSearchResponseMsg result = await aWSECommerceServiceBinding.CreateItemSearch(body);
+Models.ItemSearchResponseMsg result = await aWSECommerceServiceBinding.CreateItemSearch9(body);
+
+```
+
+
+### <a name="create_item_lookup10"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemLookup10") CreateItemLookup10
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.ItemLookupResponseMsg> CreateItemLookup10(Models.ItemLookupRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.ItemLookupRequestMsg();
+
+Models.ItemLookupResponseMsg result = await aWSECommerceServiceBinding.CreateItemLookup10(body);
+
+```
+
+
+### <a name="create_browse_node_lookup11"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateBrowseNodeLookup11") CreateBrowseNodeLookup11
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.BrowseNodeLookupResponseMsg> CreateBrowseNodeLookup11(Models.BrowseNodeLookupRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.BrowseNodeLookupRequestMsg();
+
+Models.BrowseNodeLookupResponseMsg result = await aWSECommerceServiceBinding.CreateBrowseNodeLookup11(body);
+
+```
+
+
+### <a name="create_similarity_lookup12"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateSimilarityLookup12") CreateSimilarityLookup12
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.SimilarityLookupResponseMsg> CreateSimilarityLookup12(Models.SimilarityLookupRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.SimilarityLookupRequestMsg();
+
+Models.SimilarityLookupResponseMsg result = await aWSECommerceServiceBinding.CreateSimilarityLookup12(body);
+
+```
+
+
+### <a name="create_cart_get13"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartGet13") CreateCartGet13
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartGetResponseMsg> CreateCartGet13(Models.CartGetRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartGetRequestMsg();
+
+Models.CartGetResponseMsg result = await aWSECommerceServiceBinding.CreateCartGet13(body);
+
+```
+
+
+### <a name="create_cart_add14"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartAdd14") CreateCartAdd14
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartAddResponseMsg> CreateCartAdd14(Models.CartAddRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartAddRequestMsg();
+
+Models.CartAddResponseMsg result = await aWSECommerceServiceBinding.CreateCartAdd14(body);
+
+```
+
+
+### <a name="create_cart_create15"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartCreate15") CreateCartCreate15
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartCreateResponseMsg> CreateCartCreate15(Models.CartCreateRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartCreateRequestMsg();
+
+Models.CartCreateResponseMsg result = await aWSECommerceServiceBinding.CreateCartCreate15(body);
+
+```
+
+
+### <a name="create_cart_modify16"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartModify16") CreateCartModify16
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartModifyResponseMsg> CreateCartModify16(Models.CartModifyRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartModifyRequestMsg();
+
+Models.CartModifyResponseMsg result = await aWSECommerceServiceBinding.CreateCartModify16(body);
+
+```
+
+
+### <a name="create_cart_clear17"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartClear17") CreateCartClear17
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartClearResponseMsg> CreateCartClear17(Models.CartClearRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartClearRequestMsg();
+
+Models.CartClearResponseMsg result = await aWSECommerceServiceBinding.CreateCartClear17(body);
+
+```
+
+
+### <a name="create_item_search18"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemSearch18") CreateItemSearch18
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.ItemSearchResponseMsg> CreateItemSearch18(Models.ItemSearchRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.ItemSearchRequestMsg();
+
+Models.ItemSearchResponseMsg result = await aWSECommerceServiceBinding.CreateItemSearch18(body);
+
+```
+
+
+### <a name="create_item_lookup19"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemLookup19") CreateItemLookup19
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.ItemLookupResponseMsg> CreateItemLookup19(Models.ItemLookupRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.ItemLookupRequestMsg();
+
+Models.ItemLookupResponseMsg result = await aWSECommerceServiceBinding.CreateItemLookup19(body);
+
+```
+
+
+### <a name="create_browse_node_lookup20"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateBrowseNodeLookup20") CreateBrowseNodeLookup20
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.BrowseNodeLookupResponseMsg> CreateBrowseNodeLookup20(Models.BrowseNodeLookupRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.BrowseNodeLookupRequestMsg();
+
+Models.BrowseNodeLookupResponseMsg result = await aWSECommerceServiceBinding.CreateBrowseNodeLookup20(body);
+
+```
+
+
+### <a name="create_similarity_lookup21"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateSimilarityLookup21") CreateSimilarityLookup21
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.SimilarityLookupResponseMsg> CreateSimilarityLookup21(Models.SimilarityLookupRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.SimilarityLookupRequestMsg();
+
+Models.SimilarityLookupResponseMsg result = await aWSECommerceServiceBinding.CreateSimilarityLookup21(body);
+
+```
+
+
+### <a name="create_cart_get22"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartGet22") CreateCartGet22
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartGetResponseMsg> CreateCartGet22(Models.CartGetRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartGetRequestMsg();
+
+Models.CartGetResponseMsg result = await aWSECommerceServiceBinding.CreateCartGet22(body);
+
+```
+
+
+### <a name="create_cart_add23"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartAdd23") CreateCartAdd23
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartAddResponseMsg> CreateCartAdd23(Models.CartAddRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartAddRequestMsg();
+
+Models.CartAddResponseMsg result = await aWSECommerceServiceBinding.CreateCartAdd23(body);
+
+```
+
+
+### <a name="create_cart_create24"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartCreate24") CreateCartCreate24
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartCreateResponseMsg> CreateCartCreate24(Models.CartCreateRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartCreateRequestMsg();
+
+Models.CartCreateResponseMsg result = await aWSECommerceServiceBinding.CreateCartCreate24(body);
+
+```
+
+
+### <a name="create_cart_modify25"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartModify25") CreateCartModify25
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartModifyResponseMsg> CreateCartModify25(Models.CartModifyRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartModifyRequestMsg();
+
+Models.CartModifyResponseMsg result = await aWSECommerceServiceBinding.CreateCartModify25(body);
+
+```
+
+
+### <a name="create_cart_clear26"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartClear26") CreateCartClear26
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartClearResponseMsg> CreateCartClear26(Models.CartClearRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartClearRequestMsg();
+
+Models.CartClearResponseMsg result = await aWSECommerceServiceBinding.CreateCartClear26(body);
+
+```
+
+
+### <a name="create_item_search27"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemSearch27") CreateItemSearch27
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.ItemSearchResponseMsg> CreateItemSearch27(Models.ItemSearchRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.ItemSearchRequestMsg();
+
+Models.ItemSearchResponseMsg result = await aWSECommerceServiceBinding.CreateItemSearch27(body);
+
+```
+
+
+### <a name="create_item_lookup28"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemLookup28") CreateItemLookup28
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.ItemLookupResponseMsg> CreateItemLookup28(Models.ItemLookupRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.ItemLookupRequestMsg();
+
+Models.ItemLookupResponseMsg result = await aWSECommerceServiceBinding.CreateItemLookup28(body);
+
+```
+
+
+### <a name="create_browse_node_lookup29"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateBrowseNodeLookup29") CreateBrowseNodeLookup29
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.BrowseNodeLookupResponseMsg> CreateBrowseNodeLookup29(Models.BrowseNodeLookupRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.BrowseNodeLookupRequestMsg();
+
+Models.BrowseNodeLookupResponseMsg result = await aWSECommerceServiceBinding.CreateBrowseNodeLookup29(body);
+
+```
+
+
+### <a name="create_similarity_lookup30"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateSimilarityLookup30") CreateSimilarityLookup30
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.SimilarityLookupResponseMsg> CreateSimilarityLookup30(Models.SimilarityLookupRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.SimilarityLookupRequestMsg();
+
+Models.SimilarityLookupResponseMsg result = await aWSECommerceServiceBinding.CreateSimilarityLookup30(body);
+
+```
+
+
+### <a name="create_cart_get31"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartGet31") CreateCartGet31
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartGetResponseMsg> CreateCartGet31(Models.CartGetRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartGetRequestMsg();
+
+Models.CartGetResponseMsg result = await aWSECommerceServiceBinding.CreateCartGet31(body);
+
+```
+
+
+### <a name="create_cart_add32"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartAdd32") CreateCartAdd32
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartAddResponseMsg> CreateCartAdd32(Models.CartAddRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartAddRequestMsg();
+
+Models.CartAddResponseMsg result = await aWSECommerceServiceBinding.CreateCartAdd32(body);
+
+```
+
+
+### <a name="create_cart_create33"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartCreate33") CreateCartCreate33
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartCreateResponseMsg> CreateCartCreate33(Models.CartCreateRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartCreateRequestMsg();
+
+Models.CartCreateResponseMsg result = await aWSECommerceServiceBinding.CreateCartCreate33(body);
+
+```
+
+
+### <a name="create_cart_modify34"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartModify34") CreateCartModify34
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartModifyResponseMsg> CreateCartModify34(Models.CartModifyRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartModifyRequestMsg();
+
+Models.CartModifyResponseMsg result = await aWSECommerceServiceBinding.CreateCartModify34(body);
+
+```
+
+
+### <a name="create_cart_clear35"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartClear35") CreateCartClear35
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartClearResponseMsg> CreateCartClear35(Models.CartClearRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartClearRequestMsg();
+
+Models.CartClearResponseMsg result = await aWSECommerceServiceBinding.CreateCartClear35(body);
+
+```
+
+
+### <a name="create_item_search36"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemSearch36") CreateItemSearch36
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.ItemSearchResponseMsg> CreateItemSearch36(Models.ItemSearchRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.ItemSearchRequestMsg();
+
+Models.ItemSearchResponseMsg result = await aWSECommerceServiceBinding.CreateItemSearch36(body);
+
+```
+
+
+### <a name="create_item_lookup37"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemLookup37") CreateItemLookup37
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.ItemLookupResponseMsg> CreateItemLookup37(Models.ItemLookupRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.ItemLookupRequestMsg();
+
+Models.ItemLookupResponseMsg result = await aWSECommerceServiceBinding.CreateItemLookup37(body);
+
+```
+
+
+### <a name="create_browse_node_lookup38"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateBrowseNodeLookup38") CreateBrowseNodeLookup38
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.BrowseNodeLookupResponseMsg> CreateBrowseNodeLookup38(Models.BrowseNodeLookupRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.BrowseNodeLookupRequestMsg();
+
+Models.BrowseNodeLookupResponseMsg result = await aWSECommerceServiceBinding.CreateBrowseNodeLookup38(body);
+
+```
+
+
+### <a name="create_similarity_lookup39"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateSimilarityLookup39") CreateSimilarityLookup39
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.SimilarityLookupResponseMsg> CreateSimilarityLookup39(Models.SimilarityLookupRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.SimilarityLookupRequestMsg();
+
+Models.SimilarityLookupResponseMsg result = await aWSECommerceServiceBinding.CreateSimilarityLookup39(body);
+
+```
+
+
+### <a name="create_cart_get40"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartGet40") CreateCartGet40
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartGetResponseMsg> CreateCartGet40(Models.CartGetRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartGetRequestMsg();
+
+Models.CartGetResponseMsg result = await aWSECommerceServiceBinding.CreateCartGet40(body);
+
+```
+
+
+### <a name="create_cart_add41"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartAdd41") CreateCartAdd41
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartAddResponseMsg> CreateCartAdd41(Models.CartAddRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartAddRequestMsg();
+
+Models.CartAddResponseMsg result = await aWSECommerceServiceBinding.CreateCartAdd41(body);
+
+```
+
+
+### <a name="create_cart_create42"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartCreate42") CreateCartCreate42
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartCreateResponseMsg> CreateCartCreate42(Models.CartCreateRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartCreateRequestMsg();
+
+Models.CartCreateResponseMsg result = await aWSECommerceServiceBinding.CreateCartCreate42(body);
+
+```
+
+
+### <a name="create_cart_modify43"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartModify43") CreateCartModify43
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartModifyResponseMsg> CreateCartModify43(Models.CartModifyRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartModifyRequestMsg();
+
+Models.CartModifyResponseMsg result = await aWSECommerceServiceBinding.CreateCartModify43(body);
+
+```
+
+
+### <a name="create_cart_clear44"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartClear44") CreateCartClear44
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartClearResponseMsg> CreateCartClear44(Models.CartClearRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartClearRequestMsg();
+
+Models.CartClearResponseMsg result = await aWSECommerceServiceBinding.CreateCartClear44(body);
+
+```
+
+
+### <a name="create_item_search45"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemSearch45") CreateItemSearch45
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.ItemSearchResponseMsg> CreateItemSearch45(Models.ItemSearchRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.ItemSearchRequestMsg();
+
+Models.ItemSearchResponseMsg result = await aWSECommerceServiceBinding.CreateItemSearch45(body);
+
+```
+
+
+### <a name="create_item_lookup46"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemLookup46") CreateItemLookup46
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.ItemLookupResponseMsg> CreateItemLookup46(Models.ItemLookupRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.ItemLookupRequestMsg();
+
+Models.ItemLookupResponseMsg result = await aWSECommerceServiceBinding.CreateItemLookup46(body);
+
+```
+
+
+### <a name="create_browse_node_lookup47"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateBrowseNodeLookup47") CreateBrowseNodeLookup47
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.BrowseNodeLookupResponseMsg> CreateBrowseNodeLookup47(Models.BrowseNodeLookupRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.BrowseNodeLookupRequestMsg();
+
+Models.BrowseNodeLookupResponseMsg result = await aWSECommerceServiceBinding.CreateBrowseNodeLookup47(body);
+
+```
+
+
+### <a name="create_similarity_lookup48"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateSimilarityLookup48") CreateSimilarityLookup48
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.SimilarityLookupResponseMsg> CreateSimilarityLookup48(Models.SimilarityLookupRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.SimilarityLookupRequestMsg();
+
+Models.SimilarityLookupResponseMsg result = await aWSECommerceServiceBinding.CreateSimilarityLookup48(body);
+
+```
+
+
+### <a name="create_cart_get49"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartGet49") CreateCartGet49
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartGetResponseMsg> CreateCartGet49(Models.CartGetRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartGetRequestMsg();
+
+Models.CartGetResponseMsg result = await aWSECommerceServiceBinding.CreateCartGet49(body);
+
+```
+
+
+### <a name="create_cart_add50"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartAdd50") CreateCartAdd50
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartAddResponseMsg> CreateCartAdd50(Models.CartAddRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartAddRequestMsg();
+
+Models.CartAddResponseMsg result = await aWSECommerceServiceBinding.CreateCartAdd50(body);
+
+```
+
+
+### <a name="create_cart_create51"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartCreate51") CreateCartCreate51
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartCreateResponseMsg> CreateCartCreate51(Models.CartCreateRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartCreateRequestMsg();
+
+Models.CartCreateResponseMsg result = await aWSECommerceServiceBinding.CreateCartCreate51(body);
+
+```
+
+
+### <a name="create_cart_modify52"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartModify52") CreateCartModify52
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartModifyResponseMsg> CreateCartModify52(Models.CartModifyRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartModifyRequestMsg();
+
+Models.CartModifyResponseMsg result = await aWSECommerceServiceBinding.CreateCartModify52(body);
+
+```
+
+
+### <a name="create_cart_clear53"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartClear53") CreateCartClear53
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartClearResponseMsg> CreateCartClear53(Models.CartClearRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartClearRequestMsg();
+
+Models.CartClearResponseMsg result = await aWSECommerceServiceBinding.CreateCartClear53(body);
+
+```
+
+
+### <a name="create_item_search54"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemSearch54") CreateItemSearch54
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.ItemSearchResponseMsg> CreateItemSearch54(Models.ItemSearchRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.ItemSearchRequestMsg();
+
+Models.ItemSearchResponseMsg result = await aWSECommerceServiceBinding.CreateItemSearch54(body);
+
+```
+
+
+### <a name="create_item_lookup55"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemLookup55") CreateItemLookup55
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.ItemLookupResponseMsg> CreateItemLookup55(Models.ItemLookupRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.ItemLookupRequestMsg();
+
+Models.ItemLookupResponseMsg result = await aWSECommerceServiceBinding.CreateItemLookup55(body);
+
+```
+
+
+### <a name="create_browse_node_lookup56"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateBrowseNodeLookup56") CreateBrowseNodeLookup56
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.BrowseNodeLookupResponseMsg> CreateBrowseNodeLookup56(Models.BrowseNodeLookupRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.BrowseNodeLookupRequestMsg();
+
+Models.BrowseNodeLookupResponseMsg result = await aWSECommerceServiceBinding.CreateBrowseNodeLookup56(body);
+
+```
+
+
+### <a name="create_similarity_lookup57"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateSimilarityLookup57") CreateSimilarityLookup57
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.SimilarityLookupResponseMsg> CreateSimilarityLookup57(Models.SimilarityLookupRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.SimilarityLookupRequestMsg();
+
+Models.SimilarityLookupResponseMsg result = await aWSECommerceServiceBinding.CreateSimilarityLookup57(body);
+
+```
+
+
+### <a name="create_cart_get58"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartGet58") CreateCartGet58
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartGetResponseMsg> CreateCartGet58(Models.CartGetRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartGetRequestMsg();
+
+Models.CartGetResponseMsg result = await aWSECommerceServiceBinding.CreateCartGet58(body);
+
+```
+
+
+### <a name="create_cart_add59"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartAdd59") CreateCartAdd59
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartAddResponseMsg> CreateCartAdd59(Models.CartAddRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartAddRequestMsg();
+
+Models.CartAddResponseMsg result = await aWSECommerceServiceBinding.CreateCartAdd59(body);
+
+```
+
+
+### <a name="create_cart_create60"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartCreate60") CreateCartCreate60
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartCreateResponseMsg> CreateCartCreate60(Models.CartCreateRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartCreateRequestMsg();
+
+Models.CartCreateResponseMsg result = await aWSECommerceServiceBinding.CreateCartCreate60(body);
+
+```
+
+
+### <a name="create_cart_modify61"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartModify61") CreateCartModify61
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartModifyResponseMsg> CreateCartModify61(Models.CartModifyRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartModifyRequestMsg();
+
+Models.CartModifyResponseMsg result = await aWSECommerceServiceBinding.CreateCartModify61(body);
+
+```
+
+
+### <a name="create_cart_clear62"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartClear62") CreateCartClear62
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartClearResponseMsg> CreateCartClear62(Models.CartClearRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartClearRequestMsg();
+
+Models.CartClearResponseMsg result = await aWSECommerceServiceBinding.CreateCartClear62(body);
+
+```
+
+
+### <a name="create_item_search63"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemSearch63") CreateItemSearch63
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.ItemSearchResponseMsg> CreateItemSearch63(Models.ItemSearchRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.ItemSearchRequestMsg();
+
+Models.ItemSearchResponseMsg result = await aWSECommerceServiceBinding.CreateItemSearch63(body);
+
+```
+
+
+### <a name="create_item_lookup64"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateItemLookup64") CreateItemLookup64
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.ItemLookupResponseMsg> CreateItemLookup64(Models.ItemLookupRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.ItemLookupRequestMsg();
+
+Models.ItemLookupResponseMsg result = await aWSECommerceServiceBinding.CreateItemLookup64(body);
+
+```
+
+
+### <a name="create_browse_node_lookup65"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateBrowseNodeLookup65") CreateBrowseNodeLookup65
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.BrowseNodeLookupResponseMsg> CreateBrowseNodeLookup65(Models.BrowseNodeLookupRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.BrowseNodeLookupRequestMsg();
+
+Models.BrowseNodeLookupResponseMsg result = await aWSECommerceServiceBinding.CreateBrowseNodeLookup65(body);
+
+```
+
+
+### <a name="create_similarity_lookup66"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateSimilarityLookup66") CreateSimilarityLookup66
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.SimilarityLookupResponseMsg> CreateSimilarityLookup66(Models.SimilarityLookupRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.SimilarityLookupRequestMsg();
+
+Models.SimilarityLookupResponseMsg result = await aWSECommerceServiceBinding.CreateSimilarityLookup66(body);
+
+```
+
+
+### <a name="create_cart_get67"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartGet67") CreateCartGet67
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartGetResponseMsg> CreateCartGet67(Models.CartGetRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartGetRequestMsg();
+
+Models.CartGetResponseMsg result = await aWSECommerceServiceBinding.CreateCartGet67(body);
+
+```
+
+
+### <a name="create_cart_add68"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartAdd68") CreateCartAdd68
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartAddResponseMsg> CreateCartAdd68(Models.CartAddRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartAddRequestMsg();
+
+Models.CartAddResponseMsg result = await aWSECommerceServiceBinding.CreateCartAdd68(body);
+
+```
+
+
+### <a name="create_cart_create69"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartCreate69") CreateCartCreate69
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartCreateResponseMsg> CreateCartCreate69(Models.CartCreateRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartCreateRequestMsg();
+
+Models.CartCreateResponseMsg result = await aWSECommerceServiceBinding.CreateCartCreate69(body);
+
+```
+
+
+### <a name="create_cart_modify70"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.AWSECommerceServiceBindingController.CreateCartModify70") CreateCartModify70
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.CartModifyResponseMsg> CreateCartModify70(Models.CartModifyRequestMsg body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CartModifyRequestMsg();
+
+Models.CartModifyResponseMsg result = await aWSECommerceServiceBinding.CreateCartModify70(body);
 
 ```
 
@@ -2857,6 +2963,394 @@ var body = new Models.CartClearRequestMsg();
 Models.CartClearResponseMsg result = await aWSECommerceServiceBinding.CreateCartClear98(body);
 
 ```
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="o_auth_authorization_controller"></a>![Class: ](https://apidocs.io/img/class.png "AWSECommerceService.PCL.Controllers.OAuthAuthorizationController") OAuthAuthorizationController
+
+### Get singleton instance
+
+The singleton instance of the ``` OAuthAuthorizationController ``` class can be accessed from the API Client.
+
+```csharp
+OAuthAuthorizationController oAuthAuthorization = client.OAuthAuthorization;
+```
+
+### <a name="create_request_token"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.OAuthAuthorizationController.CreateRequestToken") CreateRequestToken
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```csharp
+Task<Models.OAuthToken> CreateRequestToken(
+        string authorization,
+        string code,
+        string redirectUri,
+        Dictionary<string, object> fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| code |  ``` Required ```  | Authorization Code |
+| redirectUri |  ``` Required ```  | Redirect Uri |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```csharp
+string authorization = "Authorization";
+string code = "code";
+string redirectUri = "redirect_uri";
+// key-value map for optional form parameters
+var formParams = new Dictionary<string, object>();
+
+
+Models.OAuthToken result = await oAuthAuthorization.CreateRequestToken(authorization, code, redirectUri, formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+### <a name="create_refresh_token"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.OAuthAuthorizationController.CreateRefreshToken") CreateRefreshToken
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```csharp
+Task<Models.OAuthToken> CreateRefreshToken(
+        string authorization,
+        string refreshToken,
+        string scope = null,
+        Dictionary<string, object> fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```csharp
+string authorization = "Authorization";
+string refreshToken = "refresh_token";
+string scope = "scope";
+// key-value map for optional form parameters
+var formParams = new Dictionary<string, object>();
+
+
+Models.OAuthToken result = await oAuthAuthorization.CreateRefreshToken(authorization, refreshToken, scope, formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+### <a name="create_request_token1"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.OAuthAuthorizationController.CreateRequestToken1") CreateRequestToken1
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```csharp
+Task<Models.OAuthToken> CreateRequestToken1(
+        string authorization,
+        string code,
+        string redirectUri,
+        Dictionary<string, object> fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| code |  ``` Required ```  | Authorization Code |
+| redirectUri |  ``` Required ```  | Redirect Uri |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```csharp
+string authorization = "Authorization";
+string code = "code";
+string redirectUri = "redirect_uri";
+// key-value map for optional form parameters
+var formParams = new Dictionary<string, object>();
+
+
+Models.OAuthToken result = await oAuthAuthorization.CreateRequestToken1(authorization, code, redirectUri, formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+### <a name="create_refresh_token1"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.OAuthAuthorizationController.CreateRefreshToken1") CreateRefreshToken1
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```csharp
+Task<Models.OAuthToken> CreateRefreshToken1(
+        string authorization,
+        string refreshToken,
+        string scope = null,
+        Dictionary<string, object> fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```csharp
+string authorization = "Authorization";
+string refreshToken = "refresh_token";
+string scope = "scope";
+// key-value map for optional form parameters
+var formParams = new Dictionary<string, object>();
+
+
+Models.OAuthToken result = await oAuthAuthorization.CreateRefreshToken1(authorization, refreshToken, scope, formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+### <a name="create_request_token2"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.OAuthAuthorizationController.CreateRequestToken2") CreateRequestToken2
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```csharp
+Task<Models.OAuthToken> CreateRequestToken2(
+        string authorization,
+        string code,
+        string redirectUri,
+        Dictionary<string, object> fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| code |  ``` Required ```  | Authorization Code |
+| redirectUri |  ``` Required ```  | Redirect Uri |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```csharp
+string authorization = "Authorization";
+string code = "code";
+string redirectUri = "redirect_uri";
+// key-value map for optional form parameters
+var formParams = new Dictionary<string, object>();
+
+
+Models.OAuthToken result = await oAuthAuthorization.CreateRequestToken2(authorization, code, redirectUri, formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+### <a name="create_refresh_token2"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.OAuthAuthorizationController.CreateRefreshToken2") CreateRefreshToken2
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```csharp
+Task<Models.OAuthToken> CreateRefreshToken2(
+        string authorization,
+        string refreshToken,
+        string scope = null,
+        Dictionary<string, object> fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```csharp
+string authorization = "Authorization";
+string refreshToken = "refresh_token";
+string scope = "scope";
+// key-value map for optional form parameters
+var formParams = new Dictionary<string, object>();
+
+
+Models.OAuthToken result = await oAuthAuthorization.CreateRefreshToken2(authorization, refreshToken, scope, formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+### <a name="create_request_token"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.OAuthAuthorizationController.CreateRequestToken") CreateRequestToken
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```csharp
+Task<Models.OAuthToken> CreateRequestToken(
+        string authorization,
+        string code,
+        string redirectUri,
+        Dictionary<string, object> fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| code |  ``` Required ```  | Authorization Code |
+| redirectUri |  ``` Required ```  | Redirect Uri |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```csharp
+string authorization = "Authorization";
+string code = "code";
+string redirectUri = "redirect_uri";
+// key-value map for optional form parameters
+var formParams = new Dictionary<string, object>();
+
+
+Models.OAuthToken result = await oAuthAuthorization.CreateRequestToken(authorization, code, redirectUri, formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+### <a name="create_refresh_token"></a>![Method: ](https://apidocs.io/img/method.png "AWSECommerceService.PCL.Controllers.OAuthAuthorizationController.CreateRefreshToken") CreateRefreshToken
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```csharp
+Task<Models.OAuthToken> CreateRefreshToken(
+        string authorization,
+        string refreshToken,
+        string scope = null,
+        Dictionary<string, object> fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```csharp
+string authorization = "Authorization";
+string refreshToken = "refresh_token";
+string scope = "scope";
+// key-value map for optional form parameters
+var formParams = new Dictionary<string, object>();
+
+
+Models.OAuthToken result = await oAuthAuthorization.CreateRefreshToken(authorization, refreshToken, scope, formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
 
 
 [Back to List of Controllers](#list_of_controllers)
